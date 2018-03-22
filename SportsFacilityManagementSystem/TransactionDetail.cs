@@ -24,8 +24,6 @@ namespace SportsFacilityManagementSystem
         public virtual Facility Facility { get; set; }
         public virtual SubFacility SubFacility { get; set; }
         public virtual Timeslot Timeslot { get; set; }
-        public virtual TransactionDetail TransactionDetails1 { get; set; }
-        public virtual TransactionDetail TransactionDetail1 { get; set; }
         public virtual Transaction Transaction { get; set; }
     }
 }

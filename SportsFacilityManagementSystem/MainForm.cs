@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace SportsFacilityManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        Team12BSFMSEntities ctx;
+        public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ctx = new Team12BSFMSEntities(); ;
         }
     }
 }

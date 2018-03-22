@@ -272,8 +272,6 @@
           <NavigationProperty Name="Facility" Relationship="Self.FK_TransactionDetails_Facilities" FromRole="TransactionDetails" ToRole="Facilities" />
           <NavigationProperty Name="SubFacility" Relationship="Self.FK_TransactionDetails_SubFacilities" FromRole="TransactionDetails" ToRole="SubFacilities" />
           <NavigationProperty Name="Timeslot" Relationship="Self.FK_TransactionDetails_Timeslots" FromRole="TransactionDetails" ToRole="Timeslots" />
-          <NavigationProperty Name="TransactionDetails1" Relationship="Self.FK_TransactionDetails_TransactionDetails" FromRole="TransactionDetails" ToRole="TransactionDetails1" />
-          <NavigationProperty Name="TransactionDetail1" Relationship="Self.FK_TransactionDetails_TransactionDetails" FromRole="TransactionDetails1" ToRole="TransactionDetails" />
           <NavigationProperty Name="Transaction" Relationship="Self.FK_TransactionDetails_Transactions" FromRole="TransactionDetails" ToRole="Transactions" />
         </EntityType>
         <EntityType Name="Transaction">
@@ -356,18 +354,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TransactionDetails_TransactionDetails">
-          <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="1" />
-          <End Role="TransactionDetails1" Type="Self.TransactionDetail" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="TransactionDetails">
-              <PropertyRef Name="transactiondetailid" />
-            </Principal>
-            <Dependent Role="TransactionDetails1">
-              <PropertyRef Name="transactiondetailid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TransactionDetails_Transactions">
           <End Role="Transactions" Type="Self.Transaction" Multiplicity="1" />
           <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="*" />
@@ -408,10 +394,6 @@
           <AssociationSet Name="FK_TransactionDetails_Timeslots" Association="Self.FK_TransactionDetails_Timeslots">
             <End Role="Timeslots" EntitySet="Timeslots" />
             <End Role="TransactionDetails" EntitySet="TransactionDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TransactionDetails_TransactionDetails" Association="Self.FK_TransactionDetails_TransactionDetails">
-            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
-            <End Role="TransactionDetails1" EntitySet="TransactionDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_TransactionDetails_Transactions" Association="Self.FK_TransactionDetails_Transactions">
             <End Role="Transactions" EntitySet="Transactions" />

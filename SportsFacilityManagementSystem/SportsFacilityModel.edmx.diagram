@@ -18,7 +18,6 @@
         <AssociationConnector Association="Team12BSFMSModel.FK_Transactions_Members" ManuallyRouted="false" />
         <AssociationConnector Association="Team12BSFMSModel.FK_TransactionDetails_SubFacilities" ManuallyRouted="false" />
         <AssociationConnector Association="Team12BSFMSModel.FK_TransactionDetails_Timeslots" ManuallyRouted="false" />
-        <AssociationConnector Association="Team12BSFMSModel.FK_TransactionDetails_TransactionDetails" ManuallyRouted="false" />
         <AssociationConnector Association="Team12BSFMSModel.FK_TransactionDetails_Transactions" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
