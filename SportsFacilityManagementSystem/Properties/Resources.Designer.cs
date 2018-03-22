@@ -93,9 +93,9 @@ namespace SportsFacilityManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bookings {
+        internal static System.Drawing.Bitmap Booking {
             get {
-                object obj = ResourceManager.GetObject("Bookings", resourceCulture);
+                object obj = ResourceManager.GetObject("Booking", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,39 @@ namespace SportsFacilityManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Member {
+        internal static System.Drawing.Bitmap Logout {
             get {
-                object obj = ResourceManager.GetObject("Member", resourceCulture);
+                object obj = ResourceManager.GetObject("Logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Members {
+            get {
+                object obj = ResourceManager.GetObject("Members", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Members1 {
+            get {
+                object obj = ResourceManager.GetObject("Members1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Report {
+            get {
+                object obj = ResourceManager.GetObject("Report", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +216,16 @@ namespace SportsFacilityManagementSystem.Properties {
         internal static System.Drawing.Bitmap Squash {
             get {
                 object obj = ResourceManager.GetObject("Squash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stadium {
+            get {
+                object obj = ResourceManager.GetObject("Stadium", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
