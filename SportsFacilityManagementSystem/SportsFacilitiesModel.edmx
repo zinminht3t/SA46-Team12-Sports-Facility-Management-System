@@ -34,7 +34,7 @@
             <PropertyRef Name="rateid" />
           </Key>
           <Property Name="rateid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="feeperhour" Type="float" Nullable="false" />
+          <Property Name="ratepertimeslot" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="SubFacilities">
           <Key>
@@ -92,6 +92,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SubFacilities_Facilities">
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="SubFacilities" Type="Self.SubFacilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="facilityid" />
+            </Principal>
+            <Dependent Role="SubFacilities">
+              <PropertyRef Name="facilityid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TransactionDetails_Facilities">
           <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
           <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
@@ -125,18 +137,6 @@
             </Principal>
             <Dependent Role="TransactionDetails">
               <PropertyRef Name="timeslotid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TransactionDetails_TransactionDetails">
-          <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="1" />
-          <End Role="TransactionDetails1" Type="Self.TransactionDetails" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="TransactionDetails">
-              <PropertyRef Name="transactiondetailid" />
-            </Principal>
-            <Dependent Role="TransactionDetails1">
-              <PropertyRef Name="transactiondetailid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -177,6 +177,10 @@
             <End Role="Rates" EntitySet="Rates" />
             <End Role="Facilities" EntitySet="Facilities" />
           </AssociationSet>
+          <AssociationSet Name="FK_SubFacilities_Facilities" Association="Self.FK_SubFacilities_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="SubFacilities" EntitySet="SubFacilities" />
+          </AssociationSet>
           <AssociationSet Name="FK_TransactionDetails_Facilities" Association="Self.FK_TransactionDetails_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
             <End Role="TransactionDetails" EntitySet="TransactionDetails" />
@@ -188,10 +192,6 @@
           <AssociationSet Name="FK_TransactionDetails_Timeslots" Association="Self.FK_TransactionDetails_Timeslots">
             <End Role="Timeslots" EntitySet="Timeslots" />
             <End Role="TransactionDetails" EntitySet="TransactionDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TransactionDetails_TransactionDetails" Association="Self.FK_TransactionDetails_TransactionDetails">
-            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
-            <End Role="TransactionDetails1" EntitySet="TransactionDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_TransactionDetails_Transactions" Association="Self.FK_TransactionDetails_Transactions">
             <End Role="Transactions" EntitySet="Transactions" />
@@ -215,6 +215,7 @@
           <Property Name="facilityname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="rateid" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Rate" Relationship="Self.FK_Facilities_Rates" FromRole="Facilities" ToRole="Rates" />
+          <NavigationProperty Name="SubFacilities" Relationship="Self.FK_SubFacilities_Facilities" FromRole="Facilities" ToRole="SubFacilities" />
           <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_Facilities" FromRole="Facilities" ToRole="TransactionDetails" />
         </EntityType>
         <EntityType Name="Member">
@@ -239,7 +240,7 @@
             <PropertyRef Name="rateid" />
           </Key>
           <Property Name="rateid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="feeperhour" Type="Double" Nullable="false" />
+          <Property Name="ratepertimeslot" Type="Double" Nullable="false" />
           <NavigationProperty Name="Facilities" Relationship="Self.FK_Facilities_Rates" FromRole="Rates" ToRole="Facilities" />
         </EntityType>
         <EntityType Name="SubFacility">
@@ -249,6 +250,7 @@
           <Property Name="subfacilityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="facilityid" Type="Int32" Nullable="false" />
           <Property Name="subfacilityname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_SubFacilities_Facilities" FromRole="SubFacilities" ToRole="Facilities" />
           <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_SubFacilities" FromRole="SubFacilities" ToRole="TransactionDetails" />
         </EntityType>
         <EntityType Name="Timeslot">
@@ -303,6 +305,18 @@
             </Principal>
             <Dependent Role="Facilities">
               <PropertyRef Name="rateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubFacilities_Facilities">
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
+          <End Role="SubFacilities" Type="Self.SubFacility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="facilityid" />
+            </Principal>
+            <Dependent Role="SubFacilities">
+              <PropertyRef Name="facilityid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -366,7 +380,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Team12BSFMSEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SportsFacilitiesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Facilities" EntityType="Self.Facility" />
           <EntitySet Name="Members" EntityType="Self.Member" />
           <EntitySet Name="Rates" EntityType="Self.Rate" />
@@ -378,6 +392,10 @@
           <AssociationSet Name="FK_Facilities_Rates" Association="Self.FK_Facilities_Rates">
             <End Role="Rates" EntitySet="Rates" />
             <End Role="Facilities" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubFacilities_Facilities" Association="Self.FK_SubFacilities_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="SubFacilities" EntitySet="SubFacilities" />
           </AssociationSet>
           <AssociationSet Name="FK_TransactionDetails_Facilities" Association="Self.FK_TransactionDetails_Facilities">
             <End Role="Facilities" EntitySet="Facilities" />
@@ -405,7 +423,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Team12BSFMSModelStoreContainer" CdmEntityContainer="Team12BSFMSEntities">
+        <EntityContainerMapping StorageEntityContainer="Team12BSFMSModelStoreContainer" CdmEntityContainer="SportsFacilitiesEntities">
           <EntitySetMapping Name="Facilities">
             <EntityTypeMapping TypeName="Team12BSFMSModel.Facility">
               <MappingFragment StoreEntitySet="Facilities">
@@ -436,7 +454,7 @@
             <EntityTypeMapping TypeName="Team12BSFMSModel.Rate">
               <MappingFragment StoreEntitySet="Rates">
                 <ScalarProperty Name="rateid" ColumnName="rateid" />
-                <ScalarProperty Name="feeperhour" ColumnName="feeperhour" />
+                <ScalarProperty Name="ratepertimeslot" ColumnName="ratepertimeslot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

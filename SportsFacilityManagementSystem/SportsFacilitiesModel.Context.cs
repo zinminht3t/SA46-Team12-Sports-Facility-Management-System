@@ -13,10 +13,10 @@ namespace SportsFacilityManagementSystem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Team12BSFMSEntities : DbContext
+    public partial class SportsFacilitiesEntities : DbContext
     {
-        public Team12BSFMSEntities()
-            : base("name=Team12BSFMSEntities")
+        public SportsFacilitiesEntities()
+            : base("name=SportsFacilitiesEntities")
         {
         }
     
