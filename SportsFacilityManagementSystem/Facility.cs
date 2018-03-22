@@ -17,6 +17,7 @@ namespace SportsFacilityManagementSystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Facility()
         {
+            this.SubFacilities = new HashSet<SubFacility>();
             this.TransactionDetails = new HashSet<TransactionDetail>();
         }
     
@@ -25,6 +26,8 @@ namespace SportsFacilityManagementSystem
         public int rateid { get; set; }
     
         public virtual Rate Rate { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SubFacility> SubFacilities { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionDetail> TransactionDetails { get; set; }
     }

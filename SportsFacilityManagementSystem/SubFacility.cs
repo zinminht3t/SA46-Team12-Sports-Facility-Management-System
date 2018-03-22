@@ -24,6 +24,7 @@ namespace SportsFacilityManagementSystem
         public int facilityid { get; set; }
         public string subfacilityname { get; set; }
     
+        public virtual Facility Facility { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionDetail> TransactionDetails { get; set; }
     }

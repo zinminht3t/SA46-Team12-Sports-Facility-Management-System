@@ -21,7 +21,7 @@ namespace SportsFacilityManagementSystem
         }
     
         public int rateid { get; set; }
-        public double feeperhour { get; set; }
+        public double ratepertimeslot { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Facility> Facilities { get; set; }
