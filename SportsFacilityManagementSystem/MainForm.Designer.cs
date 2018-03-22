@@ -63,11 +63,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SportsFacilityManagementSystem.Properties.Resources.UserHead;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
@@ -95,6 +93,7 @@
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
             // 
             // btnBooking
@@ -240,13 +239,13 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Lucida Handwriting", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWelcome.Location = new System.Drawing.Point(624, 8);
+            this.lblWelcome.Location = new System.Drawing.Point(698, 9);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(178, 36);
+            this.lblWelcome.Size = new System.Drawing.Size(154, 20);
             this.lblWelcome.TabIndex = 16;
-            this.lblWelcome.Text = "Welcome, ";
+            this.lblWelcome.Text = "User logged on : ";
             // 
             // frmMain
             // 

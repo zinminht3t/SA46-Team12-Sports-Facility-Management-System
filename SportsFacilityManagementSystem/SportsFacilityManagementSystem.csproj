@@ -127,6 +127,12 @@
     <Compile Include="TransactionDetail.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ucAddFacilities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAddFacilities.Designer.cs">
+      <DependentUpon>ucAddFacilities.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucAddMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     <Compile Include="ucMembers.Designer.cs">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucReports.Designer.cs">
+      <DependentUpon>ucReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
@@ -169,6 +181,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucAddFacilities.resx">
+      <DependentUpon>ucAddFacilities.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucAddMember.resx">
       <DependentUpon>ucAddMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucMembers.resx">
       <DependentUpon>ucMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucReports.resx">
+      <DependentUpon>ucReports.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -242,6 +260,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Testlogo.png" />
     <Content Include="SportsFacilitiesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>

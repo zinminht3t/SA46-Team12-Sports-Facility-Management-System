@@ -22,42 +22,35 @@ namespace SportsFacilityManagementSystem
             lblWelcome.Text = lblWelcome.Text + frmLogin.user.name;
         }
 
-        #region Sidetab Panel
+        #region Sidetab Panel (Mouse Enter Events)
         private void btnBooking_MouseEnter(object sender, EventArgs e)
         {
-            //this.pnlSidetab.Location = new System.Drawing.Point(-1, 160);
             this.pnlSidetab.Location = this.btnBooking.Location;
             this.pnlSidetab.Left = -1;
-            btnSearchMembers.Visible = false;
-            btnAddMembers.Visible = false;
+            MembersMenu(false);
         }
 
         private void btnMembers_MouseEnter(object sender, EventArgs e)
         {
             this.pnlSidetab.Location = this.btnMembers.Location;
             this.pnlSidetab.Left = -1;
-            btnAddMembers.Visible = true;
-            btnSearchMembers.Visible = true;
-            btnAddFacilities.Visible = false;
-            btnSearchFacilities.Visible = false;
+            MembersMenu(true);
+            FacilitiesMenu(false);
         }
 
         private void btnFacilities_MouseEnter(object sender, EventArgs e)
         {
             this.pnlSidetab.Location = this.btnFacilities.Location;
             this.pnlSidetab.Left = -1;
-            btnSearchMembers.Visible = false;
-            btnAddMembers.Visible = false;
-            btnAddFacilities.Visible = true;
-            btnSearchFacilities.Visible = true;
+            MembersMenu(false);
+            FacilitiesMenu(true);
         }
 
         private void btnReports_MouseEnter(object sender, EventArgs e)
         {
             this.pnlSidetab.Location = this.btnReports.Location;
             this.pnlSidetab.Left = -1;
-            btnAddFacilities.Visible = false;
-            btnSearchFacilities.Visible = false;
+            FacilitiesMenu(false);
         }
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)
@@ -65,14 +58,47 @@ namespace SportsFacilityManagementSystem
             this.pnlSidetab.Location = this.btnLogout.Location;
             this.pnlSidetab.Left = -1;
         }
-        #endregion
 
         private void frmMain_MouseEnter(object sender, EventArgs e)
         {
-            btnAddFacilities.Visible = false;
-            btnSearchFacilities.Visible = false;
-            btnSearchMembers.Visible = false;
-            btnAddMembers.Visible = false;
+            FacilitiesMenu(false);
+            MembersMenu(false);
         }
+        #endregion
+
+        #region Sidetab Panel (Mouse Click Events)
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult logoutMsg =
+                MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo);
+
+            if (logoutMsg == DialogResult.Yes)
+            {
+                this.Close();
+                frmLogin login = new frmLogin();
+                login.Show();
+            }
+        }
+        #endregion
+
+        #region Visibility Methods
+        private void MembersMenu(bool visibility)
+        {
+            btnSearchMembers.Visible = visibility;
+            btnAddMembers.Visible = visibility;
+        }
+
+        private void FacilitiesMenu(bool visibility)
+        {
+            btnAddFacilities.Visible = visibility;
+            btnSearchFacilities.Visible = visibility;
+        }
+        #endregion
+
+        private void ShowUserControl(string ucName)
+        {
+            // Visibility methods using ucName to call which to hide using if method
+        }
+
     }
 }
