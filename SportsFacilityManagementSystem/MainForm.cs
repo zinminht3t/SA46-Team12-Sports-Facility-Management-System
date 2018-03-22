@@ -12,7 +12,6 @@ namespace SportsFacilityManagementSystem
 {
     public partial class frmMain : Form
     {
-        SportsFacilitiesEntities ctx;
         public frmMain()
         {
             InitializeComponent();
@@ -20,7 +19,6 @@ namespace SportsFacilityManagementSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ctx = new SportsFacilitiesEntities();
             
         }
 
