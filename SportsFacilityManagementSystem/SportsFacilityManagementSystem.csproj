@@ -133,6 +133,12 @@
     <Compile Include="TransactionDetail.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ucAddFacility.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAddFacility.Designer.cs">
+      <DependentUpon>ucAddFacility.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucAddMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAddFacility.resx">
+      <DependentUpon>ucAddFacility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAddMember.resx">
       <DependentUpon>ucAddMember.cs</DependentUpon>
