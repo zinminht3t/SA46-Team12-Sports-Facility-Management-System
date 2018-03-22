@@ -20,8 +20,6 @@ namespace SportsFacilityManagementSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
-
-
             DataSet1 ds = new DataSet1();
 
             DataSet1TableAdapters.MembersTableAdapter da = new DataSet1TableAdapters.MembersTableAdapter();
