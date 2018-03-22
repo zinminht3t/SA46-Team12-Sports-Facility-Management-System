@@ -32,11 +32,14 @@ namespace SportsFacilityManagementSystem
                 string password = txtPassword.Text;
                 int result = 0;
                 result = ctx.Users.Where(x => x.userid == userid && x.password == password).Count();
-                if (result > 0)
+
+                if (result > 0) //if the user login success
                 {
                     user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
-                    frmMain main = new frmMain();
+                    ChangeExpiredMemberStatus(); //check the expired members and update their status to "Inactive"
                     this.Hide();
+
+                    frmMain main = new frmMain(); //call the main form
                     main.Show();
                 }
                 else
@@ -50,6 +53,17 @@ namespace SportsFacilityManagementSystem
         {
             ctx = new SportsFacilitiesEntities();
 
+        }
+
+        private void ChangeExpiredMemberStatus()
+        {
+            List<Member> lstmember = new List<Member>();
+            lstmember = ctx.Members.Where(x => x.expirydate < DateTime.Today).ToList();
+            foreach (var member in lstmember)
+            {
+                ctx.Members.First(x => x.memberid == member.memberid).status = "Inactive";
+            }
+            ctx.SaveChanges();
         }
     }
 }
