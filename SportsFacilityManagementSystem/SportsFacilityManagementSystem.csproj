@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -58,13 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facility.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -73,45 +70,44 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Member.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Rate.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SportsFacilitiesModel.Context.cs">
+    <Compile Include="SportsFacilityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportsFacilitiesModel.Context.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SportsFacilitiesModel.cs">
+    <Compile Include="SportsFacilityModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SportsFacilitiesModel.Designer.cs">
+    <Compile Include="SportsFacilityModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>
+      <DependentUpon>SportsFacilityModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="SubFacility.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Timeslot.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Transaction.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TransactionDetail.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ucAddMember.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucAddMember.Designer.cs">
-      <DependentUpon>ucAddMember.cs</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ucBooking.cs">
       <SubType>UserControl</SubType>
@@ -119,48 +115,22 @@
     <Compile Include="ucBooking.Designer.cs">
       <DependentUpon>ucBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucFacilities.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucFacilities.Designer.cs">
-      <DependentUpon>ucFacilities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucMembers.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucMembers.Designer.cs">
-      <DependentUpon>ucMembers.cs</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
+      <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="ucAddMember.resx">
-      <DependentUpon>ucAddMember.cs</DependentUpon>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ucBooking.resx">
       <DependentUpon>ucBooking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucFacilities.resx">
-      <DependentUpon>ucFacilities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucMembers.resx">
-      <DependentUpon>ucMembers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -172,12 +142,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="SportsFacilitiesModel.edmx">
+    <EntityDeploy Include="SportsFacilityModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SportsFacilitiesModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SportsFacilityModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SportsFacilitiesModel.edmx.diagram">
-      <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>
+    <None Include="SportsFacilityModel.edmx.diagram">
+      <DependentUpon>SportsFacilityModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -187,36 +157,38 @@
     <None Include="Resources\LoginBlack.png" />
     <None Include="Resources\Badminton.png" />
     <None Include="Resources\Basketball.png" />
-    <None Include="Resources\Bookings.png" />
     <None Include="Resources\Calendar.png" />
     <None Include="Resources\Facility.png" />
     <None Include="Resources\Info.png" />
     <None Include="Resources\LoginGreen.png" />
     <None Include="Resources\LoginWhite.png" />
-    <None Include="Resources\Member.png" />
     <None Include="Resources\Soccerball.png" />
     <None Include="Resources\Squash.png" />
     <None Include="Resources\TableTennis.png" />
-    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Members1.png" />
     <None Include="Resources\Account.png" />
     <None Include="Resources\UserHead.png" />
+    <None Include="Resources\Member.png" />
+    <None Include="Resources\Booking.png" />
+    <None Include="Resources\Members.png" />
+    <None Include="Resources\Warning.png" />
     <None Include="Resources\UserHeadd.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\Report.png" />
+    <None Include="Resources\Stadium.png" />
+    <Content Include="SportsFacilityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SportsFacilityModel.Context.cs</LastGenOutput>
+      <DependentUpon>SportsFacilityModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="SportsFacilityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SportsFacilityModel.edmx</DependentUpon>
+      <LastGenOutput>SportsFacilityModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SportsFacilitiesModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>
-      <LastGenOutput>SportsFacilitiesModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="SportsFacilitiesModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>
-      <LastGenOutput>SportsFacilitiesModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
