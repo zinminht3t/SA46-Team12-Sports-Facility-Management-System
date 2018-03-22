@@ -76,7 +76,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::SportsFacilityManagementSystem.Properties.Resources.UserHeadd;
             this.pictureBox2.Location = new System.Drawing.Point(246, 100);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(23, 22);
@@ -86,7 +85,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SportsFacilityManagementSystem.Properties.Resources.LoginWhite;
             this.pictureBox1.Location = new System.Drawing.Point(246, 152);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(23, 22);
