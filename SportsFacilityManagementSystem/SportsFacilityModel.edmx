@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Team12BSFMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Facilities">
+          <Key>
+            <PropertyRef Name="facilityid" />
+          </Key>
+          <Property Name="facilityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="facilityname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="rateid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="memberid" />
+          </Key>
+          <Property Name="memberid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="icno" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="mobileno" Type="int" />
+          <Property Name="gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="dateofbirth" Type="date" />
+          <Property Name="joindate" Type="date" />
+          <Property Name="expirydate" Type="date" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rates">
+          <Key>
+            <PropertyRef Name="rateid" />
+          </Key>
+          <Property Name="rateid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="feeperhour" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubFacilities">
+          <Key>
+            <PropertyRef Name="subfacilityid" />
+          </Key>
+          <Property Name="subfacilityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="facilityid" Type="int" Nullable="false" />
+          <Property Name="subfacilityname" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Timeslots">
+          <Key>
+            <PropertyRef Name="timeslotid" />
+          </Key>
+          <Property Name="timeslotid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="timeslot" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransactionDetails">
+          <Key>
+            <PropertyRef Name="transactiondetailid" />
+          </Key>
+          <Property Name="transactiondetailid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transactionid" Type="int" Nullable="false" />
+          <Property Name="facilityid" Type="int" Nullable="false" />
+          <Property Name="timeslotid" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="subfacilityid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="transactionid" />
+          </Key>
+          <Property Name="transactionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberid" Type="int" Nullable="false" />
+          <Property Name="remark" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="systemtime" Type="datetime" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Facilities_Rates">
+          <End Role="Rates" Type="Self.Rates" Multiplicity="1" />
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rates">
+              <PropertyRef Name="rateid" />
+            </Principal>
+            <Dependent Role="Facilities">
+              <PropertyRef Name="rateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Facilities">
+          <End Role="Facilities" Type="Self.Facilities" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="facilityid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="facilityid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_SubFacilities">
+          <End Role="SubFacilities" Type="Self.SubFacilities" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubFacilities">
+              <PropertyRef Name="subfacilityid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="subfacilityid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Timeslots">
+          <End Role="Timeslots" Type="Self.Timeslots" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Timeslots">
+              <PropertyRef Name="timeslotid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="timeslotid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_TransactionDetails">
+          <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="1" />
+          <End Role="TransactionDetails1" Type="Self.TransactionDetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionDetails">
+              <PropertyRef Name="transactiondetailid" />
+            </Principal>
+            <Dependent Role="TransactionDetails1">
+              <PropertyRef Name="transactiondetailid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Transactions">
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transactions">
+              <PropertyRef Name="transactionid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="transactionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Members">
+          <End Role="Members" Type="Self.Members" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="memberid" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="memberid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Team12BSFMSModelStoreContainer">
+          <EntitySet Name="Facilities" EntityType="Self.Facilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rates" EntityType="Self.Rates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubFacilities" EntityType="Self.SubFacilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Timeslots" EntityType="Self.Timeslots" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Facilities_Rates" Association="Self.FK_Facilities_Rates">
+            <End Role="Rates" EntitySet="Rates" />
+            <End Role="Facilities" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Facilities" Association="Self.FK_TransactionDetails_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_SubFacilities" Association="Self.FK_TransactionDetails_SubFacilities">
+            <End Role="SubFacilities" EntitySet="SubFacilities" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Timeslots" Association="Self.FK_TransactionDetails_Timeslots">
+            <End Role="Timeslots" EntitySet="Timeslots" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_TransactionDetails" Association="Self.FK_TransactionDetails_TransactionDetails">
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+            <End Role="TransactionDetails1" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Transactions" Association="Self.FK_TransactionDetails_Transactions">
+            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Team12BSFMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Facility">
+          <Key>
+            <PropertyRef Name="facilityid" />
+          </Key>
+          <Property Name="facilityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="facilityname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="rateid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rate" Relationship="Self.FK_Facilities_Rates" FromRole="Facilities" ToRole="Rates" />
+          <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_Facilities" FromRole="Facilities" ToRole="TransactionDetails" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="memberid" />
+          </Key>
+          <Property Name="memberid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="icno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mobileno" Type="Int32" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dateofbirth" Type="DateTime" Precision="0" />
+          <Property Name="joindate" Type="DateTime" Precision="0" />
+          <Property Name="expirydate" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_Transactions_Members" FromRole="Members" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="rateid" />
+          </Key>
+          <Property Name="rateid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feeperhour" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Facilities" Relationship="Self.FK_Facilities_Rates" FromRole="Rates" ToRole="Facilities" />
+        </EntityType>
+        <EntityType Name="SubFacility">
+          <Key>
+            <PropertyRef Name="subfacilityid" />
+          </Key>
+          <Property Name="subfacilityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="facilityid" Type="Int32" Nullable="false" />
+          <Property Name="subfacilityname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_SubFacilities" FromRole="SubFacilities" ToRole="TransactionDetails" />
+        </EntityType>
+        <EntityType Name="Timeslot">
+          <Key>
+            <PropertyRef Name="timeslotid" />
+          </Key>
+          <Property Name="timeslotid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timeslot1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_Timeslots" FromRole="Timeslots" ToRole="TransactionDetails" />
+        </EntityType>
+        <EntityType Name="TransactionDetail">
+          <Key>
+            <PropertyRef Name="transactiondetailid" />
+          </Key>
+          <Property Name="transactiondetailid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transactionid" Type="Int32" Nullable="false" />
+          <Property Name="facilityid" Type="Int32" Nullable="false" />
+          <Property Name="timeslotid" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="subfacilityid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Facility" Relationship="Self.FK_TransactionDetails_Facilities" FromRole="TransactionDetails" ToRole="Facilities" />
+          <NavigationProperty Name="SubFacility" Relationship="Self.FK_TransactionDetails_SubFacilities" FromRole="TransactionDetails" ToRole="SubFacilities" />
+          <NavigationProperty Name="Timeslot" Relationship="Self.FK_TransactionDetails_Timeslots" FromRole="TransactionDetails" ToRole="Timeslots" />
+          <NavigationProperty Name="TransactionDetails1" Relationship="Self.FK_TransactionDetails_TransactionDetails" FromRole="TransactionDetails" ToRole="TransactionDetails1" />
+          <NavigationProperty Name="TransactionDetail1" Relationship="Self.FK_TransactionDetails_TransactionDetails" FromRole="TransactionDetails1" ToRole="TransactionDetails" />
+          <NavigationProperty Name="Transaction" Relationship="Self.FK_TransactionDetails_Transactions" FromRole="TransactionDetails" ToRole="Transactions" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="transactionid" />
+          </Key>
+          <Property Name="transactionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberid" Type="Int32" Nullable="false" />
+          <Property Name="remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="systemtime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="total" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Transactions_Members" FromRole="Transactions" ToRole="Members" />
+          <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_Transactions" FromRole="Transactions" ToRole="TransactionDetails" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Facilities_Rates">
+          <End Role="Rates" Type="Self.Rate" Multiplicity="1" />
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rates">
+              <PropertyRef Name="rateid" />
+            </Principal>
+            <Dependent Role="Facilities">
+              <PropertyRef Name="rateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Facilities">
+          <End Role="Facilities" Type="Self.Facility" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="facilityid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="facilityid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transactions_Members">
+          <End Role="Members" Type="Self.Member" Multiplicity="1" />
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="memberid" />
+            </Principal>
+            <Dependent Role="Transactions">
+              <PropertyRef Name="memberid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_SubFacilities">
+          <End Role="SubFacilities" Type="Self.SubFacility" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubFacilities">
+              <PropertyRef Name="subfacilityid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="subfacilityid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Timeslots">
+          <End Role="Timeslots" Type="Self.Timeslot" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Timeslots">
+              <PropertyRef Name="timeslotid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="timeslotid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_TransactionDetails">
+          <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="1" />
+          <End Role="TransactionDetails1" Type="Self.TransactionDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionDetails">
+              <PropertyRef Name="transactiondetailid" />
+            </Principal>
+            <Dependent Role="TransactionDetails1">
+              <PropertyRef Name="transactiondetailid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionDetails_Transactions">
+          <End Role="Transactions" Type="Self.Transaction" Multiplicity="1" />
+          <End Role="TransactionDetails" Type="Self.TransactionDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transactions">
+              <PropertyRef Name="transactionid" />
+            </Principal>
+            <Dependent Role="TransactionDetails">
+              <PropertyRef Name="transactionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Team12BSFMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Facilities" EntityType="Self.Facility" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Rates" EntityType="Self.Rate" />
+          <EntitySet Name="SubFacilities" EntityType="Self.SubFacility" />
+          <EntitySet Name="Timeslots" EntityType="Self.Timeslot" />
+          <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetail" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Facilities_Rates" Association="Self.FK_Facilities_Rates">
+            <End Role="Rates" EntitySet="Rates" />
+            <End Role="Facilities" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Facilities" Association="Self.FK_TransactionDetails_Facilities">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transactions_Members" Association="Self.FK_Transactions_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Transactions" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_SubFacilities" Association="Self.FK_TransactionDetails_SubFacilities">
+            <End Role="SubFacilities" EntitySet="SubFacilities" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Timeslots" Association="Self.FK_TransactionDetails_Timeslots">
+            <End Role="Timeslots" EntitySet="Timeslots" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_TransactionDetails" Association="Self.FK_TransactionDetails_TransactionDetails">
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+            <End Role="TransactionDetails1" EntitySet="TransactionDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionDetails_Transactions" Association="Self.FK_TransactionDetails_Transactions">
+            <End Role="Transactions" EntitySet="Transactions" />
+            <End Role="TransactionDetails" EntitySet="TransactionDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Team12BSFMSModelStoreContainer" CdmEntityContainer="Team12BSFMSEntities">
+          <EntitySetMapping Name="Facilities">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.Facility">
+              <MappingFragment StoreEntitySet="Facilities">
+                <ScalarProperty Name="facilityid" ColumnName="facilityid" />
+                <ScalarProperty Name="facilityname" ColumnName="facilityname" />
+                <ScalarProperty Name="rateid" ColumnName="rateid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="memberid" ColumnName="memberid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="icno" ColumnName="icno" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="dateofbirth" ColumnName="dateofbirth" />
+                <ScalarProperty Name="joindate" ColumnName="joindate" />
+                <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rates">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.Rate">
+              <MappingFragment StoreEntitySet="Rates">
+                <ScalarProperty Name="rateid" ColumnName="rateid" />
+                <ScalarProperty Name="feeperhour" ColumnName="feeperhour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubFacilities">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.SubFacility">
+              <MappingFragment StoreEntitySet="SubFacilities">
+                <ScalarProperty Name="subfacilityid" ColumnName="subfacilityid" />
+                <ScalarProperty Name="facilityid" ColumnName="facilityid" />
+                <ScalarProperty Name="subfacilityname" ColumnName="subfacilityname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Timeslots">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.Timeslot">
+              <MappingFragment StoreEntitySet="Timeslots">
+                <ScalarProperty Name="timeslotid" ColumnName="timeslotid" />
+                <ScalarProperty Name="timeslot1" ColumnName="timeslot" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionDetails">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.TransactionDetail">
+              <MappingFragment StoreEntitySet="TransactionDetails">
+                <ScalarProperty Name="transactiondetailid" ColumnName="transactiondetailid" />
+                <ScalarProperty Name="transactionid" ColumnName="transactionid" />
+                <ScalarProperty Name="facilityid" ColumnName="facilityid" />
+                <ScalarProperty Name="timeslotid" ColumnName="timeslotid" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="subfacilityid" ColumnName="subfacilityid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="transactionid" ColumnName="transactionid" />
+                <ScalarProperty Name="memberid" ColumnName="memberid" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="systemtime" ColumnName="systemtime" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Team12BSFMSModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
