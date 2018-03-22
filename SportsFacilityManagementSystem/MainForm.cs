@@ -18,8 +18,8 @@ namespace SportsFacilityManagementSystem
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            
+        {            
+            lblWelcome.Text = lblWelcome.Text + frmLogin.user.name;
         }
 
         #region Sidetab Panel
@@ -56,6 +56,8 @@ namespace SportsFacilityManagementSystem
         {
             this.pnlSidetab.Location = this.btnReports.Location;
             this.pnlSidetab.Left = -1;
+            btnAddFacilities.Visible = false;
+            btnSearchFacilities.Visible = false;
         }
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)
@@ -65,10 +67,12 @@ namespace SportsFacilityManagementSystem
         }
         #endregion
 
-        private void btnMembers_MouseLeave(object sender, EventArgs e)
+        private void frmMain_MouseEnter(object sender, EventArgs e)
         {
-
+            btnAddFacilities.Visible = false;
+            btnSearchFacilities.Visible = false;
+            btnSearchMembers.Visible = false;
+            btnAddMembers.Visible = false;
         }
-
     }
 }

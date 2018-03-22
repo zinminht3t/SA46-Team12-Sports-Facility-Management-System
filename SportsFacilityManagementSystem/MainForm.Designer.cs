@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlSidetab = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnBooking = new System.Windows.Forms.Button();
@@ -39,12 +40,15 @@
             this.btnAddMembers = new System.Windows.Forms.Button();
             this.btnAddFacilities = new System.Windows.Forms.Button();
             this.btnSearchFacilities = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnlSidebar.Controls.Add(this.pictureBox1);
             this.pnlSidebar.Controls.Add(this.pnlSidetab);
             this.pnlSidebar.Controls.Add(this.btnLogout);
             this.pnlSidebar.Controls.Add(this.btnBooking);
@@ -56,6 +60,16 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(229, 553);
             this.pnlSidebar.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SportsFacilityManagementSystem.Properties.Resources.UserHead;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // pnlSidetab
             // 
@@ -118,7 +132,6 @@
             this.btnMembers.Text = "Members";
             this.btnMembers.UseVisualStyleBackColor = false;
             this.btnMembers.MouseEnter += new System.EventHandler(this.btnMembers_MouseEnter);
-            this.btnMembers.MouseLeave += new System.EventHandler(this.btnMembers_MouseLeave);
             // 
             // btnFacilities
             // 
@@ -199,7 +212,7 @@
             this.btnAddFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFacilities.Location = new System.Drawing.Point(228, 391);
+            this.btnAddFacilities.Location = new System.Drawing.Point(228, 387);
             this.btnAddFacilities.Name = "btnAddFacilities";
             this.btnAddFacilities.Size = new System.Drawing.Size(154, 76);
             this.btnAddFacilities.TabIndex = 14;
@@ -216,7 +229,7 @@
             this.btnSearchFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSearchFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchFacilities.Location = new System.Drawing.Point(228, 315);
+            this.btnSearchFacilities.Location = new System.Drawing.Point(228, 311);
             this.btnSearchFacilities.Name = "btnSearchFacilities";
             this.btnSearchFacilities.Size = new System.Drawing.Size(154, 76);
             this.btnSearchFacilities.TabIndex = 13;
@@ -224,12 +237,24 @@
             this.btnSearchFacilities.UseVisualStyleBackColor = false;
             this.btnSearchFacilities.Visible = false;
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Lucida Handwriting", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblWelcome.Location = new System.Drawing.Point(624, 8);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(178, 36);
+            this.lblWelcome.TabIndex = 16;
+            this.lblWelcome.Text = "Welcome, ";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(982, 533);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnAddFacilities);
             this.Controls.Add(this.btnSearchFacilities);
             this.Controls.Add(this.btnAddMembers);
@@ -242,8 +267,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sports Facility Management System";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MouseEnter += new System.EventHandler(this.frmMain_MouseEnter);
             this.pnlSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -259,6 +287,8 @@
         private System.Windows.Forms.Button btnAddMembers;
         private System.Windows.Forms.Button btnAddFacilities;
         private System.Windows.Forms.Button btnSearchFacilities;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblWelcome;
     }
 }
 
