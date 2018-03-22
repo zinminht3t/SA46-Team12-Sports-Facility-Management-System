@@ -98,6 +98,12 @@
     <Compile Include="TransactionDetail.cs">
       <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ucBooking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBooking.Designer.cs">
+      <DependentUpon>ucBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SportsFacilityModel.tt</DependentUpon>
     </Compile>
@@ -113,6 +119,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucBooking.resx">
+      <DependentUpon>ucBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
