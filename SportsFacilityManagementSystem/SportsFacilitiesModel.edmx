@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Team12BSFMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SportsFacilitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Facilities">
           <Key>
             <PropertyRef Name="facilityid" />
@@ -164,7 +164,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Team12BSFMSModelStoreContainer">
+        <EntityContainer Name="SportsFacilitiesModelStoreContainer">
           <EntitySet Name="Facilities" EntityType="Self.Facilities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rates" EntityType="Self.Rates" Schema="dbo" store:Type="Tables" />
@@ -206,7 +206,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Team12BSFMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SportsFacilitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Facility">
           <Key>
             <PropertyRef Name="facilityid" />
@@ -423,9 +423,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Team12BSFMSModelStoreContainer" CdmEntityContainer="SportsFacilitiesEntities">
+        <EntityContainerMapping StorageEntityContainer="SportsFacilitiesModelStoreContainer" CdmEntityContainer="SportsFacilitiesEntities">
           <EntitySetMapping Name="Facilities">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.Facility">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.Facility">
               <MappingFragment StoreEntitySet="Facilities">
                 <ScalarProperty Name="facilityid" ColumnName="facilityid" />
                 <ScalarProperty Name="facilityname" ColumnName="facilityname" />
@@ -434,7 +434,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Members">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.Member">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.Member">
               <MappingFragment StoreEntitySet="Members">
                 <ScalarProperty Name="memberid" ColumnName="memberid" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -451,7 +451,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rates">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.Rate">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.Rate">
               <MappingFragment StoreEntitySet="Rates">
                 <ScalarProperty Name="rateid" ColumnName="rateid" />
                 <ScalarProperty Name="ratepertimeslot" ColumnName="ratepertimeslot" />
@@ -459,7 +459,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SubFacilities">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.SubFacility">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.SubFacility">
               <MappingFragment StoreEntitySet="SubFacilities">
                 <ScalarProperty Name="subfacilityid" ColumnName="subfacilityid" />
                 <ScalarProperty Name="facilityid" ColumnName="facilityid" />
@@ -468,7 +468,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Timeslots">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.Timeslot">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.Timeslot">
               <MappingFragment StoreEntitySet="Timeslots">
                 <ScalarProperty Name="timeslotid" ColumnName="timeslotid" />
                 <ScalarProperty Name="timeslot1" ColumnName="timeslot" />
@@ -476,7 +476,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TransactionDetails">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.TransactionDetail">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.TransactionDetail">
               <MappingFragment StoreEntitySet="TransactionDetails">
                 <ScalarProperty Name="transactiondetailid" ColumnName="transactiondetailid" />
                 <ScalarProperty Name="transactionid" ColumnName="transactionid" />
@@ -488,7 +488,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transactions">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.Transaction">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.Transaction">
               <MappingFragment StoreEntitySet="Transactions">
                 <ScalarProperty Name="transactionid" ColumnName="transactionid" />
                 <ScalarProperty Name="memberid" ColumnName="memberid" />
@@ -499,7 +499,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Team12BSFMSModel.User">
+            <EntityTypeMapping TypeName="SportsFacilitiesModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="name" ColumnName="name" />
