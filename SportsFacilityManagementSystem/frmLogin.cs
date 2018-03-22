@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace SportsFacilityManagementSystem
 {
-    public partial class LoginForm : Form
+    public partial class frmLogin : Form
     {
         SportsFacilitiesEntities ctx;
         public static User user;
-        public LoginForm()
+        public frmLogin()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             if (txtUserID.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Enter the User ID and Password!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -43,12 +44,12 @@ namespace SportsFacilityManagementSystem
                     MessageBox.Show("Your User ID or Password is wrong!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
         {
             ctx = new SportsFacilitiesEntities();
+
         }
     }
 }
