@@ -12,7 +12,7 @@ namespace SportsFacilityManagementSystem
 {
     public partial class frmMain : Form
     {
-        Team12BSFMSEntities ctx;
+        SportsFacilitiesEntities ctx;
         public frmMain()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace SportsFacilityManagementSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            ctx = new Team12BSFMSEntities(); ;
+            ctx = new SportsFacilitiesEntities(); ;
         }
     }
 }
