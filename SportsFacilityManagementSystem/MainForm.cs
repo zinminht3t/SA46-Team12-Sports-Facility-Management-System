@@ -172,36 +172,42 @@ namespace SportsFacilityManagementSystem
         {
             HideAllUC();
             ucBooking1.Visible = true;
+            BookingsMenu(false);
         }
 
         private void btnPasttransactions_Click(object sender, EventArgs e)
         {
             HideAllUC();
             ucPastTransactions1.Visible = true;
+            BookingsMenu(false);
         }
 
         private void btnSearchFacilities_Click(object sender, EventArgs e)
         {
             HideAllUC();
             ucFacilities1.Visible = true;
+            FacilitiesMenu(false);
         }
 
         private void btnAddFacilities_Click(object sender, EventArgs e)
         {
             HideAllUC();
             ucAddFacilities1.Visible = true;
+            FacilitiesMenu(false);
         }
 
         private void btnSearchMembers_Click(object sender, EventArgs e)
         {
             HideAllUC();
             ucMembers1.Visible = true;
+            MembersMenu(false);
         }
 
         private void btnAddMembers_Click(object sender, EventArgs e)
         {
             HideAllUC();
             ucAddMember1.Visible = true;
+            MembersMenu(false);
         }
 
         private void HideAllUC()
