@@ -110,7 +110,7 @@ namespace SportsFacilityManagementSystem
             }
         }
 
-        public static bool CheckEmail(string email)
+        public bool CheckEmail(string email)
         {
             string pattern;
             pattern = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";

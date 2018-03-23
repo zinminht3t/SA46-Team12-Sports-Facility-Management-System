@@ -21,5 +21,14 @@ namespace SportsFacilityManagementSystem
         {
             lblRatesInfo.Visible = true;
         }
+
+        private void pbRatesinfo_MouseLeave(object sender, EventArgs e)
+        {
+            lblRatesInfo.Visible = false;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
