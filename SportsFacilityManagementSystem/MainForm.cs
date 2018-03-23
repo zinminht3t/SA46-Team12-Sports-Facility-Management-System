@@ -20,6 +20,7 @@ namespace SportsFacilityManagementSystem
         private void MainForm_Load(object sender, EventArgs e)
         {            
             lblWelcome.Text = lblWelcome.Text + frmLogin.user.name;
+            ucBooking1.Visible = true;
         }
 
         #region Sidetab Panel (Mouse Enter Events)
@@ -161,6 +162,63 @@ namespace SportsFacilityManagementSystem
             // Visibility methods using ucName to call which to hide using if method
         }
 
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucReports1.Visible = true;
+        }
 
+        private void btnUpcoming_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucBooking1.Visible = true;
+            BookingsMenu(false);
+        }
+
+        private void btnPasttransactions_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucPastTransactions1.Visible = true;
+            BookingsMenu(false);
+        }
+
+        private void btnSearchFacilities_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucFacilities1.Visible = true;
+            FacilitiesMenu(false);
+        }
+
+        private void btnAddFacilities_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucAddFacilities1.Visible = true;
+            FacilitiesMenu(false);
+        }
+
+        private void btnSearchMembers_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucMembers1.Visible = true;
+            MembersMenu(false);
+        }
+
+        private void btnAddMembers_Click(object sender, EventArgs e)
+        {
+            HideAllUC();
+            ucAddMember1.Visible = true;
+            MembersMenu(false);
+        }
+
+        private void HideAllUC()
+        {
+            ucReports1.Visible = false;
+            ucBooking1.Visible = false;
+            ucPastTransactions1.Visible = false;
+            ucFacilities1.Visible = false;
+            ucAddFacilities1.Visible = false;
+            ucMembers1.Visible = false;
+            ucAddMember1.Visible = false;
+        }
     }
 }
