@@ -32,9 +32,9 @@
             this.dtpBookingDate = new System.Windows.Forms.DateTimePicker();
             this.lblSports = new System.Windows.Forms.Label();
             this.lblBookingDate = new System.Windows.Forms.Label();
-            this.lblCourt3 = new System.Windows.Forms.Label();
-            this.lblCourt2 = new System.Windows.Forms.Label();
-            this.button49 = new System.Windows.Forms.Button();
+            this.lblRow3 = new System.Windows.Forms.Label();
+            this.lblRow2 = new System.Windows.Forms.Label();
+            this.btnBook = new System.Windows.Forms.Button();
             this.btnC5 = new System.Windows.Forms.Button();
             this.btnC4 = new System.Windows.Forms.Button();
             this.btnC3 = new System.Windows.Forms.Button();
@@ -45,27 +45,33 @@
             this.btnB3 = new System.Windows.Forms.Button();
             this.btnB2 = new System.Windows.Forms.Button();
             this.btnB1 = new System.Windows.Forms.Button();
-            this.lblCourt1 = new System.Windows.Forms.Label();
+            this.lblRow1 = new System.Windows.Forms.Label();
             this.btnA5 = new System.Windows.Forms.Button();
             this.btnA4 = new System.Windows.Forms.Button();
             this.btnA3 = new System.Windows.Forms.Button();
             this.btnA2 = new System.Windows.Forms.Button();
             this.btnA1 = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblTime3 = new System.Windows.Forms.Label();
+            this.lblTime2 = new System.Windows.Forms.Label();
+            this.lblTime1 = new System.Windows.Forms.Label();
+            this.lblTime5 = new System.Windows.Forms.Label();
+            this.lblTime4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbSports
             // 
             this.cmbSports.FormattingEnabled = true;
-            this.cmbSports.Location = new System.Drawing.Point(123, 71);
-            this.cmbSports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSports.Location = new System.Drawing.Point(149, 106);
+            this.cmbSports.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSports.Name = "cmbSports";
             this.cmbSports.Size = new System.Drawing.Size(265, 24);
             this.cmbSports.TabIndex = 79;
             // 
             // dtpBookingDate
             // 
-            this.dtpBookingDate.Location = new System.Drawing.Point(123, 32);
-            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpBookingDate.Location = new System.Drawing.Point(149, 66);
+            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(265, 22);
             this.dtpBookingDate.TabIndex = 78;
@@ -73,7 +79,7 @@
             // lblSports
             // 
             this.lblSports.AutoSize = true;
-            this.lblSports.Location = new System.Drawing.Point(55, 75);
+            this.lblSports.Location = new System.Drawing.Point(81, 109);
             this.lblSports.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSports.Name = "lblSports";
             this.lblSports.Size = new System.Drawing.Size(53, 17);
@@ -83,226 +89,344 @@
             // lblBookingDate
             // 
             this.lblBookingDate.AutoSize = true;
-            this.lblBookingDate.Location = new System.Drawing.Point(55, 32);
+            this.lblBookingDate.Location = new System.Drawing.Point(81, 66);
             this.lblBookingDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(42, 17);
             this.lblBookingDate.TabIndex = 76;
             this.lblBookingDate.Text = "Date:";
             // 
-            // lblCourt3
+            // lblRow3
             // 
-            this.lblCourt3.AutoSize = true;
-            this.lblCourt3.Location = new System.Drawing.Point(46, 425);
-            this.lblCourt3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCourt3.Name = "lblCourt3";
-            this.lblCourt3.Size = new System.Drawing.Size(54, 17);
-            this.lblCourt3.TabIndex = 75;
-            this.lblCourt3.Text = "Court 3";
-            this.lblCourt3.Visible = false;
+            this.lblRow3.AutoSize = true;
+            this.lblRow3.Location = new System.Drawing.Point(64, 400);
+            this.lblRow3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRow3.Name = "lblRow3";
+            this.lblRow3.Size = new System.Drawing.Size(84, 17);
+            this.lblRow3.TabIndex = 75;
+            this.lblRow3.Text = "Sub Entity 3";
+            this.lblRow3.Visible = false;
             // 
-            // lblCourt2
+            // lblRow2
             // 
-            this.lblCourt2.AutoSize = true;
-            this.lblCourt2.Location = new System.Drawing.Point(46, 312);
-            this.lblCourt2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCourt2.Name = "lblCourt2";
-            this.lblCourt2.Size = new System.Drawing.Size(54, 17);
-            this.lblCourt2.TabIndex = 74;
-            this.lblCourt2.Text = "Court 2";
-            this.lblCourt2.Visible = false;
+            this.lblRow2.AutoSize = true;
+            this.lblRow2.Location = new System.Drawing.Point(64, 307);
+            this.lblRow2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRow2.Name = "lblRow2";
+            this.lblRow2.Size = new System.Drawing.Size(84, 17);
+            this.lblRow2.TabIndex = 74;
+            this.lblRow2.Text = "Sub Entity 2";
+            this.lblRow2.Visible = false;
             // 
-            // button49
+            // btnBook
             // 
-            this.button49.Location = new System.Drawing.Point(555, 542);
-            this.button49.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(100, 28);
-            this.button49.TabIndex = 73;
-            this.button49.Text = "Book";
-            this.button49.UseVisualStyleBackColor = true;
+            this.btnBook.Enabled = false;
+            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBook.Location = new System.Drawing.Point(576, 466);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(100, 28);
+            this.btnBook.TabIndex = 73;
+            this.btnBook.Text = "Book";
+            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // btnC5
             // 
-            this.btnC5.Location = new System.Drawing.Point(555, 387);
-            this.btnC5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC5.BackColor = System.Drawing.Color.LightGreen;
+            this.btnC5.Enabled = false;
+            this.btnC5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnC5.Location = new System.Drawing.Point(576, 362);
+            this.btnC5.Margin = new System.Windows.Forms.Padding(4);
             this.btnC5.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC5.Name = "btnC5";
             this.btnC5.Size = new System.Drawing.Size(100, 92);
             this.btnC5.TabIndex = 72;
-            this.btnC5.UseVisualStyleBackColor = true;
+            this.btnC5.UseVisualStyleBackColor = false;
             this.btnC5.Visible = false;
             // 
             // btnC4
             // 
-            this.btnC4.Location = new System.Drawing.Point(447, 387);
-            this.btnC4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC4.BackColor = System.Drawing.Color.LightGreen;
+            this.btnC4.Enabled = false;
+            this.btnC4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnC4.Location = new System.Drawing.Point(475, 362);
+            this.btnC4.Margin = new System.Windows.Forms.Padding(4);
             this.btnC4.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC4.Name = "btnC4";
             this.btnC4.Size = new System.Drawing.Size(100, 92);
             this.btnC4.TabIndex = 71;
-            this.btnC4.UseVisualStyleBackColor = true;
+            this.btnC4.UseVisualStyleBackColor = false;
             this.btnC4.Visible = false;
             // 
             // btnC3
             // 
-            this.btnC3.Location = new System.Drawing.Point(339, 387);
-            this.btnC3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC3.BackColor = System.Drawing.Color.LightGreen;
+            this.btnC3.Enabled = false;
+            this.btnC3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnC3.Location = new System.Drawing.Point(374, 362);
+            this.btnC3.Margin = new System.Windows.Forms.Padding(4);
             this.btnC3.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC3.Name = "btnC3";
             this.btnC3.Size = new System.Drawing.Size(100, 92);
-            this.btnC3.TabIndex = 70;
-            this.btnC3.UseVisualStyleBackColor = true;
+            this.btnC3.TabIndex = 69;
+            this.btnC3.UseVisualStyleBackColor = false;
             this.btnC3.Visible = false;
             // 
             // btnC2
             // 
-            this.btnC2.Location = new System.Drawing.Point(231, 387);
-            this.btnC2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC2.BackColor = System.Drawing.Color.LightGreen;
+            this.btnC2.Enabled = false;
+            this.btnC2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnC2.Location = new System.Drawing.Point(273, 362);
+            this.btnC2.Margin = new System.Windows.Forms.Padding(4);
             this.btnC2.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC2.Name = "btnC2";
             this.btnC2.Size = new System.Drawing.Size(100, 92);
-            this.btnC2.TabIndex = 69;
-            this.btnC2.UseVisualStyleBackColor = true;
+            this.btnC2.TabIndex = 68;
+            this.btnC2.UseVisualStyleBackColor = false;
             this.btnC2.Visible = false;
             // 
             // btnC1
             // 
-            this.btnC1.Location = new System.Drawing.Point(123, 387);
-            this.btnC1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC1.BackColor = System.Drawing.Color.LightGreen;
+            this.btnC1.Enabled = false;
+            this.btnC1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnC1.Location = new System.Drawing.Point(172, 362);
+            this.btnC1.Margin = new System.Windows.Forms.Padding(4);
             this.btnC1.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC1.Name = "btnC1";
             this.btnC1.Size = new System.Drawing.Size(100, 92);
-            this.btnC1.TabIndex = 68;
-            this.btnC1.UseVisualStyleBackColor = true;
+            this.btnC1.TabIndex = 67;
+            this.btnC1.UseVisualStyleBackColor = false;
             this.btnC1.Visible = false;
             // 
             // btnB5
             // 
-            this.btnB5.Location = new System.Drawing.Point(555, 274);
-            this.btnB5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB5.BackColor = System.Drawing.Color.LightGreen;
+            this.btnB5.Enabled = false;
+            this.btnB5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnB5.Location = new System.Drawing.Point(576, 269);
+            this.btnB5.Margin = new System.Windows.Forms.Padding(4);
             this.btnB5.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB5.Name = "btnB5";
             this.btnB5.Size = new System.Drawing.Size(100, 92);
-            this.btnB5.TabIndex = 67;
-            this.btnB5.UseVisualStyleBackColor = true;
+            this.btnB5.TabIndex = 66;
+            this.btnB5.UseVisualStyleBackColor = false;
             this.btnB5.Visible = false;
             // 
             // btnB4
             // 
-            this.btnB4.Location = new System.Drawing.Point(447, 274);
-            this.btnB4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB4.BackColor = System.Drawing.Color.LightGreen;
+            this.btnB4.Enabled = false;
+            this.btnB4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnB4.Location = new System.Drawing.Point(475, 269);
+            this.btnB4.Margin = new System.Windows.Forms.Padding(4);
             this.btnB4.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB4.Name = "btnB4";
             this.btnB4.Size = new System.Drawing.Size(100, 92);
-            this.btnB4.TabIndex = 66;
-            this.btnB4.UseVisualStyleBackColor = true;
+            this.btnB4.TabIndex = 65;
+            this.btnB4.UseVisualStyleBackColor = false;
             this.btnB4.Visible = false;
             // 
             // btnB3
             // 
-            this.btnB3.Location = new System.Drawing.Point(339, 274);
-            this.btnB3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB3.BackColor = System.Drawing.Color.LightGreen;
+            this.btnB3.Enabled = false;
+            this.btnB3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnB3.Location = new System.Drawing.Point(374, 269);
+            this.btnB3.Margin = new System.Windows.Forms.Padding(4);
             this.btnB3.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB3.Name = "btnB3";
             this.btnB3.Size = new System.Drawing.Size(100, 92);
-            this.btnB3.TabIndex = 65;
-            this.btnB3.UseVisualStyleBackColor = true;
+            this.btnB3.TabIndex = 64;
+            this.btnB3.UseVisualStyleBackColor = false;
             this.btnB3.Visible = false;
             // 
             // btnB2
             // 
-            this.btnB2.Location = new System.Drawing.Point(231, 274);
-            this.btnB2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB2.BackColor = System.Drawing.Color.LightGreen;
+            this.btnB2.Enabled = false;
+            this.btnB2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnB2.Location = new System.Drawing.Point(273, 269);
+            this.btnB2.Margin = new System.Windows.Forms.Padding(4);
             this.btnB2.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB2.Name = "btnB2";
             this.btnB2.Size = new System.Drawing.Size(100, 92);
-            this.btnB2.TabIndex = 64;
-            this.btnB2.UseVisualStyleBackColor = true;
+            this.btnB2.TabIndex = 63;
+            this.btnB2.UseVisualStyleBackColor = false;
             this.btnB2.Visible = false;
             // 
             // btnB1
             // 
-            this.btnB1.Location = new System.Drawing.Point(123, 274);
-            this.btnB1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB1.BackColor = System.Drawing.Color.LightGreen;
+            this.btnB1.Enabled = false;
+            this.btnB1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnB1.Location = new System.Drawing.Point(172, 269);
+            this.btnB1.Margin = new System.Windows.Forms.Padding(4);
             this.btnB1.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB1.Name = "btnB1";
             this.btnB1.Size = new System.Drawing.Size(100, 92);
-            this.btnB1.TabIndex = 63;
-            this.btnB1.UseVisualStyleBackColor = true;
+            this.btnB1.TabIndex = 62;
+            this.btnB1.UseVisualStyleBackColor = false;
             this.btnB1.Visible = false;
             // 
-            // lblCourt1
+            // lblRow1
             // 
-            this.lblCourt1.AutoSize = true;
-            this.lblCourt1.Location = new System.Drawing.Point(46, 198);
-            this.lblCourt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCourt1.Name = "lblCourt1";
-            this.lblCourt1.Size = new System.Drawing.Size(54, 17);
-            this.lblCourt1.TabIndex = 62;
-            this.lblCourt1.Text = "Court 1";
+            this.lblRow1.AutoSize = true;
+            this.lblRow1.Location = new System.Drawing.Point(64, 214);
+            this.lblRow1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRow1.Name = "lblRow1";
+            this.lblRow1.Size = new System.Drawing.Size(84, 17);
+            this.lblRow1.TabIndex = 70;
+            this.lblRow1.Text = "Sub Entity 1";
+            this.lblRow1.Visible = false;
             // 
             // btnA5
             // 
-            this.btnA5.Location = new System.Drawing.Point(555, 160);
-            this.btnA5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA5.BackColor = System.Drawing.Color.LightGreen;
+            this.btnA5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnA5.Location = new System.Drawing.Point(576, 176);
+            this.btnA5.Margin = new System.Windows.Forms.Padding(4);
             this.btnA5.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA5.Name = "btnA5";
             this.btnA5.Size = new System.Drawing.Size(100, 92);
             this.btnA5.TabIndex = 61;
-            this.btnA5.UseVisualStyleBackColor = true;
+            this.btnA5.UseVisualStyleBackColor = false;
             // 
             // btnA4
             // 
-            this.btnA4.Location = new System.Drawing.Point(447, 160);
-            this.btnA4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA4.BackColor = System.Drawing.Color.LightGreen;
+            this.btnA4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnA4.Location = new System.Drawing.Point(475, 176);
+            this.btnA4.Margin = new System.Windows.Forms.Padding(4);
             this.btnA4.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA4.Name = "btnA4";
             this.btnA4.Size = new System.Drawing.Size(100, 92);
             this.btnA4.TabIndex = 60;
-            this.btnA4.UseVisualStyleBackColor = true;
+            this.btnA4.UseVisualStyleBackColor = false;
             // 
             // btnA3
             // 
-            this.btnA3.Location = new System.Drawing.Point(339, 160);
-            this.btnA3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA3.BackColor = System.Drawing.Color.LightGreen;
+            this.btnA3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnA3.Location = new System.Drawing.Point(374, 176);
+            this.btnA3.Margin = new System.Windows.Forms.Padding(4);
             this.btnA3.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA3.Name = "btnA3";
             this.btnA3.Size = new System.Drawing.Size(100, 92);
             this.btnA3.TabIndex = 59;
-            this.btnA3.UseVisualStyleBackColor = true;
+            this.btnA3.UseVisualStyleBackColor = false;
             // 
             // btnA2
             // 
-            this.btnA2.Location = new System.Drawing.Point(231, 160);
-            this.btnA2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA2.BackColor = System.Drawing.Color.LightGreen;
+            this.btnA2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnA2.Location = new System.Drawing.Point(273, 176);
+            this.btnA2.Margin = new System.Windows.Forms.Padding(4);
             this.btnA2.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA2.Name = "btnA2";
             this.btnA2.Size = new System.Drawing.Size(100, 92);
             this.btnA2.TabIndex = 58;
-            this.btnA2.UseVisualStyleBackColor = true;
+            this.btnA2.UseVisualStyleBackColor = false;
             // 
             // btnA1
             // 
-            this.btnA1.Location = new System.Drawing.Point(123, 160);
-            this.btnA1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA1.BackColor = System.Drawing.Color.LightGreen;
+            this.btnA1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnA1.Location = new System.Drawing.Point(172, 176);
+            this.btnA1.Margin = new System.Windows.Forms.Padding(4);
             this.btnA1.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA1.Name = "btnA1";
             this.btnA1.Size = new System.Drawing.Size(100, 92);
             this.btnA1.TabIndex = 57;
-            this.btnA1.UseVisualStyleBackColor = true;
+            this.btnA1.UseVisualStyleBackColor = false;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTitle.Location = new System.Drawing.Point(20, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(710, 33);
+            this.lblTitle.TabIndex = 80;
+            this.lblTitle.Text = "Upcoming Bookings";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTime3
+            // 
+            this.lblTime3.AutoSize = true;
+            this.lblTime3.Location = new System.Drawing.Point(377, 152);
+            this.lblTime3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime3.Name = "lblTime3";
+            this.lblTime3.Size = new System.Drawing.Size(93, 17);
+            this.lblTime3.TabIndex = 83;
+            this.lblTime3.Text = "14:00 - 16:00";
+            this.lblTime3.Visible = false;
+            // 
+            // lblTime2
+            // 
+            this.lblTime2.AutoSize = true;
+            this.lblTime2.Location = new System.Drawing.Point(276, 152);
+            this.lblTime2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime2.Name = "lblTime2";
+            this.lblTime2.Size = new System.Drawing.Size(93, 17);
+            this.lblTime2.TabIndex = 82;
+            this.lblTime2.Text = "12:00 - 14:00";
+            this.lblTime2.Visible = false;
+            // 
+            // lblTime1
+            // 
+            this.lblTime1.AutoSize = true;
+            this.lblTime1.Location = new System.Drawing.Point(175, 152);
+            this.lblTime1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime1.Name = "lblTime1";
+            this.lblTime1.Size = new System.Drawing.Size(93, 17);
+            this.lblTime1.TabIndex = 81;
+            this.lblTime1.Text = "10:00 - 12:00";
+            this.lblTime1.Visible = false;
+            // 
+            // lblTime5
+            // 
+            this.lblTime5.AutoSize = true;
+            this.lblTime5.Location = new System.Drawing.Point(578, 152);
+            this.lblTime5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime5.Name = "lblTime5";
+            this.lblTime5.Size = new System.Drawing.Size(93, 17);
+            this.lblTime5.TabIndex = 85;
+            this.lblTime5.Text = "18:00 - 20:00";
+            this.lblTime5.Visible = false;
+            // 
+            // lblTime4
+            // 
+            this.lblTime4.AutoSize = true;
+            this.lblTime4.Location = new System.Drawing.Point(477, 152);
+            this.lblTime4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime4.Name = "lblTime4";
+            this.lblTime4.Size = new System.Drawing.Size(93, 17);
+            this.lblTime4.TabIndex = 84;
+            this.lblTime4.Text = "16:00 - 18:00";
+            this.lblTime4.Visible = false;
             // 
             // ucBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTime5);
+            this.Controls.Add(this.lblTime4);
+            this.Controls.Add(this.lblTime3);
+            this.Controls.Add(this.lblTime2);
+            this.Controls.Add(this.lblTime1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.cmbSports);
             this.Controls.Add(this.dtpBookingDate);
             this.Controls.Add(this.lblSports);
             this.Controls.Add(this.lblBookingDate);
-            this.Controls.Add(this.lblCourt3);
-            this.Controls.Add(this.lblCourt2);
-            this.Controls.Add(this.button49);
+            this.Controls.Add(this.lblRow3);
+            this.Controls.Add(this.lblRow2);
+            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.btnC5);
             this.Controls.Add(this.btnC4);
             this.Controls.Add(this.btnC3);
@@ -313,15 +437,15 @@
             this.Controls.Add(this.btnB3);
             this.Controls.Add(this.btnB2);
             this.Controls.Add(this.btnB1);
-            this.Controls.Add(this.lblCourt1);
+            this.Controls.Add(this.lblRow1);
             this.Controls.Add(this.btnA5);
             this.Controls.Add(this.btnA4);
             this.Controls.Add(this.btnA3);
             this.Controls.Add(this.btnA2);
             this.Controls.Add(this.btnA1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucBooking";
-            this.Size = new System.Drawing.Size(702, 592);
+            this.Size = new System.Drawing.Size(752, 508);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,9 +457,9 @@
         private System.Windows.Forms.DateTimePicker dtpBookingDate;
         private System.Windows.Forms.Label lblSports;
         private System.Windows.Forms.Label lblBookingDate;
-        private System.Windows.Forms.Label lblCourt3;
-        private System.Windows.Forms.Label lblCourt2;
-        private System.Windows.Forms.Button button49;
+        private System.Windows.Forms.Label lblRow3;
+        private System.Windows.Forms.Label lblRow2;
+        private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.Button btnC5;
         private System.Windows.Forms.Button btnC4;
         private System.Windows.Forms.Button btnC3;
@@ -346,11 +470,17 @@
         private System.Windows.Forms.Button btnB3;
         private System.Windows.Forms.Button btnB2;
         private System.Windows.Forms.Button btnB1;
-        private System.Windows.Forms.Label lblCourt1;
+        private System.Windows.Forms.Label lblRow1;
         private System.Windows.Forms.Button btnA5;
         private System.Windows.Forms.Button btnA4;
         private System.Windows.Forms.Button btnA3;
         private System.Windows.Forms.Button btnA2;
         private System.Windows.Forms.Button btnA1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblTime3;
+        private System.Windows.Forms.Label lblTime2;
+        private System.Windows.Forms.Label lblTime1;
+        private System.Windows.Forms.Label lblTime5;
+        private System.Windows.Forms.Label lblTime4;
     }
 }

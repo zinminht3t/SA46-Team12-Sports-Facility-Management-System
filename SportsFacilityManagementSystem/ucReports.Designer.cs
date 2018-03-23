@@ -38,17 +38,17 @@
             this.labelWarningReportTodate = new System.Windows.Forms.Label();
             this.btnPrintReport = new System.Windows.Forms.Button();
             this.gbMemberList = new System.Windows.Forms.GroupBox();
-            this.lblWarningMLDateTo = new System.Windows.Forms.Label();
             this.btnPrintML = new System.Windows.Forms.Button();
             this.dtpDatetoML = new System.Windows.Forms.DateTimePicker();
             this.dtpDateFromML = new System.Windows.Forms.DateTimePicker();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.chkbStatus = new System.Windows.Forms.CheckBox();
-            this.chkbDateTo = new System.Windows.Forms.CheckBox();
             this.chkbDateFrom = new System.Windows.Forms.CheckBox();
             this.rbtnAll = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblWarningMLDateTo = new System.Windows.Forms.Label();
             this.gbReport.SuspendLayout();
             this.gbMemberList.SuspendLayout();
             this.SuspendLayout();
@@ -144,12 +144,12 @@
             // gbMemberList
             // 
             this.gbMemberList.Controls.Add(this.lblWarningMLDateTo);
+            this.gbMemberList.Controls.Add(this.label1);
             this.gbMemberList.Controls.Add(this.btnPrintML);
             this.gbMemberList.Controls.Add(this.dtpDatetoML);
             this.gbMemberList.Controls.Add(this.dtpDateFromML);
             this.gbMemberList.Controls.Add(this.cmbStatus);
             this.gbMemberList.Controls.Add(this.chkbStatus);
-            this.gbMemberList.Controls.Add(this.chkbDateTo);
             this.gbMemberList.Controls.Add(this.chkbDateFrom);
             this.gbMemberList.Controls.Add(this.rbtnAll);
             this.gbMemberList.Location = new System.Drawing.Point(89, 114);
@@ -157,16 +157,6 @@
             this.gbMemberList.Size = new System.Drawing.Size(537, 338);
             this.gbMemberList.TabIndex = 14;
             this.gbMemberList.TabStop = false;
-            // 
-            // lblWarningMLDateTo
-            // 
-            this.lblWarningMLDateTo.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningMLDateTo.Location = new System.Drawing.Point(404, 121);
-            this.lblWarningMLDateTo.Name = "lblWarningMLDateTo";
-            this.lblWarningMLDateTo.Size = new System.Drawing.Size(121, 45);
-            this.lblWarningMLDateTo.TabIndex = 23;
-            this.lblWarningMLDateTo.Text = "* To Date cannot be less than Date From";
-            this.lblWarningMLDateTo.Visible = false;
             // 
             // btnPrintML
             // 
@@ -213,16 +203,6 @@
             this.chkbStatus.Text = "Membership Status :";
             this.chkbStatus.UseVisualStyleBackColor = true;
             // 
-            // chkbDateTo
-            // 
-            this.chkbDateTo.AutoSize = true;
-            this.chkbDateTo.Location = new System.Drawing.Point(33, 123);
-            this.chkbDateTo.Name = "chkbDateTo";
-            this.chkbDateTo.Size = new System.Drawing.Size(89, 21);
-            this.chkbDateTo.TabIndex = 15;
-            this.chkbDateTo.Text = "Date To :";
-            this.chkbDateTo.UseVisualStyleBackColor = true;
-            // 
             // chkbDateFrom
             // 
             this.chkbDateFrom.AutoSize = true;
@@ -238,10 +218,10 @@
             this.rbtnAll.AutoSize = true;
             this.rbtnAll.Location = new System.Drawing.Point(33, 25);
             this.rbtnAll.Name = "rbtnAll";
-            this.rbtnAll.Size = new System.Drawing.Size(87, 21);
+            this.rbtnAll.Size = new System.Drawing.Size(149, 21);
             this.rbtnAll.TabIndex = 13;
             this.rbtnAll.TabStop = true;
-            this.rbtnAll.Text = "Select All";
+            this.rbtnAll.Text = "Select All Members";
             this.rbtnAll.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -266,6 +246,25 @@
             this.lblTitle.TabIndex = 57;
             this.lblTitle.Text = "Print Report";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Date To :";
+            // 
+            // lblWarningMLDateTo
+            // 
+            this.lblWarningMLDateTo.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningMLDateTo.Location = new System.Drawing.Point(398, 122);
+            this.lblWarningMLDateTo.Name = "lblWarningMLDateTo";
+            this.lblWarningMLDateTo.Size = new System.Drawing.Size(131, 58);
+            this.lblWarningMLDateTo.TabIndex = 38;
+            this.lblWarningMLDateTo.Text = "* Date cannot be less than Date from";
+            this.lblWarningMLDateTo.Visible = false;
             // 
             // ucReports
             // 
@@ -300,16 +299,16 @@
         private System.Windows.Forms.Label labelWarningReportTodate;
         private System.Windows.Forms.Button btnPrintReport;
         private System.Windows.Forms.GroupBox gbMemberList;
-        private System.Windows.Forms.Label lblWarningMLDateTo;
         private System.Windows.Forms.Button btnPrintML;
         private System.Windows.Forms.DateTimePicker dtpDatetoML;
         private System.Windows.Forms.DateTimePicker dtpDateFromML;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.CheckBox chkbStatus;
-        private System.Windows.Forms.CheckBox chkbDateTo;
         private System.Windows.Forms.CheckBox chkbDateFrom;
         private System.Windows.Forms.RadioButton rbtnAll;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblWarningMLDateTo;
+        private System.Windows.Forms.Label label1;
     }
 }
