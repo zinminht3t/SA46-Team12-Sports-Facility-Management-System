@@ -36,10 +36,6 @@
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtExpiryDate = new System.Windows.Forms.TextBox();
-            this.txtJoinDate = new System.Windows.Forms.TextBox();
-            this.txtDOB = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtGender = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
@@ -59,6 +55,10 @@
             this.lblWarningKeyword = new System.Windows.Forms.Label();
             this.lblWarningSearchBy = new System.Windows.Forms.Label();
             this.lblWarningSearchResult = new System.Windows.Forms.Label();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.dtpJoin = new System.Windows.Forms.DateTimePicker();
+            this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.gbSearchResults.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +77,6 @@
             this.cmbSearchBy.Items.AddRange(new object[] {
             "Name",
             "IC Number",
-            "Address",
             "Mobile Number",
             "Email"});
             this.cmbSearchBy.Location = new System.Drawing.Point(162, 119);
@@ -119,12 +118,12 @@
             // 
             // gbSearchResults
             // 
+            this.gbSearchResults.Controls.Add(this.cmbStatus);
+            this.gbSearchResults.Controls.Add(this.dtpExpiry);
+            this.gbSearchResults.Controls.Add(this.dtpJoin);
+            this.gbSearchResults.Controls.Add(this.dtpDOB);
             this.gbSearchResults.Controls.Add(this.btnReset);
             this.gbSearchResults.Controls.Add(this.btnUpdate);
-            this.gbSearchResults.Controls.Add(this.txtStatus);
-            this.gbSearchResults.Controls.Add(this.txtExpiryDate);
-            this.gbSearchResults.Controls.Add(this.txtJoinDate);
-            this.gbSearchResults.Controls.Add(this.txtDOB);
             this.gbSearchResults.Controls.Add(this.txtEmail);
             this.gbSearchResults.Controls.Add(this.txtGender);
             this.gbSearchResults.Controls.Add(this.txtMobile);
@@ -159,6 +158,7 @@
             this.btnReset.TabIndex = 47;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnUpdate
             // 
@@ -169,81 +169,53 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(454, 428);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(326, 31);
-            this.txtStatus.TabIndex = 45;
-            // 
-            // txtExpiryDate
-            // 
-            this.txtExpiryDate.Location = new System.Drawing.Point(454, 389);
-            this.txtExpiryDate.Name = "txtExpiryDate";
-            this.txtExpiryDate.Size = new System.Drawing.Size(326, 31);
-            this.txtExpiryDate.TabIndex = 44;
-            // 
-            // txtJoinDate
-            // 
-            this.txtJoinDate.Location = new System.Drawing.Point(454, 350);
-            this.txtJoinDate.Name = "txtJoinDate";
-            this.txtJoinDate.Size = new System.Drawing.Size(326, 31);
-            this.txtJoinDate.TabIndex = 43;
-            // 
-            // txtDOB
-            // 
-            this.txtDOB.Location = new System.Drawing.Point(454, 308);
-            this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Size = new System.Drawing.Size(326, 31);
-            this.txtDOB.TabIndex = 42;
-            // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(454, 267);
+            this.txtEmail.Location = new System.Drawing.Point(378, 266);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(326, 31);
+            this.txtEmail.Size = new System.Drawing.Size(402, 31);
             this.txtEmail.TabIndex = 41;
             // 
             // txtGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(454, 227);
+            this.txtGender.Location = new System.Drawing.Point(378, 227);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(326, 31);
+            this.txtGender.Size = new System.Drawing.Size(402, 31);
             this.txtGender.TabIndex = 40;
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(454, 186);
+            this.txtMobile.Location = new System.Drawing.Point(378, 186);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(326, 31);
+            this.txtMobile.Size = new System.Drawing.Size(402, 31);
             this.txtMobile.TabIndex = 39;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(454, 109);
+            this.txtAddress.Location = new System.Drawing.Point(378, 109);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(326, 70);
+            this.txtAddress.Size = new System.Drawing.Size(402, 70);
             this.txtAddress.TabIndex = 38;
             // 
             // txtICNo
             // 
-            this.txtICNo.Location = new System.Drawing.Point(454, 69);
+            this.txtICNo.Location = new System.Drawing.Point(378, 69);
             this.txtICNo.Name = "txtICNo";
-            this.txtICNo.Size = new System.Drawing.Size(326, 31);
+            this.txtICNo.Size = new System.Drawing.Size(402, 31);
             this.txtICNo.TabIndex = 37;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(454, 27);
+            this.txtName.Location = new System.Drawing.Point(378, 27);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(326, 31);
+            this.txtName.Size = new System.Drawing.Size(402, 31);
             this.txtName.TabIndex = 36;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(51, 433);
+            this.label11.Location = new System.Drawing.Point(51, 440);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 25);
             this.label11.TabIndex = 35;
@@ -252,7 +224,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(51, 392);
+            this.label10.Location = new System.Drawing.Point(51, 399);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(141, 25);
             this.label10.TabIndex = 34;
@@ -261,7 +233,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(51, 356);
+            this.label9.Location = new System.Drawing.Point(51, 363);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 25);
             this.label9.TabIndex = 33;
@@ -270,7 +242,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 314);
+            this.label8.Location = new System.Drawing.Point(51, 321);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(149, 25);
             this.label8.TabIndex = 32;
@@ -279,7 +251,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(51, 273);
+            this.label7.Location = new System.Drawing.Point(51, 272);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 25);
             this.label7.TabIndex = 31;
@@ -366,6 +338,38 @@
             this.lblWarningSearchResult.Text = "There is no result related to the keyword";
             this.lblWarningSearchResult.Visible = false;
             // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(378, 310);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(402, 31);
+            this.dtpDOB.TabIndex = 48;
+            // 
+            // dtpJoin
+            // 
+            this.dtpJoin.Location = new System.Drawing.Point(378, 353);
+            this.dtpJoin.Name = "dtpJoin";
+            this.dtpJoin.Size = new System.Drawing.Size(402, 31);
+            this.dtpJoin.TabIndex = 49;
+            // 
+            // dtpExpiry
+            // 
+            this.dtpExpiry.Location = new System.Drawing.Point(378, 393);
+            this.dtpExpiry.Name = "dtpExpiry";
+            this.dtpExpiry.Size = new System.Drawing.Size(402, 31);
+            this.dtpExpiry.TabIndex = 50;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.cmbStatus.Location = new System.Drawing.Point(378, 440);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(402, 33);
+            this.cmbStatus.TabIndex = 51;
+            // 
             // ucMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -381,6 +385,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ucMembers";
             this.Size = new System.Drawing.Size(1128, 794);
+            this.Load += new System.EventHandler(this.ucMembers_Load);
             this.gbSearchResults.ResumeLayout(false);
             this.gbSearchResults.PerformLayout();
             this.ResumeLayout(false);
@@ -398,10 +403,6 @@
         private System.Windows.Forms.GroupBox gbSearchResults;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtExpiryDate;
-        private System.Windows.Forms.TextBox txtJoinDate;
-        private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtMobile;
@@ -421,5 +422,9 @@
         private System.Windows.Forms.Label lblWarningKeyword;
         private System.Windows.Forms.Label lblWarningSearchBy;
         private System.Windows.Forms.Label lblWarningSearchResult;
+        private System.Windows.Forms.DateTimePicker dtpExpiry;
+        private System.Windows.Forms.DateTimePicker dtpJoin;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }
