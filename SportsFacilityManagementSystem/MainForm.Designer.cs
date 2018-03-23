@@ -30,7 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlSidetab = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnBooking = new System.Windows.Forms.Button();
+            this.btnMembers = new System.Windows.Forms.Button();
+            this.btnFacilities = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
             this.btnSearchMembers = new System.Windows.Forms.Button();
             this.btnAddMembers = new System.Windows.Forms.Button();
             this.btnAddFacilities = new System.Windows.Forms.Button();
@@ -38,12 +44,6 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.btnPasttransactions = new System.Windows.Forms.Button();
             this.btnUpcoming = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnBooking = new System.Windows.Forms.Button();
-            this.btnMembers = new System.Windows.Forms.Button();
-            this.btnFacilities = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -64,127 +64,6 @@
             this.pnlSidebar.Size = new System.Drawing.Size(229, 553);
             this.pnlSidebar.TabIndex = 6;
             // 
-            // pnlSidetab
-            // 
-            this.pnlSidetab.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pnlSidetab.Location = new System.Drawing.Point(-1, 160);
-            this.pnlSidetab.Name = "pnlSidetab";
-            this.pnlSidetab.Size = new System.Drawing.Size(17, 76);
-            this.pnlSidetab.TabIndex = 7;
-            // 
-            // btnSearchMembers
-            // 
-            this.btnSearchMembers.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnSearchMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSearchMembers.FlatAppearance.BorderSize = 0;
-            this.btnSearchMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSearchMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchMembers.Location = new System.Drawing.Point(228, 233);
-            this.btnSearchMembers.Name = "btnSearchMembers";
-            this.btnSearchMembers.Size = new System.Drawing.Size(154, 76);
-            this.btnSearchMembers.TabIndex = 11;
-            this.btnSearchMembers.Text = "Search / Modify Members List";
-            this.btnSearchMembers.UseVisualStyleBackColor = false;
-            this.btnSearchMembers.Visible = false;
-            // 
-            // btnAddMembers
-            // 
-            this.btnAddMembers.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnAddMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddMembers.FlatAppearance.BorderSize = 0;
-            this.btnAddMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddMembers.Location = new System.Drawing.Point(228, 309);
-            this.btnAddMembers.Name = "btnAddMembers";
-            this.btnAddMembers.Size = new System.Drawing.Size(154, 76);
-            this.btnAddMembers.TabIndex = 12;
-            this.btnAddMembers.Text = "Add New Members";
-            this.btnAddMembers.UseVisualStyleBackColor = false;
-            this.btnAddMembers.Visible = false;
-            // 
-            // btnAddFacilities
-            // 
-            this.btnAddFacilities.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnAddFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddFacilities.FlatAppearance.BorderSize = 0;
-            this.btnAddFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFacilities.Location = new System.Drawing.Point(228, 387);
-            this.btnAddFacilities.Name = "btnAddFacilities";
-            this.btnAddFacilities.Size = new System.Drawing.Size(154, 76);
-            this.btnAddFacilities.TabIndex = 14;
-            this.btnAddFacilities.Text = "Add New Facilities";
-            this.btnAddFacilities.UseVisualStyleBackColor = false;
-            this.btnAddFacilities.Visible = false;
-            // 
-            // btnSearchFacilities
-            // 
-            this.btnSearchFacilities.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnSearchFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSearchFacilities.FlatAppearance.BorderSize = 0;
-            this.btnSearchFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSearchFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchFacilities.Location = new System.Drawing.Point(228, 311);
-            this.btnSearchFacilities.Name = "btnSearchFacilities";
-            this.btnSearchFacilities.Size = new System.Drawing.Size(154, 76);
-            this.btnSearchFacilities.TabIndex = 13;
-            this.btnSearchFacilities.Text = "Search / Modify Facilities";
-            this.btnSearchFacilities.UseVisualStyleBackColor = false;
-            this.btnSearchFacilities.Visible = false;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWelcome.Location = new System.Drawing.Point(698, 9);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(154, 20);
-            this.lblWelcome.TabIndex = 16;
-            this.lblWelcome.Text = "User logged on : ";
-            // 
-            // btnPasttransactions
-            // 
-            this.btnPasttransactions.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnPasttransactions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPasttransactions.FlatAppearance.BorderSize = 0;
-            this.btnPasttransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPasttransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPasttransactions.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPasttransactions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPasttransactions.Location = new System.Drawing.Point(228, 231);
-            this.btnPasttransactions.Name = "btnPasttransactions";
-            this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
-            this.btnPasttransactions.TabIndex = 18;
-            this.btnPasttransactions.Text = "View Past Transactions";
-            this.btnPasttransactions.UseVisualStyleBackColor = false;
-            this.btnPasttransactions.Visible = false;
-            // 
-            // btnUpcoming
-            // 
-            this.btnUpcoming.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnUpcoming.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnUpcoming.FlatAppearance.BorderSize = 0;
-            this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpcoming.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpcoming.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpcoming.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpcoming.Location = new System.Drawing.Point(228, 155);
-            this.btnUpcoming.Name = "btnUpcoming";
-            this.btnUpcoming.Size = new System.Drawing.Size(154, 76);
-            this.btnUpcoming.TabIndex = 17;
-            this.btnUpcoming.Text = "Upcoming Bookings";
-            this.btnUpcoming.UseVisualStyleBackColor = false;
-            this.btnUpcoming.Visible = false;
-            // 
             // pbLogo
             // 
             this.pbLogo.Location = new System.Drawing.Point(-1, 0);
@@ -194,6 +73,14 @@
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;
             this.pbLogo.MouseEnter += new System.EventHandler(this.pbLogo_MouseEnter);
+            // 
+            // pnlSidetab
+            // 
+            this.pnlSidetab.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pnlSidetab.Location = new System.Drawing.Point(-1, 160);
+            this.pnlSidetab.Name = "pnlSidetab";
+            this.pnlSidetab.Size = new System.Drawing.Size(17, 76);
+            this.pnlSidetab.TabIndex = 7;
             // 
             // btnLogout
             // 
@@ -285,6 +172,125 @@
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
             this.btnReports.MouseEnter += new System.EventHandler(this.btnReports_MouseEnter);
+            // 
+            // btnSearchMembers
+            // 
+            this.btnSearchMembers.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSearchMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSearchMembers.FlatAppearance.BorderSize = 0;
+            this.btnSearchMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearchMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchMembers.Location = new System.Drawing.Point(229, 234);
+            this.btnSearchMembers.Name = "btnSearchMembers";
+            this.btnSearchMembers.Size = new System.Drawing.Size(154, 76);
+            this.btnSearchMembers.TabIndex = 11;
+            this.btnSearchMembers.Text = "Search / Modify Members List";
+            this.btnSearchMembers.UseVisualStyleBackColor = false;
+            this.btnSearchMembers.Visible = false;
+            this.btnSearchMembers.MouseLeave += new System.EventHandler(this.btnSearchMembers_MouseLeave);
+            // 
+            // btnAddMembers
+            // 
+            this.btnAddMembers.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnAddMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddMembers.FlatAppearance.BorderSize = 0;
+            this.btnAddMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddMembers.Location = new System.Drawing.Point(229, 310);
+            this.btnAddMembers.Name = "btnAddMembers";
+            this.btnAddMembers.Size = new System.Drawing.Size(154, 76);
+            this.btnAddMembers.TabIndex = 12;
+            this.btnAddMembers.Text = "Add New Members";
+            this.btnAddMembers.UseVisualStyleBackColor = false;
+            this.btnAddMembers.Visible = false;
+            this.btnAddMembers.MouseLeave += new System.EventHandler(this.btnSearchMembers_MouseLeave);
+            // 
+            // btnAddFacilities
+            // 
+            this.btnAddFacilities.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnAddFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddFacilities.FlatAppearance.BorderSize = 0;
+            this.btnAddFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddFacilities.Location = new System.Drawing.Point(229, 385);
+            this.btnAddFacilities.Name = "btnAddFacilities";
+            this.btnAddFacilities.Size = new System.Drawing.Size(154, 76);
+            this.btnAddFacilities.TabIndex = 14;
+            this.btnAddFacilities.Text = "Add New Facilities";
+            this.btnAddFacilities.UseVisualStyleBackColor = false;
+            this.btnAddFacilities.Visible = false;
+            this.btnAddFacilities.MouseLeave += new System.EventHandler(this.btnSearchFacilities_MouseLeave);
+            // 
+            // btnSearchFacilities
+            // 
+            this.btnSearchFacilities.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSearchFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSearchFacilities.FlatAppearance.BorderSize = 0;
+            this.btnSearchFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSearchFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearchFacilities.Location = new System.Drawing.Point(229, 309);
+            this.btnSearchFacilities.Name = "btnSearchFacilities";
+            this.btnSearchFacilities.Size = new System.Drawing.Size(154, 76);
+            this.btnSearchFacilities.TabIndex = 13;
+            this.btnSearchFacilities.Text = "Search / Modify Facilities";
+            this.btnSearchFacilities.UseVisualStyleBackColor = false;
+            this.btnSearchFacilities.Visible = false;
+            this.btnSearchFacilities.MouseLeave += new System.EventHandler(this.btnSearchFacilities_MouseLeave);
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblWelcome.Location = new System.Drawing.Point(698, 9);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(154, 20);
+            this.lblWelcome.TabIndex = 16;
+            this.lblWelcome.Text = "User logged on : ";
+            // 
+            // btnPasttransactions
+            // 
+            this.btnPasttransactions.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnPasttransactions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPasttransactions.FlatAppearance.BorderSize = 0;
+            this.btnPasttransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasttransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasttransactions.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPasttransactions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPasttransactions.Location = new System.Drawing.Point(229, 232);
+            this.btnPasttransactions.Name = "btnPasttransactions";
+            this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
+            this.btnPasttransactions.TabIndex = 18;
+            this.btnPasttransactions.Text = "View Past Transactions";
+            this.btnPasttransactions.UseVisualStyleBackColor = false;
+            this.btnPasttransactions.Visible = false;
+            this.btnPasttransactions.MouseLeave += new System.EventHandler(this.btnUpcoming_MouseLeave);
+            // 
+            // btnUpcoming
+            // 
+            this.btnUpcoming.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUpcoming.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUpcoming.FlatAppearance.BorderSize = 0;
+            this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpcoming.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpcoming.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpcoming.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpcoming.Location = new System.Drawing.Point(229, 156);
+            this.btnUpcoming.Name = "btnUpcoming";
+            this.btnUpcoming.Size = new System.Drawing.Size(154, 76);
+            this.btnUpcoming.TabIndex = 17;
+            this.btnUpcoming.Text = "Upcoming Bookings";
+            this.btnUpcoming.UseVisualStyleBackColor = false;
+            this.btnUpcoming.Visible = false;
+            this.btnUpcoming.MouseLeave += new System.EventHandler(this.btnUpcoming_MouseLeave);
             // 
             // frmMain
             // 

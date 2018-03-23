@@ -73,6 +73,23 @@ namespace SportsFacilityManagementSystem
         }
         #endregion
 
+        #region Sidetab Panel (Mouse Leave Events)
+        private void btnUpcoming_MouseLeave(object sender, EventArgs e)
+        {
+            BookingsMenu(false);
+        }
+
+        private void btnSearchFacilities_MouseLeave(object sender, EventArgs e)
+        {
+            FacilitiesMenu(false);
+        }
+
+        private void btnSearchMembers_MouseLeave(object sender, EventArgs e)
+        {
+            MembersMenu(false);
+        }
+        #endregion
+
         #region Sidetab Panel (Mouse Click Events)
         private void btnLogout_Click(object sender, EventArgs e)
         {
