@@ -125,13 +125,12 @@
             // 
             // lblFacilitiesNoEdit
             // 
-            this.lblFacilitiesNoEdit.AutoSize = true;
-            this.lblFacilitiesNoEdit.Location = new System.Drawing.Point(30, 160);
+            this.lblFacilitiesNoEdit.Location = new System.Drawing.Point(30, 146);
             this.lblFacilitiesNoEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFacilitiesNoEdit.Name = "lblFacilitiesNoEdit";
-            this.lblFacilitiesNoEdit.Size = new System.Drawing.Size(112, 17);
+            this.lblFacilitiesNoEdit.Size = new System.Drawing.Size(100, 42);
             this.lblFacilitiesNoEdit.TabIndex = 41;
-            this.lblFacilitiesNoEdit.Text = "No of Facilities : ";
+            this.lblFacilitiesNoEdit.Text = "No of Courts / Fields : ";
             // 
             // txtNameEdit
             // 

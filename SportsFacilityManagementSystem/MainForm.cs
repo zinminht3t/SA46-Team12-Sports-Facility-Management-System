@@ -23,11 +23,16 @@ namespace SportsFacilityManagementSystem
         }
 
         #region Sidetab Panel (Mouse Enter Events)
+        private void pbLogo_MouseEnter(object sender, EventArgs e)
+        {
+            BookingsMenu(false);
+        }
         private void btnBooking_MouseEnter(object sender, EventArgs e)
         {
             this.pnlSidetab.Location = this.btnBooking.Location;
             this.pnlSidetab.Left = -1;
             MembersMenu(false);
+            BookingsMenu(true);
         }
 
         private void btnMembers_MouseEnter(object sender, EventArgs e)
@@ -36,6 +41,7 @@ namespace SportsFacilityManagementSystem
             this.pnlSidetab.Left = -1;
             MembersMenu(true);
             FacilitiesMenu(false);
+            BookingsMenu(false);
         }
 
         private void btnFacilities_MouseEnter(object sender, EventArgs e)
@@ -63,6 +69,7 @@ namespace SportsFacilityManagementSystem
         {
             FacilitiesMenu(false);
             MembersMenu(false);
+            BookingsMenu(false);
         }
         #endregion
 
@@ -82,6 +89,12 @@ namespace SportsFacilityManagementSystem
         #endregion
 
         #region Visibility Methods
+        private void BookingsMenu(bool visibility)
+        {
+            btnUpcoming.Visible = visibility;
+            btnPasttransactions.Visible = visibility;
+        }
+
         private void MembersMenu(bool visibility)
         {
             btnSearchMembers.Visible = visibility;
@@ -100,5 +113,6 @@ namespace SportsFacilityManagementSystem
             // Visibility methods using ucName to call which to hide using if method
         }
 
+        
     }
 }
