@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlSidetab = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnBooking = new System.Windows.Forms.Button();
@@ -41,14 +41,16 @@
             this.btnAddFacilities = new System.Windows.Forms.Button();
             this.btnSearchFacilities = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnPasttransactions = new System.Windows.Forms.Button();
+            this.btnUpcoming = new System.Windows.Forms.Button();
             this.pnlSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pnlSidebar.Controls.Add(this.pictureBox1);
+            this.pnlSidebar.Controls.Add(this.pbLogo);
             this.pnlSidebar.Controls.Add(this.pnlSidetab);
             this.pnlSidebar.Controls.Add(this.btnLogout);
             this.pnlSidebar.Controls.Add(this.btnBooking);
@@ -61,13 +63,14 @@
             this.pnlSidebar.Size = new System.Drawing.Size(229, 553);
             this.pnlSidebar.TabIndex = 6;
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 160);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.Location = new System.Drawing.Point(-1, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(230, 160);
+            this.pbLogo.TabIndex = 15;
+            this.pbLogo.TabStop = false;
+            this.pbLogo.MouseEnter += new System.EventHandler(this.pbLogo_MouseEnter);
             // 
             // pnlSidetab
             // 
@@ -247,12 +250,48 @@
             this.lblWelcome.TabIndex = 16;
             this.lblWelcome.Text = "User logged on : ";
             // 
+            // btnPasttransactions
+            // 
+            this.btnPasttransactions.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnPasttransactions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPasttransactions.FlatAppearance.BorderSize = 0;
+            this.btnPasttransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasttransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPasttransactions.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPasttransactions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPasttransactions.Location = new System.Drawing.Point(228, 231);
+            this.btnPasttransactions.Name = "btnPasttransactions";
+            this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
+            this.btnPasttransactions.TabIndex = 18;
+            this.btnPasttransactions.Text = "View Past Transactions";
+            this.btnPasttransactions.UseVisualStyleBackColor = false;
+            this.btnPasttransactions.Visible = false;
+            // 
+            // btnUpcoming
+            // 
+            this.btnUpcoming.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUpcoming.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUpcoming.FlatAppearance.BorderSize = 0;
+            this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpcoming.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpcoming.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUpcoming.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpcoming.Location = new System.Drawing.Point(228, 155);
+            this.btnUpcoming.Name = "btnUpcoming";
+            this.btnUpcoming.Size = new System.Drawing.Size(154, 76);
+            this.btnUpcoming.TabIndex = 17;
+            this.btnUpcoming.Text = "Upcoming Bookings";
+            this.btnUpcoming.UseVisualStyleBackColor = false;
+            this.btnUpcoming.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(982, 533);
+            this.Controls.Add(this.btnPasttransactions);
+            this.Controls.Add(this.btnUpcoming);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnAddFacilities);
             this.Controls.Add(this.btnSearchFacilities);
@@ -268,7 +307,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseEnter += new System.EventHandler(this.frmMain_MouseEnter);
             this.pnlSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,8 +325,10 @@
         private System.Windows.Forms.Button btnAddMembers;
         private System.Windows.Forms.Button btnAddFacilities;
         private System.Windows.Forms.Button btnSearchFacilities;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnPasttransactions;
+        private System.Windows.Forms.Button btnUpcoming;
     }
 }
 
