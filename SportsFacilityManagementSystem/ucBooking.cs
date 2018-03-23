@@ -12,6 +12,8 @@ namespace SportsFacilityManagementSystem
 {
     public partial class ucBooking : UserControl
     {
+        private SportsFacilitiesEntities ctx;
+        private string defaultCmbSports;
         private int noSubFacilities;
         private List<Control> collectionVisibleButtons = new List<Control>();
         private int noSelected = 0;
@@ -21,11 +23,23 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
 
-            SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
+            ctx = new SportsFacilitiesEntities();
             List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
+            defaultCmbSports = "- Select sport -";
+            facList.Insert(0, defaultCmbSports);
             cmbSports.DataSource = facList;
-            //cmbSports.DisplayMember = "Name";
-            //cmbSports.ValueMember = "Code";
+
+            dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
+
+            cmbSports.Text = defaultCmbSports;
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = facList;
+
+            //cmbSports.DataSource = bs.DataSource;
+            //cmbSports.DisplayMember = "facilityname";
+            //cmbSports.ValueMember = "facilityname";
+
+
         }
 
         //This event is triggered when a visible Button is clicked.
@@ -75,61 +89,132 @@ namespace SportsFacilityManagementSystem
 
         private void ucBooking_Load(object sender, EventArgs e)
         {
-            dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
 
-            
+        }
 
-            noSubFacilities = 3;
+        private void cmbSports_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            collectionVisibleButtons.Clear(); //pls check collection of items stored per click change
 
-            
-            //noSubFacilities = sfe.subfaciliti; //to replace output with no of subfac belonging to selected facility
-            //BindingSource bs = new BindingSource();
-            //bs.DataSource = facList;
-
-            //cmbSports.DataSource = bs.DataSource;
-            //cmbSports.DisplayMember = "facilityname";
-            //cmbSports.ValueMember = "facilityname";
-
-            //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
-            for (int noRows = 1; noRows <= noSubFacilities; noRows++)
+            //get facility id of chosen facility in combobox
+            if (cmbSports.Text != defaultCmbSports)
             {
-                Controls["lblRow" + noRows].Visible = true;
+                var facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text);
+                int facId_ = facId.facilityid;
+                noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId_); //to replace output with no of subfac belonging to selected facility
 
-                for (int noCols = 1; noCols <= 5; noCols++)
+                //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
+                for (int noRows = 1; noRows <= 3; noRows++)
                 {
-                    switch (noRows)
+                    if (noRows <= noSubFacilities)
                     {
-                        case 1:
-                            Control A = this.Controls["btnA" + noCols];
-                            A.Text = noCols.ToString(); //to repplace output as booking name
-                            collectionVisibleButtons.Add(A);
-
-                            break;
-                        case 2:
-                            Control B = this.Controls["btnB" + noCols];
-                            B.Enabled = true;
-                            B.Visible = true;
-                            B.Text = noCols.ToString(); //to repplace output as booking name
-                            collectionVisibleButtons.Add(B);
-
-                            break;
-                        case 3:
-                            Control C = this.Controls["btnC" + noCols];
-                            C.Enabled = true;
-                            C.Visible = true;
-                            C.Text = noCols.ToString(); //to repplace output as booking name
-                            collectionVisibleButtons.Add(C);
-
-                            break;
+                        Controls["lblRow" + noRows].Visible = true;
+                    } else
+                    {
+                        Controls["lblRow" + noRows].Visible = false;
                     }
+
+                    for (int noCols = 1; noCols <= 5; noCols++)
+                    {
+                        switch (noRows)
+                        {
+                            case 1:
+                                Control A = this.Controls["btnA" + noCols];
+                                A.Enabled = true;
+                                A.Visible = true;
+                                A.Text = noCols.ToString(); //to repplace output as booking name
+                                collectionVisibleButtons.Add(A);
+
+                                break;
+                            case 2: //might need to hide if selected facility only has 1 subfacility
+
+                                Control B = this.Controls["btnB" + noCols];
+
+                                if (noSubFacilities > 1)
+                                {
+                                    B.Enabled = true;
+                                    B.Visible = true;
+                                    B.Text = noCols.ToString(); //to repplace output as booking name
+                                    collectionVisibleButtons.Add(B);
+                                }
+                                else
+                                {
+                                    B.Enabled = false;
+                                    B.Visible = false;
+                                    B.Text = noCols.ToString();
+                                }
+
+                                break;
+                            case 3: //might need to hide if selected facility only has 1 subfacility
+
+                                Control C = this.Controls["btnC" + noCols];
+
+                                if (noSubFacilities > 2)
+                                {
+                                    C.Enabled = true;
+                                    C.Visible = true;
+                                    C.Text = noCols.ToString(); //to repplace output as booking name
+                                    collectionVisibleButtons.Add(C);
+                                }
+                                else
+                                {
+                                    C.Enabled = false;
+                                    C.Visible = false;
+                                    C.Text = noCols.ToString(); //to repplace output as booking name
+                                }
+                                    
+
+                                break;
+                        }
+                    }
+
+                }
+
+                //for each button in visible buttons, add click event handler
+                foreach (Control con in collectionVisibleButtons)
+                {
+                    con.Click += new System.EventHandler(this.con_Click);
                 }
 
             }
-
-            //for each button in visible buttons, add click event handler
-            foreach (Control con in collectionVisibleButtons)
+            else
             {
-                con.Click += new System.EventHandler(this.con_Click);
+                //if default option, show only 1 row of subfacility slots
+                //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
+
+                //Q: do i need to reset the collection of vis buttons?
+                for (int noRows = 1; noRows <= 3; noRows++)
+                {
+                    Controls["lblRow" + noRows].Visible = false; //subtntity labels
+
+                    for (int noCols = 1; noCols <= 5; noCols++)
+                    {
+                        switch (noRows)
+                        {
+                            case 1:
+                                Control A = this.Controls["btnA" + noCols];
+                                A.Enabled = false;
+                                A.Visible = false;
+
+                                break;
+                            case 2:
+                                Control B = this.Controls["btnB" + noCols];
+                                B.Enabled = false;
+                                B.Visible = false;
+
+
+                                break;
+                            case 3:
+                                Control C = this.Controls["btnC" + noCols];
+                                C.Enabled = false;
+                                C.Visible = false;
+
+
+                                break;
+                        }
+                    }
+                }
+
             }
         }
     }
