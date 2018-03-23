@@ -37,7 +37,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtICNo = new System.Windows.Forms.TextBox();
@@ -59,7 +58,11 @@
             this.dtpJoin = new System.Windows.Forms.DateTimePicker();
             this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.gbSearchResults.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +121,7 @@
             // 
             // gbSearchResults
             // 
+            this.gbSearchResults.Controls.Add(this.groupBox1);
             this.gbSearchResults.Controls.Add(this.cmbStatus);
             this.gbSearchResults.Controls.Add(this.dtpExpiry);
             this.gbSearchResults.Controls.Add(this.dtpJoin);
@@ -125,7 +129,6 @@
             this.gbSearchResults.Controls.Add(this.btnReset);
             this.gbSearchResults.Controls.Add(this.btnUpdate);
             this.gbSearchResults.Controls.Add(this.txtEmail);
-            this.gbSearchResults.Controls.Add(this.txtGender);
             this.gbSearchResults.Controls.Add(this.txtMobile);
             this.gbSearchResults.Controls.Add(this.txtAddress);
             this.gbSearchResults.Controls.Add(this.txtICNo);
@@ -140,11 +143,11 @@
             this.gbSearchResults.Controls.Add(this.label4);
             this.gbSearchResults.Controls.Add(this.lbl);
             this.gbSearchResults.Controls.Add(this.lblName);
-            this.gbSearchResults.Location = new System.Drawing.Point(122, 233);
+            this.gbSearchResults.Location = new System.Drawing.Point(122, 219);
             this.gbSearchResults.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbSearchResults.Name = "gbSearchResults";
             this.gbSearchResults.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbSearchResults.Size = new System.Drawing.Size(834, 555);
+            this.gbSearchResults.Size = new System.Drawing.Size(834, 569);
             this.gbSearchResults.TabIndex = 58;
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
@@ -152,7 +155,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(174, 486);
+            this.btnReset.Location = new System.Drawing.Point(174, 513);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(188, 47);
             this.btnReset.TabIndex = 47;
@@ -162,26 +165,20 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(592, 486);
+            this.btnUpdate.Location = new System.Drawing.Point(592, 513);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(188, 47);
             this.btnUpdate.TabIndex = 46;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(378, 266);
+            this.txtEmail.Location = new System.Drawing.Point(378, 293);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(402, 31);
             this.txtEmail.TabIndex = 41;
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(378, 227);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(402, 31);
-            this.txtGender.TabIndex = 40;
             // 
             // txtMobile
             // 
@@ -215,7 +212,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(51, 440);
+            this.label11.Location = new System.Drawing.Point(51, 467);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 25);
             this.label11.TabIndex = 35;
@@ -224,7 +221,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(51, 399);
+            this.label10.Location = new System.Drawing.Point(51, 426);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(141, 25);
             this.label10.TabIndex = 34;
@@ -233,7 +230,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(51, 363);
+            this.label9.Location = new System.Drawing.Point(51, 390);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(121, 25);
             this.label9.TabIndex = 33;
@@ -242,7 +239,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 321);
+            this.label8.Location = new System.Drawing.Point(51, 348);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(149, 25);
             this.label8.TabIndex = 32;
@@ -251,7 +248,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(51, 272);
+            this.label7.Location = new System.Drawing.Point(51, 299);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 25);
             this.label7.TabIndex = 31;
@@ -260,7 +257,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 230);
+            this.label6.Location = new System.Drawing.Point(51, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 25);
             this.label6.TabIndex = 30;
@@ -340,21 +337,21 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(378, 310);
+            this.dtpDOB.Location = new System.Drawing.Point(378, 337);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(402, 31);
             this.dtpDOB.TabIndex = 48;
             // 
             // dtpJoin
             // 
-            this.dtpJoin.Location = new System.Drawing.Point(378, 353);
+            this.dtpJoin.Location = new System.Drawing.Point(378, 380);
             this.dtpJoin.Name = "dtpJoin";
             this.dtpJoin.Size = new System.Drawing.Size(402, 31);
             this.dtpJoin.TabIndex = 49;
             // 
             // dtpExpiry
             // 
-            this.dtpExpiry.Location = new System.Drawing.Point(378, 393);
+            this.dtpExpiry.Location = new System.Drawing.Point(378, 420);
             this.dtpExpiry.Name = "dtpExpiry";
             this.dtpExpiry.Size = new System.Drawing.Size(402, 31);
             this.dtpExpiry.TabIndex = 50;
@@ -365,10 +362,42 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(378, 440);
+            this.cmbStatus.Location = new System.Drawing.Point(378, 467);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(402, 33);
             this.cmbStatus.TabIndex = 51;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdbFemale);
+            this.groupBox1.Controls.Add(this.rdbMale);
+            this.groupBox1.Location = new System.Drawing.Point(378, 224);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(402, 57);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            // 
+            // rdbMale
+            // 
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Location = new System.Drawing.Point(56, 18);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(90, 29);
+            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "Male";
+            this.rdbMale.UseVisualStyleBackColor = true;
+            // 
+            // rdbFemale
+            // 
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Location = new System.Drawing.Point(248, 18);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(114, 29);
+            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.TabStop = true;
+            this.rdbFemale.Text = "Female";
+            this.rdbFemale.UseVisualStyleBackColor = true;
             // 
             // ucMembers
             // 
@@ -388,6 +417,8 @@
             this.Load += new System.EventHandler(this.ucMembers_Load);
             this.gbSearchResults.ResumeLayout(false);
             this.gbSearchResults.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +435,6 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtMobile;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtICNo;
@@ -426,5 +456,8 @@
         private System.Windows.Forms.DateTimePicker dtpJoin;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbFemale;
+        private System.Windows.Forms.RadioButton rdbMale;
     }
 }

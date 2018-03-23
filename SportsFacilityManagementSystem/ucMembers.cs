@@ -13,6 +13,7 @@ namespace SportsFacilityManagementSystem
     public partial class ucMembers : UserControl
     {
         Member resultmember;
+        SportsFacilitiesEntities ctx;
         public ucMembers()
         {
             InitializeComponent();
@@ -35,7 +36,6 @@ namespace SportsFacilityManagementSystem
             {
                 lblWarningSearchBy.Visible = false;
                 lblWarningKeyword.Visible = false;
-                SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
                 int count = 0;
                 resultmember = new Member();
                 switch(cmbSearchBy.SelectedItem.ToString())
@@ -113,7 +113,14 @@ namespace SportsFacilityManagementSystem
             txtName.Text = m.name;
             txtICNo.Text = m.icno;
             txtMobile.Text = m.mobileno.ToString();
-            txtGender.Text = m.gender;
+            if(m.gender == "Male")
+            {
+                rdbMale.Checked = true;
+            }
+            else
+            {
+                rdbFemale.Checked = true;
+            }
             txtEmail.Text = m.email;
             txtAddress.Text = m.address;
             if(m.status == "Active")
@@ -140,12 +147,64 @@ namespace SportsFacilityManagementSystem
 
         private void ucMembers_Load(object sender, EventArgs e)
         {
+            ctx = new SportsFacilitiesEntities();
             dtpDOB.MaxDate = DateTime.Today.AddYears(-13); // the member must be at least 13 years old.
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             PopulateData(resultmember);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if(txtName.Text == "" || txtICNo.Text == "" || txtAddress.Text == "" || txtMobile.Text == "" || txtEmail.Text == "")
+            {
+                MessageBox.Show("All fields are required to be filled!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    UpdateMember();
+                    PopulateData(resultmember);
+                    MessageBox.Show("Update Member Information Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Some errors occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void UpdateMember()
+        {
+            resultmember.name = txtName.Text;
+            resultmember.icno = txtICNo.Text;
+            resultmember.address = txtAddress.Text;
+            resultmember.mobileno = Convert.ToInt32(txtMobile.Text);
+            if (rdbFemale.Checked == true)
+            {
+                resultmember.gender = "Female";
+            }
+            else
+            {
+                resultmember.gender = "Male";
+            }
+            resultmember.email = txtEmail.Text;
+            resultmember.dateofbirth = dtpDOB.Value;
+            resultmember.joindate = dtpJoin.Value;
+            resultmember.expirydate = dtpExpiry.Value;
+            if (cmbStatus.SelectedItem.ToString() == "Active")
+            {
+                resultmember.status = "Active";
+            }
+            else
+            {
+                resultmember.status = "Inactive";
+            }
+            ctx.SaveChanges();
         }
     }
 }
