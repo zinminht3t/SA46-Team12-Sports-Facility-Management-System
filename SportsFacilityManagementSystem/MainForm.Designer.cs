@@ -76,9 +76,9 @@
             // pbLogo
             // 
             this.pbLogo.Image = global::SportsFacilityManagementSystem.Properties.Resources.GetActiveLogo;
-            this.pbLogo.Location = new System.Drawing.Point(-1, 0);
+            this.pbLogo.Location = new System.Drawing.Point(18, 0);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(230, 160);
+            this.pbLogo.Size = new System.Drawing.Size(207, 160);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;

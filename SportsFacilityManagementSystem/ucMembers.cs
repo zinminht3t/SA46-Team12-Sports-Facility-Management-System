@@ -72,17 +72,25 @@ namespace SportsFacilityManagementSystem
                         }
                         break;
                     case "Mobile Number":
-                        int keyword = Convert.ToInt32(txtKeyword.Text);
-                        count = ctx.Members.Where(x => x.mobileno == keyword).Count();
-                        if (CheckSearchResult(count))
+                        try
                         {
-                            gbSearchResults.Visible = true;
+                            int keyword = Convert.ToInt32(txtKeyword.Text);
+                            count = ctx.Members.Where(x => x.mobileno == keyword).Count();
+                            if (CheckSearchResult(count))
+                            {
+                                gbSearchResults.Visible = true;
 
-                            lblWarningSearchResult.Visible = false;
-                            resultmember = ctx.Members.First(x => x.mobileno == keyword);
-                            PopulateData(resultmember);
+                                lblWarningSearchResult.Visible = false;
+                                resultmember = ctx.Members.First(x => x.mobileno == keyword);
+                                PopulateData(resultmember);
+                            }
+                            else
+                            {
+                                gbSearchResults.Visible = false;
+                                lblWarningSearchResult.Visible = true;
+                            }
                         }
-                        else
+                        catch
                         {
                             gbSearchResults.Visible = false;
                             lblWarningSearchResult.Visible = true;

@@ -28,23 +28,30 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
-                int userid = Convert.ToInt32(txtUserID.Text);
-                string password = txtPassword.Text;
-                int result = 0;
-                result = ctx.Users.Where(x => x.userid == userid && x.password == password).Count();
-
-                if (result > 0) //if the user login success
+                try
                 {
-                    user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
-                    ChangeExpiredMemberStatus(); //check the expired members and update their status to "Inactive"
-                    this.Hide();
+                    int userid = Convert.ToInt32(txtUserID.Text);
+                    string password = txtPassword.Text;
+                    int result = 0;
+                    result = ctx.Users.Where(x => x.userid == userid && x.password == password).Count();
 
-                    frmMain main = new frmMain(); //call the main form
-                    main.Show();
+                    if (result > 0) //if the user login success
+                    {
+                        user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
+                        ChangeExpiredMemberStatus(); //check the expired members and update their status to "Inactive"
+                        this.Hide();
+
+                        frmMain main = new frmMain(); //call the main form
+                        main.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your User ID or Password is wrong!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Your User ID or Password is wrong!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("User ID is number only!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
