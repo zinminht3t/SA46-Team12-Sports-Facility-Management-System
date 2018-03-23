@@ -157,6 +157,12 @@
     <Compile Include="ucMembers.Designer.cs">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucPastTransactions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPastTransactions.Designer.cs">
+      <DependentUpon>ucPastTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucReports.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucMembers.resx">
       <DependentUpon>ucMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPastTransactions.resx">
+      <DependentUpon>ucPastTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucReports.resx">
       <DependentUpon>ucReports.cs</DependentUpon>
