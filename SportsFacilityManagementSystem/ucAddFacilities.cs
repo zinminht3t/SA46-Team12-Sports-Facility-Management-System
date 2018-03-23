@@ -30,5 +30,13 @@ namespace SportsFacilityManagementSystem
         private void btnReset_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if(txtName.Text == "" || txtRate.Text == "" || cmbCourtNo.Text == "")
+            {
+
+            }
+        }
     }
 }
