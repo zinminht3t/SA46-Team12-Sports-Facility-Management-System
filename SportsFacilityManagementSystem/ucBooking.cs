@@ -13,6 +13,7 @@ namespace SportsFacilityManagementSystem
     public partial class ucBooking : UserControl
     {
         private SportsFacilitiesEntities ctx;
+        private List<String> subfacilitiesList = new List<String>();
         private string defaultCmbSports;
         private int noSubFacilities;
         private List<Control> collectionVisibleButtons = new List<Control>();
@@ -32,14 +33,7 @@ namespace SportsFacilityManagementSystem
             dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
 
             cmbSports.Text = defaultCmbSports;
-            //BindingSource bs = new BindingSource();
-            //bs.DataSource = facList;
-
-            //cmbSports.DataSource = bs.DataSource;
-            //cmbSports.DisplayMember = "facilityname";
-            //cmbSports.ValueMember = "facilityname";
-
-
+            
         }
 
         //This event is triggered when a visible Button is clicked.
@@ -83,8 +77,7 @@ namespace SportsFacilityManagementSystem
                 ucbd.Show();
                 ucbd.setTxtFacilityID(cmbSports.Text);
             }
-
-
+            
         }
 
         private void ucBooking_Load(object sender, EventArgs e)
@@ -95,6 +88,7 @@ namespace SportsFacilityManagementSystem
         private void cmbSports_SelectedIndexChanged(object sender, EventArgs e)
         {
             collectionVisibleButtons.Clear(); //pls check collection of items stored per click change
+            subfacilitiesList.Clear();
 
             //get facility id of chosen facility in combobox
             if (cmbSports.Text != defaultCmbSports)
@@ -102,12 +96,23 @@ namespace SportsFacilityManagementSystem
                 var facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text);
                 int facId_ = facId.facilityid;
                 noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId_); //to replace output with no of subfac belonging to selected facility
+                //create array of subenetities name belonging to selceted facility
+                var qry = from x in ctx.SubFacilities where x.facilityid == facId_ orderby x.subfacilityname select x.subfacilityname;
+                subfacilitiesList = qry.ToList<String>();
+                
+                //popoulate visible buttons + handle the click events
+                for (int slotsLabels = 1; slotsLabels <= 5; slotsLabels++)
+                {
+                    Controls["lblTime" + slotsLabels].Visible = true;
+
+                }
 
                 //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
                 for (int noRows = 1; noRows <= 3; noRows++)
                 {
                     if (noRows <= noSubFacilities)
                     {
+                        Controls["lblRow" + noRows].Text = subfacilitiesList[noRows-1];
                         Controls["lblRow" + noRows].Visible = true;
                     } else
                     {
@@ -181,6 +186,11 @@ namespace SportsFacilityManagementSystem
             {
                 //if default option, show only 1 row of subfacility slots
                 //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
+
+                for (int slotsLabels = 1; slotsLabels <= 5; slotsLabels++)
+                {
+                    Controls["lblTime" + slotsLabels].Visible = false;
+                }
 
                 //Q: do i need to reset the collection of vis buttons?
                 for (int noRows = 1; noRows <= 3; noRows++)

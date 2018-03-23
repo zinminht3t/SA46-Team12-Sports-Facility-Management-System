@@ -62,7 +62,7 @@
             // cmbSports
             // 
             this.cmbSports.FormattingEnabled = true;
-            this.cmbSports.Location = new System.Drawing.Point(112, 86);
+            this.cmbSports.Location = new System.Drawing.Point(100, 86);
             this.cmbSports.Name = "cmbSports";
             this.cmbSports.Size = new System.Drawing.Size(200, 21);
             this.cmbSports.TabIndex = 79;
@@ -70,7 +70,7 @@
             // 
             // dtpBookingDate
             // 
-            this.dtpBookingDate.Location = new System.Drawing.Point(112, 54);
+            this.dtpBookingDate.Location = new System.Drawing.Point(100, 54);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBookingDate.TabIndex = 78;
@@ -78,7 +78,7 @@
             // lblSports
             // 
             this.lblSports.AutoSize = true;
-            this.lblSports.Location = new System.Drawing.Point(61, 89);
+            this.lblSports.Location = new System.Drawing.Point(49, 89);
             this.lblSports.Name = "lblSports";
             this.lblSports.Size = new System.Drawing.Size(40, 13);
             this.lblSports.TabIndex = 77;
@@ -87,7 +87,7 @@
             // lblBookingDate
             // 
             this.lblBookingDate.AutoSize = true;
-            this.lblBookingDate.Location = new System.Drawing.Point(61, 54);
+            this.lblBookingDate.Location = new System.Drawing.Point(49, 54);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(33, 13);
             this.lblBookingDate.TabIndex = 76;
