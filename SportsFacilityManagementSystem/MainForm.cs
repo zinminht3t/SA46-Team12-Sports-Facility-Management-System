@@ -210,7 +210,7 @@ namespace SportsFacilityManagementSystem
             MembersMenu(false);
         }
 
-        private void HideAllUC()
+        public void HideAllUC()
         {
             ucReports1.Visible = false;
             ucBooking1.Visible = false;
@@ -219,6 +219,11 @@ namespace SportsFacilityManagementSystem
             ucAddFacilities1.Visible = false;
             ucMembers1.Visible = false;
             ucAddMember1.Visible = false;
+        }
+        public void ShowMainpage()
+        {
+            HideAllUC();
+            ucBooking1.Visible = true;
         }
     }
 }
