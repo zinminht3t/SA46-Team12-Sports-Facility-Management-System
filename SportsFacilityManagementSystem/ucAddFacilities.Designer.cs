@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.gbSearchEdit = new System.Windows.Forms.GroupBox();
+            this.lblWarningCourt = new System.Windows.Forms.Label();
+            this.lblWarningRate = new System.Windows.Forms.Label();
+            this.lblWarningName = new System.Windows.Forms.Label();
             this.lblRatesInfo = new System.Windows.Forms.Label();
             this.pbRatesinfo = new System.Windows.Forms.PictureBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.cmbCourtNo = new System.Windows.Forms.ComboBox();
+            this.txtRate = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblFacilitiesNoEdit = new System.Windows.Forms.Label();
-            this.txtNameEdit = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.lblRatesEdit = new System.Windows.Forms.Label();
             this.lblNameEdit = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -46,14 +49,17 @@
             // 
             // gbSearchEdit
             // 
+            this.gbSearchEdit.Controls.Add(this.lblWarningCourt);
+            this.gbSearchEdit.Controls.Add(this.lblWarningRate);
+            this.gbSearchEdit.Controls.Add(this.lblWarningName);
             this.gbSearchEdit.Controls.Add(this.lblRatesInfo);
             this.gbSearchEdit.Controls.Add(this.pbRatesinfo);
-            this.gbSearchEdit.Controls.Add(this.comboBox2);
-            this.gbSearchEdit.Controls.Add(this.textBox4);
-            this.gbSearchEdit.Controls.Add(this.btnSave);
+            this.gbSearchEdit.Controls.Add(this.cmbCourtNo);
+            this.gbSearchEdit.Controls.Add(this.txtRate);
+            this.gbSearchEdit.Controls.Add(this.btnSubmit);
             this.gbSearchEdit.Controls.Add(this.btnReset);
             this.gbSearchEdit.Controls.Add(this.lblFacilitiesNoEdit);
-            this.gbSearchEdit.Controls.Add(this.txtNameEdit);
+            this.gbSearchEdit.Controls.Add(this.txtName);
             this.gbSearchEdit.Controls.Add(this.lblRatesEdit);
             this.gbSearchEdit.Controls.Add(this.lblNameEdit);
             this.gbSearchEdit.Location = new System.Drawing.Point(190, 125);
@@ -64,13 +70,49 @@
             this.gbSearchEdit.TabIndex = 65;
             this.gbSearchEdit.TabStop = false;
             // 
+            // lblWarningCourt
+            // 
+            this.lblWarningCourt.AutoSize = true;
+            this.lblWarningCourt.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningCourt.Location = new System.Drawing.Point(266, 221);
+            this.lblWarningCourt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarningCourt.Name = "lblWarningCourt";
+            this.lblWarningCourt.Size = new System.Drawing.Size(232, 25);
+            this.lblWarningCourt.TabIndex = 70;
+            this.lblWarningCourt.Text = "* Field cannot be blank";
+            this.lblWarningCourt.Visible = false;
+            // 
+            // lblWarningRate
+            // 
+            this.lblWarningRate.AutoSize = true;
+            this.lblWarningRate.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningRate.Location = new System.Drawing.Point(266, 132);
+            this.lblWarningRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarningRate.Name = "lblWarningRate";
+            this.lblWarningRate.Size = new System.Drawing.Size(232, 25);
+            this.lblWarningRate.TabIndex = 69;
+            this.lblWarningRate.Text = "* Field cannot be blank";
+            this.lblWarningRate.Visible = false;
+            // 
+            // lblWarningName
+            // 
+            this.lblWarningName.AutoSize = true;
+            this.lblWarningName.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningName.Location = new System.Drawing.Point(266, 29);
+            this.lblWarningName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarningName.Name = "lblWarningName";
+            this.lblWarningName.Size = new System.Drawing.Size(232, 25);
+            this.lblWarningName.TabIndex = 68;
+            this.lblWarningName.Text = "* Field cannot be blank";
+            this.lblWarningName.Visible = false;
+            // 
             // lblRatesInfo
             // 
             this.lblRatesInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRatesInfo.Location = new System.Drawing.Point(484, 162);
+            this.lblRatesInfo.Location = new System.Drawing.Point(498, 164);
             this.lblRatesInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRatesInfo.Name = "lblRatesInfo";
-            this.lblRatesInfo.Size = new System.Drawing.Size(89, 66);
+            this.lblRatesInfo.Size = new System.Drawing.Size(192, 66);
             this.lblRatesInfo.TabIndex = 67;
             this.lblRatesInfo.Text = "Rates / 2 hours";
             this.lblRatesInfo.Visible = false;
@@ -88,35 +130,37 @@
             this.pbRatesinfo.MouseEnter += new System.EventHandler(this.pbRatesinfo_MouseEnter);
             this.pbRatesinfo.MouseLeave += new System.EventHandler(this.pbRatesinfo_MouseLeave);
             // 
-            // comboBox2
+            // cmbCourtNo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbCourtNo.FormattingEnabled = true;
+            this.cmbCourtNo.Items.AddRange(new object[] {
             "1",
             "2",
             "3"});
-            this.comboBox2.Location = new System.Drawing.Point(262, 239);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(104, 33);
-            this.comboBox2.TabIndex = 65;
-            this.comboBox2.Text = "Select";
+            this.cmbCourtNo.Location = new System.Drawing.Point(262, 251);
+            this.cmbCourtNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbCourtNo.Name = "cmbCourtNo";
+            this.cmbCourtNo.Size = new System.Drawing.Size(104, 33);
+            this.cmbCourtNo.TabIndex = 65;
+            this.cmbCourtNo.Text = "Select";
             // 
-            // textBox4
+            // txtRate
             // 
-            this.textBox4.Location = new System.Drawing.Point(262, 162);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 31);
-            this.textBox4.TabIndex = 61;
+            this.txtRate.Location = new System.Drawing.Point(262, 162);
+            this.txtRate.Name = "txtRate";
+            this.txtRate.Size = new System.Drawing.Size(176, 31);
+            this.txtRate.TabIndex = 61;
+            this.txtRate.TextChanged += new System.EventHandler(this.txtRate_TextChanged);
             // 
-            // btnSave
+            // btnSubmit
             // 
-            this.btnSave.Location = new System.Drawing.Point(498, 430);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(178, 58);
-            this.btnSave.TabIndex = 43;
-            this.btnSave.Text = "Save Changes";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSubmit.Location = new System.Drawing.Point(498, 430);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(178, 58);
+            this.btnSubmit.TabIndex = 43;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnReset
             // 
@@ -130,18 +174,18 @@
             // 
             // lblFacilitiesNoEdit
             // 
-            this.lblFacilitiesNoEdit.Location = new System.Drawing.Point(45, 228);
+            this.lblFacilitiesNoEdit.Location = new System.Drawing.Point(45, 251);
             this.lblFacilitiesNoEdit.Name = "lblFacilitiesNoEdit";
             this.lblFacilitiesNoEdit.Size = new System.Drawing.Size(150, 66);
             this.lblFacilitiesNoEdit.TabIndex = 41;
             this.lblFacilitiesNoEdit.Text = "No of Courts / Fields : ";
             // 
-            // txtNameEdit
+            // txtName
             // 
-            this.txtNameEdit.Location = new System.Drawing.Point(262, 61);
-            this.txtNameEdit.Name = "txtNameEdit";
-            this.txtNameEdit.Size = new System.Drawing.Size(310, 31);
-            this.txtNameEdit.TabIndex = 39;
+            this.txtName.Location = new System.Drawing.Point(262, 61);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(310, 31);
+            this.txtName.TabIndex = 39;
             // 
             // lblRatesEdit
             // 
@@ -185,6 +229,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ucAddFacilities";
             this.Size = new System.Drawing.Size(1128, 794);
+            this.Load += new System.EventHandler(this.ucAddFacilities_Load);
             this.gbSearchEdit.ResumeLayout(false);
             this.gbSearchEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRatesinfo)).EndInit();
@@ -195,16 +240,19 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbSearchEdit;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cmbCourtNo;
+        private System.Windows.Forms.TextBox txtRate;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblFacilitiesNoEdit;
-        private System.Windows.Forms.TextBox txtNameEdit;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblRatesEdit;
         private System.Windows.Forms.Label lblNameEdit;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblRatesInfo;
         private System.Windows.Forms.PictureBox pbRatesinfo;
+        private System.Windows.Forms.Label lblWarningCourt;
+        private System.Windows.Forms.Label lblWarningRate;
+        private System.Windows.Forms.Label lblWarningName;
     }
 }

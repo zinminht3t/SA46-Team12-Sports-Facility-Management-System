@@ -28,21 +28,44 @@ namespace SportsFacilityManagementSystem
                 {
                     lblWarningName.Visible = true;
                 }
+                else
+                {
+                    lblWarningName.Visible = false;
+                }
+
                 if (txtICNo.Text == "")
                 {
                     lblWarningIC.Visible = true;
                 }
+                else
+                {
+                    lblWarningIC.Visible = false;
+                }
+
                 if (txtMobile.Text == "")
                 {
                     lblWarningMobile.Visible = true;
                 }
+                else
+                {
+                    lblWarningMobile.Visible = false;
+                }
+
                 if (txtEmail.Text == "")
                 {
                     lblWarningEmail.Visible = true;
                 }
+                else
+                {
+                    lblWarningEmail.Visible = false;
+                }
                 if (txtAddress.Text == "")
                 {
                     lblWarningAddress.Visible = true;
+                }
+                else
+                {
+                    lblWarningAddress.Visible = false;
                 }
             }
             else
