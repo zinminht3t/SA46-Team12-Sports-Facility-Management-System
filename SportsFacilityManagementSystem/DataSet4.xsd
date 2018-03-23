@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet4" targetNamespace="http://tempuri.org/DataSet4.xsd" xmlns:mstns="http://tempuri.org/DataSet4.xsd" xmlns="http://tempuri.org/DataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Team12BSFMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Team12BSFMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SportsFacilityManagementSystem.Properties.Settings.GlobalReference.Default.Team12BSFMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="revenuereportTableAdapter" GeneratorDataComponentClassName="revenuereportTableAdapter" Name="revenuereport" UserDataComponentName="revenuereportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Team12BSFMSConnectionString (Settings)" DbObjectName="Team12BSFMS.dbo.revenuereport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT facilityid, facilityname, date, total, transactionid, transactiondetailid FROM dbo.revenuereport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="facilityid" DataSetColumn="facilityid" />
+              <Mapping SourceColumn="facilityname" DataSetColumn="facilityname" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="transactionid" DataSetColumn="transactionid" />
+              <Mapping SourceColumn="transactiondetailid" DataSetColumn="transactiondetailid" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet4" msprop:Generator_UserDSName="DataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="revenuereport" msprop:Generator_TableClassName="revenuereportDataTable" msprop:Generator_TableVarName="tablerevenuereport" msprop:Generator_TablePropName="revenuereport" msprop:Generator_RowDeletingName="revenuereportRowDeleting" msprop:Generator_RowChangingName="revenuereportRowChanging" msprop:Generator_RowEvHandlerName="revenuereportRowChangeEventHandler" msprop:Generator_RowDeletedName="revenuereportRowDeleted" msprop:Generator_UserTableName="revenuereport" msprop:Generator_RowChangedName="revenuereportRowChanged" msprop:Generator_RowEvArgName="revenuereportRowChangeEvent" msprop:Generator_RowClassName="revenuereportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="facilityid" msprop:Generator_ColumnVarNameInTable="columnfacilityid" msprop:Generator_ColumnPropNameInRow="facilityid" msprop:Generator_ColumnPropNameInTable="facilityidColumn" msprop:Generator_UserColumnName="facilityid" type="xs:int" />
+              <xs:element name="facilityname" msprop:Generator_ColumnVarNameInTable="columnfacilityname" msprop:Generator_ColumnPropNameInRow="facilityname" msprop:Generator_ColumnPropNameInTable="facilitynameColumn" msprop:Generator_UserColumnName="facilityname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:dateTime" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" />
+              <xs:element name="transactionid" msprop:Generator_ColumnVarNameInTable="columntransactionid" msprop:Generator_ColumnPropNameInRow="transactionid" msprop:Generator_ColumnPropNameInTable="transactionidColumn" msprop:Generator_UserColumnName="transactionid" type="xs:int" />
+              <xs:element name="transactiondetailid" msprop:Generator_ColumnVarNameInTable="columntransactiondetailid" msprop:Generator_ColumnPropNameInRow="transactiondetailid" msprop:Generator_ColumnPropNameInTable="transactiondetailidColumn" msprop:Generator_UserColumnName="transactiondetailid" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:revenuereport" />
+      <xs:field xpath="mstns:facilityid" />
+      <xs:field xpath="mstns:transactionid" />
+      <xs:field xpath="mstns:transactiondetailid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

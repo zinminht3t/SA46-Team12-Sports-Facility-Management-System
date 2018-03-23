@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Team12BSFMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Team12BSFMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SportsFacilityManagementSystem.Properties.Settings.GlobalReference.Default.Team12BSFMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="bookinginvoicereportTableAdapter" GeneratorDataComponentClassName="bookinginvoicereportTableAdapter" Name="bookinginvoicereport" UserDataComponentName="bookinginvoicereportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Team12BSFMSConnectionString (Settings)" DbObjectName="Team12BSFMS.dbo.bookinginvoicereport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT memberid, name, systemtime, total, transactionid, facilityid, date, timeslot, facilityname, remark, ratepertimeslot FROM dbo.bookinginvoicereport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="memberid" DataSetColumn="memberid" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="systemtime" DataSetColumn="systemtime" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="transactionid" DataSetColumn="transactionid" />
+              <Mapping SourceColumn="facilityid" DataSetColumn="facilityid" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
+              <Mapping SourceColumn="timeslot" DataSetColumn="timeslot" />
+              <Mapping SourceColumn="facilityname" DataSetColumn="facilityname" />
+              <Mapping SourceColumn="remark" DataSetColumn="remark" />
+              <Mapping SourceColumn="ratepertimeslot" DataSetColumn="ratepertimeslot" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="bookinginvoicereport" msprop:Generator_TableClassName="bookinginvoicereportDataTable" msprop:Generator_TableVarName="tablebookinginvoicereport" msprop:Generator_TablePropName="bookinginvoicereport" msprop:Generator_RowDeletingName="bookinginvoicereportRowDeleting" msprop:Generator_RowChangingName="bookinginvoicereportRowChanging" msprop:Generator_RowEvHandlerName="bookinginvoicereportRowChangeEventHandler" msprop:Generator_RowDeletedName="bookinginvoicereportRowDeleted" msprop:Generator_UserTableName="bookinginvoicereport" msprop:Generator_RowChangedName="bookinginvoicereportRowChanged" msprop:Generator_RowEvArgName="bookinginvoicereportRowChangeEvent" msprop:Generator_RowClassName="bookinginvoicereportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="memberid" msprop:Generator_ColumnVarNameInTable="columnmemberid" msprop:Generator_ColumnPropNameInRow="memberid" msprop:Generator_ColumnPropNameInTable="memberidColumn" msprop:Generator_UserColumnName="memberid" type="xs:int" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="systemtime" msprop:Generator_ColumnVarNameInTable="columnsystemtime" msprop:Generator_ColumnPropNameInRow="systemtime" msprop:Generator_ColumnPropNameInTable="systemtimeColumn" msprop:Generator_UserColumnName="systemtime" type="xs:dateTime" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" />
+              <xs:element name="transactionid" msprop:Generator_ColumnVarNameInTable="columntransactionid" msprop:Generator_ColumnPropNameInRow="transactionid" msprop:Generator_ColumnPropNameInTable="transactionidColumn" msprop:Generator_UserColumnName="transactionid" type="xs:int" />
+              <xs:element name="facilityid" msprop:Generator_ColumnVarNameInTable="columnfacilityid" msprop:Generator_ColumnPropNameInRow="facilityid" msprop:Generator_ColumnPropNameInTable="facilityidColumn" msprop:Generator_UserColumnName="facilityid" type="xs:int" />
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:dateTime" />
+              <xs:element name="timeslot" msprop:Generator_ColumnVarNameInTable="columntimeslot" msprop:Generator_ColumnPropNameInRow="timeslot" msprop:Generator_ColumnPropNameInTable="timeslotColumn" msprop:Generator_UserColumnName="timeslot">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="facilityname" msprop:Generator_ColumnVarNameInTable="columnfacilityname" msprop:Generator_ColumnPropNameInRow="facilityname" msprop:Generator_ColumnPropNameInTable="facilitynameColumn" msprop:Generator_UserColumnName="facilityname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="remark" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_UserColumnName="remark">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ratepertimeslot" msprop:Generator_ColumnVarNameInTable="columnratepertimeslot" msprop:Generator_ColumnPropNameInRow="ratepertimeslot" msprop:Generator_ColumnPropNameInTable="ratepertimeslotColumn" msprop:Generator_UserColumnName="ratepertimeslot" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
