@@ -190,6 +190,7 @@
             this.pbLogo.Location = new System.Drawing.Point(-1, 0);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(230, 160);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;
             this.pbLogo.MouseEnter += new System.EventHandler(this.pbLogo_MouseEnter);
