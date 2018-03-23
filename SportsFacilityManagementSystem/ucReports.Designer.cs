@@ -38,6 +38,8 @@
             this.labelWarningReportTodate = new System.Windows.Forms.Label();
             this.btnPrintReport = new System.Windows.Forms.Button();
             this.gbMemberList = new System.Windows.Forms.GroupBox();
+            this.lblWarningMLDateTo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnPrintML = new System.Windows.Forms.Button();
             this.dtpDatetoML = new System.Windows.Forms.DateTimePicker();
             this.dtpDateFromML = new System.Windows.Forms.DateTimePicker();
@@ -47,8 +49,6 @@
             this.rbtnAll = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblWarningMLDateTo = new System.Windows.Forms.Label();
             this.gbReport.SuspendLayout();
             this.gbMemberList.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             "Member List",
             "Facility Occupany Report",
             "Revenue Report"});
-            this.cmbTypeofReport.Location = new System.Drawing.Point(240, 76);
+            this.cmbTypeofReport.Location = new System.Drawing.Point(240, 56);
             this.cmbTypeofReport.Name = "cmbTypeofReport";
             this.cmbTypeofReport.Size = new System.Drawing.Size(222, 24);
             this.cmbTypeofReport.TabIndex = 0;
@@ -70,7 +70,7 @@
             // lblTypeofReport
             // 
             this.lblTypeofReport.AutoSize = true;
-            this.lblTypeofReport.Location = new System.Drawing.Point(123, 79);
+            this.lblTypeofReport.Location = new System.Drawing.Point(123, 59);
             this.lblTypeofReport.Name = "lblTypeofReport";
             this.lblTypeofReport.Size = new System.Drawing.Size(111, 17);
             this.lblTypeofReport.TabIndex = 1;
@@ -116,7 +116,7 @@
             this.gbReport.Controls.Add(this.dtpDateFromReport);
             this.gbReport.Controls.Add(this.lblToDate);
             this.gbReport.Controls.Add(this.lblDateFrom);
-            this.gbReport.Location = new System.Drawing.Point(89, 114);
+            this.gbReport.Location = new System.Drawing.Point(89, 94);
             this.gbReport.Name = "gbReport";
             this.gbReport.Size = new System.Drawing.Size(537, 338);
             this.gbReport.TabIndex = 13;
@@ -152,11 +152,30 @@
             this.gbMemberList.Controls.Add(this.chkbStatus);
             this.gbMemberList.Controls.Add(this.chkbDateFrom);
             this.gbMemberList.Controls.Add(this.rbtnAll);
-            this.gbMemberList.Location = new System.Drawing.Point(89, 114);
+            this.gbMemberList.Location = new System.Drawing.Point(89, 94);
             this.gbMemberList.Name = "gbMemberList";
             this.gbMemberList.Size = new System.Drawing.Size(537, 338);
             this.gbMemberList.TabIndex = 14;
             this.gbMemberList.TabStop = false;
+            // 
+            // lblWarningMLDateTo
+            // 
+            this.lblWarningMLDateTo.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningMLDateTo.Location = new System.Drawing.Point(398, 122);
+            this.lblWarningMLDateTo.Name = "lblWarningMLDateTo";
+            this.lblWarningMLDateTo.Size = new System.Drawing.Size(131, 58);
+            this.lblWarningMLDateTo.TabIndex = 38;
+            this.lblWarningMLDateTo.Text = "* Date cannot be less than Date from";
+            this.lblWarningMLDateTo.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Date To :";
             // 
             // btnPrintML
             // 
@@ -227,7 +246,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(119, 470);
+            this.label3.Location = new System.Drawing.Point(119, 450);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(521, 17);
             this.label3.TabIndex = 15;
@@ -240,36 +259,18 @@
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTitle.Location = new System.Drawing.Point(89, 21);
+            this.lblTitle.Location = new System.Drawing.Point(89, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(537, 40);
             this.lblTitle.TabIndex = 57;
             this.lblTitle.Text = "Print Report";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Date To :";
-            // 
-            // lblWarningMLDateTo
-            // 
-            this.lblWarningMLDateTo.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningMLDateTo.Location = new System.Drawing.Point(398, 122);
-            this.lblWarningMLDateTo.Name = "lblWarningMLDateTo";
-            this.lblWarningMLDateTo.Size = new System.Drawing.Size(131, 58);
-            this.lblWarningMLDateTo.TabIndex = 38;
-            this.lblWarningMLDateTo.Text = "* Date cannot be less than Date from";
-            this.lblWarningMLDateTo.Visible = false;
-            // 
             // ucReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTypeofReport);

@@ -364,7 +364,6 @@
             this.lblTime3.Size = new System.Drawing.Size(93, 17);
             this.lblTime3.TabIndex = 83;
             this.lblTime3.Text = "14:00 - 16:00";
-            this.lblTime3.Visible = false;
             // 
             // lblTime2
             // 
@@ -375,7 +374,6 @@
             this.lblTime2.Size = new System.Drawing.Size(93, 17);
             this.lblTime2.TabIndex = 82;
             this.lblTime2.Text = "12:00 - 14:00";
-            this.lblTime2.Visible = false;
             // 
             // lblTime1
             // 
@@ -386,7 +384,6 @@
             this.lblTime1.Size = new System.Drawing.Size(93, 17);
             this.lblTime1.TabIndex = 81;
             this.lblTime1.Text = "10:00 - 12:00";
-            this.lblTime1.Visible = false;
             // 
             // lblTime5
             // 
@@ -397,7 +394,6 @@
             this.lblTime5.Size = new System.Drawing.Size(93, 17);
             this.lblTime5.TabIndex = 85;
             this.lblTime5.Text = "18:00 - 20:00";
-            this.lblTime5.Visible = false;
             // 
             // lblTime4
             // 
@@ -408,12 +404,12 @@
             this.lblTime4.Size = new System.Drawing.Size(93, 17);
             this.lblTime4.TabIndex = 84;
             this.lblTime4.Text = "16:00 - 18:00";
-            this.lblTime4.Visible = false;
             // 
             // ucBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.lblTime5);
             this.Controls.Add(this.lblTime4);
             this.Controls.Add(this.lblTime3);

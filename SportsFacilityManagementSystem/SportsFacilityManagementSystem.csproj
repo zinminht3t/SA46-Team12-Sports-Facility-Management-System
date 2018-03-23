@@ -151,6 +151,12 @@
     <Compile Include="ucBookingDetails.Designer.cs">
       <DependentUpon>ucBookingDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucBookingEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBookingEdit.Designer.cs">
+      <DependentUpon>ucBookingEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucFacilities.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucBookingDetails.resx">
       <DependentUpon>ucBookingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBookingEdit.resx">
+      <DependentUpon>ucBookingEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucFacilities.resx">
       <DependentUpon>ucFacilities.cs</DependentUpon>
@@ -279,6 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Testlogo.png" />
+    <None Include="Resources\GetActiveLogo.png" />
     <Content Include="SportsFacilitiesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>

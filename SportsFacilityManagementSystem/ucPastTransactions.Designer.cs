@@ -30,7 +30,6 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearch = new System.Windows.Forms.GroupBox();
-            this.btnView = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.chkbStatus = new System.Windows.Forms.CheckBox();
@@ -40,6 +39,7 @@
             this.dtpDateFromML = new System.Windows.Forms.DateTimePicker();
             this.chkbDateFrom = new System.Windows.Forms.CheckBox();
             this.chkbFacilities = new System.Windows.Forms.CheckBox();
+            this.btnView = new System.Windows.Forms.Button();
             this.gbSearch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,15 +73,6 @@
             this.gbSearch.TabIndex = 68;
             this.gbSearch.TabStop = false;
             this.gbSearch.Text = "Search by";
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(319, 465);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(114, 40);
-            this.btnView.TabIndex = 69;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
@@ -173,13 +164,24 @@
             this.chkbFacilities.Text = "Facilities :";
             this.chkbFacilities.UseVisualStyleBackColor = true;
             // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(319, 465);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(114, 40);
+            this.btnView.TabIndex = 69;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            // 
             // ucPastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.lblTitle);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPastTransactions";
             this.Size = new System.Drawing.Size(752, 508);
             this.gbSearch.ResumeLayout(false);

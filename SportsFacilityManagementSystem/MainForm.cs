@@ -67,26 +67,50 @@ namespace SportsFacilityManagementSystem
 
         private void frmMain_MouseEnter(object sender, EventArgs e)
         {
-            FacilitiesMenu(false);
-            MembersMenu(false);
-            BookingsMenu(false);
+            AllMenu(false);
         }
-        #endregion
-
-        #region Sidetab Panel (Mouse Leave Events)
-        private void btnUpcoming_MouseLeave(object sender, EventArgs e)
+        private void ucBooking1_MouseEnter(object sender, EventArgs e)
         {
-            BookingsMenu(false);
+            AllMenu(false);
         }
 
-        private void btnSearchFacilities_MouseLeave(object sender, EventArgs e)
+        private void ucAddFacilities1_MouseEnter(object sender, EventArgs e)
         {
-            FacilitiesMenu(false);
+            AllMenu(false);
         }
 
-        private void btnSearchMembers_MouseLeave(object sender, EventArgs e)
+        private void ucAddMember1_MouseEnter(object sender, EventArgs e)
         {
-            MembersMenu(false);
+            AllMenu(false);
+        }
+
+        private void ucBookingDetails1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+        private void ucBookingEdit1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void ucFacilities1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void ucMembers1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void ucPastTransactions1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void ucReports1_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
         }
         #endregion
 
@@ -123,6 +147,13 @@ namespace SportsFacilityManagementSystem
             btnAddFacilities.Visible = visibility;
             btnSearchFacilities.Visible = visibility;
         }
+
+        private void AllMenu(bool visibility)
+        {
+            BookingsMenu(visibility);
+            MembersMenu(visibility);
+            FacilitiesMenu(visibility);
+        }
         #endregion
 
         private void ShowUserControl(string ucName)
@@ -130,6 +161,6 @@ namespace SportsFacilityManagementSystem
             // Visibility methods using ucName to call which to hide using if method
         }
 
-        
+
     }
 }
