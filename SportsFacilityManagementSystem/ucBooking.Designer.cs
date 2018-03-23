@@ -70,10 +70,12 @@
             // 
             // dtpBookingDate
             // 
+            this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBookingDate.Location = new System.Drawing.Point(100, 54);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(200, 20);
             this.dtpBookingDate.TabIndex = 78;
+            this.dtpBookingDate.ValueChanged += new System.EventHandler(this.dtpBookingDate_ValueChanged);
             // 
             // lblSports
             // 

@@ -13,12 +13,21 @@ namespace SportsFacilityManagementSystem
     public partial class ucBooking : UserControl
     {
         private SportsFacilitiesEntities ctx;
-        private List<String> subfacilitiesList = new List<String>();
+        private List<String> subfacilitiesListNames = new List<String>();
+        private List<int> subfacilitiesListIds = new List<int>();
+        private List<int> ifBookedSubfacility = new List<int>();
+        private int[,] arrayDaySlots = new int[3,5];
+        private string[,] arrayDaySlotsName = new string[3, 5];
         private string defaultCmbSports;
         private int noSubFacilities;
         private List<Control> collectionVisibleButtons = new List<Control>();
-        private int noSelected = 0;
+        private int noSelected;
         private List<Control> collectionClickedButtons = new List<Control>();
+        private int? facilityTransID;
+        private int? facilityMemID;
+        private string facilityMemName;
+        private DateTime dtpBookingDatevalue;
+
 
         public ucBooking()
         {
@@ -30,15 +39,19 @@ namespace SportsFacilityManagementSystem
             facList.Insert(0, defaultCmbSports);
             cmbSports.DataSource = facList;
 
-            dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
+            //dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
 
             cmbSports.Text = defaultCmbSports;
-            
+
+            dtpBookingDate.CustomFormat = "yyyy-MM-dd";
+            dtpBookingDatevalue = dtpBookingDate.Value;
+
         }
 
         //This event is triggered when a visible Button is clicked.
         protected void con_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("clicked");
             Button dynamicButton = (sender as Button);
 
             if (dynamicButton.BackColor == Color.Green) //already clicked before
@@ -87,8 +100,15 @@ namespace SportsFacilityManagementSystem
 
         private void cmbSports_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //need to clear button collections                     con.Click += new System.EventHandler(this.con_Click);
+            foreach(Control c in collectionVisibleButtons)
+            {
+                c.Click -= new System.EventHandler(this.con_Click);
+            }
+
             collectionVisibleButtons.Clear(); //pls check collection of items stored per click change
-            subfacilitiesList.Clear();
+            subfacilitiesListNames.Clear();
+            ifBookedSubfacility.Clear();
 
             //get facility id of chosen facility in combobox
             if (cmbSports.Text != defaultCmbSports)
@@ -96,23 +116,53 @@ namespace SportsFacilityManagementSystem
                 var facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text);
                 int facId_ = facId.facilityid;
                 noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId_); //to replace output with no of subfac belonging to selected facility
-                //create array of subenetities name belonging to selceted facility
-                var qry = from x in ctx.SubFacilities where x.facilityid == facId_ orderby x.subfacilityname select x.subfacilityname;
-                subfacilitiesList = qry.ToList<String>();
                 
+                //create array of subfacilities name belonging to selceted facility
+                var qrySubFacilitiesName = from x in ctx.SubFacilities where x.facilityid == facId_ orderby x.subfacilityname select x.subfacilityname;
+                subfacilitiesListNames = qrySubFacilitiesName.ToList<String>();
+                
+
+                //populate arrays for UI booking slots of selected date
+                for (int slotRow = 1; slotRow <= 3; slotRow++)
+                {
+                    for (int slotCol = 1; slotCol <= 3; slotCol++)
+                    {
+                        try
+                        {
+                            facilityTransID = ctx.TransactionDetails.Where(x => x.facilityid == facId_ && x.subfacilityid == slotRow && x.timeslotid == slotCol && x.date == dtpBookingDatevalue).FirstOrDefault().transactionid;
+                            facilityMemID = ctx.Transactions.Where(x => x.transactionid == facilityTransID).FirstOrDefault().memberid;
+                            facilityMemName = ctx.Members.Where(x => x.memberid == facilityMemID).FirstOrDefault().name;
+                        } catch(Exception)
+                        {
+                        }
+                        
+
+                        if (facilityTransID!=null)
+                        {
+                            arrayDaySlots[slotRow-1, slotCol-1] = 1;
+                            arrayDaySlotsName[slotRow-1, slotCol-1] = facilityMemName; //get member details via Transaction table
+                        }
+                        else
+                        {
+                            arrayDaySlots[slotRow-1, slotCol-1] = 0;
+                            arrayDaySlotsName[slotRow-1, slotCol-1] = facilityMemName;
+                        }
+                    }
+                }
+
+
                 //popoulate visible buttons + handle the click events
                 for (int slotsLabels = 1; slotsLabels <= 5; slotsLabels++)
                 {
                     Controls["lblTime" + slotsLabels].Visible = true;
-
                 }
 
                 //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
                 for (int noRows = 1; noRows <= 3; noRows++)
                 {
-                    if (noRows <= noSubFacilities)
+                    if (noRows <= noSubFacilities) //subfacility labels visibility
                     {
-                        Controls["lblRow" + noRows].Text = subfacilitiesList[noRows-1];
+                        Controls["lblRow" + noRows].Text = subfacilitiesListNames[noRows-1];
                         Controls["lblRow" + noRows].Visible = true;
                     } else
                     {
@@ -127,8 +177,19 @@ namespace SportsFacilityManagementSystem
                                 Control A = this.Controls["btnA" + noCols];
                                 A.Enabled = true;
                                 A.Visible = true;
-                                A.Text = noCols.ToString(); //to repplace output as booking name
                                 collectionVisibleButtons.Add(A);
+
+                                if (arrayDaySlots[noRows - 1, noRows - 1] == 1)
+                                {
+                                    //this slot is already booked
+                                    A.Text = arrayDaySlotsName[noRows - 1, noRows - 1];
+                                    A.BackColor = Color.Red;
+                                }
+                                else
+                                {
+                                    A.BackColor = Color.LightGreen;
+                                }
+                                
 
                                 break;
                             case 2: //might need to hide if selected facility only has 1 subfacility
@@ -139,14 +200,25 @@ namespace SportsFacilityManagementSystem
                                 {
                                     B.Enabled = true;
                                     B.Visible = true;
-                                    B.Text = noCols.ToString(); //to repplace output as booking name
                                     collectionVisibleButtons.Add(B);
+
+                                    if (arrayDaySlots[noRows - 1, noRows - 1] == 1)
+                                    {
+                                        //this slot is already booked
+                                        B.Text = arrayDaySlotsName[noRows - 1, noRows - 1];
+                                        B.BackColor = Color.Red;
+                                    }
+                                    else
+                                    {
+                                        B.BackColor = Color.LightGreen;
+                                    }
                                 }
                                 else
                                 {
                                     B.Enabled = false;
                                     B.Visible = false;
-                                    B.Text = noCols.ToString();
+                                    B.BackColor = Color.LightGreen;
+
                                 }
 
                                 break;
@@ -158,22 +230,33 @@ namespace SportsFacilityManagementSystem
                                 {
                                     C.Enabled = true;
                                     C.Visible = true;
-                                    C.Text = noCols.ToString(); //to repplace output as booking name
                                     collectionVisibleButtons.Add(C);
+
+                                    if (arrayDaySlots[noRows - 1, noRows - 1] == 1)
+                                    {
+                                        //this slot is already booked
+                                        C.Text = arrayDaySlotsName[noRows - 1, noRows - 1];
+                                        C.BackColor = Color.Red;
+                                    }
+                                    else
+                                    {
+                                        C.BackColor = Color.LightGreen;
+                                    }
                                 }
                                 else
                                 {
                                     C.Enabled = false;
                                     C.Visible = false;
-                                    C.Text = noCols.ToString(); //to repplace output as booking name
+                                    C.BackColor = Color.LightGreen;
+
                                 }
-                                    
 
                                 break;
                         }
                     }
 
                 }
+
 
                 //for each button in visible buttons, add click event handler
                 foreach (Control con in collectionVisibleButtons)
@@ -184,7 +267,7 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
-                //if default option, show only 1 row of subfacility slots
+                //if default option, show 0 row of subfacility slots
                 //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
 
                 for (int slotsLabels = 1; slotsLabels <= 5; slotsLabels++)
@@ -226,6 +309,11 @@ namespace SportsFacilityManagementSystem
                 }
 
             }
+        }
+
+        private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpBookingDatevalue = dtpBookingDate.Value;
         }
     }
 }
