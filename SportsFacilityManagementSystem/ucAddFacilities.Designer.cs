@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbSearchEdit = new System.Windows.Forms.GroupBox();
+            this.lblWarningCourt = new System.Windows.Forms.Label();
+            this.lblWarningRate = new System.Windows.Forms.Label();
+            this.lblWarningName = new System.Windows.Forms.Label();
             this.lblRatesInfo = new System.Windows.Forms.Label();
             this.pbRatesinfo = new System.Windows.Forms.PictureBox();
             this.cmbCourtNo = new System.Windows.Forms.ComboBox();
@@ -40,9 +43,6 @@
             this.lblRatesEdit = new System.Windows.Forms.Label();
             this.lblNameEdit = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblWarningName = new System.Windows.Forms.Label();
-            this.lblWarningRate = new System.Windows.Forms.Label();
-            this.lblWarningCourt = new System.Windows.Forms.Label();
             this.gbSearchEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRatesinfo)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,42 @@
             this.gbSearchEdit.Size = new System.Drawing.Size(724, 512);
             this.gbSearchEdit.TabIndex = 65;
             this.gbSearchEdit.TabStop = false;
+            // 
+            // lblWarningCourt
+            // 
+            this.lblWarningCourt.AutoSize = true;
+            this.lblWarningCourt.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningCourt.Location = new System.Drawing.Point(266, 221);
+            this.lblWarningCourt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarningCourt.Name = "lblWarningCourt";
+            this.lblWarningCourt.Size = new System.Drawing.Size(232, 25);
+            this.lblWarningCourt.TabIndex = 70;
+            this.lblWarningCourt.Text = "* Field cannot be blank";
+            this.lblWarningCourt.Visible = false;
+            // 
+            // lblWarningRate
+            // 
+            this.lblWarningRate.AutoSize = true;
+            this.lblWarningRate.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningRate.Location = new System.Drawing.Point(266, 132);
+            this.lblWarningRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarningRate.Name = "lblWarningRate";
+            this.lblWarningRate.Size = new System.Drawing.Size(232, 25);
+            this.lblWarningRate.TabIndex = 69;
+            this.lblWarningRate.Text = "* Field cannot be blank";
+            this.lblWarningRate.Visible = false;
+            // 
+            // lblWarningName
+            // 
+            this.lblWarningName.AutoSize = true;
+            this.lblWarningName.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningName.Location = new System.Drawing.Point(266, 29);
+            this.lblWarningName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWarningName.Name = "lblWarningName";
+            this.lblWarningName.Size = new System.Drawing.Size(232, 25);
+            this.lblWarningName.TabIndex = 68;
+            this.lblWarningName.Text = "* Field cannot be blank";
+            this.lblWarningName.Visible = false;
             // 
             // lblRatesInfo
             // 
@@ -114,6 +150,7 @@
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(176, 31);
             this.txtRate.TabIndex = 61;
+            this.txtRate.TextChanged += new System.EventHandler(this.txtRate_TextChanged);
             // 
             // btnSubmit
             // 
@@ -181,42 +218,6 @@
             this.lblTitle.TabIndex = 66;
             this.lblTitle.Text = "Add New Facilities";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblWarningName
-            // 
-            this.lblWarningName.AutoSize = true;
-            this.lblWarningName.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningName.Location = new System.Drawing.Point(266, 29);
-            this.lblWarningName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWarningName.Name = "lblWarningName";
-            this.lblWarningName.Size = new System.Drawing.Size(232, 25);
-            this.lblWarningName.TabIndex = 68;
-            this.lblWarningName.Text = "* Field cannot be blank";
-            this.lblWarningName.Visible = false;
-            // 
-            // lblWarningRate
-            // 
-            this.lblWarningRate.AutoSize = true;
-            this.lblWarningRate.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningRate.Location = new System.Drawing.Point(266, 132);
-            this.lblWarningRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWarningRate.Name = "lblWarningRate";
-            this.lblWarningRate.Size = new System.Drawing.Size(232, 25);
-            this.lblWarningRate.TabIndex = 69;
-            this.lblWarningRate.Text = "* Field cannot be blank";
-            this.lblWarningRate.Visible = false;
-            // 
-            // lblWarningCourt
-            // 
-            this.lblWarningCourt.AutoSize = true;
-            this.lblWarningCourt.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningCourt.Location = new System.Drawing.Point(266, 221);
-            this.lblWarningCourt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWarningCourt.Name = "lblWarningCourt";
-            this.lblWarningCourt.Size = new System.Drawing.Size(232, 25);
-            this.lblWarningCourt.TabIndex = 70;
-            this.lblWarningCourt.Text = "* Field cannot be blank";
-            this.lblWarningCourt.Visible = false;
             // 
             // ucAddFacilities
             // 
