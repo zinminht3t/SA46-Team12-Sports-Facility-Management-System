@@ -229,6 +229,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ucAddFacilities";
             this.Size = new System.Drawing.Size(1128, 794);
+            this.Load += new System.EventHandler(this.ucAddFacilities_Load);
             this.gbSearchEdit.ResumeLayout(false);
             this.gbSearchEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRatesinfo)).EndInit();

@@ -13,7 +13,6 @@ namespace SportsFacilityManagementSystem
     public partial class ucAddFacilities : UserControl
     {
         Facility facility;
-        SubFacility subfacility;
         public ucAddFacilities()
         {
             InitializeComponent();
@@ -153,6 +152,11 @@ namespace SportsFacilityManagementSystem
             {
                 lblWarningRate.Text = "";
             }
+        }
+
+        private void ucAddFacilities_Load(object sender, EventArgs e)
+        {
+            cmbCourtNo.SelectedIndex = 0;
         }
     }
 }
