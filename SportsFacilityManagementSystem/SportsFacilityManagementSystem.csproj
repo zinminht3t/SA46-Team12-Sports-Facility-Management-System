@@ -90,11 +90,11 @@
     <Compile Include="Facility.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -160,6 +160,12 @@
     <Compile Include="TransactionDetail.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ucAddFacilities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAddFacilities.Designer.cs">
+      <DependentUpon>ucAddFacilities.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucAddMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,18 @@
     </Compile>
     <Compile Include="ucBooking.Designer.cs">
       <DependentUpon>ucBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucBookingDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBookingDetails.Designer.cs">
+      <DependentUpon>ucBookingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucBookingEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBookingEdit.Designer.cs">
+      <DependentUpon>ucBookingEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="ucFacilities.cs">
       <SubType>UserControl</SubType>
@@ -184,13 +202,21 @@
     <Compile Include="ucMembers.Designer.cs">
       <DependentUpon>ucMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucPastTransactions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPastTransactions.Designer.cs">
+      <DependentUpon>ucPastTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucReports.Designer.cs">
+      <DependentUpon>ucReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingInvoice.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookingInvoice.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,21 +236,29 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Revenue.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Revenue.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucAddMember.resx">
       <DependentUpon>ucAddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucBooking.resx">
       <DependentUpon>ucBooking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucBookingDetails.resx">
+      <DependentUpon>ucBookingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBookingEdit.resx">
+      <DependentUpon>ucBookingEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucFacilities.resx">
       <DependentUpon>ucFacilities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucMembers.resx">
       <DependentUpon>ucMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPastTransactions.resx">
+      <DependentUpon>ucPastTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucReports.resx">
+      <DependentUpon>ucReports.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -320,6 +354,8 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Testlogo.png" />
+    <None Include="Resources\GetActiveLogo.png" />
     <Content Include="SportsFacilitiesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SportsFacilitiesModel.edmx</DependentUpon>

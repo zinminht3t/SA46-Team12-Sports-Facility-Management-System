@@ -31,7 +31,7 @@ namespace SportsFacilityManagementSystem
                 string password = txtPassword.Text;
                 int result = 0;
                 result = ctx.Users.Where(x => x.userid == userid && x.password == password).Count();
-                if(result > 0)
+                if (result > 0)
                 {
                     user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
                     frmMain main = new frmMain();

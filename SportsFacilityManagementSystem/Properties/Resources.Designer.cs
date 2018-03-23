@@ -123,6 +123,16 @@ namespace SportsFacilityManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GetActiveLogo {
+            get {
+                object obj = ResourceManager.GetObject("GetActiveLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Info {
             get {
                 object obj = ResourceManager.GetObject("Info", resourceCulture);
@@ -236,6 +246,16 @@ namespace SportsFacilityManagementSystem.Properties {
         internal static System.Drawing.Bitmap TableTennis {
             get {
                 object obj = ResourceManager.GetObject("TableTennis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Testlogo {
+            get {
+                object obj = ResourceManager.GetObject("Testlogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
