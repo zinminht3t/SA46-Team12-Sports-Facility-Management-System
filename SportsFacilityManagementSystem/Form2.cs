@@ -71,18 +71,38 @@ namespace SportsFacilityManagementSystem
 
 
 
-            //Booking Occupancy Report
-            DataSet5 ds = new DataSet5();
 
-            DataSet5TableAdapters.revenuereportTableAdapter da = new DataSet5TableAdapters.revenuereportTableAdapter();
+            // Monthly Revenue Report
+            DataSet4 ds = new DataSet4();
+
+            DataSet4TableAdapters.revenuereportTableAdapter da = new DataSet4TableAdapters.revenuereportTableAdapter();
 
             da.Fill(ds.revenuereport);
-            BookingOccupancy cr = new BookingOccupancy();
-            cr.SetDataSource(ds);
-            cr.SetParameterValue("Param_datefrom", 1);
-            cr.SetParameterValue("Param_dateto", 2);
+            MonthlyRevenue cr = new MonthlyRevenue();
+            cr.SetDataSource(ds);            
 
             crystalReportViewer1.ReportSource = cr;
+
+
+
+
+
+            //Booking Occupancy Report
+            //DataSet5 ds = new DataSet5();
+
+            //DataSet5TableAdapters.revenuereportTableAdapter da = new DataSet5TableAdapters.revenuereportTableAdapter();
+
+            //da.Fill(ds.revenuereport);
+            //BookingOccupancy cr = new BookingOccupancy();
+            //cr.SetDataSource(ds);
+
+
+            //crystalReportViewer1.ReportSource = cr;
+
+
+
+
+
 
         }
     }
