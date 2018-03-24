@@ -34,10 +34,10 @@ namespace SportsFacilityManagementSystem
             InitializeComponent();
 
             ctx = new SportsFacilitiesEntities();
-          //  List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
+            List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
             defaultCmbSports = "- Select sport -";
-            //facList.Insert(0, defaultCmbSports);
-            //cmbSports.DataSource = facList;
+            facList.Insert(0, defaultCmbSports);
+            cmbSports.DataSource = facList;
 
             //dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
 
