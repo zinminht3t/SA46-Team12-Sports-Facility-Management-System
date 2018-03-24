@@ -64,6 +64,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PastTransactions";
             this.Text = "PastTransactions";
+            this.Load += new System.EventHandler(this.PastTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.ResumeLayout(false);
 

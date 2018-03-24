@@ -316,7 +316,7 @@
             // ucFacilities2
             // 
             this.ucFacilities2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucFacilities2.Location = new System.Drawing.Point(229, 26);
+            this.ucFacilities2.Location = new System.Drawing.Point(229, 27);
             this.ucFacilities2.Margin = new System.Windows.Forms.Padding(1);
             this.ucFacilities2.Name = "ucFacilities2";
             this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
@@ -326,7 +326,7 @@
             // ucAddFacilities1
             // 
             this.ucAddFacilities1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddFacilities1.Location = new System.Drawing.Point(228, 30);
+            this.ucAddFacilities1.Location = new System.Drawing.Point(228, 31);
             this.ucAddFacilities1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucAddFacilities1.Name = "ucAddFacilities1";
             this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
@@ -337,7 +337,7 @@
             // ucReports1
             // 
             this.ucReports1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucReports1.Location = new System.Drawing.Point(231, 28);
+            this.ucReports1.Location = new System.Drawing.Point(231, 29);
             this.ucReports1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucReports1.Name = "ucReports1";
             this.ucReports1.Size = new System.Drawing.Size(751, 519);
@@ -352,7 +352,7 @@
             this.ucPastTransactions1.Dateto = null;
             this.ucPastTransactions1.Fac = null;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ucPastTransactions1.Location = new System.Drawing.Point(230, 28);
+            this.ucPastTransactions1.Location = new System.Drawing.Point(230, 29);
             this.ucPastTransactions1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucPastTransactions1.Name = "ucPastTransactions1";
             this.ucPastTransactions1.Size = new System.Drawing.Size(752, 508);
@@ -364,7 +364,7 @@
             // ucMembers1
             // 
             this.ucMembers1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucMembers1.Location = new System.Drawing.Point(231, 30);
+            this.ucMembers1.Location = new System.Drawing.Point(231, 31);
             this.ucMembers1.Margin = new System.Windows.Forms.Padding(1);
             this.ucMembers1.Name = "ucMembers1";
             this.ucMembers1.Size = new System.Drawing.Size(752, 508);
@@ -375,7 +375,7 @@
             // ucAddMember1
             // 
             this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddMember1.Location = new System.Drawing.Point(228, 30);
+            this.ucAddMember1.Location = new System.Drawing.Point(228, 27);
             this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1);
             this.ucAddMember1.Name = "ucAddMember1";
             this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
@@ -385,7 +385,7 @@
             // ucBooking2
             // 
             this.ucBooking2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucBooking2.Location = new System.Drawing.Point(228, 28);
+            this.ucBooking2.Location = new System.Drawing.Point(228, 29);
             this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucBooking2.Name = "ucBooking2";
             this.ucBooking2.Size = new System.Drawing.Size(752, 508);
