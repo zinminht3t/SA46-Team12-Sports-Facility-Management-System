@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PastTransactions));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvTransactions
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(89, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(658, 353);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.Location = new System.Drawing.Point(89, 28);
+            this.dgvTransactions.Name = "dgvTransactions";
+            this.dgvTransactions.RowTemplate.Height = 24;
+            this.dgvTransactions.Size = new System.Drawing.Size(658, 353);
+            this.dgvTransactions.TabIndex = 0;
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.Location = new System.Drawing.Point(380, 413);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(380, 413);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(86, 34);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // PastTransactions
             // 
@@ -58,19 +59,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(832, 477);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.dgvTransactions);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PastTransactions";
             this.Text = "PastTransactions";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvTransactions;
+        private System.Windows.Forms.Button btnClose;
     }
 }
