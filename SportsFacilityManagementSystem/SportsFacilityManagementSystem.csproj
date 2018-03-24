@@ -153,6 +153,12 @@
       <DependentUpon>MonthlyRevenue.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PastTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PastTransactions.Designer.cs">
+      <DependentUpon>PastTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -290,6 +296,9 @@
     <EmbeddedResource Include="MonthlyRevenue.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MonthlyRevenue.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastTransactions.resx">
+      <DependentUpon>PastTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

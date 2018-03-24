@@ -36,22 +36,29 @@ namespace SportsFacilityManagementSystem
             SubFacility subf = new SubFacility();
             Rate rate = new Rate();
             string r;
-            gbSearchResults.Visible = true;
-            fac = cxt.Facilities.Where(x => x.facilityname == cmbSearchBy.Text).First();
-            //Facility Name / ID Display
-            txtFacilityID.Text = fac.facilityid.ToString();
-            facilityidtemp = txtFacilityID.Text;
-            txtName.Text = fac.facilityname.ToString();
-            nametemp = txtName.Text;
-            // Rates Display
-            r = fac.rateid.ToString();
-            rate = cxt.Rates.Where(x => x.rateid.ToString() == r).First();
-            txtRates.Text = rate.ratepertimeslot.ToString();
-            ratestemp = txtRates.Text;
-            // Subfacility Display
-            var q = from x in cxt.SubFacilities where x.facilityid.ToString() == txtFacilityID.Text select x;
-            txtFacilitiesNo.Text = q.Count().ToString();
-            facilitiesnotemp = txtFacilitiesNo.Text;
+            try
+            {
+                fac = cxt.Facilities.Where(x => x.facilityname == cmbSearchBy.Text).First();
+                gbSearchResults.Visible = true;
+                //Facility Name / ID Display
+                txtFacilityID.Text = fac.facilityid.ToString();
+                facilityidtemp = txtFacilityID.Text;
+                txtName.Text = fac.facilityname.ToString();
+                nametemp = txtName.Text;
+                // Rates Display
+                r = fac.rateid.ToString();
+                rate = cxt.Rates.Where(x => x.rateid.ToString() == r).First();
+                txtRates.Text = rate.ratepertimeslot.ToString();
+                ratestemp = txtRates.Text;
+                // Subfacility Display
+                var q = from x in cxt.SubFacilities where x.facilityid.ToString() == txtFacilityID.Text select x;
+                txtFacilitiesNo.Text = q.Count().ToString();
+                facilitiesnotemp = txtFacilitiesNo.Text;
+            }
+            catch(InvalidOperationException)
+            {
+                MessageBox.Show("Search Results cannot be empty", "Warning", MessageBoxButtons.OK , MessageBoxIcon.Error);
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -137,10 +144,7 @@ namespace SportsFacilityManagementSystem
 
         private void lblAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Link cant be used ?!
-            frmMain fm = new frmMain();
             this.Hide();
-            fm.ShowMainpage();
         }
     }
 }

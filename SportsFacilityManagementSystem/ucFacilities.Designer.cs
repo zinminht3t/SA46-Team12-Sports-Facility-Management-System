@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblSearchby = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -50,14 +49,9 @@
             this.lblRates = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.cmbSearchBy = new System.Windows.Forms.ComboBox();
-            this.dataSet1 = new SportsFacilityManagementSystem.DataSet1();
-            this.facilitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.facilitiesTableAdapter = new SportsFacilityManagementSystem.DataSet1TableAdapters.FacilitiesTableAdapter();
             this.gbSearchResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facilitiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -292,7 +286,6 @@
             // 
             // cmbSearchBy
             // 
-            this.cmbSearchBy.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.facilitiesBindingSource, "facilityname", true));
             this.cmbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchBy.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbSearchBy.FormattingEnabled = true;
@@ -307,20 +300,6 @@
             this.cmbSearchBy.Name = "cmbSearchBy";
             this.cmbSearchBy.Size = new System.Drawing.Size(190, 24);
             this.cmbSearchBy.TabIndex = 27;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // facilitiesBindingSource
-            // 
-            this.facilitiesBindingSource.DataMember = "Facilities";
-            this.facilitiesBindingSource.DataSource = this.dataSet1;
-            // 
-            // facilitiesTableAdapter
-            // 
-            this.facilitiesTableAdapter.ClearBeforeFill = true;
             // 
             // ucFacilities
             // 
@@ -339,8 +318,6 @@
             this.gbSearchResults.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facilitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,8 +346,5 @@
         private System.Windows.Forms.PictureBox pbWarningFac;
         private System.Windows.Forms.PictureBox pbWarningID;
         private System.Windows.Forms.LinkLabel lblAvailable;
-        private System.Windows.Forms.BindingSource facilitiesBindingSource;
-        private DataSet1 dataSet1;
-        private DataSet1TableAdapters.FacilitiesTableAdapter facilitiesTableAdapter;
     }
 }

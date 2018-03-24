@@ -317,7 +317,7 @@
             // 
             this.ucFacilities2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucFacilities2.Location = new System.Drawing.Point(229, 26);
-            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(1);
             this.ucFacilities2.Name = "ucFacilities2";
             this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
             this.ucFacilities2.TabIndex = 32;
@@ -348,11 +348,15 @@
             // ucPastTransactions1
             // 
             this.ucPastTransactions1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ucPastTransactions1.Datefrom = null;
+            this.ucPastTransactions1.Dateto = null;
+            this.ucPastTransactions1.Fac = null;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ucPastTransactions1.Location = new System.Drawing.Point(230, 28);
             this.ucPastTransactions1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucPastTransactions1.Name = "ucPastTransactions1";
             this.ucPastTransactions1.Size = new System.Drawing.Size(752, 508);
+            this.ucPastTransactions1.Status = null;
             this.ucPastTransactions1.TabIndex = 28;
             this.ucPastTransactions1.Visible = false;
             this.ucPastTransactions1.MouseEnter += new System.EventHandler(this.ucPastTransactions1_MouseEnter);
@@ -361,7 +365,7 @@
             // 
             this.ucMembers1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucMembers1.Location = new System.Drawing.Point(231, 30);
-            this.ucMembers1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ucMembers1.Margin = new System.Windows.Forms.Padding(1);
             this.ucMembers1.Name = "ucMembers1";
             this.ucMembers1.Size = new System.Drawing.Size(752, 508);
             this.ucMembers1.TabIndex = 27;
@@ -372,7 +376,7 @@
             // 
             this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucAddMember1.Location = new System.Drawing.Point(228, 30);
-            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1);
             this.ucAddMember1.Name = "ucAddMember1";
             this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
             this.ucAddMember1.TabIndex = 31;
@@ -394,7 +398,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(979, 524);
-            this.Controls.Add(this.ucBooking2);
             this.Controls.Add(this.btnUpcoming);
             this.Controls.Add(this.btnPasttransactions);
             this.Controls.Add(this.pictureBox1);
@@ -410,8 +413,9 @@
             this.Controls.Add(this.ucReports1);
             this.Controls.Add(this.ucPastTransactions1);
             this.Controls.Add(this.ucMembers1);
+            this.Controls.Add(this.ucBooking2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(997, 571);
             this.MinimumSize = new System.Drawing.Size(997, 571);
             this.Name = "frmMain";
