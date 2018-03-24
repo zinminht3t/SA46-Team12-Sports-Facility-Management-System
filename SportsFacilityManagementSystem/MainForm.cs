@@ -128,39 +128,6 @@ namespace SportsFacilityManagementSystem
                 login.Show();
             }
         }
-        #endregion
-
-        #region Visibility Methods
-        private void BookingsMenu(bool visibility)
-        {
-            btnUpcoming.Visible = visibility;
-            btnPasttransactions.Visible = visibility;
-        }
-
-        private void MembersMenu(bool visibility)
-        {
-            btnSearchMembers.Visible = visibility;
-            btnAddMembers.Visible = visibility;
-        }
-
-        private void FacilitiesMenu(bool visibility)
-        {
-            btnAddFacilities.Visible = visibility;
-            btnSearchFacilities.Visible = visibility;
-        }
-
-        private void AllMenu(bool visibility)
-        {
-            BookingsMenu(visibility);
-            MembersMenu(visibility);
-            FacilitiesMenu(visibility);
-        }
-        #endregion
-
-        private void ShowUserControl(string ucName)
-        {
-            // Visibility methods using ucName to call which to hide using if method
-        }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
@@ -209,7 +176,33 @@ namespace SportsFacilityManagementSystem
             ucAddMember1.Visible = true;
             MembersMenu(false);
         }
+        #endregion
 
+        #region Visibility Methods
+        private void BookingsMenu(bool visibility)
+        {
+            btnUpcoming.Visible = visibility;
+            btnPasttransactions.Visible = visibility;
+        }
+
+        private void MembersMenu(bool visibility)
+        {
+            btnSearchMembers.Visible = visibility;
+            btnAddMembers.Visible = visibility;
+        }
+
+        private void FacilitiesMenu(bool visibility)
+        {
+            btnAddFacilities.Visible = visibility;
+            btnSearchFacilities.Visible = visibility;
+        }
+
+        private void AllMenu(bool visibility)
+        {
+            BookingsMenu(visibility);
+            MembersMenu(visibility);
+            FacilitiesMenu(visibility);
+        }
         public void HideAllUC()
         {
             ucReports1.Visible = false;
@@ -225,5 +218,7 @@ namespace SportsFacilityManagementSystem
             HideAllUC();
             ucBooking1.Visible = true;
         }
+        #endregion
+
     }
 }
