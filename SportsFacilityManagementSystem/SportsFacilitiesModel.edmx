@@ -258,7 +258,7 @@
             <PropertyRef Name="timeslotid" />
           </Key>
           <Property Name="timeslotid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="timeslot1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="timeslot" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_Timeslots" FromRole="Timeslots" ToRole="TransactionDetails" />
         </EntityType>
         <EntityType Name="TransactionDetail">
@@ -472,7 +472,7 @@
             <EntityTypeMapping TypeName="SportsFacilitiesModel.Timeslot">
               <MappingFragment StoreEntitySet="Timeslots">
                 <ScalarProperty Name="timeslotid" ColumnName="timeslotid" />
-                <ScalarProperty Name="timeslot1" ColumnName="timeslot" />
+                <ScalarProperty Name="timeslot" ColumnName="timeslot" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -21,7 +21,7 @@ namespace SportsFacilityManagementSystem
         }
     
         public int timeslotid { get; set; }
-        public string timeslot1 { get; set; }
+        public string timeslot { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionDetail> TransactionDetails { get; set; }

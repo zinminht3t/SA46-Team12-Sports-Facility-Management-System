@@ -16,14 +16,14 @@ namespace SportsFacilityManagementSystem
         private List<String> subfacilitiesListNames = new List<String>();
         private List<int> subfacilitiesListIds = new List<int>();
         private List<int> ifBookedSubfacility = new List<int>();
-        private int[,] arrayDaySlots = new int[3,5];
+        private int[,] arrayDaySlots = new int[3, 5];
         private string[,] arrayDaySlotsName = new string[3, 5];
         private string defaultCmbSports;
         private int noSubFacilities;
         private List<Control> collectionVisibleButtons = new List<Control>();
         private int noSelected;
         private List<Control> collectionClickedButtons = new List<Control>();
-        private List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
+        private static List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
 
 
         private int? facilityTransID;
@@ -45,9 +45,10 @@ namespace SportsFacilityManagementSystem
             //dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
 
             cmbSports.Text = defaultCmbSports;
+            dtpBookingDate.Value = DateTime.Today;
 
-            dtpBookingDate.CustomFormat = "yyyy-MM-dd";
-            dtpBookingDatevalue = dtpBookingDate.Value;
+            //dtpBookingDate.CustomFormat = "yyyy-MM-dd";
+            //dtpBookingDatevalue = dtpBookingDate.Value;
 
         }
 
@@ -61,6 +62,12 @@ namespace SportsFacilityManagementSystem
                 dynamicButton.BackColor = Color.LightGreen;
                 collectionClickedButtons.Remove(dynamicButton);
                 noSelected--; //unselected
+            }
+            else if (dynamicButton.BackColor == Color.Red)
+            {
+                frmBookingDetail frmBD = new frmBookingDetail();
+                frmBD.ShowDialog();
+
             }
             else
             {
@@ -79,11 +86,13 @@ namespace SportsFacilityManagementSystem
             }
 
         }
-
+        public static List<BookingDetails> getSelectedSlots()
+        {
+            return bkgDetailsList;
+        }
         private void btnBook_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(noSelected.ToString());
             if (noSelected == 0)
             {
                 MessageBox.Show("You have not selected any booking slot.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -91,21 +100,48 @@ namespace SportsFacilityManagementSystem
             else
             {
                 int controlIndex = 0;
-                foreach(Control c in collectionClickedButtons)
+                foreach (Control c in collectionClickedButtons)
                 {
+                    char cRow = char.Parse(c.Name.Substring(3, 1));
+                    int cRow_ =0;
+                    switch (cRow)
+                    {
+                        case 'A':
+                            cRow_ = 1;
+                            break;
 
-                    
-                    new BookingDetails() { subFacilityBooked = subfacilitiesListNames[controlIndex], slotBooked = Int32.Parse(collectionClickedButtons[controlIndex].Name.Substring(4,1)) };
-                    
+                        case 'B':
+                            cRow_ = 2;
+                            break;
 
+                        case 'C':
+                            cRow_ = 3;
+                            break;
+
+                    }
+
+                    BookingDetails bd = new BookingDetails() { subFacilityBooked = subfacilitiesListNames[cRow_-1], slotBooked = Int32.Parse(c.Name.Substring(4, 1)) };
+                    bkgDetailsList.Add(bd);
+                    controlIndex++;
+                }
+
+                frmBookingDetail frmBD = new frmBookingDetail();
+                frmBD.setTxtFacilityID(cmbSports.Text);
+                frmBD.SetLbSelectedSlotSF(bkgDetailsList);
+                for(int i = 0; i < noSubFacilities; i++)
+                {
+                    frmBD.setLbSelFacility(cmbSports.Text);
 
                 }
-                ucBookingDetails ucbd = new ucBookingDetails();
-                ucbd.Show();
-                ucbd.setTxtFacilityID(cmbSports.Text);
-                ucbd.SetLbSelectedSlotSF(bkgDetailsList);
+                frmBD.ShowDialog();
+
+                LoadBookingSlots();
+                // ucBookingDetails ucbd = new ucBookingDetails();
+                //ucbd.Show();
+                //ucbd.setTxtFacilityID(cmbSports.Text);
+                //ucbd.SetLbSelectedSlotSF(bkgDetailsList);
             }
-            
+
         }
 
         private void ucBooking_Load(object sender, EventArgs e)
@@ -115,8 +151,14 @@ namespace SportsFacilityManagementSystem
 
         private void cmbSports_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoadBookingSlots();
+        }
+
+        private void LoadBookingSlots()
+        {
+            noSelected = 0;
             //need to clear button collections                     con.Click += new System.EventHandler(this.con_Click);
-            foreach(Control c in collectionVisibleButtons)
+            foreach (Control c in collectionVisibleButtons)
             {
                 c.Click -= new System.EventHandler(this.con_Click);
             }
@@ -131,36 +173,38 @@ namespace SportsFacilityManagementSystem
                 var facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text);
                 int facId_ = facId.facilityid;
                 noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId_); //to replace output with no of subfac belonging to selected facility
-                
+
                 //create array of subfacilities name belonging to selceted facility
                 var qrySubFacilitiesName = from x in ctx.SubFacilities where x.facilityid == facId_ orderby x.subfacilityname select x.subfacilityname;
                 subfacilitiesListNames = qrySubFacilitiesName.ToList<String>();
-                
+
 
                 //populate arrays for UI booking slots of selected date
                 for (int slotRow = 1; slotRow <= 3; slotRow++)
                 {
-                    for (int slotCol = 1; slotCol <= 3; slotCol++)
+                    for (int slotCol = 1; slotCol <= 5; slotCol++)
                     {
                         try
                         {
-                            facilityTransID = ctx.TransactionDetails.Where(x => x.facilityid == facId_ && x.subfacilityid == slotRow && x.timeslotid == slotCol && x.date == dtpBookingDatevalue).FirstOrDefault().transactionid;
-                            facilityMemID = ctx.Transactions.Where(x => x.transactionid == facilityTransID).FirstOrDefault().memberid;
+                            facilityTransID = ctx.TransactionDetails.First(x => x.facilityid == facId_ && x.subfacilityid == slotRow && x.timeslotid == slotCol && x.date == dtpBookingDate.Value).transactionid;
+                            facilityMemID = ctx.Transactions.Where(x => x.transactionid == facilityTransID && x.status == "Confirmed").FirstOrDefault().memberid;
                             facilityMemName = ctx.Members.Where(x => x.memberid == facilityMemID).FirstOrDefault().name;
-                        } catch(Exception)
+                        }
+                        catch (Exception)
                         {
                         }
-                        
 
-                        if (facilityTransID!=null)
+
+                        if (facilityMemName != null)
                         {
-                            arrayDaySlots[slotRow-1, slotCol-1] = 1;
-                            arrayDaySlotsName[slotRow-1, slotCol-1] = facilityMemName; //get member details via Transaction table
+                            arrayDaySlots[slotRow - 1, slotCol - 1] = 1;
+                            arrayDaySlotsName[slotRow - 1, slotCol - 1] = facilityMemName; //get member details via Transaction table
+                            facilityMemName = null;
                         }
                         else
                         {
-                            arrayDaySlots[slotRow-1, slotCol-1] = 0;
-                            arrayDaySlotsName[slotRow-1, slotCol-1] = facilityMemName;
+                            arrayDaySlots[slotRow - 1, slotCol - 1] = 0;
+                            arrayDaySlotsName[slotRow - 1, slotCol - 1] = facilityMemName;
                         }
                     }
                 }
@@ -177,9 +221,10 @@ namespace SportsFacilityManagementSystem
                 {
                     if (noRows <= noSubFacilities) //subfacility labels visibility
                     {
-                        Controls["lblRow" + noRows].Text = subfacilitiesListNames[noRows-1];
+                        Controls["lblRow" + noRows].Text = subfacilitiesListNames[noRows - 1];
                         Controls["lblRow" + noRows].Visible = true;
-                    } else
+                    }
+                    else
                     {
                         Controls["lblRow" + noRows].Visible = false;
                     }
@@ -194,17 +239,19 @@ namespace SportsFacilityManagementSystem
                                 A.Visible = true;
                                 collectionVisibleButtons.Add(A);
 
-                                if (arrayDaySlots[noRows - 1, noRows - 1] == 1)
+                                if (arrayDaySlots[noRows - 1, noCols - 1] == 1)
                                 {
                                     //this slot is already booked
-                                    A.Text = arrayDaySlotsName[noRows - 1, noRows - 1];
+                                    A.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                     A.BackColor = Color.Red;
+                                    //A.Enabled = false;
                                 }
                                 else
                                 {
                                     A.BackColor = Color.LightGreen;
+                                    A.Text = "";
                                 }
-                                
+
 
                                 break;
                             case 2: //might need to hide if selected facility only has 1 subfacility
@@ -215,17 +262,19 @@ namespace SportsFacilityManagementSystem
                                 {
                                     B.Enabled = true;
                                     B.Visible = true;
-                                    collectionVisibleButtons.Add(B);
 
-                                    if (arrayDaySlots[noRows - 1, noRows - 1] == 1)
+                                    if (arrayDaySlots[noRows - 1, noCols - 1] == 1)
                                     {
                                         //this slot is already booked
-                                        B.Text = arrayDaySlotsName[noRows - 1, noRows - 1];
+                                        B.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                         B.BackColor = Color.Red;
                                     }
                                     else
                                     {
                                         B.BackColor = Color.LightGreen;
+                                        B.Text = "";
+                                        collectionVisibleButtons.Add(B);
+
                                     }
                                 }
                                 else
@@ -245,17 +294,19 @@ namespace SportsFacilityManagementSystem
                                 {
                                     C.Enabled = true;
                                     C.Visible = true;
-                                    collectionVisibleButtons.Add(C);
 
-                                    if (arrayDaySlots[noRows - 1, noRows - 1] == 1)
+                                    if (arrayDaySlots[noRows - 1, noCols - 1] == 1)
                                     {
                                         //this slot is already booked
-                                        C.Text = arrayDaySlotsName[noRows - 1, noRows - 1];
+                                        C.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                         C.BackColor = Color.Red;
                                     }
                                     else
                                     {
                                         C.BackColor = Color.LightGreen;
+                                        C.Text = "";
+                                        collectionVisibleButtons.Add(C);
+
                                     }
                                 }
                                 else
