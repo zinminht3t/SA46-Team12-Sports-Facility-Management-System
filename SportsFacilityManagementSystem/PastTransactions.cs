@@ -17,7 +17,6 @@ namespace SportsFacilityManagementSystem
         public bool getFlagfac;
         public bool getFlagdate;
         public bool getFlagstatus;
-        int count;
         public PastTransactions()
         {
             InitializeComponent();
@@ -39,7 +38,6 @@ namespace SportsFacilityManagementSystem
             sda.Fill(ds);
             ds.Tables.Add(dt);
             cn.Close();
-            count = dt.Rows.Count;
             dgvTransactions.DataSource = ds.Tables[1];
         }
 
@@ -168,13 +166,8 @@ namespace SportsFacilityManagementSystem
 
             DisplayTable(command);
 
-            #region Zero Results
-            if (count == 0)
-            {
-                MessageBox.Show("No Results for search criterias!", "Zero Search Results");
-                this.Close();
-            }
-            #endregion
+            // Note : Missing SQL search results = 0 and Date range cannot be the same ?!
+            // Should we add search via transaction ID ?
         }
 
     }

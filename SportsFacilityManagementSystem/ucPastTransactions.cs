@@ -131,14 +131,10 @@ namespace SportsFacilityManagementSystem
             if (error == false)
             {
                 PastTransactions pt = new PastTransactions();
-                // Passing values to form
                 pt.getFlagfac = chkbFacilities.Checked;
                 pt.getFlagdate = chkbDateFrom.Checked;
                 pt.getFlagstatus = chkbStatus.Checked;
                 pt.ShowDialog();
-                chkbFacilities.Checked = false;
-                chkbDateFrom.Checked = false;
-                chkbStatus.Checked = false;
             }
             
             // Reset to false for new search
