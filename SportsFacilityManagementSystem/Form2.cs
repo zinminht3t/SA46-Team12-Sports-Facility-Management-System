@@ -48,52 +48,38 @@ namespace SportsFacilityManagementSystem
             // Membership Form
             //DataSet3 ds = new DataSet3();
 
-            //DataSet3TableAdapters.MembersTableAdapter da = new DataSet3TableAdapters.MembersTableAdapter();       
+            //DataSet3TableAdapters.MembersTableAdapter da = new DataSet3TableAdapters.MembersTableAdapter();
 
-            //da.Fill(ds.Members);           
+            //da.Fill(ds.Members);
             //MemberForm cr = new MemberForm();
             //cr.SetDataSource(ds);
 
             //crystalReportViewer1.ReportSource = cr;
 
-            //Revenue Report
-            //DataSet4 ds = new DataSet4();
-
-            //DataSet4TableAdapters.revenuereportTableAdapter da = new DataSet4TableAdapters.revenuereportTableAdapter();
-
-            //da.Fill(ds.revenuereport);
-            //Revenue cr = new Revenue();
-            //cr.SetDataSource(ds);
-            //cr.SetParameterValue("Param_datefrom", 1);
-            //cr.SetParameterValue("Param_dateto", 2);
-
-            //crystalReportViewer1.ReportSource = cr;
 
 
+            //  Monthly Revenue Report
+            DataSet4 ds = new DataSet4();
 
+            DataSet4TableAdapters.revenuereportTableAdapter da = new DataSet4TableAdapters.revenuereportTableAdapter();
 
-            // Monthly Revenue Report
-           // DataSet4 ds = new DataSet4();
+            da.Fill(ds.revenuereport);
+            MonthlyRevenue cr = new MonthlyRevenue();
+            cr.SetDataSource(ds);
 
-           // DataSet4TableAdapters.revenuereportTableAdapter da = new DataSet4TableAdapters.revenuereportTableAdapter();
-
-//            da.Fill(ds.revenuereport);
-            //MonthlyRevenue cr = new MonthlyRevenue();
-            //cr.SetDataSource(ds);            
-
-//            crystalReportViewer1.ReportSource = cr;
+            crystalReportViewer1.ReportSource = cr;
 
 
 
 
+            //Occupancy Report
 
-            //Booking Occupancy Report
-            //DataSet5 ds = new DataSet5();
+            //DataSet6 ds = new DataSet6();
 
-            //DataSet5TableAdapters.revenuereportTableAdapter da = new DataSet5TableAdapters.revenuereportTableAdapter();
+            //DataSet6TableAdapters.bookinginvoicereportTableAdapter da = new DataSet6TableAdapters.bookinginvoicereportTableAdapter();
 
-            //da.Fill(ds.revenuereport);
-            //BookingOccupancy cr = new BookingOccupancy();
+            //da.Fill(ds.bookinginvoicereport);
+            //Occupancy cr = new Occupancy();
             //cr.SetDataSource(ds);
 
 
