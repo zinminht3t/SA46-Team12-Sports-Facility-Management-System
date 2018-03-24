@@ -129,7 +129,7 @@ namespace SportsFacilityManagementSystem
                 txtName.ReadOnly = false;
                 txtRates.ReadOnly = false;
                 btnEdit.Visible = false;
-                lblCheckAvailability.Visible = false;
+                lblAvailable.Visible = false;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 pbWarningFac.Visible = true;
@@ -141,7 +141,7 @@ namespace SportsFacilityManagementSystem
                 txtName.ReadOnly = true;
                 txtRates.ReadOnly = true;
                 btnEdit.Visible = true;
-                lblCheckAvailability.Visible = true;
+                lblAvailable.Visible = true;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
                 pbWarningFac.Visible = false;
@@ -170,5 +170,13 @@ namespace SportsFacilityManagementSystem
             lblWarningFac.Visible = false;
         }
         #endregion
+
+        private void lblAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Link cant be used ?!
+            frmMain fm = new frmMain();
+            this.Hide();
+            fm.ShowMainpage();
+        }
     }
 }
