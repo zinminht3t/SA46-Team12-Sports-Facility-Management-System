@@ -21,8 +21,8 @@ namespace SportsFacilityManagementSystem
         public ucFacilities()
         {
             InitializeComponent();
+            ComboBoxText();
         }
-        // Combobox update codes
 
         private void lblCheckAvailability_Click(object sender, EventArgs e)
         {
@@ -34,31 +34,30 @@ namespace SportsFacilityManagementSystem
         {
             cxt = new SportsFacilitiesEntities();
             Facility fac = new Facility();
+            SubFacility subf = new SubFacility();
             Rate rate = new Rate();
+            string r;
             gbSearchResults.Visible = true;
             fac = cxt.Facilities.Where(x => x.facilityname == cmbSearchBy.Text).First();
-            
             //Facility Name / ID Display
             txtFacilityID.Text = fac.facilityid.ToString();
             facilityidtemp = txtFacilityID.Text;
             txtName.Text = fac.facilityname.ToString();
             nametemp = txtName.Text;
             // Rates Display
-            rate = cxt.Rates.Where(y => y.rateid == fac.rateid).First();
-            ratestemp = rate.ratepertimeslot.ToString();
+            r = fac.rateid.ToString();
+            rate = cxt.Rates.Where(x => x.rateid.ToString() == r).First();
+            txtRates.Text = rate.ratepertimeslot.ToString();
+            ratestemp = txtRates.Text;
             // Subfacility Display
-            //var q = from xsf in cxt.SubFacilities join xf in cxt.Facilities on xsf.facilityid equals xf.facilityid select xsf.facilityid;
-            var SubFacilityQ = from xsf in cxt.SubFacilities
-                               join xf in cxt.Facilities on xsf.facilityid equals xf.facilityid
-                               group xsf by xsf.subfacilityid into results
-                               select new { Facility = results.Key, SubFacility = results.Count() };
-            txtFacilitiesNo.Text = SubFacilityQ.ToString();
+            var q = from x in cxt.SubFacilities where x.facilityid.ToString() == txtFacilityID.Text select x;
+            txtFacilitiesNo.Text = q.Count().ToString();
+            facilitiesnotemp = txtFacilitiesNo.Text;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ButtonVisibility(true);
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -70,6 +69,40 @@ namespace SportsFacilityManagementSystem
             ButtonVisibility(false);
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DialogResult savebtn =
+                MessageBox.Show("Are you sure you want to save the changes?", "Save Changes", MessageBoxButtons.YesNo);
+            if (savebtn == DialogResult.Yes)
+            {
+                double rpts = double.Parse(txtRates.Text);
+                ButtonVisibility(false);
+                Facility fac = new Facility();
+                fac.facilityname = txtName.Text;
+                Rate rate = new Rate();
+                rate.ratepertimeslot = rpts;
+                cxt.Rates.Add(rate);
+                cxt.Facilities.Add(fac);
+            }
+        }
+
+        private void ComboBoxText()
+        {
+            cxt = new SportsFacilitiesEntities();
+            //Facility fac = new Facility();
+            //int count = cxt.Facilities.Count();
+            //string row = "";
+            //for (int i = 1; i <= count; i++)
+            //{
+            //    fac = cxt.Facilities.Where(x => x.facilityid == i).First();
+            //    row = fac.facilityname.ToString();
+            //    cmbSearchBy.Items.Add(row);
+            //}
+            List<String> addrow = cxt.Facilities.OrderBy(x => x.facilityname).Select(y=> y.facilityname).ToList();
+            cmbSearchBy.DataSource = addrow;
+        }
+
+        #region Visibility Events
         private void ButtonVisibility(bool ClickEditBtn)
         {
             // If edit is clicked, fields can be edited and saved
@@ -77,44 +110,47 @@ namespace SportsFacilityManagementSystem
             {
                 txtName.ReadOnly = false;
                 txtRates.ReadOnly = false;
-                txtFacilitiesNo.ReadOnly = false;
                 btnEdit.Visible = false;
                 lblCheckAvailability.Visible = false;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
+                pbWarningFac.Visible = true;
+                pbWarningID.Visible = true;
                 btnSearch.Enabled = false;
             }
             else
             {
                 txtName.ReadOnly = true;
                 txtRates.ReadOnly = true;
-                txtFacilitiesNo.ReadOnly = true;
                 btnEdit.Visible = true;
                 lblCheckAvailability.Visible = true;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
+                pbWarningFac.Visible = false;
+                pbWarningID.Visible = false;
                 btnSearch.Enabled = true;
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void pbWarningID_MouseEnter(object sender, EventArgs e)
         {
-            //update database
-            DialogResult savebtn = 
-                MessageBox.Show("Are you sure you want to save the changes?", "Save Changes", MessageBoxButtons.YesNo);
-            if(savebtn == DialogResult.Yes)
-            {
-                ButtonVisibility(false);
-                cxt = new SportsFacilitiesEntities();
-                Facility fac = new Facility();
-                fac.facilityname = txtName.Text;
-                fac.rateid = int.Parse(txtRates.Text);
-            }
+            lblWarningID.Visible = true;
         }
 
-        private void PopulateCombobox()
+        private void pbWarningID_MouseLeave(object sender, EventArgs e)
         {
-
+            lblWarningID.Visible = false;
         }
+
+        private void pbWarningFac_MouseEnter(object sender, EventArgs e)
+        {
+            lblWarningFac.Visible = true;
+        }
+
+        private void pbWarningFac_MouseLeave(object sender, EventArgs e)
+        {
+            lblWarningFac.Visible = false;
+        }
+        #endregion
     }
 }

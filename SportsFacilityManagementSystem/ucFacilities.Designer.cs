@@ -32,6 +32,10 @@
             this.lblSearchby = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
+            this.lblWarningFac = new System.Windows.Forms.Label();
+            this.lblWarningID = new System.Windows.Forms.Label();
+            this.pbWarningFac = new System.Windows.Forms.PictureBox();
+            this.pbWarningID = new System.Windows.Forms.PictureBox();
             this.txtFacilityID = new System.Windows.Forms.TextBox();
             this.lblFacilityID = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -46,6 +50,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.cmbSearchBy = new System.Windows.Forms.ComboBox();
             this.gbSearchResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -85,6 +91,10 @@
             // gbSearchResults
             // 
             this.gbSearchResults.BackColor = System.Drawing.Color.Transparent;
+            this.gbSearchResults.Controls.Add(this.lblWarningFac);
+            this.gbSearchResults.Controls.Add(this.lblWarningID);
+            this.gbSearchResults.Controls.Add(this.pbWarningFac);
+            this.gbSearchResults.Controls.Add(this.pbWarningID);
             this.gbSearchResults.Controls.Add(this.txtFacilityID);
             this.gbSearchResults.Controls.Add(this.lblFacilityID);
             this.gbSearchResults.Controls.Add(this.btnEdit);
@@ -105,9 +115,55 @@
             this.gbSearchResults.Text = "Search Results";
             this.gbSearchResults.Visible = false;
             // 
+            // lblWarningFac
+            // 
+            this.lblWarningFac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblWarningFac.Location = new System.Drawing.Point(323, 167);
+            this.lblWarningFac.Name = "lblWarningFac";
+            this.lblWarningFac.Size = new System.Drawing.Size(89, 56);
+            this.lblWarningFac.TabIndex = 69;
+            this.lblWarningFac.Text = "This field cannot be edited";
+            this.lblWarningFac.Visible = false;
+            // 
+            // lblWarningID
+            // 
+            this.lblWarningID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblWarningID.Location = new System.Drawing.Point(324, 53);
+            this.lblWarningID.Name = "lblWarningID";
+            this.lblWarningID.Size = new System.Drawing.Size(83, 60);
+            this.lblWarningID.TabIndex = 68;
+            this.lblWarningID.Text = "This field cannot be edited";
+            this.lblWarningID.Visible = false;
+            // 
+            // pbWarningFac
+            // 
+            this.pbWarningFac.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
+            this.pbWarningFac.Location = new System.Drawing.Point(294, 168);
+            this.pbWarningFac.Name = "pbWarningFac";
+            this.pbWarningFac.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningFac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbWarningFac.TabIndex = 67;
+            this.pbWarningFac.TabStop = false;
+            this.pbWarningFac.Visible = false;
+            this.pbWarningFac.MouseEnter += new System.EventHandler(this.pbWarningFac_MouseEnter);
+            this.pbWarningFac.MouseLeave += new System.EventHandler(this.pbWarningFac_MouseLeave);
+            // 
+            // pbWarningID
+            // 
+            this.pbWarningID.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
+            this.pbWarningID.Location = new System.Drawing.Point(294, 53);
+            this.pbWarningID.Name = "pbWarningID";
+            this.pbWarningID.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbWarningID.TabIndex = 66;
+            this.pbWarningID.TabStop = false;
+            this.pbWarningID.Visible = false;
+            this.pbWarningID.MouseEnter += new System.EventHandler(this.pbWarningID_MouseEnter);
+            this.pbWarningID.MouseLeave += new System.EventHandler(this.pbWarningID_MouseLeave);
+            // 
             // txtFacilityID
             // 
-            this.txtFacilityID.Location = new System.Drawing.Point(196, 51);
+            this.txtFacilityID.Location = new System.Drawing.Point(174, 53);
             this.txtFacilityID.Margin = new System.Windows.Forms.Padding(2);
             this.txtFacilityID.Name = "txtFacilityID";
             this.txtFacilityID.ReadOnly = true;
@@ -172,7 +228,7 @@
             // 
             // txtFacilitiesNo
             // 
-            this.txtFacilitiesNo.Location = new System.Drawing.Point(196, 166);
+            this.txtFacilitiesNo.Location = new System.Drawing.Point(174, 168);
             this.txtFacilitiesNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtFacilitiesNo.Name = "txtFacilitiesNo";
             this.txtFacilitiesNo.ReadOnly = true;
@@ -181,7 +237,7 @@
             // 
             // txtRates
             // 
-            this.txtRates.Location = new System.Drawing.Point(196, 129);
+            this.txtRates.Location = new System.Drawing.Point(174, 131);
             this.txtRates.Margin = new System.Windows.Forms.Padding(2);
             this.txtRates.Name = "txtRates";
             this.txtRates.ReadOnly = true;
@@ -200,7 +256,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(196, 90);
+            this.txtName.Location = new System.Drawing.Point(174, 92);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
@@ -231,12 +287,6 @@
             // 
             this.cmbSearchBy.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbSearchBy.FormattingEnabled = true;
-            this.cmbSearchBy.Items.AddRange(new object[] {
-            "Basketball",
-            "Badminton",
-            "Futsal",
-            "Squash",
-            "Table Tennis"});
             this.cmbSearchBy.Location = new System.Drawing.Point(335, 71);
             this.cmbSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSearchBy.Name = "cmbSearchBy";
@@ -258,6 +308,8 @@
             this.Size = new System.Drawing.Size(752, 508);
             this.gbSearchResults.ResumeLayout(false);
             this.gbSearchResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +334,9 @@
         private System.Windows.Forms.TextBox txtFacilityID;
         private System.Windows.Forms.Label lblFacilityID;
         private System.Windows.Forms.ComboBox cmbSearchBy;
+        private System.Windows.Forms.Label lblWarningFac;
+        private System.Windows.Forms.Label lblWarningID;
+        private System.Windows.Forms.PictureBox pbWarningFac;
+        private System.Windows.Forms.PictureBox pbWarningID;
     }
 }
