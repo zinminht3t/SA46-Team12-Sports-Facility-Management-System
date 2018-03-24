@@ -16,14 +16,14 @@ namespace SportsFacilityManagementSystem {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Revenue : ReportClass {
+    public class BookingInvoice : ReportClass {
         
-        public Revenue() {
+        public BookingInvoice() {
         }
         
         public override string ResourceName {
             get {
-                return "Revenue.rpt";
+                return "BookingInvoice.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SportsFacilityManagementSystem {
         
         public override string FullResourceName {
             get {
-                return "SportsFacilityManagementSystem.Revenue.rpt";
+                return "SportsFacilityManagementSystem.BookingInvoice.rpt";
             }
             set {
                 // Do nothing
@@ -103,36 +103,12 @@ namespace SportsFacilityManagementSystem {
                 return this.ReportDefinition.Sections[6];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Param_DateFrom {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Param_DateTo {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DateRange {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRevenue : Component, ICachedReport {
+    public class CachedBookingInvoice : Component, ICachedReport {
         
-        public CachedRevenue() {
+        public CachedBookingInvoice() {
         }
         
         [Browsable(false)]
@@ -169,7 +145,7 @@ namespace SportsFacilityManagementSystem {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Revenue rpt = new Revenue();
+            BookingInvoice rpt = new BookingInvoice();
             rpt.Site = this.Site;
             return rpt;
         }
