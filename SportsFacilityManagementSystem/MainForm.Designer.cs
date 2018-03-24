@@ -51,6 +51,7 @@
             this.ucPastTransactions1 = new SportsFacilityManagementSystem.ucPastTransactions();
             this.ucMembers1 = new SportsFacilityManagementSystem.ucMembers();
             this.ucAddMember1 = new SportsFacilityManagementSystem.ucAddMember();
+            this.ucBooking2 = new SportsFacilityManagementSystem.ucBooking();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,19 +68,17 @@
             this.pnlSidebar.Controls.Add(this.btnFacilities);
             this.pnlSidebar.Controls.Add(this.btnReports);
             this.pnlSidebar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnlSidebar.Location = new System.Drawing.Point(-2, -6);
-            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlSidebar.Location = new System.Drawing.Point(-1, -4);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(344, 864);
+            this.pnlSidebar.Size = new System.Drawing.Size(229, 553);
             this.pnlSidebar.TabIndex = 6;
             // 
             // pbLogo
             // 
             this.pbLogo.Image = global::SportsFacilityManagementSystem.Properties.Resources.GetActiveLogo;
-            this.pbLogo.Location = new System.Drawing.Point(27, 0);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbLogo.Location = new System.Drawing.Point(18, 0);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(310, 250);
+            this.pbLogo.Size = new System.Drawing.Size(207, 160);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;
@@ -88,10 +87,9 @@
             // pnlSidetab
             // 
             this.pnlSidetab.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pnlSidetab.Location = new System.Drawing.Point(-2, 250);
-            this.pnlSidetab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlSidetab.Location = new System.Drawing.Point(-1, 160);
             this.pnlSidetab.Name = "pnlSidetab";
-            this.pnlSidetab.Size = new System.Drawing.Size(26, 119);
+            this.pnlSidetab.Size = new System.Drawing.Size(17, 76);
             this.pnlSidetab.TabIndex = 7;
             // 
             // btnLogout
@@ -104,10 +102,9 @@
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogout.Image = global::SportsFacilityManagementSystem.Properties.Resources.Logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(20, 730);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogout.Location = new System.Drawing.Point(13, 467);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(322, 119);
+            this.btnLogout.Size = new System.Drawing.Size(215, 76);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -124,10 +121,9 @@
             this.btnBooking.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBooking.Image = global::SportsFacilityManagementSystem.Properties.Resources.Booking;
             this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBooking.Location = new System.Drawing.Point(20, 250);
-            this.btnBooking.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBooking.Location = new System.Drawing.Point(13, 160);
             this.btnBooking.Name = "btnBooking";
-            this.btnBooking.Size = new System.Drawing.Size(322, 119);
+            this.btnBooking.Size = new System.Drawing.Size(215, 76);
             this.btnBooking.TabIndex = 1;
             this.btnBooking.Text = "Bookings";
             this.btnBooking.UseVisualStyleBackColor = false;
@@ -143,10 +139,9 @@
             this.btnMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnMembers.Image = global::SportsFacilityManagementSystem.Properties.Resources.Members;
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(20, 369);
-            this.btnMembers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMembers.Location = new System.Drawing.Point(13, 236);
             this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Size = new System.Drawing.Size(322, 119);
+            this.btnMembers.Size = new System.Drawing.Size(215, 76);
             this.btnMembers.TabIndex = 7;
             this.btnMembers.Text = "Members";
             this.btnMembers.UseVisualStyleBackColor = false;
@@ -162,10 +157,9 @@
             this.btnFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnFacilities.Image = global::SportsFacilityManagementSystem.Properties.Resources.Stadium;
             this.btnFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacilities.Location = new System.Drawing.Point(20, 488);
-            this.btnFacilities.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFacilities.Location = new System.Drawing.Point(13, 312);
             this.btnFacilities.Name = "btnFacilities";
-            this.btnFacilities.Size = new System.Drawing.Size(322, 119);
+            this.btnFacilities.Size = new System.Drawing.Size(215, 76);
             this.btnFacilities.TabIndex = 9;
             this.btnFacilities.Text = "Facilities";
             this.btnFacilities.UseVisualStyleBackColor = false;
@@ -181,10 +175,9 @@
             this.btnReports.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnReports.Image = global::SportsFacilityManagementSystem.Properties.Resources.Report;
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(20, 606);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReports.Location = new System.Drawing.Point(13, 388);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(322, 119);
+            this.btnReports.Size = new System.Drawing.Size(215, 76);
             this.btnReports.TabIndex = 8;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
@@ -200,10 +193,9 @@
             this.btnSearchMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSearchMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchMembers.Location = new System.Drawing.Point(342, 362);
-            this.btnSearchMembers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearchMembers.Location = new System.Drawing.Point(228, 232);
             this.btnSearchMembers.Name = "btnSearchMembers";
-            this.btnSearchMembers.Size = new System.Drawing.Size(231, 119);
+            this.btnSearchMembers.Size = new System.Drawing.Size(154, 76);
             this.btnSearchMembers.TabIndex = 11;
             this.btnSearchMembers.Text = "Search / Modify Members List";
             this.btnSearchMembers.UseVisualStyleBackColor = false;
@@ -219,10 +211,9 @@
             this.btnAddMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddMembers.Location = new System.Drawing.Point(342, 481);
-            this.btnAddMembers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddMembers.Location = new System.Drawing.Point(228, 308);
             this.btnAddMembers.Name = "btnAddMembers";
-            this.btnAddMembers.Size = new System.Drawing.Size(231, 119);
+            this.btnAddMembers.Size = new System.Drawing.Size(154, 76);
             this.btnAddMembers.TabIndex = 12;
             this.btnAddMembers.Text = "Add New Members";
             this.btnAddMembers.UseVisualStyleBackColor = false;
@@ -238,10 +229,9 @@
             this.btnAddFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFacilities.Location = new System.Drawing.Point(342, 598);
-            this.btnAddFacilities.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddFacilities.Location = new System.Drawing.Point(228, 383);
             this.btnAddFacilities.Name = "btnAddFacilities";
-            this.btnAddFacilities.Size = new System.Drawing.Size(231, 119);
+            this.btnAddFacilities.Size = new System.Drawing.Size(154, 76);
             this.btnAddFacilities.TabIndex = 14;
             this.btnAddFacilities.Text = "Add New Facilities";
             this.btnAddFacilities.UseVisualStyleBackColor = false;
@@ -257,10 +247,9 @@
             this.btnSearchFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSearchFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchFacilities.Location = new System.Drawing.Point(342, 480);
-            this.btnSearchFacilities.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearchFacilities.Location = new System.Drawing.Point(228, 307);
             this.btnSearchFacilities.Name = "btnSearchFacilities";
-            this.btnSearchFacilities.Size = new System.Drawing.Size(231, 119);
+            this.btnSearchFacilities.Size = new System.Drawing.Size(154, 76);
             this.btnSearchFacilities.TabIndex = 13;
             this.btnSearchFacilities.Text = "Search / Modify Facilities";
             this.btnSearchFacilities.UseVisualStyleBackColor = false;
@@ -272,10 +261,9 @@
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblWelcome.Location = new System.Drawing.Point(1047, 6);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWelcome.Location = new System.Drawing.Point(698, 4);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(236, 31);
+            this.lblWelcome.Size = new System.Drawing.Size(154, 20);
             this.lblWelcome.TabIndex = 16;
             this.lblWelcome.Text = "User logged on : ";
             // 
@@ -288,10 +276,9 @@
             this.btnUpcoming.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpcoming.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpcoming.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpcoming.Location = new System.Drawing.Point(342, 244);
-            this.btnUpcoming.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpcoming.Location = new System.Drawing.Point(228, 156);
             this.btnUpcoming.Name = "btnUpcoming";
-            this.btnUpcoming.Size = new System.Drawing.Size(231, 119);
+            this.btnUpcoming.Size = new System.Drawing.Size(154, 76);
             this.btnUpcoming.TabIndex = 21;
             this.btnUpcoming.Text = "Upcoming Bookings";
             this.btnUpcoming.UseVisualStyleBackColor = false;
@@ -307,10 +294,9 @@
             this.btnPasttransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPasttransactions.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPasttransactions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPasttransactions.Location = new System.Drawing.Point(342, 361);
-            this.btnPasttransactions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPasttransactions.Location = new System.Drawing.Point(228, 231);
             this.btnPasttransactions.Name = "btnPasttransactions";
-            this.btnPasttransactions.Size = new System.Drawing.Size(231, 119);
+            this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
             this.btnPasttransactions.TabIndex = 20;
             this.btnPasttransactions.Text = "View Past Transactions";
             this.btnPasttransactions.UseVisualStyleBackColor = false;
@@ -320,10 +306,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SportsFacilityManagementSystem.Properties.Resources.Account;
-            this.pictureBox1.Location = new System.Drawing.Point(1020, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(680, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 31);
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -331,19 +316,20 @@
             // ucFacilities2
             // 
             this.ucFacilities2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucFacilities2.Location = new System.Drawing.Point(344, 41);
+            this.ucFacilities2.Location = new System.Drawing.Point(229, 26);
+            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ucFacilities2.Name = "ucFacilities2";
-            this.ucFacilities2.Size = new System.Drawing.Size(1128, 794);
+            this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
             this.ucFacilities2.TabIndex = 32;
             this.ucFacilities2.Visible = false;
             // 
             // ucAddFacilities1
             // 
             this.ucAddFacilities1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddFacilities1.Location = new System.Drawing.Point(342, 47);
-            this.ucAddFacilities1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.ucAddFacilities1.Location = new System.Drawing.Point(228, 30);
+            this.ucAddFacilities1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucAddFacilities1.Name = "ucAddFacilities1";
-            this.ucAddFacilities1.Size = new System.Drawing.Size(1128, 794);
+            this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
             this.ucAddFacilities1.TabIndex = 23;
             this.ucAddFacilities1.Visible = false;
             this.ucAddFacilities1.MouseEnter += new System.EventHandler(this.ucAddFacilities1_MouseEnter);
@@ -351,10 +337,10 @@
             // ucReports1
             // 
             this.ucReports1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucReports1.Location = new System.Drawing.Point(346, 44);
-            this.ucReports1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.ucReports1.Location = new System.Drawing.Point(231, 28);
+            this.ucReports1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucReports1.Name = "ucReports1";
-            this.ucReports1.Size = new System.Drawing.Size(1126, 811);
+            this.ucReports1.Size = new System.Drawing.Size(751, 519);
             this.ucReports1.TabIndex = 29;
             this.ucReports1.Visible = false;
             this.ucReports1.MouseEnter += new System.EventHandler(this.ucReports1_MouseEnter);
@@ -363,10 +349,10 @@
             // 
             this.ucPastTransactions1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ucPastTransactions1.Location = new System.Drawing.Point(345, 44);
-            this.ucPastTransactions1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.ucPastTransactions1.Location = new System.Drawing.Point(230, 28);
+            this.ucPastTransactions1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucPastTransactions1.Name = "ucPastTransactions1";
-            this.ucPastTransactions1.Size = new System.Drawing.Size(1128, 794);
+            this.ucPastTransactions1.Size = new System.Drawing.Size(752, 508);
             this.ucPastTransactions1.TabIndex = 28;
             this.ucPastTransactions1.Visible = false;
             this.ucPastTransactions1.MouseEnter += new System.EventHandler(this.ucPastTransactions1_MouseEnter);
@@ -374,9 +360,10 @@
             // ucMembers1
             // 
             this.ucMembers1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucMembers1.Location = new System.Drawing.Point(346, 47);
+            this.ucMembers1.Location = new System.Drawing.Point(231, 30);
+            this.ucMembers1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ucMembers1.Name = "ucMembers1";
-            this.ucMembers1.Size = new System.Drawing.Size(1128, 794);
+            this.ucMembers1.Size = new System.Drawing.Size(752, 508);
             this.ucMembers1.TabIndex = 27;
             this.ucMembers1.Visible = false;
             this.ucMembers1.MouseEnter += new System.EventHandler(this.ucMembers1_MouseEnter);
@@ -384,18 +371,30 @@
             // ucAddMember1
             // 
             this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddMember1.Location = new System.Drawing.Point(342, 47);
+            this.ucAddMember1.Location = new System.Drawing.Point(228, 30);
+            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ucAddMember1.Name = "ucAddMember1";
-            this.ucAddMember1.Size = new System.Drawing.Size(1128, 794);
+            this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
             this.ucAddMember1.TabIndex = 31;
             this.ucAddMember1.Visible = false;
             // 
+            // ucBooking2
+            // 
+            this.ucBooking2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ucBooking2.Location = new System.Drawing.Point(228, 28);
+            this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucBooking2.Name = "ucBooking2";
+            this.ucBooking2.Size = new System.Drawing.Size(752, 508);
+            this.ucBooking2.TabIndex = 33;
+            this.ucBooking2.Visible = false;
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1461, 795);
+            this.ClientSize = new System.Drawing.Size(979, 524);
+            this.Controls.Add(this.ucBooking2);
             this.Controls.Add(this.btnUpcoming);
             this.Controls.Add(this.btnPasttransactions);
             this.Controls.Add(this.pictureBox1);
@@ -405,15 +404,16 @@
             this.Controls.Add(this.btnAddMembers);
             this.Controls.Add(this.btnSearchMembers);
             this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.ucAddMember1);
+            this.Controls.Add(this.ucFacilities2);
             this.Controls.Add(this.ucAddFacilities1);
             this.Controls.Add(this.ucReports1);
             this.Controls.Add(this.ucPastTransactions1);
             this.Controls.Add(this.ucMembers1);
-            this.Controls.Add(this.ucAddMember1);
-            this.Controls.Add(this.ucFacilities2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1487, 866);
-            this.MinimumSize = new System.Drawing.Size(1487, 866);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(997, 571);
+            this.MinimumSize = new System.Drawing.Size(997, 571);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sports Facility Management System";
@@ -452,6 +452,7 @@
         private ucReports ucReports1;
         private ucAddMember ucAddMember1;
         private ucFacilities ucFacilities2;
+        private ucBooking ucBooking2;
     }
 }
 

@@ -62,18 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookingDetails.cs" />
-    <Compile Include="BookingInvoice.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingInvoice.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BookingInvoice2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingInvoice.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="BookingOccupancy.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +145,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MemberListingbyStatus.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MonthlyRevenue.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyRevenue.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -265,10 +259,6 @@
     <Compile Include="User.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingInvoice.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookingInvoice2.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="BookingOccupancy.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BookingOccupancy.cs</LastGenOutput>
@@ -296,6 +286,10 @@
     <EmbeddedResource Include="MemberListingbyStatus.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberListingbyStatus.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyRevenue.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyRevenue.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

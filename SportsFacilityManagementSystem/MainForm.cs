@@ -20,7 +20,7 @@ namespace SportsFacilityManagementSystem
         private void MainForm_Load(object sender, EventArgs e)
         {            
             lblWelcome.Text = lblWelcome.Text + frmLogin.user.name;
-            //ucBooking1.Visible = true;
+            ucBooking2.Visible = true;
         }
 
         #region Sidetab Panel (Mouse Enter Events)
@@ -138,7 +138,7 @@ namespace SportsFacilityManagementSystem
         private void btnUpcoming_Click(object sender, EventArgs e)
         {
             HideAllUC();
-            ucBooking1.Visible = true;
+            ucBooking2.Visible = true;
             BookingsMenu(false);
         }
 
@@ -206,7 +206,7 @@ namespace SportsFacilityManagementSystem
         public void HideAllUC()
         {
             ucReports1.Visible = false;
-            ucBooking1.Visible = false;
+            ucBooking2.Visible = false;
             ucPastTransactions1.Visible = false;
             ucFacilities2.Visible = false;
             ucAddFacilities1.Visible = false;
@@ -216,7 +216,7 @@ namespace SportsFacilityManagementSystem
         public void ShowMainpage()
         {
             HideAllUC();
-            //ucBooking1.Visible = true;
+            ucBooking2.Visible = true;
         }
         #endregion
 

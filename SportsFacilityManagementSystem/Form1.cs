@@ -57,17 +57,17 @@ namespace SportsFacilityManagementSystem
             //crystalReportViewer1.ReportSource = cr;
 
             //Revenue Report
-            DataSet4 ds = new DataSet4();
+            //DataSet4 ds = new DataSet4();
 
-            DataSet4TableAdapters.revenuereportTableAdapter da = new DataSet4TableAdapters.revenuereportTableAdapter();
+            //DataSet4TableAdapters.revenuereportTableAdapter da = new DataSet4TableAdapters.revenuereportTableAdapter();
 
-            da.Fill(ds.revenuereport);
-            Revenue cr = new Revenue();
-            cr.SetDataSource(ds);
-            //cr.SetParameterValue("Param_datefrom", 1);
-            //cr.SetParameterValue("Param_dateto", 2);
+            //da.Fill(ds.revenuereport);
+            //Revenue cr = new Revenue();
+            //cr.SetDataSource(ds);
+            ////cr.SetParameterValue("Param_datefrom", 1);
+            ////cr.SetParameterValue("Param_dateto", 2);
 
-            crystalReportViewer1.ReportSource = cr;
+            //crystalReportViewer1.ReportSource = cr;
 
 
 
