@@ -32,6 +32,7 @@
             this.lblSearchby = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
+            this.lblAvailable = new System.Windows.Forms.LinkLabel();
             this.lblWarningFac = new System.Windows.Forms.Label();
             this.lblWarningID = new System.Windows.Forms.Label();
             this.pbWarningFac = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,6 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblCheckAvailability = new System.Windows.Forms.Label();
             this.txtFacilitiesNo = new System.Windows.Forms.TextBox();
             this.txtRates = new System.Windows.Forms.TextBox();
             this.lblFacilitiesno = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             // gbSearchResults
             // 
             this.gbSearchResults.BackColor = System.Drawing.Color.Transparent;
+            this.gbSearchResults.Controls.Add(this.lblAvailable);
             this.gbSearchResults.Controls.Add(this.lblWarningFac);
             this.gbSearchResults.Controls.Add(this.lblWarningID);
             this.gbSearchResults.Controls.Add(this.pbWarningFac);
@@ -100,7 +101,6 @@
             this.gbSearchResults.Controls.Add(this.btnEdit);
             this.gbSearchResults.Controls.Add(this.btnSave);
             this.gbSearchResults.Controls.Add(this.btnCancel);
-            this.gbSearchResults.Controls.Add(this.lblCheckAvailability);
             this.gbSearchResults.Controls.Add(this.txtFacilitiesNo);
             this.gbSearchResults.Controls.Add(this.txtRates);
             this.gbSearchResults.Controls.Add(this.lblFacilitiesno);
@@ -114,6 +114,18 @@
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
             this.gbSearchResults.Visible = false;
+            // 
+            // lblAvailable
+            // 
+            this.lblAvailable.AutoSize = true;
+            this.lblAvailable.Location = new System.Drawing.Point(51, 206);
+            this.lblAvailable.Name = "lblAvailable";
+            this.lblAvailable.Size = new System.Drawing.Size(120, 17);
+            this.lblAvailable.TabIndex = 70;
+            this.lblAvailable.TabStop = true;
+            this.lblAvailable.Text = "Check Availablility";
+            this.lblAvailable.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.lblAvailable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAvailable_LinkClicked);
             // 
             // lblWarningFac
             // 
@@ -215,17 +227,6 @@
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblCheckAvailability
-            // 
-            this.lblCheckAvailability.AutoSize = true;
-            this.lblCheckAvailability.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblCheckAvailability.Location = new System.Drawing.Point(9, 272);
-            this.lblCheckAvailability.Name = "lblCheckAvailability";
-            this.lblCheckAvailability.Size = new System.Drawing.Size(117, 17);
-            this.lblCheckAvailability.TabIndex = 61;
-            this.lblCheckAvailability.Text = "Check Availability";
-            this.lblCheckAvailability.Click += new System.EventHandler(this.lblCheckAvailability_Click);
-            // 
             // txtFacilitiesNo
             // 
             this.txtFacilitiesNo.Location = new System.Drawing.Point(174, 168);
@@ -279,12 +280,13 @@
             this.lblName.Location = new System.Drawing.Point(51, 94);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(63, 17);
+            this.lblName.Size = new System.Drawing.Size(104, 17);
             this.lblName.TabIndex = 37;
-            this.lblName.Text = "Facility : ";
+            this.lblName.Text = "Facility Name : ";
             // 
             // cmbSearchBy
             // 
+            this.cmbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchBy.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbSearchBy.FormattingEnabled = true;
             this.cmbSearchBy.Location = new System.Drawing.Point(335, 71);
@@ -328,7 +330,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblRates;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblCheckAvailability;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtFacilityID;
@@ -338,5 +339,6 @@
         private System.Windows.Forms.Label lblWarningID;
         private System.Windows.Forms.PictureBox pbWarningFac;
         private System.Windows.Forms.PictureBox pbWarningID;
+        private System.Windows.Forms.LinkLabel lblAvailable;
     }
 }

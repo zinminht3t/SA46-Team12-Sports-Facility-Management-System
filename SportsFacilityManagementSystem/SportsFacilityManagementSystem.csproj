@@ -113,6 +113,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMemberListingReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberListingReport.Designer.cs">
+      <DependentUpon>frmMemberListingReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MemberForm.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MemberListingbyStatus.cs">
+      <DependentUpon>MemberListingbyStatus.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="MemberListing.cs">
       <AutoGen>True</AutoGen>
@@ -254,12 +266,19 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberListingReport.resx">
+      <DependentUpon>frmMemberListingReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberForm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberListingbyStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MemberListingbyStatus.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberListing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

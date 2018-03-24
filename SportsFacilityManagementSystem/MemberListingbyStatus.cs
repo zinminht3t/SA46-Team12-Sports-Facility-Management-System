@@ -16,14 +16,14 @@ namespace SportsFacilityManagementSystem {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class MemberListing : ReportClass {
+    public class MemberListingbyStatus : ReportClass {
         
-        public MemberListing() {
+        public MemberListingbyStatus() {
         }
         
         public override string ResourceName {
             get {
-                return "MemberListing.rpt";
+                return "MemberListingbyStatus.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SportsFacilityManagementSystem {
         
         public override string FullResourceName {
             get {
-                return "SportsFacilityManagementSystem.MemberListing.rpt";
+                return "SportsFacilityManagementSystem.MemberListingbyStatus.rpt";
             }
             set {
                 // Do nothing
@@ -106,7 +106,7 @@ namespace SportsFacilityManagementSystem {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Param_ExpDateTo {
+        public CrystalDecisions.Shared.IParameterField Parameter_Param_Status {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,9 +114,9 @@ namespace SportsFacilityManagementSystem {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedMemberListing : Component, ICachedReport {
+    public class CachedMemberListingbyStatus : Component, ICachedReport {
         
-        public CachedMemberListing() {
+        public CachedMemberListingbyStatus() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace SportsFacilityManagementSystem {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            MemberListing rpt = new MemberListing();
+            MemberListingbyStatus rpt = new MemberListingbyStatus();
             rpt.Site = this.Site;
             return rpt;
         }
