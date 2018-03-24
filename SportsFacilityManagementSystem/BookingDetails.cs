@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsFacilityManagementSystem
 {
-    class BookingDetails
+    public class BookingDetails
     {
         
         public string subFacilityBooked { get; set; }

@@ -26,7 +26,7 @@ namespace SportsFacilityManagementSystem
             this.txtFacilityID.Text = s;
         }
 
-        public void setLbSelectedSlotSF(List<BookingDetails> l)
+        public void SetLbSelectedSlotSF(List<BookingDetails> l)
         {
             foreach(BookingDetails bd in l)
             {

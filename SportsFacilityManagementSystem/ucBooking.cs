@@ -102,7 +102,7 @@ namespace SportsFacilityManagementSystem
                 ucBookingDetails ucbd = new ucBookingDetails();
                 ucbd.Show();
                 ucbd.setTxtFacilityID(cmbSports.Text);
-                ucbd.setLbSelectedSlotSF(bkgDetailsList);
+                ucbd.SetLbSelectedSlotSF(bkgDetailsList);
             }
             
         }
