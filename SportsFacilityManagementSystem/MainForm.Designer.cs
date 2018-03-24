@@ -317,7 +317,7 @@
             // 
             this.ucFacilities2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucFacilities2.Location = new System.Drawing.Point(229, 26);
-            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(2);
+            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ucFacilities2.Name = "ucFacilities2";
             this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
             this.ucFacilities2.TabIndex = 32;
@@ -327,6 +327,7 @@
             // 
             this.ucAddFacilities1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucAddFacilities1.Location = new System.Drawing.Point(228, 30);
+            this.ucAddFacilities1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucAddFacilities1.Name = "ucAddFacilities1";
             this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
             this.ucAddFacilities1.TabIndex = 23;
@@ -337,6 +338,7 @@
             // 
             this.ucReports1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucReports1.Location = new System.Drawing.Point(231, 28);
+            this.ucReports1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucReports1.Name = "ucReports1";
             this.ucReports1.Size = new System.Drawing.Size(751, 519);
             this.ucReports1.TabIndex = 29;
@@ -348,6 +350,7 @@
             this.ucPastTransactions1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ucPastTransactions1.Location = new System.Drawing.Point(230, 28);
+            this.ucPastTransactions1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucPastTransactions1.Name = "ucPastTransactions1";
             this.ucPastTransactions1.Size = new System.Drawing.Size(752, 508);
             this.ucPastTransactions1.TabIndex = 28;
@@ -358,7 +361,7 @@
             // 
             this.ucMembers1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucMembers1.Location = new System.Drawing.Point(231, 30);
-            this.ucMembers1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucMembers1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ucMembers1.Name = "ucMembers1";
             this.ucMembers1.Size = new System.Drawing.Size(752, 508);
             this.ucMembers1.TabIndex = 27;
@@ -369,7 +372,7 @@
             // 
             this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ucAddMember1.Location = new System.Drawing.Point(228, 30);
-            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ucAddMember1.Name = "ucAddMember1";
             this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
             this.ucAddMember1.TabIndex = 31;
@@ -378,18 +381,20 @@
             // ucBooking2
             // 
             this.ucBooking2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucBooking2.Location = new System.Drawing.Point(228, 27);
+            this.ucBooking2.Location = new System.Drawing.Point(228, 28);
             this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucBooking2.Name = "ucBooking2";
-            this.ucBooking2.Size = new System.Drawing.Size(752, 505);
+            this.ucBooking2.Size = new System.Drawing.Size(752, 508);
             this.ucBooking2.TabIndex = 33;
+            this.ucBooking2.Visible = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(982, 533);
+            this.ClientSize = new System.Drawing.Size(979, 524);
+            this.Controls.Add(this.ucBooking2);
             this.Controls.Add(this.btnUpcoming);
             this.Controls.Add(this.btnPasttransactions);
             this.Controls.Add(this.pictureBox1);
@@ -399,17 +404,16 @@
             this.Controls.Add(this.btnAddMembers);
             this.Controls.Add(this.btnSearchMembers);
             this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.ucAddMember1);
+            this.Controls.Add(this.ucFacilities2);
             this.Controls.Add(this.ucAddFacilities1);
             this.Controls.Add(this.ucReports1);
             this.Controls.Add(this.ucPastTransactions1);
             this.Controls.Add(this.ucMembers1);
-            this.Controls.Add(this.ucAddMember1);
-            this.Controls.Add(this.ucFacilities2);
-            this.Controls.Add(this.ucBooking2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(1000, 580);
-            this.MinimumSize = new System.Drawing.Size(1000, 580);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(997, 571);
+            this.MinimumSize = new System.Drawing.Size(997, 571);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sports Facility Management System";

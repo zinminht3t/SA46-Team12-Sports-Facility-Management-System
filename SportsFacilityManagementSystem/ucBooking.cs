@@ -23,6 +23,9 @@ namespace SportsFacilityManagementSystem
         private List<Control> collectionVisibleButtons = new List<Control>();
         private int noSelected;
         private List<Control> collectionClickedButtons = new List<Control>();
+        private List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
+
+
         private int? facilityTransID;
         private int? facilityMemID;
         private string facilityMemName;
@@ -34,10 +37,10 @@ namespace SportsFacilityManagementSystem
             InitializeComponent();
 
             ctx = new SportsFacilitiesEntities();
-            List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
+            //List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
             defaultCmbSports = "- Select sport -";
-            facList.Insert(0, defaultCmbSports);
-            cmbSports.DataSource = facList;
+            //facList.Insert(0, defaultCmbSports);
+            //cmbSports.DataSource = facList;
 
             //dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
 
@@ -51,7 +54,6 @@ namespace SportsFacilityManagementSystem
         //This event is triggered when a visible Button is clicked.
         protected void con_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("clicked");
             Button dynamicButton = (sender as Button);
 
             if (dynamicButton.BackColor == Color.Green) //already clicked before
@@ -80,15 +82,28 @@ namespace SportsFacilityManagementSystem
 
         private void btnBook_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show(noSelected.ToString());
             if (noSelected == 0)
             {
                 MessageBox.Show("You have not selected any booking slot.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                int controlIndex = 0;
+                foreach(Control c in collectionClickedButtons)
+                {
+
+                    
+                    new BookingDetails() { subFacilityBooked = subfacilitiesListNames[controlIndex], slotBooked = Int32.Parse(collectionClickedButtons[controlIndex].Name.Substring(4,1)) };
+                    
+
+
+                }
                 ucBookingDetails ucbd = new ucBookingDetails();
                 ucbd.Show();
                 ucbd.setTxtFacilityID(cmbSports.Text);
+                ucbd.SetLbSelectedSlotSF(bkgDetailsList);
             }
             
         }
@@ -314,6 +329,10 @@ namespace SportsFacilityManagementSystem
         private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
         {
             dtpBookingDatevalue = dtpBookingDate.Value;
+        }
+
+        private void ucBooking_Load_1(object sender, EventArgs e)
+        {
         }
     }
 }
