@@ -16,5 +16,27 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Date changes
+        private void dtpDateFromML_ValueChanged(object sender, EventArgs e)
+        {
+            Datelabelwarning();            
+        }
+
+        private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
+        {
+            Datelabelwarning();
+        }
+
+        private void Datelabelwarning()
+        {
+                lblWarningMLDateTo.Visible = true;
+        }
+        #endregion
     }
 }

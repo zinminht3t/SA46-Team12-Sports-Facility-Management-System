@@ -61,7 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingInvoice1.cs">
+    <Compile Include="BookingDetails.cs" />
+    <Compile Include="BookingInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BookingInvoice2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BookingInvoice.rpt</DependentUpon>
@@ -101,6 +108,12 @@
     <Compile Include="Facility.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,22 +147,16 @@
       <DependentUpon>MemberForm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MemberListingbyStatus.cs">
-      <DependentUpon>MemberListingbyStatus.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="MemberListing.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MemberListing.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MonthlyRevenue.cs">
+    <Compile Include="MemberListingbyStatus.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MonthlyRevenue.rpt</DependentUpon>
+      <DependentUpon>MemberListingbyStatus.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -169,9 +176,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Revenue1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Revenue.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="SportsFacilitiesModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -259,7 +267,7 @@
     </Compile>
     <EmbeddedResource Include="BookingInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookingInvoice1.cs</LastGenOutput>
+      <LastGenOutput>BookingInvoice2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="BookingOccupancy.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -281,17 +289,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberForm.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberListingbyStatus.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MemberListingbyStatus.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="MemberListing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberListing.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonthlyRevenue.rpt">
+    <EmbeddedResource Include="MemberListingbyStatus.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MonthlyRevenue.cs</LastGenOutput>
+      <LastGenOutput>MemberListingbyStatus.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -374,9 +378,9 @@
       <DependentUpon>DataSet5.xsd</DependentUpon>
     </None>
     <None Include="DataSet5.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataSet5.xss">
       <DependentUpon>DataSet5.xsd</DependentUpon>

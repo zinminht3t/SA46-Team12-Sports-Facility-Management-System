@@ -136,6 +136,7 @@
             this.dtpDatetoML.Name = "dtpDatetoML";
             this.dtpDatetoML.Size = new System.Drawing.Size(226, 22);
             this.dtpDatetoML.TabIndex = 36;
+            this.dtpDatetoML.ValueChanged += new System.EventHandler(this.dtpDatetoML_ValueChanged);
             // 
             // dtpDateFromML
             // 
@@ -143,6 +144,7 @@
             this.dtpDateFromML.Name = "dtpDateFromML";
             this.dtpDateFromML.Size = new System.Drawing.Size(222, 22);
             this.dtpDateFromML.TabIndex = 35;
+            this.dtpDateFromML.ValueChanged += new System.EventHandler(this.dtpDateFromML_ValueChanged);
             // 
             // chkbDateFrom
             // 
@@ -172,6 +174,7 @@
             this.btnView.TabIndex = 69;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // ucPastTransactions
             // 
