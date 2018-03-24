@@ -108,6 +108,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBookingDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBookingDetail.Designer.cs">
+      <DependentUpon>frmBookingDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="frmMemberListingReport.Designer.cs">
       <DependentUpon>frmMemberListingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSubMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSubMembers.Designer.cs">
+      <DependentUpon>FrmSubMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -269,8 +281,14 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBookingDetail.resx">
+      <DependentUpon>frmBookingDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMemberListingReport.resx">
       <DependentUpon>frmMemberListingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSubMembers.resx">
+      <DependentUpon>FrmSubMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

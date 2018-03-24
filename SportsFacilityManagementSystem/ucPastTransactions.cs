@@ -13,11 +13,14 @@ namespace SportsFacilityManagementSystem
     public partial class ucPastTransactions : UserControl
     {
         #region Properties
-        string fac;
-        string status;
-        string datefrom;
-        string dateto;
-
+        static string fac;
+        static string status;
+        static string datefrom;
+        static string dateto;
+        bool error = false;
+        bool msgbox = false;
+        #endregion
+        #region Assessor / Mutators (For passing values to New Form)
         public string Fac
         {
             get
@@ -63,7 +66,7 @@ namespace SportsFacilityManagementSystem
             }
         }
         #endregion
-        int error = 0;
+        
         public ucPastTransactions()
         {
             InitializeComponent();
@@ -71,10 +74,11 @@ namespace SportsFacilityManagementSystem
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            #region Checking error of selection
             if (chkbDateFrom.Checked == false && chkbFacilities.Checked == false && chkbStatus.Checked == false)
             {
-                    error = 1;
-                    MessageBox.Show("Please tick at least one box", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);               
+                error = true;
+                msgBox();
             }
             else
             {
@@ -82,71 +86,72 @@ namespace SportsFacilityManagementSystem
                 {
                     if (cmbFac.Text == "")
                     {
-                        error = 1;
-                        MessageBox.Show("Please choose an option!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        error = true;
+                        msgBox();
                     }
                     else
                     {
                         Fac = cmbFac.Text;
                     }
                 }
-                else
+
                 if (chkbStatus.Checked)
                 {
                     if (cmbStatus.Text != "")
                     {
-                        Status = cmbStatus.Text;
+                        error = true;
+                        msgBox();
                     }
                     else
                     {
-                        error = 1;
-                        MessageBox.Show("Please choose an option!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Status = cmbStatus.Text;
                     }
                 }
-                else
+
                 if (chkbDateFrom.Checked)
                 {
+                    // Cannot work if you put same date... WHY !!?!?
                     if (dtpDateFromML.Value >= dtpDatetoML.Value)
+                    {
+                        error = true;
+                        msgBox();
+                        lblWarningMLDateTo.Visible = true;
+                    }
+                    else
                     {
                         Datefrom = dtpDateFromML.Text;
                         Dateto = dtpDatetoML.Text;
-                    }
-                    else
-                    {
-                        error = 1;
+                        lblWarningMLDateTo.Visible = false;
                     }
                 }
             }
+            #endregion
 
-            if(error == 0)
+            #region Passing values to new form / reset boolean
+            if (error == false)
             {
                 PastTransactions pt = new PastTransactions();
+                // Passing values to form
+                pt.getFlagfac = chkbFacilities.Checked;
+                pt.getFlagdate = chkbDateFrom.Checked;
+                pt.getFlagstatus = chkbStatus.Checked;
                 pt.ShowDialog();
             }
-            else
+            
+            // Reset to false for new search
+            error = false;
+            msgbox = false;
+            #endregion
+        }
+
+        private void msgBox()
+        {
+            if (msgbox == false)
             {
-                error = 0;
+                msgbox = true;
+                MessageBox.Show("Selection error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        #region Date changes
-        private void dtpDateFromML_ValueChanged(object sender, EventArgs e)
-        {
-            Datelabelwarning();            
-        }
-
-        private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
-        {
-            Datelabelwarning();
-        }
-
-        private void Datelabelwarning()
-        {
-            if (dtpDateFromML.Value < dtpDatetoML.Value)
-            {
-                lblWarningMLDateTo.Visible = true;
-            }
-        }
-        #endregion
     }
 }
