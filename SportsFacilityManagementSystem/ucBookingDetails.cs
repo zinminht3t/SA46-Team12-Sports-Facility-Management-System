@@ -41,5 +41,10 @@ namespace SportsFacilityManagementSystem
         {
             this.Hide();
         }
+
+        private void txtMemID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

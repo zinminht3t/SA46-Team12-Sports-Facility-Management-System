@@ -53,113 +53,126 @@
             // txtFacilityIDdisplay
             // 
             this.txtFacilityIDdisplay.Enabled = false;
-            this.txtFacilityIDdisplay.Location = new System.Drawing.Point(151, 80);
+            this.txtFacilityIDdisplay.Location = new System.Drawing.Point(302, 154);
+            this.txtFacilityIDdisplay.Margin = new System.Windows.Forms.Padding(6);
             this.txtFacilityIDdisplay.Name = "txtFacilityIDdisplay";
-            this.txtFacilityIDdisplay.Size = new System.Drawing.Size(98, 20);
+            this.txtFacilityIDdisplay.Size = new System.Drawing.Size(192, 31);
             this.txtFacilityIDdisplay.TabIndex = 43;
             // 
             // txtMemIDdisplay
             // 
             this.txtMemIDdisplay.Enabled = false;
-            this.txtMemIDdisplay.Location = new System.Drawing.Point(151, 40);
+            this.txtMemIDdisplay.Location = new System.Drawing.Point(302, 77);
+            this.txtMemIDdisplay.Margin = new System.Windows.Forms.Padding(6);
             this.txtMemIDdisplay.Name = "txtMemIDdisplay";
-            this.txtMemIDdisplay.Size = new System.Drawing.Size(98, 20);
+            this.txtMemIDdisplay.Size = new System.Drawing.Size(192, 31);
             this.txtMemIDdisplay.TabIndex = 42;
             // 
             // btnBook
             // 
-            this.btnBook.Location = new System.Drawing.Point(170, 275);
+            this.btnBook.Location = new System.Drawing.Point(340, 529);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(6);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(75, 23);
+            this.btnBook.Size = new System.Drawing.Size(150, 44);
             this.btnBook.TabIndex = 40;
             this.btnBook.Text = "Book Now";
             this.btnBook.UseVisualStyleBackColor = true;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(80, 193);
-            this.txtRemarks.MaximumSize = new System.Drawing.Size(500, 500);
+            this.txtRemarks.Location = new System.Drawing.Point(160, 371);
+            this.txtRemarks.Margin = new System.Windows.Forms.Padding(6);
+            this.txtRemarks.MaximumSize = new System.Drawing.Size(996, 958);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
-            this.txtRemarks.Size = new System.Drawing.Size(169, 59);
+            this.txtRemarks.Size = new System.Drawing.Size(334, 110);
             this.txtRemarks.TabIndex = 38;
             // 
             // txtFacilityID
             // 
             this.txtFacilityID.Enabled = false;
-            this.txtFacilityID.Location = new System.Drawing.Point(80, 80);
+            this.txtFacilityID.Location = new System.Drawing.Point(160, 154);
+            this.txtFacilityID.Margin = new System.Windows.Forms.Padding(6);
             this.txtFacilityID.Name = "txtFacilityID";
-            this.txtFacilityID.Size = new System.Drawing.Size(66, 20);
+            this.txtFacilityID.Size = new System.Drawing.Size(128, 31);
             this.txtFacilityID.TabIndex = 37;
             // 
             // dtpBookingDate
             // 
             this.dtpBookingDate.Enabled = false;
             this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookingDate.Location = new System.Drawing.Point(80, 60);
+            this.dtpBookingDate.Location = new System.Drawing.Point(160, 115);
+            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpBookingDate.Name = "dtpBookingDate";
-            this.dtpBookingDate.Size = new System.Drawing.Size(169, 20);
+            this.dtpBookingDate.Size = new System.Drawing.Size(334, 31);
             this.dtpBookingDate.TabIndex = 36;
             // 
             // txtMemID
             // 
             this.txtMemID.Enabled = false;
-            this.txtMemID.Location = new System.Drawing.Point(80, 40);
+            this.txtMemID.Location = new System.Drawing.Point(160, 77);
+            this.txtMemID.Margin = new System.Windows.Forms.Padding(6);
             this.txtMemID.Name = "txtMemID";
-            this.txtMemID.Size = new System.Drawing.Size(66, 20);
+            this.txtMemID.Size = new System.Drawing.Size(128, 31);
             this.txtMemID.TabIndex = 35;
             // 
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(2, 196);
+            this.lblRemarks.Location = new System.Drawing.Point(4, 377);
+            this.lblRemarks.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.Size = new System.Drawing.Size(52, 13);
+            this.lblRemarks.Size = new System.Drawing.Size(103, 25);
             this.lblRemarks.TabIndex = 34;
             this.lblRemarks.Text = "Remarks:";
             // 
             // lblBookingSlot
             // 
             this.lblBookingSlot.AutoSize = true;
-            this.lblBookingSlot.Location = new System.Drawing.Point(2, 124);
+            this.lblBookingSlot.Location = new System.Drawing.Point(4, 238);
+            this.lblBookingSlot.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBookingSlot.Name = "lblBookingSlot";
-            this.lblBookingSlot.Size = new System.Drawing.Size(68, 13);
+            this.lblBookingSlot.Size = new System.Drawing.Size(136, 25);
             this.lblBookingSlot.TabIndex = 33;
             this.lblBookingSlot.Text = "Booking slot:";
             // 
             // lblFacilityID
             // 
             this.lblFacilityID.AutoSize = true;
-            this.lblFacilityID.Location = new System.Drawing.Point(2, 83);
+            this.lblFacilityID.Location = new System.Drawing.Point(4, 160);
+            this.lblFacilityID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFacilityID.Name = "lblFacilityID";
-            this.lblFacilityID.Size = new System.Drawing.Size(56, 13);
+            this.lblFacilityID.Size = new System.Drawing.Size(112, 25);
             this.lblFacilityID.TabIndex = 32;
             this.lblFacilityID.Text = "Facility ID:";
             // 
             // lblBookingDate
             // 
             this.lblBookingDate.AutoSize = true;
-            this.lblBookingDate.Location = new System.Drawing.Point(2, 63);
+            this.lblBookingDate.Location = new System.Drawing.Point(4, 121);
+            this.lblBookingDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBookingDate.Name = "lblBookingDate";
-            this.lblBookingDate.Size = new System.Drawing.Size(75, 13);
+            this.lblBookingDate.Size = new System.Drawing.Size(147, 25);
             this.lblBookingDate.TabIndex = 31;
             this.lblBookingDate.Text = "Booking Date:";
             // 
             // lblMemID
             // 
             this.lblMemID.AutoSize = true;
-            this.lblMemID.Location = new System.Drawing.Point(2, 42);
+            this.lblMemID.Location = new System.Drawing.Point(4, 81);
+            this.lblMemID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMemID.Name = "lblMemID";
-            this.lblMemID.Size = new System.Drawing.Size(62, 13);
+            this.lblMemID.Size = new System.Drawing.Size(122, 25);
             this.lblMemID.TabIndex = 30;
             this.lblMemID.Text = "Member ID:";
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
-            this.btnClose.Location = new System.Drawing.Point(239, -1);
+            this.btnClose.Location = new System.Drawing.Point(478, -2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(17, 16);
+            this.btnClose.Size = new System.Drawing.Size(34, 31);
             this.btnClose.TabIndex = 44;
             this.btnClose.Text = "x";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -171,9 +184,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(256, 32);
+            this.lblTitle.Size = new System.Drawing.Size(512, 62);
             this.lblTitle.TabIndex = 68;
             this.lblTitle.Text = "Booking Form";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,56 +194,64 @@
             // txtRates
             // 
             this.txtRates.Enabled = false;
-            this.txtRates.Location = new System.Drawing.Point(80, 102);
+            this.txtRates.Location = new System.Drawing.Point(160, 196);
+            this.txtRates.Margin = new System.Windows.Forms.Padding(6);
             this.txtRates.Name = "txtRates";
-            this.txtRates.Size = new System.Drawing.Size(66, 20);
+            this.txtRates.Size = new System.Drawing.Size(128, 31);
             this.txtRates.TabIndex = 69;
             // 
             // lblRates
             // 
             this.lblRates.AutoSize = true;
-            this.lblRates.Location = new System.Drawing.Point(2, 104);
+            this.lblRates.Location = new System.Drawing.Point(4, 200);
+            this.lblRates.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRates.Name = "lblRates";
-            this.lblRates.Size = new System.Drawing.Size(38, 13);
+            this.lblRates.Size = new System.Drawing.Size(74, 25);
             this.lblRates.TabIndex = 70;
             this.lblRates.Text = "Rates:";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(2, 257);
+            this.lblTotalPrice.Location = new System.Drawing.Point(4, 494);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(64, 13);
+            this.lblTotalPrice.Size = new System.Drawing.Size(127, 25);
             this.lblTotalPrice.TabIndex = 72;
             this.lblTotalPrice.Text = "Total Price: ";
             // 
             // txtTotalPrice
             // 
             this.txtTotalPrice.Enabled = false;
-            this.txtTotalPrice.Location = new System.Drawing.Point(80, 254);
+            this.txtTotalPrice.Location = new System.Drawing.Point(160, 488);
+            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(6);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(66, 20);
+            this.txtTotalPrice.Size = new System.Drawing.Size(128, 31);
             this.txtTotalPrice.TabIndex = 71;
             // 
             // lbSelSlotsSF
             // 
             this.lbSelSlotsSF.FormattingEnabled = true;
-            this.lbSelSlotsSF.Location = new System.Drawing.Point(80, 125);
+            this.lbSelSlotsSF.ItemHeight = 25;
+            this.lbSelSlotsSF.Location = new System.Drawing.Point(160, 240);
+            this.lbSelSlotsSF.Margin = new System.Windows.Forms.Padding(6);
             this.lbSelSlotsSF.Name = "lbSelSlotsSF";
-            this.lbSelSlotsSF.Size = new System.Drawing.Size(66, 56);
+            this.lbSelSlotsSF.Size = new System.Drawing.Size(128, 104);
             this.lbSelSlotsSF.TabIndex = 73;
             // 
             // lbSelSlotsTiming
             // 
             this.lbSelSlotsTiming.FormattingEnabled = true;
-            this.lbSelSlotsTiming.Location = new System.Drawing.Point(148, 125);
+            this.lbSelSlotsTiming.ItemHeight = 25;
+            this.lbSelSlotsTiming.Location = new System.Drawing.Point(296, 240);
+            this.lbSelSlotsTiming.Margin = new System.Windows.Forms.Padding(6);
             this.lbSelSlotsTiming.Name = "lbSelSlotsTiming";
-            this.lbSelSlotsTiming.Size = new System.Drawing.Size(66, 56);
+            this.lbSelSlotsTiming.Size = new System.Drawing.Size(128, 104);
             this.lbSelSlotsTiming.TabIndex = 74;
             // 
             // ucBookingDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -254,9 +275,9 @@
             this.Controls.Add(this.lblBookingDate);
             this.Controls.Add(this.lblMemID);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucBookingDetails";
-            this.Size = new System.Drawing.Size(256, 301);
+            this.Size = new System.Drawing.Size(512, 579);
             this.ResumeLayout(false);
             this.PerformLayout();
 

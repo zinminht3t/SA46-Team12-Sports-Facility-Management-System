@@ -54,7 +54,6 @@ namespace SportsFacilityManagementSystem
         //This event is triggered when a visible Button is clicked.
         protected void con_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("clicked");
             Button dynamicButton = (sender as Button);
 
             if (dynamicButton.BackColor == Color.Green) //already clicked before
@@ -83,6 +82,8 @@ namespace SportsFacilityManagementSystem
 
         private void btnBook_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show(noSelected.ToString());
             if (noSelected == 0)
             {
                 MessageBox.Show("You have not selected any booking slot.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,9 +94,9 @@ namespace SportsFacilityManagementSystem
                 foreach(Control c in collectionClickedButtons)
                 {
 
-                    {
-                        new BookingDetails() { subFacilityBooked = subfacilitiesListNames[controlIndex], slotBooked = Int32.Parse(collectionClickedButtons[controlIndex].Name.Substring(4,1)) };
-                    };
+                    
+                    new BookingDetails() { subFacilityBooked = subfacilitiesListNames[controlIndex], slotBooked = Int32.Parse(collectionClickedButtons[controlIndex].Name.Substring(4,1)) };
+                    
 
 
                 }
