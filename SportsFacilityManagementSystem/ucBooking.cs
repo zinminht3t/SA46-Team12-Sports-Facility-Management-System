@@ -23,6 +23,9 @@ namespace SportsFacilityManagementSystem
         private List<Control> collectionVisibleButtons = new List<Control>();
         private int noSelected;
         private List<Control> collectionClickedButtons = new List<Control>();
+        private List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
+
+
         private int? facilityTransID;
         private int? facilityMemID;
         private string facilityMemName;
@@ -86,9 +89,20 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
+                int controlIndex = 0;
+                foreach(Control c in collectionClickedButtons)
+                {
+
+                    {
+                        new BookingDetails() { subFacilityBooked = subfacilitiesListNames[controlIndex], slotBooked = Int32.Parse(collectionClickedButtons[controlIndex].Name.Substring(4,1)) };
+                    };
+
+
+                }
                 ucBookingDetails ucbd = new ucBookingDetails();
                 ucbd.Show();
                 ucbd.setTxtFacilityID(cmbSports.Text);
+                ucbd.setLbSelectedSlotSF(bkgDetailsList);
             }
             
         }

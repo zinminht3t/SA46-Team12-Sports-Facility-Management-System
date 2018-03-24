@@ -12,6 +12,9 @@ namespace SportsFacilityManagementSystem
 {
     public partial class ucBookingDetails : UserControl
     {
+        private int i;
+
+
         public ucBookingDetails()
         {
             InitializeComponent();
@@ -21,6 +24,17 @@ namespace SportsFacilityManagementSystem
         public void setTxtFacilityID(string s)
         {
             this.txtFacilityID.Text = s;
+        }
+
+        public void setLbSelectedSlotSF(List<BookingDetails> l)
+        {
+            foreach(BookingDetails bd in l)
+            {
+                i= l.IndexOf(bd);
+                this.lbSelSlotsSF.Items[i] = l[i].subFacilityBooked;
+                this.lbSelSlotsTiming.Items[i] = l[i].slotBooked;
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

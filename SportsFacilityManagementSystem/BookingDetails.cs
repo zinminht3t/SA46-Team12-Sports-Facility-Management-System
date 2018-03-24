@@ -8,5 +8,9 @@ namespace SportsFacilityManagementSystem
 {
     class BookingDetails
     {
+        
+        public string subFacilityBooked { get; set; }
+        public int slotBooked { get; set; }
+        
     }
 }

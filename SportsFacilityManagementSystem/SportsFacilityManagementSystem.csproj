@@ -61,16 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingInvoice1.cs">
+    <Compile Include="BookingDetails.cs" />
+    <Compile Include="BookingInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BookingInvoice.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BookingOccupancy.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingOccupancy.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
@@ -93,11 +88,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet5.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Facility.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
@@ -112,12 +102,6 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMemberListingReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMemberListingReport.Designer.cs">
-      <DependentUpon>frmMemberListingReport.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -134,23 +118,11 @@
       <DependentUpon>MemberForm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MemberListingbyStatus.cs">
-      <DependentUpon>MemberListingbyStatus.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="MemberListing.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MemberListing.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PastTransactions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PastTransactions.Designer.cs">
-      <DependentUpon>PastTransactions.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,9 +142,9 @@
     </Compile>
     <Compile Include="Revenue1.cs">
       <DependentUpon>Revenue.rpt</DependentUpon>
+      <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SportsFacilitiesModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -258,22 +230,11 @@
     <Compile Include="User.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingInvoice.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookingInvoice1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BookingOccupancy.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookingOccupancy.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMemberListingReport.resx">
-      <DependentUpon>frmMemberListingReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -282,16 +243,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberForm.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberListingbyStatus.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MemberListingbyStatus.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="MemberListing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberListing.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PastTransactions.resx">
-      <DependentUpon>PastTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -369,17 +323,6 @@
     </None>
     <None Include="DataSet4.xss">
       <DependentUpon>DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet5.xsc">
-      <DependentUpon>DataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet5.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet5.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet5.xss">
-      <DependentUpon>DataSet5.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
