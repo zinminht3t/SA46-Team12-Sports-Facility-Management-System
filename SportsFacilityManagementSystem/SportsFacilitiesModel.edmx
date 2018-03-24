@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SportsFacilitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SportsFacilitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Facilities">
           <Key>
             <PropertyRef Name="facilityid" />
@@ -42,7 +42,7 @@
           </Key>
           <Property Name="subfacilityid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="facilityid" Type="int" Nullable="false" />
-          <Property Name="subfacilityname" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="subfacilityname" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="Timeslots">
           <Key>
@@ -71,6 +71,7 @@
           <Property Name="remark" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="systemtime" Type="datetime" Nullable="false" />
           <Property Name="total" Type="float" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -202,8 +203,7 @@
             <End Role="Transactions" EntitySet="Transactions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SportsFacilitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -249,7 +249,7 @@
           </Key>
           <Property Name="subfacilityid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="facilityid" Type="Int32" Nullable="false" />
-          <Property Name="subfacilityname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="subfacilityname" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Facility" Relationship="Self.FK_SubFacilities_Facilities" FromRole="SubFacilities" ToRole="Facilities" />
           <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_SubFacilities" FromRole="SubFacilities" ToRole="TransactionDetails" />
         </EntityType>
@@ -287,6 +287,7 @@
           <Property Name="total" Type="Double" Nullable="false" />
           <NavigationProperty Name="Member" Relationship="Self.FK_Transactions_Members" FromRole="Transactions" ToRole="Members" />
           <NavigationProperty Name="TransactionDetails" Relationship="Self.FK_TransactionDetails_Transactions" FromRole="Transactions" ToRole="TransactionDetails" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -490,6 +491,7 @@
           <EntitySetMapping Name="Transactions">
             <EntityTypeMapping TypeName="SportsFacilitiesModel.Transaction">
               <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="transactionid" ColumnName="transactionid" />
                 <ScalarProperty Name="memberid" ColumnName="memberid" />
                 <ScalarProperty Name="remark" ColumnName="remark" />
