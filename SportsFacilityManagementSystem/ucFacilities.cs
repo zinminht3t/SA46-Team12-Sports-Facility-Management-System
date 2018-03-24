@@ -89,17 +89,35 @@ namespace SportsFacilityManagementSystem
         private void ComboBoxText()
         {
             cxt = new SportsFacilitiesEntities();
-            //Facility fac = new Facility();
-            //int count = cxt.Facilities.Count();
-            //string row = "";
+            Facility fac = new Facility();
+            int count = cxt.Facilities.Count();
+            string row;
             //for (int i = 1; i <= count; i++)
             //{
             //    fac = cxt.Facilities.Where(x => x.facilityid == i).First();
             //    row = fac.facilityname.ToString();
             //    cmbSearchBy.Items.Add(row);
             //}
-            List<String> addrow = cxt.Facilities.OrderBy(x => x.facilityname).Select(y=> y.facilityname).ToList();
-            cmbSearchBy.DataSource = addrow;
+            string[] row1 = new string[count];
+            for (int i = 1; i <= count; i++)
+            {
+                fac = cxt.Facilities.Where(x => x.facilityid == i).First();
+                row1[i - 1] = fac.facilityname.ToString();
+            }
+            Array.Sort(row1);
+            for(int i =0; i < count; i++)
+            {
+                try
+                {
+                    cmbSearchBy.Items.Add(row1[i]);
+                }
+                catch(Exception)
+                {
+                   
+                }
+            }
+            //List<String> addrow = cxt.Facilities.OrderBy(x => x.facilityname).Select(y=> y.facilityname).ToList();
+            //cmbSearchBy.DataSource = addrow;
         }
 
         #region Visibility Events
