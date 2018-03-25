@@ -35,10 +35,10 @@
             // dgvMembers
             // 
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMembers.Location = new System.Drawing.Point(12, 111);
+            this.dgvMembers.Location = new System.Drawing.Point(12, 100);
             this.dgvMembers.Name = "dgvMembers";
             this.dgvMembers.RowTemplate.Height = 33;
-            this.dgvMembers.Size = new System.Drawing.Size(910, 508);
+            this.dgvMembers.Size = new System.Drawing.Size(1653, 978);
             this.dgvMembers.TabIndex = 0;
             this.dgvMembers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMembers_CellDoubleClick);
             // 
@@ -46,10 +46,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 640);
+            this.ClientSize = new System.Drawing.Size(1677, 1090);
             this.Controls.Add(this.dgvMembers);
             this.Name = "FrmSubMembers";
             this.Text = "FrmSubMembers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSubMembers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.ResumeLayout(false);

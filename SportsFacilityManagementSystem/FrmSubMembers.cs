@@ -27,6 +27,7 @@ namespace SportsFacilityManagementSystem
         private void dgvMembers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             memberid = Convert.ToInt32(dgvMembers.Rows[e.RowIndex].Cells[0].Value.ToString());
+            this.Close();
         }
     }
 }

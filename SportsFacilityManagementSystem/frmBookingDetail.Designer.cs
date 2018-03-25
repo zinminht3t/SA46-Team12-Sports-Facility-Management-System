@@ -58,7 +58,7 @@
             // 
             this.lbSelSlotsTiming.FormattingEnabled = true;
             this.lbSelSlotsTiming.ItemHeight = 25;
-            this.lbSelSlotsTiming.Location = new System.Drawing.Point(413, 305);
+            this.lbSelSlotsTiming.Location = new System.Drawing.Point(413, 325);
             this.lbSelSlotsTiming.Margin = new System.Windows.Forms.Padding(6);
             this.lbSelSlotsTiming.Name = "lbSelSlotsTiming";
             this.lbSelSlotsTiming.Size = new System.Drawing.Size(246, 104);
@@ -68,7 +68,7 @@
             // 
             this.lbSelSlotsSF.FormattingEnabled = true;
             this.lbSelSlotsSF.ItemHeight = 25;
-            this.lbSelSlotsSF.Location = new System.Drawing.Point(315, 304);
+            this.lbSelSlotsSF.Location = new System.Drawing.Point(315, 324);
             this.lbSelSlotsSF.Margin = new System.Windows.Forms.Padding(6);
             this.lbSelSlotsSF.Name = "lbSelSlotsSF";
             this.lbSelSlotsSF.Size = new System.Drawing.Size(75, 104);
@@ -78,7 +78,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(17, 584);
+            this.lblTotalPrice.Location = new System.Drawing.Point(17, 604);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(127, 25);
@@ -88,7 +88,7 @@
             // txtTotalPrice
             // 
             this.txtTotalPrice.Enabled = false;
-            this.txtTotalPrice.Location = new System.Drawing.Point(173, 581);
+            this.txtTotalPrice.Location = new System.Drawing.Point(173, 601);
             this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(6);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(128, 31);
@@ -97,7 +97,7 @@
             // lblRates
             // 
             this.lblRates.AutoSize = true;
-            this.lblRates.Location = new System.Drawing.Point(17, 209);
+            this.lblRates.Location = new System.Drawing.Point(17, 229);
             this.lblRates.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRates.Name = "lblRates";
             this.lblRates.Size = new System.Drawing.Size(154, 25);
@@ -107,7 +107,7 @@
             // txtRates
             // 
             this.txtRates.Enabled = false;
-            this.txtRates.Location = new System.Drawing.Point(173, 205);
+            this.txtRates.Location = new System.Drawing.Point(173, 225);
             this.txtRates.Margin = new System.Windows.Forms.Padding(6);
             this.txtRates.Name = "txtRates";
             this.txtRates.Size = new System.Drawing.Size(179, 31);
@@ -116,7 +116,7 @@
             // txtFacilityIDdisplay
             // 
             this.txtFacilityIDdisplay.Enabled = false;
-            this.txtFacilityIDdisplay.Location = new System.Drawing.Point(384, 163);
+            this.txtFacilityIDdisplay.Location = new System.Drawing.Point(384, 183);
             this.txtFacilityIDdisplay.Margin = new System.Windows.Forms.Padding(6);
             this.txtFacilityIDdisplay.Name = "txtFacilityIDdisplay";
             this.txtFacilityIDdisplay.Size = new System.Drawing.Size(275, 31);
@@ -144,7 +144,7 @@
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(173, 438);
+            this.txtRemarks.Location = new System.Drawing.Point(173, 458);
             this.txtRemarks.Margin = new System.Windows.Forms.Padding(6);
             this.txtRemarks.MaximumSize = new System.Drawing.Size(996, 958);
             this.txtRemarks.Multiline = true;
@@ -155,7 +155,7 @@
             // txtFacilityID
             // 
             this.txtFacilityID.Enabled = false;
-            this.txtFacilityID.Location = new System.Drawing.Point(173, 162);
+            this.txtFacilityID.Location = new System.Drawing.Point(173, 182);
             this.txtFacilityID.Margin = new System.Windows.Forms.Padding(6);
             this.txtFacilityID.Name = "txtFacilityID";
             this.txtFacilityID.Size = new System.Drawing.Size(179, 31);
@@ -165,7 +165,7 @@
             // 
             this.dtpBookingDate.Enabled = false;
             this.dtpBookingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookingDate.Location = new System.Drawing.Point(173, 124);
+            this.dtpBookingDate.Location = new System.Drawing.Point(173, 132);
             this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(486, 31);
@@ -183,7 +183,7 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(17, 444);
+            this.lblRemarks.Location = new System.Drawing.Point(17, 464);
             this.lblRemarks.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(103, 25);
@@ -193,7 +193,7 @@
             // lblBookingSlot
             // 
             this.lblBookingSlot.AutoSize = true;
-            this.lblBookingSlot.Location = new System.Drawing.Point(17, 305);
+            this.lblBookingSlot.Location = new System.Drawing.Point(17, 325);
             this.lblBookingSlot.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBookingSlot.Name = "lblBookingSlot";
             this.lblBookingSlot.Size = new System.Drawing.Size(136, 25);
@@ -203,7 +203,7 @@
             // lblFacilityID
             // 
             this.lblFacilityID.AutoSize = true;
-            this.lblFacilityID.Location = new System.Drawing.Point(17, 169);
+            this.lblFacilityID.Location = new System.Drawing.Point(17, 189);
             this.lblFacilityID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFacilityID.Name = "lblFacilityID";
             this.lblFacilityID.Size = new System.Drawing.Size(112, 25);
@@ -213,7 +213,7 @@
             // lblBookingDate
             // 
             this.lblBookingDate.AutoSize = true;
-            this.lblBookingDate.Location = new System.Drawing.Point(17, 130);
+            this.lblBookingDate.Location = new System.Drawing.Point(17, 136);
             this.lblBookingDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(147, 25);
@@ -247,7 +247,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 257);
+            this.label1.Location = new System.Drawing.Point(17, 277);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 25);
@@ -258,7 +258,7 @@
             // 
             this.dtpDate.Enabled = false;
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(173, 252);
+            this.dtpDate.Location = new System.Drawing.Point(173, 272);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(486, 31);
@@ -268,7 +268,7 @@
             // 
             this.lbSelSlotsFacility.FormattingEnabled = true;
             this.lbSelSlotsFacility.ItemHeight = 25;
-            this.lbSelSlotsFacility.Location = new System.Drawing.Point(171, 304);
+            this.lbSelSlotsFacility.Location = new System.Drawing.Point(171, 324);
             this.lbSelSlotsFacility.Margin = new System.Windows.Forms.Padding(6);
             this.lbSelSlotsFacility.Name = "lbSelSlotsFacility";
             this.lbSelSlotsFacility.Size = new System.Drawing.Size(128, 104);
@@ -326,7 +326,8 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);
             this.Name = "frmBookingDetail";
-            this.Text = "frmBookingDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Booking Details";
             this.Load += new System.EventHandler(this.frmBookingDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

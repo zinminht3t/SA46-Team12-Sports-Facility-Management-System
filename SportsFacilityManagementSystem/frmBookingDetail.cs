@@ -39,6 +39,17 @@ namespace SportsFacilityManagementSystem
             dtpBookingDate.Value = t.systemtime;
             txtRemarks.Text = t.remark;
             txtTotalPrice.Text = t.total.ToString();
+
+            foreach(TransactionDetail td in t.TransactionDetails)
+            {
+                txtFacilityID.Text = td.facilityid.ToString();
+                txtFacilityIDdisplay.Text = td.Facility.facilityname.ToString();
+                txtRates.Text = td.Facility.Rate.ratepertimeslot.ToString();
+
+                lbSelSlotsFacility.Items.Add(td.Facility.facilityname);
+                lbSelSlotsSF.Items.Add(td.SubFacility.subfacilityname);
+                lbSelSlotsTiming.Items.Add(td.Timeslot.timeslot);
+            }
         }
 
         private void frmBookingDetail_Load(object sender, EventArgs e)
@@ -111,6 +122,7 @@ namespace SportsFacilityManagementSystem
         {
             FrmSubMembers fsm = new FrmSubMembers();
             fsm.ShowDialog();
+            txtMemID.Text = FrmSubMembers.memberid.ToString();
         }
 
         private void btnBook_Click(object sender, EventArgs e)
