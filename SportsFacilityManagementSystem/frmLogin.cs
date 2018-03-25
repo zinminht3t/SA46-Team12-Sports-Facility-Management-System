@@ -14,6 +14,7 @@ namespace SportsFacilityManagementSystem
     {
         SportsFacilitiesEntities ctx;
         public static User user;
+        public static List<Facility> facilitylist;
         public frmLogin()
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace SportsFacilityManagementSystem
 
                         frmMain main = new frmMain(); //call the main form
                         main.Show();
+                        facilitylist = ctx.Facilities.ToList();
                     }
                     else
                     {

@@ -39,6 +39,7 @@ namespace SportsFacilityManagementSystem
 
             ctx = new SportsFacilitiesEntities();
             //List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
+
             defaultCmbSports = "- Select sport -";
             //facList.Insert(0, defaultCmbSports);
             //cmbSports.DataSource = facList;
