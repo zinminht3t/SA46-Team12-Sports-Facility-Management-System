@@ -18,6 +18,7 @@ namespace SportsFacilityManagementSystem
         string nametemp = "";
         string ratestemp = "";
         string facilitiesnotemp = "";
+        Facility fac;
         public ucFacilities()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace SportsFacilityManagementSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             cxt = new SportsFacilitiesEntities();
-            Facility fac = new Facility();
+            fac = new Facility();
             SubFacility subf = new SubFacility();
             Rate rate = new Rate();
             string r;
@@ -82,12 +83,9 @@ namespace SportsFacilityManagementSystem
             if (savebtn == DialogResult.Yes)
             {
                 ButtonVisibility(false);
-                // Changes not being saved
                 int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == txtRates.Text).Select(y => y.rateid).First();
-                Facility fac = cxt.Facilities.Where(x => x.facilityid.ToString() == txtFacilityID.Text).First();
                 fac.rateid = rateid;
                 fac.facilityname = txtName.Text;
-                cxt.Facilities.Add(fac);
                 cxt.SaveChanges();
             }
         }

@@ -20,17 +20,17 @@ namespace SportsFacilityManagementSystem {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet6")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet5")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet6 : global::System.Data.DataSet {
+    public partial class DataSet5 : global::System.Data.DataSet {
         
-        private bookinginvoicereportDataTable tablebookinginvoicereport;
+        private revenuereportDataTable tablerevenuereport;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DataSet6() {
+        public DataSet5() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SportsFacilityManagementSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected DataSet6(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet5(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace SportsFacilityManagementSystem {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["bookinginvoicereport"] != null)) {
-                    base.Tables.Add(new bookinginvoicereportDataTable(ds.Tables["bookinginvoicereport"]));
+                if ((ds.Tables["revenuereport"] != null)) {
+                    base.Tables.Add(new revenuereportDataTable(ds.Tables["revenuereport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SportsFacilityManagementSystem {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public bookinginvoicereportDataTable bookinginvoicereport {
+        public revenuereportDataTable revenuereport {
             get {
-                return this.tablebookinginvoicereport;
+                return this.tablerevenuereport;
             }
         }
         
@@ -127,7 +127,7 @@ namespace SportsFacilityManagementSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet6 cln = ((DataSet6)(base.Clone()));
+            DataSet5 cln = ((DataSet5)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace SportsFacilityManagementSystem {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["bookinginvoicereport"] != null)) {
-                    base.Tables.Add(new bookinginvoicereportDataTable(ds.Tables["bookinginvoicereport"]));
+                if ((ds.Tables["revenuereport"] != null)) {
+                    base.Tables.Add(new revenuereportDataTable(ds.Tables["revenuereport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SportsFacilityManagementSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablebookinginvoicereport = ((bookinginvoicereportDataTable)(base.Tables["bookinginvoicereport"]));
+            this.tablerevenuereport = ((revenuereportDataTable)(base.Tables["revenuereport"]));
             if ((initTable == true)) {
-                if ((this.tablebookinginvoicereport != null)) {
-                    this.tablebookinginvoicereport.InitVars();
+                if ((this.tablerevenuereport != null)) {
+                    this.tablerevenuereport.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace SportsFacilityManagementSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet6";
+            this.DataSetName = "DataSet5";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet6.xsd";
+            this.Namespace = "http://tempuri.org/DataSet5.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablebookinginvoicereport = new bookinginvoicereportDataTable();
-            base.Tables.Add(this.tablebookinginvoicereport);
+            this.tablerevenuereport = new revenuereportDataTable();
+            base.Tables.Add(this.tablerevenuereport);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializebookinginvoicereport() {
+        private bool ShouldSerializerevenuereport() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace SportsFacilityManagementSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet6 ds = new DataSet6();
+            DataSet5 ds = new DataSet5();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,49 +270,39 @@ namespace SportsFacilityManagementSystem {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void bookinginvoicereportRowChangeEventHandler(object sender, bookinginvoicereportRowChangeEvent e);
+        public delegate void revenuereportRowChangeEventHandler(object sender, revenuereportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class bookinginvoicereportDataTable : global::System.Data.TypedTableBase<bookinginvoicereportRow> {
+        public partial class revenuereportDataTable : global::System.Data.TypedTableBase<revenuereportRow> {
             
-            private global::System.Data.DataColumn columnmemberid;
+            private global::System.Data.DataColumn columnfacilityid;
             
-            private global::System.Data.DataColumn columnname;
+            private global::System.Data.DataColumn columnfacilityname;
             
-            private global::System.Data.DataColumn columnsystemtime;
+            private global::System.Data.DataColumn columndate;
             
             private global::System.Data.DataColumn columntotal;
             
             private global::System.Data.DataColumn columntransactionid;
             
-            private global::System.Data.DataColumn columnfacilityid;
-            
-            private global::System.Data.DataColumn columndate;
-            
-            private global::System.Data.DataColumn columntimeslot;
-            
-            private global::System.Data.DataColumn columnfacilityname;
-            
-            private global::System.Data.DataColumn columnremark;
+            private global::System.Data.DataColumn columntransactiondetailid;
             
             private global::System.Data.DataColumn columnratepertimeslot;
             
+            private global::System.Data.DataColumn columnrateid;
+            
+            private global::System.Data.DataColumn columnsystemtime;
+            
             private global::System.Data.DataColumn columnstatus;
-            
-            private global::System.Data.DataColumn columnsubfacilityid;
-            
-            private global::System.Data.DataColumn columnsubfacilityname;
-            
-            private global::System.Data.DataColumn columntimeslotid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportDataTable() {
-                this.TableName = "bookinginvoicereport";
+            public revenuereportDataTable() {
+                this.TableName = "revenuereport";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -320,7 +310,7 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal bookinginvoicereportDataTable(global::System.Data.DataTable table) {
+            internal revenuereportDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -337,32 +327,32 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected bookinginvoicereportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected revenuereportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn memberidColumn {
+            public global::System.Data.DataColumn facilityidColumn {
                 get {
-                    return this.columnmemberid;
+                    return this.columnfacilityid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn nameColumn {
+            public global::System.Data.DataColumn facilitynameColumn {
                 get {
-                    return this.columnname;
+                    return this.columnfacilityname;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn systemtimeColumn {
+            public global::System.Data.DataColumn dateColumn {
                 get {
-                    return this.columnsystemtime;
+                    return this.columndate;
                 }
             }
             
@@ -384,41 +374,9 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn facilityidColumn {
+            public global::System.Data.DataColumn transactiondetailidColumn {
                 get {
-                    return this.columnfacilityid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dateColumn {
-                get {
-                    return this.columndate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn timeslotColumn {
-                get {
-                    return this.columntimeslot;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn facilitynameColumn {
-                get {
-                    return this.columnfacilityname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn remarkColumn {
-                get {
-                    return this.columnremark;
+                    return this.columntransactiondetailid;
                 }
             }
             
@@ -432,33 +390,25 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn rateidColumn {
+                get {
+                    return this.columnrateid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn systemtimeColumn {
+                get {
+                    return this.columnsystemtime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn statusColumn {
                 get {
                     return this.columnstatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn subfacilityidColumn {
-                get {
-                    return this.columnsubfacilityid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn subfacilitynameColumn {
-                get {
-                    return this.columnsubfacilityname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn timeslotidColumn {
-                get {
-                    return this.columntimeslotid;
                 }
             }
             
@@ -473,59 +423,64 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportRow this[int index] {
+            public revenuereportRow this[int index] {
                 get {
-                    return ((bookinginvoicereportRow)(this.Rows[index]));
+                    return ((revenuereportRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event bookinginvoicereportRowChangeEventHandler bookinginvoicereportRowChanging;
+            public event revenuereportRowChangeEventHandler revenuereportRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event bookinginvoicereportRowChangeEventHandler bookinginvoicereportRowChanged;
+            public event revenuereportRowChangeEventHandler revenuereportRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event bookinginvoicereportRowChangeEventHandler bookinginvoicereportRowDeleting;
+            public event revenuereportRowChangeEventHandler revenuereportRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event bookinginvoicereportRowChangeEventHandler bookinginvoicereportRowDeleted;
+            public event revenuereportRowChangeEventHandler revenuereportRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddbookinginvoicereportRow(bookinginvoicereportRow row) {
+            public void AddrevenuereportRow(revenuereportRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportRow AddbookinginvoicereportRow(int memberid, string name, System.DateTime systemtime, double total, int transactionid, int facilityid, System.DateTime date, string timeslot, string facilityname, string remark, double ratepertimeslot, string status, int subfacilityid, string subfacilityname, int timeslotid) {
-                bookinginvoicereportRow rowbookinginvoicereportRow = ((bookinginvoicereportRow)(this.NewRow()));
+            public revenuereportRow AddrevenuereportRow(int facilityid, string facilityname, System.DateTime date, double total, int transactionid, int transactiondetailid, double ratepertimeslot, int rateid, System.DateTime systemtime, string status) {
+                revenuereportRow rowrevenuereportRow = ((revenuereportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        memberid,
-                        name,
-                        systemtime,
+                        facilityid,
+                        facilityname,
+                        date,
                         total,
                         transactionid,
-                        facilityid,
-                        date,
-                        timeslot,
-                        facilityname,
-                        remark,
+                        transactiondetailid,
                         ratepertimeslot,
-                        status,
-                        subfacilityid,
-                        subfacilityname,
-                        timeslotid};
-                rowbookinginvoicereportRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowbookinginvoicereportRow);
-                return rowbookinginvoicereportRow;
+                        rateid,
+                        systemtime,
+                        status};
+                rowrevenuereportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowrevenuereportRow);
+                return rowrevenuereportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public revenuereportRow FindByfacilityidtransactionidtransactiondetailidrateid(int facilityid, int transactionid, int transactiondetailid, int rateid) {
+                return ((revenuereportRow)(this.Rows.Find(new object[] {
+                            facilityid,
+                            transactionid,
+                            transactiondetailid,
+                            rateid})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                bookinginvoicereportDataTable cln = ((bookinginvoicereportDataTable)(base.Clone()));
+                revenuereportDataTable cln = ((revenuereportDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -533,107 +488,89 @@ namespace SportsFacilityManagementSystem {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new bookinginvoicereportDataTable();
+                return new revenuereportDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnmemberid = base.Columns["memberid"];
-                this.columnname = base.Columns["name"];
-                this.columnsystemtime = base.Columns["systemtime"];
+                this.columnfacilityid = base.Columns["facilityid"];
+                this.columnfacilityname = base.Columns["facilityname"];
+                this.columndate = base.Columns["date"];
                 this.columntotal = base.Columns["total"];
                 this.columntransactionid = base.Columns["transactionid"];
-                this.columnfacilityid = base.Columns["facilityid"];
-                this.columndate = base.Columns["date"];
-                this.columntimeslot = base.Columns["timeslot"];
-                this.columnfacilityname = base.Columns["facilityname"];
-                this.columnremark = base.Columns["remark"];
+                this.columntransactiondetailid = base.Columns["transactiondetailid"];
                 this.columnratepertimeslot = base.Columns["ratepertimeslot"];
+                this.columnrateid = base.Columns["rateid"];
+                this.columnsystemtime = base.Columns["systemtime"];
                 this.columnstatus = base.Columns["status"];
-                this.columnsubfacilityid = base.Columns["subfacilityid"];
-                this.columnsubfacilityname = base.Columns["subfacilityname"];
-                this.columntimeslotid = base.Columns["timeslotid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnmemberid = new global::System.Data.DataColumn("memberid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmemberid);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
-                this.columnsystemtime = new global::System.Data.DataColumn("systemtime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsystemtime);
+                this.columnfacilityid = new global::System.Data.DataColumn("facilityid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfacilityid);
+                this.columnfacilityname = new global::System.Data.DataColumn("facilityname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfacilityname);
+                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
                 this.columntransactionid = new global::System.Data.DataColumn("transactionid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntransactionid);
-                this.columnfacilityid = new global::System.Data.DataColumn("facilityid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfacilityid);
-                this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndate);
-                this.columntimeslot = new global::System.Data.DataColumn("timeslot", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntimeslot);
-                this.columnfacilityname = new global::System.Data.DataColumn("facilityname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfacilityname);
-                this.columnremark = new global::System.Data.DataColumn("remark", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnremark);
+                this.columntransactiondetailid = new global::System.Data.DataColumn("transactiondetailid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntransactiondetailid);
                 this.columnratepertimeslot = new global::System.Data.DataColumn("ratepertimeslot", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnratepertimeslot);
+                this.columnrateid = new global::System.Data.DataColumn("rateid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrateid);
+                this.columnsystemtime = new global::System.Data.DataColumn("systemtime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsystemtime);
                 this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatus);
-                this.columnsubfacilityid = new global::System.Data.DataColumn("subfacilityid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsubfacilityid);
-                this.columnsubfacilityname = new global::System.Data.DataColumn("subfacilityname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsubfacilityname);
-                this.columntimeslotid = new global::System.Data.DataColumn("timeslotid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntimeslotid);
-                this.columnmemberid.AllowDBNull = false;
-                this.columnname.MaxLength = 50;
-                this.columnsystemtime.AllowDBNull = false;
-                this.columntotal.AllowDBNull = false;
-                this.columntransactionid.AllowDBNull = false;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnfacilityid,
+                                this.columntransactionid,
+                                this.columntransactiondetailid,
+                                this.columnrateid}, true));
                 this.columnfacilityid.AllowDBNull = false;
-                this.columndate.AllowDBNull = false;
-                this.columntimeslot.AllowDBNull = false;
-                this.columntimeslot.MaxLength = 50;
                 this.columnfacilityname.AllowDBNull = false;
                 this.columnfacilityname.MaxLength = 50;
-                this.columnremark.AllowDBNull = false;
-                this.columnremark.MaxLength = 50;
+                this.columndate.AllowDBNull = false;
+                this.columntotal.AllowDBNull = false;
+                this.columntransactionid.AllowDBNull = false;
+                this.columntransactiondetailid.AllowDBNull = false;
                 this.columnratepertimeslot.AllowDBNull = false;
+                this.columnrateid.AllowDBNull = false;
+                this.columnsystemtime.AllowDBNull = false;
                 this.columnstatus.MaxLength = 10;
-                this.columnsubfacilityid.AllowDBNull = false;
-                this.columnsubfacilityname.AllowDBNull = false;
-                this.columnsubfacilityname.MaxLength = 1;
-                this.columntimeslotid.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportRow NewbookinginvoicereportRow() {
-                return ((bookinginvoicereportRow)(this.NewRow()));
+            public revenuereportRow NewrevenuereportRow() {
+                return ((revenuereportRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new bookinginvoicereportRow(builder);
+                return new revenuereportRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(bookinginvoicereportRow);
+                return typeof(revenuereportRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.bookinginvoicereportRowChanged != null)) {
-                    this.bookinginvoicereportRowChanged(this, new bookinginvoicereportRowChangeEvent(((bookinginvoicereportRow)(e.Row)), e.Action));
+                if ((this.revenuereportRowChanged != null)) {
+                    this.revenuereportRowChanged(this, new revenuereportRowChangeEvent(((revenuereportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -641,8 +578,8 @@ namespace SportsFacilityManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.bookinginvoicereportRowChanging != null)) {
-                    this.bookinginvoicereportRowChanging(this, new bookinginvoicereportRowChangeEvent(((bookinginvoicereportRow)(e.Row)), e.Action));
+                if ((this.revenuereportRowChanging != null)) {
+                    this.revenuereportRowChanging(this, new revenuereportRowChangeEvent(((revenuereportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -650,8 +587,8 @@ namespace SportsFacilityManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.bookinginvoicereportRowDeleted != null)) {
-                    this.bookinginvoicereportRowDeleted(this, new bookinginvoicereportRowChangeEvent(((bookinginvoicereportRow)(e.Row)), e.Action));
+                if ((this.revenuereportRowDeleted != null)) {
+                    this.revenuereportRowDeleted(this, new revenuereportRowChangeEvent(((revenuereportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -659,14 +596,14 @@ namespace SportsFacilityManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.bookinginvoicereportRowDeleting != null)) {
-                    this.bookinginvoicereportRowDeleting(this, new bookinginvoicereportRowChangeEvent(((bookinginvoicereportRow)(e.Row)), e.Action));
+                if ((this.revenuereportRowDeleting != null)) {
+                    this.revenuereportRowDeleting(this, new revenuereportRowChangeEvent(((revenuereportRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovebookinginvoicereportRow(bookinginvoicereportRow row) {
+            public void RemoverevenuereportRow(revenuereportRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -675,7 +612,7 @@ namespace SportsFacilityManagementSystem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet6 ds = new DataSet6();
+                DataSet5 ds = new DataSet5();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -693,7 +630,7 @@ namespace SportsFacilityManagementSystem {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "bookinginvoicereportDataTable";
+                attribute2.FixedValue = "revenuereportDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -737,107 +674,25 @@ namespace SportsFacilityManagementSystem {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class bookinginvoicereportRow : global::System.Data.DataRow {
+        public partial class revenuereportRow : global::System.Data.DataRow {
             
-            private bookinginvoicereportDataTable tablebookinginvoicereport;
+            private revenuereportDataTable tablerevenuereport;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal bookinginvoicereportRow(global::System.Data.DataRowBuilder rb) : 
+            internal revenuereportRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablebookinginvoicereport = ((bookinginvoicereportDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int memberid {
-                get {
-                    return ((int)(this[this.tablebookinginvoicereport.memberidColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.memberidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string name {
-                get {
-                    try {
-                        return ((string)(this[this.tablebookinginvoicereport.nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'name\' in table \'bookinginvoicereport\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablebookinginvoicereport.nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime systemtime {
-                get {
-                    return ((global::System.DateTime)(this[this.tablebookinginvoicereport.systemtimeColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.systemtimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double total {
-                get {
-                    return ((double)(this[this.tablebookinginvoicereport.totalColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.totalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int transactionid {
-                get {
-                    return ((int)(this[this.tablebookinginvoicereport.transactionidColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.transactionidColumn] = value;
-                }
+                this.tablerevenuereport = ((revenuereportDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int facilityid {
                 get {
-                    return ((int)(this[this.tablebookinginvoicereport.facilityidColumn]));
+                    return ((int)(this[this.tablerevenuereport.facilityidColumn]));
                 }
                 set {
-                    this[this.tablebookinginvoicereport.facilityidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime date {
-                get {
-                    return ((global::System.DateTime)(this[this.tablebookinginvoicereport.dateColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string timeslot {
-                get {
-                    return ((string)(this[this.tablebookinginvoicereport.timeslotColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.timeslotColumn] = value;
+                    this[this.tablerevenuereport.facilityidColumn] = value;
                 }
             }
             
@@ -845,21 +700,54 @@ namespace SportsFacilityManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string facilityname {
                 get {
-                    return ((string)(this[this.tablebookinginvoicereport.facilitynameColumn]));
+                    return ((string)(this[this.tablerevenuereport.facilitynameColumn]));
                 }
                 set {
-                    this[this.tablebookinginvoicereport.facilitynameColumn] = value;
+                    this[this.tablerevenuereport.facilitynameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string remark {
+            public System.DateTime date {
                 get {
-                    return ((string)(this[this.tablebookinginvoicereport.remarkColumn]));
+                    return ((global::System.DateTime)(this[this.tablerevenuereport.dateColumn]));
                 }
                 set {
-                    this[this.tablebookinginvoicereport.remarkColumn] = value;
+                    this[this.tablerevenuereport.dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double total {
+                get {
+                    return ((double)(this[this.tablerevenuereport.totalColumn]));
+                }
+                set {
+                    this[this.tablerevenuereport.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int transactionid {
+                get {
+                    return ((int)(this[this.tablerevenuereport.transactionidColumn]));
+                }
+                set {
+                    this[this.tablerevenuereport.transactionidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int transactiondetailid {
+                get {
+                    return ((int)(this[this.tablerevenuereport.transactiondetailidColumn]));
+                }
+                set {
+                    this[this.tablerevenuereport.transactiondetailidColumn] = value;
                 }
             }
             
@@ -867,10 +755,32 @@ namespace SportsFacilityManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double ratepertimeslot {
                 get {
-                    return ((double)(this[this.tablebookinginvoicereport.ratepertimeslotColumn]));
+                    return ((double)(this[this.tablerevenuereport.ratepertimeslotColumn]));
                 }
                 set {
-                    this[this.tablebookinginvoicereport.ratepertimeslotColumn] = value;
+                    this[this.tablerevenuereport.ratepertimeslotColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int rateid {
+                get {
+                    return ((int)(this[this.tablerevenuereport.rateidColumn]));
+                }
+                set {
+                    this[this.tablerevenuereport.rateidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime systemtime {
+                get {
+                    return ((global::System.DateTime)(this[this.tablerevenuereport.systemtimeColumn]));
+                }
+                set {
+                    this[this.tablerevenuereport.systemtimeColumn] = value;
                 }
             }
             
@@ -879,72 +789,27 @@ namespace SportsFacilityManagementSystem {
             public string status {
                 get {
                     try {
-                        return ((string)(this[this.tablebookinginvoicereport.statusColumn]));
+                        return ((string)(this[this.tablerevenuereport.statusColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'bookinginvoicereport\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'revenuereport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablebookinginvoicereport.statusColumn] = value;
+                    this[this.tablerevenuereport.statusColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int subfacilityid {
-                get {
-                    return ((int)(this[this.tablebookinginvoicereport.subfacilityidColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.subfacilityidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string subfacilityname {
-                get {
-                    return ((string)(this[this.tablebookinginvoicereport.subfacilitynameColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.subfacilitynameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int timeslotid {
-                get {
-                    return ((int)(this[this.tablebookinginvoicereport.timeslotidColumn]));
-                }
-                set {
-                    this[this.tablebookinginvoicereport.timeslotidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsnameNull() {
-                return this.IsNull(this.tablebookinginvoicereport.nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetnameNull() {
-                this[this.tablebookinginvoicereport.nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsstatusNull() {
-                return this.IsNull(this.tablebookinginvoicereport.statusColumn);
+                return this.IsNull(this.tablerevenuereport.statusColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetstatusNull() {
-                this[this.tablebookinginvoicereport.statusColumn] = global::System.Convert.DBNull;
+                this[this.tablerevenuereport.statusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -952,22 +817,22 @@ namespace SportsFacilityManagementSystem {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class bookinginvoicereportRowChangeEvent : global::System.EventArgs {
+        public class revenuereportRowChangeEvent : global::System.EventArgs {
             
-            private bookinginvoicereportRow eventRow;
+            private revenuereportRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportRowChangeEvent(bookinginvoicereportRow row, global::System.Data.DataRowAction action) {
+            public revenuereportRowChangeEvent(revenuereportRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportRow Row {
+            public revenuereportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -983,7 +848,7 @@ namespace SportsFacilityManagementSystem {
         }
     }
 }
-namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
+namespace SportsFacilityManagementSystem.DataSet5TableAdapters {
     
     
     /// <summary>
@@ -995,7 +860,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class bookinginvoicereportTableAdapter : global::System.ComponentModel.Component {
+    public partial class revenuereportTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1009,7 +874,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bookinginvoicereportTableAdapter() {
+        public revenuereportTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1106,22 +971,17 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "bookinginvoicereport";
-            tableMapping.ColumnMappings.Add("memberid", "memberid");
-            tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("systemtime", "systemtime");
+            tableMapping.DataSetTable = "revenuereport";
+            tableMapping.ColumnMappings.Add("facilityid", "facilityid");
+            tableMapping.ColumnMappings.Add("facilityname", "facilityname");
+            tableMapping.ColumnMappings.Add("date", "date");
             tableMapping.ColumnMappings.Add("total", "total");
             tableMapping.ColumnMappings.Add("transactionid", "transactionid");
-            tableMapping.ColumnMappings.Add("facilityid", "facilityid");
-            tableMapping.ColumnMappings.Add("date", "date");
-            tableMapping.ColumnMappings.Add("timeslot", "timeslot");
-            tableMapping.ColumnMappings.Add("facilityname", "facilityname");
-            tableMapping.ColumnMappings.Add("remark", "remark");
+            tableMapping.ColumnMappings.Add("transactiondetailid", "transactiondetailid");
             tableMapping.ColumnMappings.Add("ratepertimeslot", "ratepertimeslot");
+            tableMapping.ColumnMappings.Add("rateid", "rateid");
+            tableMapping.ColumnMappings.Add("systemtime", "systemtime");
             tableMapping.ColumnMappings.Add("status", "status");
-            tableMapping.ColumnMappings.Add("subfacilityid", "subfacilityid");
-            tableMapping.ColumnMappings.Add("subfacilityname", "subfacilityname");
-            tableMapping.ColumnMappings.Add("timeslotid", "timeslotid");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1138,9 +998,8 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT memberid, name, systemtime, total, transactionid, facilityid, date, timesl" +
-                "ot, facilityname, remark, ratepertimeslot, status, subfacilityid, subfacilitynam" +
-                "e, timeslotid FROM dbo.bookinginvoicereport";
+            this._commandCollection[0].CommandText = "SELECT facilityid, facilityname, date, total, transactionid, transactiondetailid," +
+                " ratepertimeslot, rateid, systemtime, status FROM dbo.revenuereport";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1148,7 +1007,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet6.bookinginvoicereportDataTable dataTable) {
+        public virtual int Fill(DataSet5.revenuereportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1161,9 +1020,9 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet6.bookinginvoicereportDataTable GetData() {
+        public virtual DataSet5.revenuereportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet6.bookinginvoicereportDataTable dataTable = new DataSet6.bookinginvoicereportDataTable();
+            DataSet5.revenuereportDataTable dataTable = new DataSet5.revenuereportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1237,7 +1096,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(DataSet6 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1247,7 +1106,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(DataSet6 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1257,7 +1116,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(DataSet6 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1291,7 +1150,7 @@ namespace SportsFacilityManagementSystem.DataSet6TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(DataSet6 dataSet) {
+        public virtual int UpdateAll(DataSet5 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -111,17 +111,18 @@ namespace SportsFacilityManagementSystem
                 if (chkbDateFrom.Checked)
                 {
                     // Cannot work if you put same date... WHY !!?!?
-                    if (dtpDateFromML.Value >= dtpDatetoML.Value)
+                    if (dtpDateFromML.Value < dtpDatetoML.Value || dtpDateFromML.Value.ToString("yyyy/MM/dd") == dtpDatetoML.Value.ToString("yyyy/MM/dd"))
+                    {
+                        Datefrom = dtpDateFromML.Value;
+                        Dateto = dtpDatetoML.Value;
+                        lblWarningMLDateTo.Visible = false;
+                        
+                    }
+                    else
                     {
                         error = true;
                         msgBox();
                         lblWarningMLDateTo.Visible = true;
-                    }
-                    else
-                    {
-                        Datefrom = dtpDateFromML.Value;
-                        Dateto = dtpDatetoML.Value ;
-                        lblWarningMLDateTo.Visible = false;
                     }
                 }
             }

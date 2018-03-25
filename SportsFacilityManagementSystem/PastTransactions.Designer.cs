@@ -39,6 +39,7 @@
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransactions.Location = new System.Drawing.Point(89, 28);
             this.dgvTransactions.Name = "dgvTransactions";
+            this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(658, 353);
             this.dgvTransactions.TabIndex = 0;

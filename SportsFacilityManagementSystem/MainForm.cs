@@ -113,6 +113,16 @@ namespace SportsFacilityManagementSystem
         {
             AllMenu(false);
         }
+
+        private void ucFacilities2_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
+
+        private void ucBooking2_MouseEnter(object sender, EventArgs e)
+        {
+            AllMenu(false);
+        }
         #endregion
 
         #region Sidetab Panel (Mouse Click Events)
@@ -206,7 +216,6 @@ namespace SportsFacilityManagementSystem
         public void HideAllUC()
         {
             ucReports1.Visible = false;
-            ucBooking2.Visible = false;
             ucPastTransactions1.Visible = false;
             ucFacilities2.Visible = false;
             ucAddFacilities1.Visible = false;
@@ -219,6 +228,7 @@ namespace SportsFacilityManagementSystem
             ucBooking2.Visible = true;
         }
         #endregion
+
 
     }
 }
