@@ -30,7 +30,12 @@ namespace SportsFacilityManagementSystem
         {
             btnCancel.Visible = true;
             btnBook.Visible = false;
+            lbSelSlotsFacility.Items.Clear();
+            lbSelSlotsSF.Items.Clear();
+            lbSelSlotsTiming.Items.Clear();
             transid = ucBooking.redButtonTransID;
+            dtpDate.Value = ucBooking.getForDate();
+
 
             Transaction t = new Transaction();
             t = cxt.Transactions.First(x => x.transactionid == transid);
@@ -45,7 +50,6 @@ namespace SportsFacilityManagementSystem
                 txtFacilityID.Text = td.facilityid.ToString();
                 txtFacilityIDdisplay.Text = td.Facility.facilityname.ToString();
                 txtRates.Text = td.Facility.Rate.ratepertimeslot.ToString();
-
                 lbSelSlotsFacility.Items.Add(td.Facility.facilityname);
                 lbSelSlotsSF.Items.Add(td.SubFacility.subfacilityname);
                 lbSelSlotsTiming.Items.Add(td.Timeslot.timeslot);
@@ -70,12 +74,14 @@ namespace SportsFacilityManagementSystem
                 price = rate * noOfSlotsSelected;
                 string totalprice = price.ToString();
                 txtTotalPrice.Text = "$" + String.Format("{0:#.00}", totalprice);
+                dtpDate.Value = ucBooking.getForDate();
             }
 
         }
 
         public void setLbSelFacility(String s)
         {
+            lbSelSlotsFacility.Items.Clear();
             this.lbSelSlotsFacility.Items.Add(s);
         }
             
@@ -86,6 +92,8 @@ namespace SportsFacilityManagementSystem
 
         public void SetLbSelectedSlotSF(List<BookingDetails> l)
         {
+            lbSelSlotsSF.Items.Clear();
+            lbSelSlotsTiming.Items.Clear();
             string a;
             int timeslot;
             foreach (BookingDetails bd in l)
