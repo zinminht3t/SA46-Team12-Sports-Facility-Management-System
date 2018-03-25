@@ -18,22 +18,59 @@ namespace SportsFacilityManagementSystem
         private int noOfSlotsSelected = 1;
         double price;
         int facilityID;
+        int transid;
+
+        public static int rptTransactionid;
         public frmBookingDetail()
         {
             InitializeComponent();
         }
 
-        
+        private void ShowExistingBookingDetail()
+        {
+            btnCancel.Visible = true;
+            btnBook.Visible = false;
+            transid = ucBooking.redButtonTransID;
+
+            Transaction t = new Transaction();
+            t = cxt.Transactions.First(x => x.transactionid == transid);
+            txtMemID.Text = t.memberid.ToString();
+            txtMemIDdisplay.Text = t.Member.name.ToString();
+            dtpBookingDate.Value = t.systemtime;
+            txtRemarks.Text = t.remark;
+            txtTotalPrice.Text = t.total.ToString();
+
+            foreach(TransactionDetail td in t.TransactionDetails)
+            {
+                txtFacilityID.Text = td.facilityid.ToString();
+                txtFacilityIDdisplay.Text = td.Facility.facilityname.ToString();
+                txtRates.Text = td.Facility.Rate.ratepertimeslot.ToString();
+
+                lbSelSlotsFacility.Items.Add(td.Facility.facilityname);
+                lbSelSlotsSF.Items.Add(td.SubFacility.subfacilityname);
+                lbSelSlotsTiming.Items.Add(td.Timeslot.timeslot);
+            }
+        }
+
         private void frmBookingDetail_Load(object sender, EventArgs e)
         {
-            facilityID = cxt.Facilities.First(x=>x.facilityname==txtFacilityID.Text).facilityid;
-            double rate = cxt.Facilities.First(x => x.facilityid == facilityID).Rate.ratepertimeslot;
-            //txtRates.Text = rate.ToString("{0:C}");
-            txtRates.Text = "$" + String.Format("{0:#.00}", rate);
-            noOfSlotsSelected = lbSelSlotsSF.Items.Count;
-            price = rate * noOfSlotsSelected;
-            string totalprice = price.ToString();
-            txtTotalPrice.Text = "$" + String.Format("{0:#.00}", totalprice);
+            if (txtFacilityID.Text == ""||txtFacilityID.Text is null)
+            {
+                ShowExistingBookingDetail();
+            }
+            else
+            {
+                btnCancel.Visible = false;
+                btnBook.Visible = true;
+                facilityID = cxt.Facilities.First(x => x.facilityname == txtFacilityID.Text).facilityid;
+                double rate = cxt.Facilities.First(x => x.facilityid == facilityID).Rate.ratepertimeslot;
+                //txtRates.Text = rate.ToString("{0:C}");
+                txtRates.Text = "$" + String.Format("{0:#.00}", rate);
+                noOfSlotsSelected = lbSelSlotsSF.Items.Count;
+                price = rate * noOfSlotsSelected;
+                string totalprice = price.ToString();
+                txtTotalPrice.Text = "$" + String.Format("{0:#.00}", totalprice);
+            }
 
         }
 
@@ -85,6 +122,7 @@ namespace SportsFacilityManagementSystem
         {
             FrmSubMembers fsm = new FrmSubMembers();
             fsm.ShowDialog();
+            txtMemID.Text = FrmSubMembers.memberid.ToString();
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -120,17 +158,50 @@ namespace SportsFacilityManagementSystem
                 }
                 ctx.SaveChanges();
                 MessageBox.Show("Booking Completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult result = MessageBox.Show("Do you want to print the booking invoice?", "Print", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    rptTransactionid = id;
+                    frmInvoiceReport frmIR = new frmInvoiceReport();
+                    frmIR.ShowDialog();
+                }
             }
             catch
             {
                 MessageBox.Show("You have encountered an error. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            this.Close();
+
             //for(lb)
             //for(int i = 0; i < noOfSlotsSelected; i++)
             //{
             //    td = new TransactionDetail();
             //}
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to proceed with the cancellation?", "Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    Transaction updatet = new Transaction();
+                    updatet = cxt.Transactions.First(x => x.transactionid == transid);
+                    updatet.status = "Cancelled";
+                    cxt.SaveChanges();
+                    MessageBox.Show("Booking has been successfully cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("You have encountered an error. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
