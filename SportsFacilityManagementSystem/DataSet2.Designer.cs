@@ -301,9 +301,13 @@ namespace SportsFacilityManagementSystem {
             
             private global::System.Data.DataColumn columnratepertimeslot;
             
+            private global::System.Data.DataColumn columnstatus;
+            
             private global::System.Data.DataColumn columnsubfacilityid;
             
             private global::System.Data.DataColumn columnsubfacilityname;
+            
+            private global::System.Data.DataColumn columntimeslotid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -428,6 +432,14 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn subfacilityidColumn {
                 get {
                     return this.columnsubfacilityid;
@@ -439,6 +451,14 @@ namespace SportsFacilityManagementSystem {
             public global::System.Data.DataColumn subfacilitynameColumn {
                 get {
                     return this.columnsubfacilityname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn timeslotidColumn {
+                get {
+                    return this.columntimeslotid;
                 }
             }
             
@@ -479,7 +499,7 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bookinginvoicereportRow AddbookinginvoicereportRow(int memberid, string name, System.DateTime systemtime, double total, int transactionid, int facilityid, System.DateTime date, string timeslot, string facilityname, string remark, double ratepertimeslot, int subfacilityid, string subfacilityname) {
+            public bookinginvoicereportRow AddbookinginvoicereportRow(int memberid, string name, System.DateTime systemtime, double total, int transactionid, int facilityid, System.DateTime date, string timeslot, string facilityname, string remark, double ratepertimeslot, string status, int subfacilityid, string subfacilityname, int timeslotid) {
                 bookinginvoicereportRow rowbookinginvoicereportRow = ((bookinginvoicereportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         memberid,
@@ -493,8 +513,10 @@ namespace SportsFacilityManagementSystem {
                         facilityname,
                         remark,
                         ratepertimeslot,
+                        status,
                         subfacilityid,
-                        subfacilityname};
+                        subfacilityname,
+                        timeslotid};
                 rowbookinginvoicereportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbookinginvoicereportRow);
                 return rowbookinginvoicereportRow;
@@ -528,8 +550,10 @@ namespace SportsFacilityManagementSystem {
                 this.columnfacilityname = base.Columns["facilityname"];
                 this.columnremark = base.Columns["remark"];
                 this.columnratepertimeslot = base.Columns["ratepertimeslot"];
+                this.columnstatus = base.Columns["status"];
                 this.columnsubfacilityid = base.Columns["subfacilityid"];
                 this.columnsubfacilityname = base.Columns["subfacilityname"];
+                this.columntimeslotid = base.Columns["timeslotid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -557,10 +581,14 @@ namespace SportsFacilityManagementSystem {
                 base.Columns.Add(this.columnremark);
                 this.columnratepertimeslot = new global::System.Data.DataColumn("ratepertimeslot", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnratepertimeslot);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.columnsubfacilityid = new global::System.Data.DataColumn("subfacilityid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubfacilityid);
                 this.columnsubfacilityname = new global::System.Data.DataColumn("subfacilityname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubfacilityname);
+                this.columntimeslotid = new global::System.Data.DataColumn("timeslotid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntimeslotid);
                 this.columnmemberid.AllowDBNull = false;
                 this.columnname.MaxLength = 50;
                 this.columnsystemtime.AllowDBNull = false;
@@ -575,9 +603,11 @@ namespace SportsFacilityManagementSystem {
                 this.columnremark.AllowDBNull = false;
                 this.columnremark.MaxLength = 50;
                 this.columnratepertimeslot.AllowDBNull = false;
+                this.columnstatus.MaxLength = 10;
                 this.columnsubfacilityid.AllowDBNull = false;
                 this.columnsubfacilityname.AllowDBNull = false;
                 this.columnsubfacilityname.MaxLength = 1;
+                this.columntimeslotid.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -846,6 +876,22 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string status {
+                get {
+                    try {
+                        return ((string)(this[this.tablebookinginvoicereport.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'bookinginvoicereport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebookinginvoicereport.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int subfacilityid {
                 get {
                     return ((int)(this[this.tablebookinginvoicereport.subfacilityidColumn]));
@@ -868,6 +914,17 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int timeslotid {
+                get {
+                    return ((int)(this[this.tablebookinginvoicereport.timeslotidColumn]));
+                }
+                set {
+                    this[this.tablebookinginvoicereport.timeslotidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsnameNull() {
                 return this.IsNull(this.tablebookinginvoicereport.nameColumn);
             }
@@ -876,6 +933,18 @@ namespace SportsFacilityManagementSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetnameNull() {
                 this[this.tablebookinginvoicereport.nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tablebookinginvoicereport.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tablebookinginvoicereport.statusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1049,8 +1118,10 @@ namespace SportsFacilityManagementSystem.DataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("facilityname", "facilityname");
             tableMapping.ColumnMappings.Add("remark", "remark");
             tableMapping.ColumnMappings.Add("ratepertimeslot", "ratepertimeslot");
+            tableMapping.ColumnMappings.Add("status", "status");
             tableMapping.ColumnMappings.Add("subfacilityid", "subfacilityid");
             tableMapping.ColumnMappings.Add("subfacilityname", "subfacilityname");
+            tableMapping.ColumnMappings.Add("timeslotid", "timeslotid");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1068,8 +1139,8 @@ namespace SportsFacilityManagementSystem.DataSet2TableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT memberid, name, systemtime, total, transactionid, facilityid, date, timesl" +
-                "ot, facilityname, remark, ratepertimeslot, subfacilityid, subfacilityname FROM d" +
-                "bo.bookinginvoicereport";
+                "ot, facilityname, remark, ratepertimeslot, status, subfacilityid, subfacilitynam" +
+                "e, timeslotid FROM dbo.bookinginvoicereport";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
