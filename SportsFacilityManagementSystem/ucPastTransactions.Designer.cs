@@ -33,19 +33,19 @@
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbFac = new System.Windows.Forms.ComboBox();
             this.chkbStatus = new System.Windows.Forms.CheckBox();
+            this.btnView = new System.Windows.Forms.Button();
             this.lblDateTo = new System.Windows.Forms.Label();
             this.lblWarningMLDateTo = new System.Windows.Forms.Label();
             this.dtpDatetoML = new System.Windows.Forms.DateTimePicker();
             this.dtpDateFromML = new System.Windows.Forms.DateTimePicker();
             this.chkbDateFrom = new System.Windows.Forms.CheckBox();
             this.chkbFacilities = new System.Windows.Forms.CheckBox();
-            this.btnView = new System.Windows.Forms.Button();
             this.btnTid = new System.Windows.Forms.Button();
             this.btnType = new System.Windows.Forms.Button();
             this.gbTrans = new System.Windows.Forms.GroupBox();
-            this.lblTid = new System.Windows.Forms.Label();
-            this.txtTid = new System.Windows.Forms.TextBox();
             this.btnViewTrans = new System.Windows.Forms.Button();
+            this.txtTid = new System.Windows.Forms.TextBox();
+            this.lblTid = new System.Windows.Forms.Label();
             this.gbType.SuspendLayout();
             this.gbTrans.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +122,16 @@
             this.chkbStatus.Text = "Booking Status :";
             this.chkbStatus.UseVisualStyleBackColor = true;
             // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(205, 252);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(114, 40);
+            this.btnView.TabIndex = 69;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // lblDateTo
             // 
             this.lblDateTo.AutoSize = true;
@@ -175,16 +185,6 @@
             this.chkbFacilities.Text = "Facilities :";
             this.chkbFacilities.UseVisualStyleBackColor = true;
             // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(205, 252);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(114, 40);
-            this.btnView.TabIndex = 69;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
-            // 
             // btnTid
             // 
             this.btnTid.BackColor = System.Drawing.Color.Maroon;
@@ -222,22 +222,6 @@
             this.gbTrans.Text = "Search by Transaction ID";
             this.gbTrans.Visible = false;
             // 
-            // lblTid
-            // 
-            this.lblTid.AutoSize = true;
-            this.lblTid.Location = new System.Drawing.Point(92, 72);
-            this.lblTid.Name = "lblTid";
-            this.lblTid.Size = new System.Drawing.Size(108, 17);
-            this.lblTid.TabIndex = 0;
-            this.lblTid.Text = "Transaction ID :";
-            // 
-            // txtTid
-            // 
-            this.txtTid.Location = new System.Drawing.Point(216, 69);
-            this.txtTid.Name = "txtTid";
-            this.txtTid.Size = new System.Drawing.Size(100, 22);
-            this.txtTid.TabIndex = 1;
-            // 
             // btnViewTrans
             // 
             this.btnViewTrans.Location = new System.Drawing.Point(161, 169);
@@ -248,19 +232,36 @@
             this.btnViewTrans.UseVisualStyleBackColor = true;
             this.btnViewTrans.Click += new System.EventHandler(this.btnViewTrans_Click);
             // 
+            // txtTid
+            // 
+            this.txtTid.Location = new System.Drawing.Point(216, 69);
+            this.txtTid.Name = "txtTid";
+            this.txtTid.Size = new System.Drawing.Size(100, 22);
+            this.txtTid.TabIndex = 1;
+            // 
+            // lblTid
+            // 
+            this.lblTid.AutoSize = true;
+            this.lblTid.Location = new System.Drawing.Point(92, 72);
+            this.lblTid.Name = "lblTid";
+            this.lblTid.Size = new System.Drawing.Size(108, 17);
+            this.lblTid.TabIndex = 0;
+            this.lblTid.Text = "Transaction ID :";
+            // 
             // ucPastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.gbTrans);
             this.Controls.Add(this.btnType);
             this.Controls.Add(this.btnTid);
             this.Controls.Add(this.gbType);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.gbTrans);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPastTransactions";
             this.Size = new System.Drawing.Size(752, 508);
+            this.Load += new System.EventHandler(this.ucPastTransactions_Load);
             this.gbType.ResumeLayout(false);
             this.gbType.PerformLayout();
             this.gbTrans.ResumeLayout(false);

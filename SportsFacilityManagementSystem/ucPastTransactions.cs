@@ -186,5 +186,13 @@ namespace SportsFacilityManagementSystem
             pt.ShowDialog();
             
         }
+
+        private void ucPastTransactions_Load(object sender, EventArgs e)
+        {
+            List<Facility> ls = frmLogin.facilitylist;
+            cmbFac.DataSource = ls;
+            cmbFac.DisplayMember = "facilityname";
+            cmbFac.ValueMember = "facilityname";
+        }
     }
 }
