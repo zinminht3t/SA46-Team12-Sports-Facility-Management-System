@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="Team12BSFMSConnectionString (Settings)" DbObjectName="Team12BSFMS.dbo.revenuereport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT facilityid, facilityname, date, total, transactionid, transactiondetailid, ratepertimeslot, rateid FROM dbo.revenuereport</CommandText>
+                    <CommandText>SELECT facilityid, facilityname, date, total, transactionid, transactiondetailid, ratepertimeslot, rateid, systemtime, status FROM dbo.revenuereport</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -27,6 +27,8 @@
               <Mapping SourceColumn="transactiondetailid" DataSetColumn="transactiondetailid" />
               <Mapping SourceColumn="ratepertimeslot" DataSetColumn="ratepertimeslot" />
               <Mapping SourceColumn="rateid" DataSetColumn="rateid" />
+              <Mapping SourceColumn="systemtime" DataSetColumn="systemtime" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -55,6 +57,14 @@
               <xs:element name="transactiondetailid" msprop:Generator_ColumnVarNameInTable="columntransactiondetailid" msprop:Generator_ColumnPropNameInRow="transactiondetailid" msprop:Generator_ColumnPropNameInTable="transactiondetailidColumn" msprop:Generator_UserColumnName="transactiondetailid" type="xs:int" />
               <xs:element name="ratepertimeslot" msprop:Generator_ColumnVarNameInTable="columnratepertimeslot" msprop:Generator_ColumnPropNameInRow="ratepertimeslot" msprop:Generator_ColumnPropNameInTable="ratepertimeslotColumn" msprop:Generator_UserColumnName="ratepertimeslot" type="xs:double" />
               <xs:element name="rateid" msprop:Generator_ColumnVarNameInTable="columnrateid" msprop:Generator_ColumnPropNameInRow="rateid" msprop:Generator_ColumnPropNameInTable="rateidColumn" msprop:Generator_UserColumnName="rateid" type="xs:int" />
+              <xs:element name="systemtime" msprop:Generator_ColumnVarNameInTable="columnsystemtime" msprop:Generator_ColumnPropNameInRow="systemtime" msprop:Generator_ColumnPropNameInTable="systemtimeColumn" msprop:Generator_UserColumnName="systemtime" type="xs:dateTime" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

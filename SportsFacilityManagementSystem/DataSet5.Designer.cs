@@ -295,6 +295,10 @@ namespace SportsFacilityManagementSystem {
             
             private global::System.Data.DataColumn columnrateid;
             
+            private global::System.Data.DataColumn columnsystemtime;
+            
+            private global::System.Data.DataColumn columnstatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public revenuereportDataTable() {
@@ -394,6 +398,22 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn systemtimeColumn {
+                get {
+                    return this.columnsystemtime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -429,7 +449,7 @@ namespace SportsFacilityManagementSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public revenuereportRow AddrevenuereportRow(int facilityid, string facilityname, System.DateTime date, double total, int transactionid, int transactiondetailid, double ratepertimeslot, int rateid) {
+            public revenuereportRow AddrevenuereportRow(int facilityid, string facilityname, System.DateTime date, double total, int transactionid, int transactiondetailid, double ratepertimeslot, int rateid, System.DateTime systemtime, string status) {
                 revenuereportRow rowrevenuereportRow = ((revenuereportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         facilityid,
@@ -439,7 +459,9 @@ namespace SportsFacilityManagementSystem {
                         transactionid,
                         transactiondetailid,
                         ratepertimeslot,
-                        rateid};
+                        rateid,
+                        systemtime,
+                        status};
                 rowrevenuereportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrevenuereportRow);
                 return rowrevenuereportRow;
@@ -480,6 +502,8 @@ namespace SportsFacilityManagementSystem {
                 this.columntransactiondetailid = base.Columns["transactiondetailid"];
                 this.columnratepertimeslot = base.Columns["ratepertimeslot"];
                 this.columnrateid = base.Columns["rateid"];
+                this.columnsystemtime = base.Columns["systemtime"];
+                this.columnstatus = base.Columns["status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -501,6 +525,10 @@ namespace SportsFacilityManagementSystem {
                 base.Columns.Add(this.columnratepertimeslot);
                 this.columnrateid = new global::System.Data.DataColumn("rateid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrateid);
+                this.columnsystemtime = new global::System.Data.DataColumn("systemtime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsystemtime);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnfacilityid,
                                 this.columntransactionid,
@@ -515,6 +543,8 @@ namespace SportsFacilityManagementSystem {
                 this.columntransactiondetailid.AllowDBNull = false;
                 this.columnratepertimeslot.AllowDBNull = false;
                 this.columnrateid.AllowDBNull = false;
+                this.columnsystemtime.AllowDBNull = false;
+                this.columnstatus.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -742,6 +772,45 @@ namespace SportsFacilityManagementSystem {
                     this[this.tablerevenuereport.rateidColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime systemtime {
+                get {
+                    return ((global::System.DateTime)(this[this.tablerevenuereport.systemtimeColumn]));
+                }
+                set {
+                    this[this.tablerevenuereport.systemtimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string status {
+                get {
+                    try {
+                        return ((string)(this[this.tablerevenuereport.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'revenuereport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerevenuereport.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tablerevenuereport.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tablerevenuereport.statusColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -911,6 +980,8 @@ namespace SportsFacilityManagementSystem.DataSet5TableAdapters {
             tableMapping.ColumnMappings.Add("transactiondetailid", "transactiondetailid");
             tableMapping.ColumnMappings.Add("ratepertimeslot", "ratepertimeslot");
             tableMapping.ColumnMappings.Add("rateid", "rateid");
+            tableMapping.ColumnMappings.Add("systemtime", "systemtime");
+            tableMapping.ColumnMappings.Add("status", "status");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -928,7 +999,7 @@ namespace SportsFacilityManagementSystem.DataSet5TableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT facilityid, facilityname, date, total, transactionid, transactiondetailid," +
-                " ratepertimeslot, rateid FROM dbo.revenuereport";
+                " ratepertimeslot, rateid, systemtime, status FROM dbo.revenuereport";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

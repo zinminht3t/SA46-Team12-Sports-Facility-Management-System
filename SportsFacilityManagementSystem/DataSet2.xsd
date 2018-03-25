@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="Team12BSFMSConnectionString (Settings)" DbObjectName="Team12BSFMS.dbo.bookinginvoicereport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT memberid, name, systemtime, total, transactionid, facilityid, date, timeslot, facilityname, remark, ratepertimeslot, subfacilityid, subfacilityname FROM dbo.bookinginvoicereport</CommandText>
+                    <CommandText>SELECT memberid, name, systemtime, total, transactionid, facilityid, date, timeslot, facilityname, remark, ratepertimeslot, status, subfacilityid, subfacilityname, timeslotid FROM dbo.bookinginvoicereport</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -30,8 +30,10 @@
               <Mapping SourceColumn="facilityname" DataSetColumn="facilityname" />
               <Mapping SourceColumn="remark" DataSetColumn="remark" />
               <Mapping SourceColumn="ratepertimeslot" DataSetColumn="ratepertimeslot" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
               <Mapping SourceColumn="subfacilityid" DataSetColumn="subfacilityid" />
               <Mapping SourceColumn="subfacilityname" DataSetColumn="subfacilityname" />
+              <Mapping SourceColumn="timeslotid" DataSetColumn="timeslotid" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -81,6 +83,13 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ratepertimeslot" msprop:Generator_ColumnVarNameInTable="columnratepertimeslot" msprop:Generator_ColumnPropNameInRow="ratepertimeslot" msprop:Generator_ColumnPropNameInTable="ratepertimeslotColumn" msprop:Generator_UserColumnName="ratepertimeslot" type="xs:double" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="subfacilityid" msprop:Generator_ColumnVarNameInTable="columnsubfacilityid" msprop:Generator_ColumnPropNameInRow="subfacilityid" msprop:Generator_ColumnPropNameInTable="subfacilityidColumn" msprop:Generator_UserColumnName="subfacilityid" type="xs:int" />
               <xs:element name="subfacilityname" msprop:Generator_ColumnVarNameInTable="columnsubfacilityname" msprop:Generator_ColumnPropNameInRow="subfacilityname" msprop:Generator_ColumnPropNameInTable="subfacilitynameColumn" msprop:Generator_UserColumnName="subfacilityname">
                 <xs:simpleType>
@@ -89,6 +98,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="timeslotid" msprop:Generator_ColumnVarNameInTable="columntimeslotid" msprop:Generator_ColumnPropNameInRow="timeslotid" msprop:Generator_ColumnPropNameInTable="timeslotidColumn" msprop:Generator_UserColumnName="timeslotid" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
