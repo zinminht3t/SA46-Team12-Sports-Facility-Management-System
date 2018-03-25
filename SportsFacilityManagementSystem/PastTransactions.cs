@@ -44,8 +44,6 @@ namespace SportsFacilityManagementSystem
         private void PastTransactions_Load(object sender, EventArgs e)
         {
             ucPT = new ucPastTransactions();
-            DateTime datef = ucPT.Datefrom;
-            DateTime datet = ucPT.Dateto;
             #region SQL Commands
             string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
             string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
