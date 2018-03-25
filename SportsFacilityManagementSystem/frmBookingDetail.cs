@@ -19,6 +19,8 @@ namespace SportsFacilityManagementSystem
         double price;
         int facilityID;
         int transid;
+
+        public static int rptTransactionid;
         public frmBookingDetail()
         {
             InitializeComponent();
@@ -144,11 +146,22 @@ namespace SportsFacilityManagementSystem
                 }
                 ctx.SaveChanges();
                 MessageBox.Show("Booking Completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult result = MessageBox.Show("Do you want to print the booking invoice?", "Print", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (result == DialogResult.OK)
+                {
+                    rptTransactionid = id;
+                    frmInvoiceReport frmIR = new frmInvoiceReport();
+                    frmIR.ShowDialog();
+                }
             }
             catch
             {
                 MessageBox.Show("You have encountered an error. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            this.Close();
 
             //for(lb)
             //for(int i = 0; i < noOfSlotsSelected; i++)
