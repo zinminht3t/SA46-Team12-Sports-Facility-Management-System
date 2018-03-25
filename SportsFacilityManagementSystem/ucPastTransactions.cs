@@ -15,8 +15,8 @@ namespace SportsFacilityManagementSystem
         #region Properties
         static string fac;
         static string status;
-        static string datefrom;
-        static string dateto;
+        static DateTime datefrom;
+        static DateTime dateto;
         bool error = false;
         bool msgbox = false;
         #endregion
@@ -43,7 +43,7 @@ namespace SportsFacilityManagementSystem
                 status = value;
             }
         }
-        public string Datefrom
+        public DateTime Datefrom
         {
             get
             {
@@ -54,7 +54,7 @@ namespace SportsFacilityManagementSystem
                 datefrom = value;
             }
         }
-        public string Dateto
+        public DateTime Dateto
         {
             get
             {
@@ -97,7 +97,7 @@ namespace SportsFacilityManagementSystem
 
                 if (chkbStatus.Checked)
                 {
-                    if (cmbStatus.Text != "")
+                    if (cmbStatus.Text == "")
                     {
                         error = true;
                         msgBox();
@@ -119,8 +119,8 @@ namespace SportsFacilityManagementSystem
                     }
                     else
                     {
-                        Datefrom = dtpDateFromML.Text;
-                        Dateto = dtpDatetoML.Text;
+                        Datefrom = dtpDateFromML.Value;
+                        Dateto = dtpDatetoML.Value ;
                         lblWarningMLDateTo.Visible = false;
                     }
                 }
@@ -131,7 +131,6 @@ namespace SportsFacilityManagementSystem
             if (error == false)
             {
                 PastTransactions pt = new PastTransactions();
-                // Passing values to form
                 pt.getFlagfac = chkbFacilities.Checked;
                 pt.getFlagdate = chkbDateFrom.Checked;
                 pt.getFlagstatus = chkbStatus.Checked;

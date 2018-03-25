@@ -14,6 +14,7 @@ namespace SportsFacilityManagementSystem
     {
         Member resultmember;
         SportsFacilitiesEntities ctx;
+        public static int memberid;
         public ucMembers()
         {
             InitializeComponent();
@@ -157,11 +158,19 @@ namespace SportsFacilityManagementSystem
         {
             ctx = new SportsFacilitiesEntities();
             dtpDOB.MaxDate = DateTime.Today.AddYears(-13); // the member must be at least 13 years old.
+            btnReset.Visible = false;
+            btnUpdate.Visible = false;
+            btnEdit.Visible = true;
+            btnPrint.Visible = true;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             PopulateData(resultmember);
+            btnReset.Visible = false;
+            btnUpdate.Visible = false;
+            btnEdit.Visible = true;
+            btnPrint.Visible = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -183,7 +192,10 @@ namespace SportsFacilityManagementSystem
                     MessageBox.Show("Some errors occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
+            btnReset.Visible = false;
+            btnUpdate.Visible = false;
+            btnEdit.Visible = true;
+            btnPrint.Visible = true;
         }
 
         private void UpdateMember()
@@ -213,6 +225,21 @@ namespace SportsFacilityManagementSystem
                 resultmember.status = "Inactive";
             }
             ctx.SaveChanges();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            btnEdit.Visible = false;
+            btnPrint.Visible = false;
+            btnUpdate.Visible = true;
+            btnReset.Visible = true;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            memberid = resultmember.memberid;
+            frmMemberInfoReport frmMIR = new frmMemberInfoReport();
+            frmMIR.ShowDialog();
         }
     }
 }

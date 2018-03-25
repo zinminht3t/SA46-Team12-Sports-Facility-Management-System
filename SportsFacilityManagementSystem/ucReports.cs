@@ -16,6 +16,9 @@ namespace SportsFacilityManagementSystem
         public static ParameterRangeValue daterangeML;
         public static string paramstatus;
         public static bool isDateRange;
+        public static DateTime datefrom;
+        public static DateTime dateto;
+        public static string year;
         public ucReports()
         {
             InitializeComponent();
@@ -27,11 +30,19 @@ namespace SportsFacilityManagementSystem
             {
                 gbReport.Visible = false;
                 gbMemberList.Visible = true;
+                gbRevenue.Visible = false;
+            }
+            else if(cmbTypeofReport.SelectedIndex == 1)
+            {
+                gbMemberList.Visible = false;
+                gbRevenue.Visible = false;
+                gbReport.Visible = true;
             }
             else
             {
                 gbMemberList.Visible = false;
-                gbReport.Visible = true;
+                gbRevenue.Visible = true;
+                gbReport.Visible = false;
             }
         }
 
@@ -41,6 +52,8 @@ namespace SportsFacilityManagementSystem
             gbMemberList.Visible = false;
             gbReport.Visible = false;
             cmbStatus.SelectedIndex = 0;
+            dtpDateFromML.MaxDate = DateTime.Today.AddDays(-1);
+            dtpDateFromReport.MaxDate = DateTime.Today.AddDays(-1);
         }
 
         private void gbMemberList_Enter(object sender, EventArgs e)
@@ -66,6 +79,34 @@ namespace SportsFacilityManagementSystem
             frmMemberListingReport frm = new frmMemberListingReport();
             frm.ShowDialog();
 
+        }
+
+        private void btnPrintReport_Click(object sender, EventArgs e)
+        {
+            datefrom = dtpDateFromReport.Value;
+            dateto = dtpToDateReport.Value;
+            if(cmbTypeofReport.SelectedIndex == 1) //facility occupancy report
+            {
+                frmOccupancyReport frmOR = new frmOccupancyReport();
+                frmOR.ShowDialog();
+            }
+        }
+
+        private void btnRPrint_Click(object sender, EventArgs e)
+        {
+            year = cmbYear.SelectedItem.ToString();
+            frmRevenueReport frmRR = new frmRevenueReport();
+            frmRR.ShowDialog();
+        }
+
+        private void dtpToDateReport_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDateFromReport.MaxDate = dtpToDateReport.Value.AddDays(-1);
+        }
+
+        private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDateFromML.MaxDate = dtpDatetoML.Value.AddDays(-1);
         }
     }
 }

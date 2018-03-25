@@ -18,6 +18,7 @@ namespace SportsFacilityManagementSystem
         string nametemp = "";
         string ratestemp = "";
         string facilitiesnotemp = "";
+        Facility fac;
         public ucFacilities()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace SportsFacilityManagementSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             cxt = new SportsFacilitiesEntities();
-            Facility fac = new Facility();
+            fac = new Facility();
             SubFacility subf = new SubFacility();
             Rate rate = new Rate();
             string r;
@@ -81,14 +82,11 @@ namespace SportsFacilityManagementSystem
                 MessageBox.Show("Are you sure you want to save the changes?", "Save Changes", MessageBoxButtons.YesNo);
             if (savebtn == DialogResult.Yes)
             {
-                double rpts = double.Parse(txtRates.Text);
                 ButtonVisibility(false);
-                Facility fac = new Facility();
+                int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == txtRates.Text).Select(y => y.rateid).First();
+                fac.rateid = rateid;
                 fac.facilityname = txtName.Text;
-                Rate rate = new Rate();
-                rate.ratepertimeslot = rpts;
-                cxt.Rates.Add(rate);
-                cxt.Facilities.Add(fac);
+                cxt.SaveChanges();
             }
         }
         #region Visibility Events

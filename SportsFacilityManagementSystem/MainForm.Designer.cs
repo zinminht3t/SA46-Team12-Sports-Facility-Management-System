@@ -348,8 +348,8 @@
             // ucPastTransactions1
             // 
             this.ucPastTransactions1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucPastTransactions1.Datefrom = null;
-            this.ucPastTransactions1.Dateto = null;
+            this.ucPastTransactions1.Datefrom = new System.DateTime(((long)(0)));
+            this.ucPastTransactions1.Dateto = new System.DateTime(((long)(0)));
             this.ucPastTransactions1.Fac = null;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ucPastTransactions1.Location = new System.Drawing.Point(230, 29);
@@ -385,12 +385,11 @@
             // ucBooking2
             // 
             this.ucBooking2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucBooking2.Location = new System.Drawing.Point(228, 29);
+            this.ucBooking2.Location = new System.Drawing.Point(228, 30);
             this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucBooking2.Name = "ucBooking2";
             this.ucBooking2.Size = new System.Drawing.Size(752, 508);
             this.ucBooking2.TabIndex = 33;
-            this.ucBooking2.Visible = false;
             // 
             // frmMain
             // 
