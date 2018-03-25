@@ -322,6 +322,7 @@
             this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
             this.ucFacilities2.TabIndex = 32;
             this.ucFacilities2.Visible = false;
+            this.ucFacilities2.MouseEnter += new System.EventHandler(this.ucFacilities2_MouseEnter);
             // 
             // ucAddFacilities1
             // 
@@ -390,6 +391,7 @@
             this.ucBooking2.Name = "ucBooking2";
             this.ucBooking2.Size = new System.Drawing.Size(752, 508);
             this.ucBooking2.TabIndex = 33;
+            this.ucBooking2.MouseEnter += new System.EventHandler(this.ucBooking2_MouseEnter);
             // 
             // frmMain
             // 
