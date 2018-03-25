@@ -41,6 +41,22 @@ namespace SportsFacilityManagementSystem
                 resultmember = new Member();
                 switch(cmbSearchBy.SelectedItem.ToString())
                 {
+                    case "Member ID":
+                        int idkeyword = Convert.ToInt32(txtKeyword.Text);
+                        count = ctx.Members.Where(x => x.memberid == idkeyword).Count();
+                        if (CheckSearchResult(count))
+                        {
+                            gbSearchResults.Visible = true;
+                            lblWarningSearchResult.Visible = false;
+                            resultmember = ctx.Members.First(x => x.memberid == idkeyword);
+                            PopulateData(resultmember);
+                        }
+                        else
+                        {
+                            gbSearchResults.Visible = false;
+                            lblWarningSearchResult.Visible = true;
+                        }
+                        break;
                     case "Name":
                         count = ctx.Members.Where(x => x.name == txtKeyword.Text).Count();
                         if(CheckSearchResult(count))
