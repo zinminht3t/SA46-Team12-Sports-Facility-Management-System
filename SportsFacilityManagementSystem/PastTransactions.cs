@@ -17,6 +17,8 @@ namespace SportsFacilityManagementSystem
         public bool getFlagfac;
         public bool getFlagdate;
         public bool getFlagstatus;
+        public bool viewbtnTrans;
+        string command;
         public PastTransactions()
         {
             InitializeComponent();
@@ -44,127 +46,134 @@ namespace SportsFacilityManagementSystem
         private void PastTransactions_Load(object sender, EventArgs e)
         {
             ucPT = new ucPastTransactions();
-
-            #region SQL Commands
-            string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
-            string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
-            string SQLwhereDate = "cast (systemtime as date) between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
-            string SQLwhereStatus = "status = '" + ucPT.Status + "'";
-            string command;
-            #endregion
-            #region Display Datagridview
-            #region Facility.Checked
-            if (getFlagfac == true && getFlagdate == false && getFlagstatus == false)
+            if (viewbtnTrans == false)
             {
-                if (ucPT.Fac == "All")
+                #region SQL Commands
+                string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
+                string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
+                string SQLwhereDate = "cast (systemtime as date) between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
+                string SQLwhereStatus = "status = '" + ucPT.Status + "'";
+                #endregion
+                #region Display Datagridview
+                #region Facility.Checked
+                if (getFlagfac == true && getFlagdate == false && getFlagstatus == false)
                 {
-                    command = SQLcolumns;
+                    if (ucPT.Fac == "All")
+                    {
+                        command = SQLcolumns;
+                    }
+                    else
+                    {
+                        command = SQLcolumns + " where " + SQLwhereFacility;
+                    }
                 }
+                #endregion
+                #region Date.Checked
                 else
+                    if (getFlagfac == false && getFlagdate == true && getFlagstatus == false)
                 {
-                    command = SQLcolumns + " where " + SQLwhereFacility;
+                    command = SQLcolumns + " where " + SQLwhereDate;
                 }
-            }
-            #endregion
-            #region Date.Checked
-            else
-                if (getFlagfac == false && getFlagdate == true && getFlagstatus == false)
-            {
-                command = SQLcolumns + " where " + SQLwhereDate;
-            }
-            #endregion
-            #region Status.Checked
-            else
-                if (getFlagfac == false && getFlagdate == false && getFlagstatus == true)
-            {
-                if (ucPT.Status == "All")
-                {
-                    command = SQLcolumns;
-                }
+                #endregion
+                #region Status.Checked
                 else
+                    if (getFlagfac == false && getFlagdate == false && getFlagstatus == true)
                 {
-                    command = SQLcolumns + " where " + SQLwhereStatus;
+                    if (ucPT.Status == "All")
+                    {
+                        command = SQLcolumns;
+                    }
+                    else
+                    {
+                        command = SQLcolumns + " where " + SQLwhereStatus;
+                    }
                 }
-            }
-            #endregion
-            #region All 3 Fields .Checked
-            else
-                if (getFlagdate == true && getFlagfac == true && getFlagstatus == true)
-            {
-                if (ucPT.Fac == "All" && ucPT.Status == "All")
+                #endregion
+                #region All 3 Fields .Checked
+                else
+                    if (getFlagdate == true && getFlagfac == true && getFlagstatus == true)
                 {
+                    if (ucPT.Fac == "All" && ucPT.Status == "All")
+                    {
                         command = SQLcolumns + " where " + SQLwhereDate;
-                }
-                else
-                if (ucPT.Fac == "All" && ucPT.Status != "All")
-                {
+                    }
+                    else
+                    if (ucPT.Fac == "All" && ucPT.Status != "All")
+                    {
                         command = SQLcolumns + " where " + SQLwhereStatus + " and " + SQLwhereDate;
-                }
-                else
-                if (ucPT.Fac != "All" && ucPT.Status == "All")
-                {
+                    }
+                    else
+                    if (ucPT.Fac != "All" && ucPT.Status == "All")
+                    {
                         command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereDate;
-                }
-                else
-                {
+                    }
+                    else
+                    {
                         command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereStatus + " and " + SQLwhereDate;
+                    }
                 }
-            }
-            #endregion
-            #region Facility.Checked + Date.Checked
-            else
-                if (getFlagfac == true && getFlagdate == true && getFlagstatus == false)
-            {
-                if (ucPT.Fac != "All")
+                #endregion
+                #region Facility.Checked + Date.Checked
+                else
+                    if (getFlagfac == true && getFlagdate == true && getFlagstatus == false)
                 {
+                    if (ucPT.Fac != "All")
+                    {
                         command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereDate;
-                }
-                else
-                {
+                    }
+                    else
+                    {
                         command = SQLcolumns + " where " + SQLwhereDate;
+                    }
                 }
-            }
-            #endregion
-            #region Facility.Checked + Status.Checked
-            else
-                if (getFlagfac == true && getFlagdate == false && getFlagstatus == true)
-            {
-                if (ucPT.Fac == "All" && ucPT.Status == "All")
-                {
-                    command = SQLcolumns;
-                }
-                else 
-                    if(ucPT.Fac != "All" && ucPT.Status != "All")
-                {
-                    command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereStatus;
-                }
+                #endregion
+                #region Facility.Checked + Status.Checked
                 else
-                    if(ucPT.Fac != "All" && ucPT.Status == "All")
+                    if (getFlagfac == true && getFlagdate == false && getFlagstatus == true)
                 {
-                    command = SQLcolumns + " where " + SQLwhereStatus;
+                    if (ucPT.Fac == "All" && ucPT.Status == "All")
+                    {
+                        command = SQLcolumns;
+                    }
+                    else
+                        if (ucPT.Fac != "All" && ucPT.Status != "All")
+                    {
+                        command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereStatus;
+                    }
+                    else
+                        if (ucPT.Fac != "All" && ucPT.Status == "All")
+                    {
+                        command = SQLcolumns + " where " + SQLwhereStatus;
+                    }
+                    else
+                    {
+                        command = SQLcolumns + " where " + SQLwhereFacility;
+                    }
                 }
+                #endregion
+                #region Date.Checked + Status.Checked
                 else
                 {
-                    command = SQLcolumns + " where " + SQLwhereFacility;
-                }
-            }
-            #endregion
-            #region Date.Checked + Status.Checked
-            else
-            {
-                if (ucPT.Status == "All")
-                {
+                    if (ucPT.Status == "All")
+                    {
                         command = SQLcolumns + " where " + SQLwhereDate;
-                }
-                else
-                {
+                    }
+                    else
+                    {
                         command = SQLcolumns + " where " + SQLwhereDate + " and " + SQLwhereStatus;
+                    }
                 }
+                #endregion
+                #endregion
             }
-            #endregion
+            else
+            {
+                command = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport " +
+                    " where transactionid ='" + ucPT.TransID +"'";
+            }
 
             DisplayTable(command);
-            #endregion
+            
             #region Show if no results returned
             if (dgvTransactions.Rows.Count == 1)
             {
