@@ -45,12 +45,12 @@
             this.btnUpcoming = new System.Windows.Forms.Button();
             this.btnPasttransactions = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucAddMember1 = new SportsFacilityManagementSystem.ucAddMember();
             this.ucFacilities2 = new SportsFacilityManagementSystem.ucFacilities();
             this.ucAddFacilities1 = new SportsFacilityManagementSystem.ucAddFacilities();
             this.ucReports1 = new SportsFacilityManagementSystem.ucReports();
             this.ucPastTransactions1 = new SportsFacilityManagementSystem.ucPastTransactions();
             this.ucMembers1 = new SportsFacilityManagementSystem.ucMembers();
-            this.ucAddMember1 = new SportsFacilityManagementSystem.ucAddMember();
             this.ucBooking2 = new SportsFacilityManagementSystem.ucBooking();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -313,6 +313,16 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // ucAddMember1
+            // 
+            this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ucAddMember1.Location = new System.Drawing.Point(228, 27);
+            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1);
+            this.ucAddMember1.Name = "ucAddMember1";
+            this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
+            this.ucAddMember1.TabIndex = 31;
+            this.ucAddMember1.Visible = false;
+            // 
             // ucFacilities2
             // 
             this.ucFacilities2.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -372,16 +382,6 @@
             this.ucMembers1.TabIndex = 27;
             this.ucMembers1.Visible = false;
             this.ucMembers1.MouseEnter += new System.EventHandler(this.ucMembers1_MouseEnter);
-            // 
-            // ucAddMember1
-            // 
-            this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddMember1.Location = new System.Drawing.Point(228, 27);
-            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1);
-            this.ucAddMember1.Name = "ucAddMember1";
-            this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
-            this.ucAddMember1.TabIndex = 31;
-            this.ucAddMember1.Visible = false;
             // 
             // ucBooking2
             // 

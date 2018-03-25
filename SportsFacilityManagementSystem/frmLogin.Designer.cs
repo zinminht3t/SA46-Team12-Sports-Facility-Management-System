@@ -48,10 +48,12 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogin.Location = new System.Drawing.Point(145, 275);
+            this.btnLogin.MaximumSize = new System.Drawing.Size(237, 36);
+            this.btnLogin.MinimumSize = new System.Drawing.Size(237, 36);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(237, 36);
             this.btnLogin.TabIndex = 14;

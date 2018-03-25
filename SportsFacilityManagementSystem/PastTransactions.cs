@@ -44,14 +44,15 @@ namespace SportsFacilityManagementSystem
         private void PastTransactions_Load(object sender, EventArgs e)
         {
             ucPT = new ucPastTransactions();
+
             #region SQL Commands
             string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
             string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
-            string SQLwhereDate = "systemtime between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
+            string SQLwhereDate = "cast (systemtime as date) between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
             string SQLwhereStatus = "status = '" + ucPT.Status + "'";
             string command;
             #endregion
-
+            #region Display Datagridview
             #region Facility.Checked
             if (getFlagfac == true && getFlagdate == false && getFlagstatus == false)
             {
@@ -92,21 +93,21 @@ namespace SportsFacilityManagementSystem
             {
                 if (ucPT.Fac == "All" && ucPT.Status == "All")
                 {
-                    command = SQLcolumns + " where " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereDate;
                 }
                 else
                 if (ucPT.Fac == "All" && ucPT.Status != "All")
                 {
-                    command = SQLcolumns + " where " + SQLwhereStatus + " and " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereStatus + " and " + SQLwhereDate;
                 }
                 else
                 if (ucPT.Fac != "All" && ucPT.Status == "All")
                 {
-                    command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereDate;
                 }
                 else
                 {
-                    command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereStatus + " and " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereStatus + " and " + SQLwhereDate;
                 }
             }
             #endregion
@@ -116,11 +117,11 @@ namespace SportsFacilityManagementSystem
             {
                 if (ucPT.Fac != "All")
                 {
-                    command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereFacility + " and " + SQLwhereDate;
                 }
                 else
                 {
-                    command = SQLcolumns + " where " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereDate;
                 }
             }
             #endregion
@@ -153,19 +154,24 @@ namespace SportsFacilityManagementSystem
             {
                 if (ucPT.Status == "All")
                 {
-                    command = SQLcolumns + " where " + SQLwhereDate;
+                        command = SQLcolumns + " where " + SQLwhereDate;
                 }
                 else
                 {
-                    command = SQLcolumns + " where " + SQLwhereDate + " and " + SQLwhereStatus;
+                        command = SQLcolumns + " where " + SQLwhereDate + " and " + SQLwhereStatus;
                 }
             }
             #endregion
 
             DisplayTable(command);
-
-            // Note : Missing SQL search results = 0 and Date range cannot be the same ?!
-            // Should we add search via transaction ID ?
+            #endregion
+            #region Show if no results returned
+            if (dgvTransactions.Rows.Count == 1)
+            {
+                this.Close();
+                MessageBox.Show("No results for these criterias!", "No Results");
+            }
+            #endregion
         }
 
     }
