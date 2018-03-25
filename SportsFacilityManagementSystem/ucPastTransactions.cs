@@ -15,6 +15,7 @@ namespace SportsFacilityManagementSystem
         #region Properties
         static string fac;
         static string status;
+        static string transID;
         static DateTime datefrom;
         static DateTime dateto;
         bool error = false;
@@ -65,6 +66,17 @@ namespace SportsFacilityManagementSystem
                 dateto = value;
             }
         }
+        public string TransID
+        {
+            get
+            {
+                return transID;
+            }
+            set
+            {
+                transID = value;
+            }
+        }
         #endregion
         
         public ucPastTransactions()
@@ -111,17 +123,18 @@ namespace SportsFacilityManagementSystem
                 if (chkbDateFrom.Checked)
                 {
                     // Cannot work if you put same date... WHY !!?!?
-                    if (dtpDateFromML.Value >= dtpDatetoML.Value)
+                    if (dtpDateFromML.Value < dtpDatetoML.Value || dtpDateFromML.Value.ToString("yyyy/MM/dd") == dtpDatetoML.Value.ToString("yyyy/MM/dd"))
+                    {
+                        Datefrom = dtpDateFromML.Value;
+                        Dateto = dtpDatetoML.Value;
+                        lblWarningMLDateTo.Visible = false;
+                        
+                    }
+                    else
                     {
                         error = true;
                         msgBox();
                         lblWarningMLDateTo.Visible = true;
-                    }
-                    else
-                    {
-                        Datefrom = dtpDateFromML.Value;
-                        Dateto = dtpDatetoML.Value ;
-                        lblWarningMLDateTo.Visible = false;
                     }
                 }
             }
@@ -134,6 +147,7 @@ namespace SportsFacilityManagementSystem
                 pt.getFlagfac = chkbFacilities.Checked;
                 pt.getFlagdate = chkbDateFrom.Checked;
                 pt.getFlagstatus = chkbStatus.Checked;
+                pt.viewbtnTrans = false;
                 pt.ShowDialog();
             }
             
@@ -152,5 +166,33 @@ namespace SportsFacilityManagementSystem
             }
         }
 
+        private void btnTid_Click(object sender, EventArgs e)
+        {
+            gbTrans.Visible = true;
+            gbType.Visible = false;
+        }
+
+        private void btnType_Click(object sender, EventArgs e)
+        {
+            gbType.Visible = true;
+            gbTrans.Visible = false;
+        }
+
+        private void btnViewTrans_Click(object sender, EventArgs e)
+        {
+            PastTransactions pt = new PastTransactions();
+            transID = txtTid.Text;
+            pt.viewbtnTrans = true;
+            pt.ShowDialog();
+            
+        }
+
+        private void ucPastTransactions_Load(object sender, EventArgs e)
+        {
+            List<Facility> ls = frmLogin.facilitylist;
+            cmbFac.DataSource = ls;
+            cmbFac.DisplayMember = "facilityname";
+            cmbFac.ValueMember = "facilityname";
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace SportsFacilityManagementSystem
         private int? facilityTransID;
         private int? facilityMemID;
         private string facilityMemName;
-        private DateTime dtpBookingDatevalue;
+        private static DateTime dtpBookingDatevalue;
         public static int redButtonTransID;
 
 
@@ -39,6 +39,7 @@ namespace SportsFacilityManagementSystem
 
             ctx = new SportsFacilitiesEntities();
             //List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
+
             defaultCmbSports = "- Select sport -";
             //facList.Insert(0, defaultCmbSports);
             //cmbSports.DataSource = facList;
@@ -68,26 +69,29 @@ namespace SportsFacilityManagementSystem
             {
                 this.getFacilityID(); //facility id
                 char redButtonSubfacility = char.Parse(dynamicButton.Name.Substring(3, 1));
-                int redButtonSubfacility_ = 0; //subfacility id
-                switch (redButtonSubfacility)
-                {
-                    case 'A':
-                        redButtonSubfacility_ = 1;
-                        break;
+                //int redButtonSubfacility_ = 0; //subfacility id
+                string subfname = redButtonSubfacility.ToString();
+                int fid = this.getFacilityID();
 
-                    case 'B':
-                        redButtonSubfacility_ = 2;
-                        break;
+                int redButtonSubfacility_ = ctx.SubFacilities.First(x => x.subfacilityname == subfname && x.facilityid == fid).subfacilityid;
+                //switch (redButtonSubfacility)
+                //{
+                //    case 'A':
+                //        redButtonSubfacility_ = 1
+                //        break;
 
-                    case 'C':
-                        redButtonSubfacility_ = 3;
-                        break;
+                //    case 'B':
+                //        redButtonSubfacility_ = 2;
+                //        break;
 
-                }
+                //    case 'C':
+                //        redButtonSubfacility_ = 3;
+                //        break;
+
+                //}
 
                 int redButtonTimeslotID = Int32.Parse(dynamicButton.Name.Substring(4, 1)); //slot id
-                int fid = this.getFacilityID();
-                redButtonTransID = ctx.TransactionDetails.First(x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == (dtpBookingDatevalue)).transactionid;
+                redButtonTransID = ctx.TransactionDetails.First(x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == dtpBookingDate.Value && x.timeslotid == redButtonTimeslotID).transactiondetailid; // this is the transaction detail id
 
                 frmBookingDetail frmBD = new frmBookingDetail();
                 frmBD.ShowDialog();
@@ -118,6 +122,7 @@ namespace SportsFacilityManagementSystem
         }
         private void btnBook_Click(object sender, EventArgs e)
         {
+            bkgDetailsList.Clear();
 
             if (noSelected == 0)
             {
@@ -125,11 +130,12 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
+                bkgDetailsList.Clear();
                 int controlIndex = 0;
                 foreach (Control c in collectionClickedButtons)
                 {
                     char cRow = char.Parse(c.Name.Substring(3, 1));
-                    int cRow_ =0;
+                    int cRow_ = 0;
                     switch (cRow)
                     {
                         case 'A':
@@ -146,7 +152,7 @@ namespace SportsFacilityManagementSystem
 
                     }
 
-                    BookingDetails bd = new BookingDetails() { subFacilityBooked = subfacilitiesListNames[cRow_-1], slotBooked = Int32.Parse(c.Name.Substring(4, 1)) };
+                    BookingDetails bd = new BookingDetails() { subFacilityBooked = subfacilitiesListNames[cRow_ - 1], slotBooked = Int32.Parse(c.Name.Substring(4, 1)) };
                     bkgDetailsList.Add(bd);
                     controlIndex++;
                 }
@@ -154,7 +160,7 @@ namespace SportsFacilityManagementSystem
                 frmBookingDetail frmBD = new frmBookingDetail();
                 frmBD.setTxtFacilityID(cmbSports.Text);
                 frmBD.SetLbSelectedSlotSF(bkgDetailsList);
-                for(int i = 0; i < noSubFacilities; i++)
+                for (int i = 0; i < noSelected; i++)
                 {
                     frmBD.setLbSelFacility(cmbSports.Text);
 
@@ -162,6 +168,8 @@ namespace SportsFacilityManagementSystem
                 frmBD.ShowDialog();
 
                 LoadBookingSlots();
+
+                collectionClickedButtons.Clear();
                 // ucBookingDetails ucbd = new ucBookingDetails();
                 //ucbd.Show();
                 //ucbd.setTxtFacilityID(cmbSports.Text);
@@ -203,7 +211,8 @@ namespace SportsFacilityManagementSystem
                 var qrySubFacilitiesName = from x in ctx.SubFacilities where x.facilityid == facId orderby x.subfacilityname select x.subfacilityname;
                 subfacilitiesListNames = qrySubFacilitiesName.ToList<String>();
 
-
+                string sfname;
+                int sfid;
                 //populate arrays for UI booking slots of selected date
                 for (int slotRow = 1; slotRow <= 3; slotRow++)
                 {
@@ -211,7 +220,13 @@ namespace SportsFacilityManagementSystem
                     {
                         try
                         {
-                            facilityTransID = ctx.TransactionDetails.First(x => x.facilityid == facId && x.subfacilityid == slotRow && x.timeslotid == slotCol && x.date == dtpBookingDate.Value).transactionid;
+                            //foreach(char name in subfacilitiesListNames[slotRow])
+                            //{
+                            //    MessageBox.Show(name.ToString());
+                            //}
+                            sfname = subfacilitiesListNames[slotRow - 1].ToString();
+                            sfid = ctx.SubFacilities.First(x => x.subfacilityname == sfname && x.facilityid == facId).subfacilityid;
+                            facilityTransID = ctx.TransactionDetails.First(x => x.facilityid == facId && x.subfacilityid == sfid && x.timeslotid == slotCol && x.date == dtpBookingDate.Value).transactionid;
                             facilityMemID = ctx.Transactions.Where(x => x.transactionid == facilityTransID && x.status == "Confirmed").FirstOrDefault().memberid;
                             facilityMemName = ctx.Members.Where(x => x.memberid == facilityMemID).FirstOrDefault().name;
                         }
@@ -293,6 +308,7 @@ namespace SportsFacilityManagementSystem
                                         //this slot is already booked
                                         B.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                         B.BackColor = Color.Red;
+                                        collectionVisibleButtons.Add(B);
                                     }
                                     else
                                     {
@@ -325,6 +341,7 @@ namespace SportsFacilityManagementSystem
                                         //this slot is already booked
                                         C.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                         C.BackColor = Color.Red;
+                                        collectionVisibleButtons.Add(C);
                                     }
                                     else
                                     {
@@ -407,7 +424,7 @@ namespace SportsFacilityManagementSystem
             try
             {
                 facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text).facilityid;
-                
+
             }
             catch
             {
@@ -416,13 +433,29 @@ namespace SportsFacilityManagementSystem
             return facId;
         }
 
+        public static DateTime getForDate()
+        {
+            return dtpBookingDatevalue;
+        }
+
         private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
         {
             dtpBookingDatevalue = dtpBookingDate.Value;
+            LoadBookingSlots();
+
+
         }
 
         private void ucBooking_Load_1(object sender, EventArgs e)
         {
+            cmbSports.DataSource = frmLogin.facilitylist;
+            cmbSports.DisplayMember = "facilityname";
+            cmbSports.ValueMember = "facilityname";
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

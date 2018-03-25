@@ -34,6 +34,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.rdbMale = new System.Windows.Forms.RadioButton();
@@ -61,8 +63,6 @@
             this.lblWarningKeyword = new System.Windows.Forms.Label();
             this.lblWarningSearchBy = new System.Windows.Forms.Label();
             this.lblWarningSearchResult = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.gbSearchResults.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             // 
             this.cmbSearchBy.FormattingEnabled = true;
             this.cmbSearchBy.Items.AddRange(new object[] {
+            "Member ID",
             "Name",
             "IC Number",
             "Mobile Number",
@@ -156,6 +157,26 @@
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
             this.gbSearchResults.Visible = false;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(174, 514);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(188, 47);
+            this.btnPrint.TabIndex = 54;
+            this.btnPrint.Text = "Print Info";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(592, 514);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(188, 47);
+            this.btnEdit.TabIndex = 53;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // groupBox1
             // 
@@ -402,26 +423,6 @@
             this.lblWarningSearchResult.TabIndex = 61;
             this.lblWarningSearchResult.Text = "There is no result related to the keyword";
             this.lblWarningSearchResult.Visible = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(592, 514);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(188, 47);
-            this.btnEdit.TabIndex = 53;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(174, 514);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(188, 47);
-            this.btnPrint.TabIndex = 54;
-            this.btnPrint.Text = "Print Info";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // ucMembers
             // 

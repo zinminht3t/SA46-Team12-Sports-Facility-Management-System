@@ -29,18 +29,25 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.gbSearch = new System.Windows.Forms.GroupBox();
+            this.gbType = new System.Windows.Forms.GroupBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbFac = new System.Windows.Forms.ComboBox();
             this.chkbStatus = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnView = new System.Windows.Forms.Button();
+            this.lblDateTo = new System.Windows.Forms.Label();
             this.lblWarningMLDateTo = new System.Windows.Forms.Label();
             this.dtpDatetoML = new System.Windows.Forms.DateTimePicker();
             this.dtpDateFromML = new System.Windows.Forms.DateTimePicker();
             this.chkbDateFrom = new System.Windows.Forms.CheckBox();
             this.chkbFacilities = new System.Windows.Forms.CheckBox();
-            this.btnView = new System.Windows.Forms.Button();
-            this.gbSearch.SuspendLayout();
+            this.btnTid = new System.Windows.Forms.Button();
+            this.btnType = new System.Windows.Forms.Button();
+            this.gbTrans = new System.Windows.Forms.GroupBox();
+            this.btnViewTrans = new System.Windows.Forms.Button();
+            this.txtTid = new System.Windows.Forms.TextBox();
+            this.lblTid = new System.Windows.Forms.Label();
+            this.gbType.SuspendLayout();
+            this.gbTrans.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -56,23 +63,25 @@
             this.lblTitle.Text = "View Past Transactions";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gbSearch
+            // gbType
             // 
-            this.gbSearch.Controls.Add(this.cmbStatus);
-            this.gbSearch.Controls.Add(this.cmbFac);
-            this.gbSearch.Controls.Add(this.chkbStatus);
-            this.gbSearch.Controls.Add(this.label1);
-            this.gbSearch.Controls.Add(this.lblWarningMLDateTo);
-            this.gbSearch.Controls.Add(this.dtpDatetoML);
-            this.gbSearch.Controls.Add(this.dtpDateFromML);
-            this.gbSearch.Controls.Add(this.chkbDateFrom);
-            this.gbSearch.Controls.Add(this.chkbFacilities);
-            this.gbSearch.Location = new System.Drawing.Point(126, 93);
-            this.gbSearch.Name = "gbSearch";
-            this.gbSearch.Size = new System.Drawing.Size(522, 272);
-            this.gbSearch.TabIndex = 68;
-            this.gbSearch.TabStop = false;
-            this.gbSearch.Text = "Search";
+            this.gbType.Controls.Add(this.cmbStatus);
+            this.gbType.Controls.Add(this.cmbFac);
+            this.gbType.Controls.Add(this.chkbStatus);
+            this.gbType.Controls.Add(this.btnView);
+            this.gbType.Controls.Add(this.lblDateTo);
+            this.gbType.Controls.Add(this.lblWarningMLDateTo);
+            this.gbType.Controls.Add(this.dtpDatetoML);
+            this.gbType.Controls.Add(this.dtpDateFromML);
+            this.gbType.Controls.Add(this.chkbDateFrom);
+            this.gbType.Controls.Add(this.chkbFacilities);
+            this.gbType.Location = new System.Drawing.Point(113, 151);
+            this.gbType.Name = "gbType";
+            this.gbType.Size = new System.Drawing.Size(522, 313);
+            this.gbType.TabIndex = 68;
+            this.gbType.TabStop = false;
+            this.gbType.Text = "Search by Type";
+            this.gbType.Visible = false;
             // 
             // cmbStatus
             // 
@@ -113,14 +122,24 @@
             this.chkbStatus.Text = "Booking Status :";
             this.chkbStatus.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnView
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 153);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Date To :";
+            this.btnView.Location = new System.Drawing.Point(205, 252);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(114, 40);
+            this.btnView.TabIndex = 69;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // lblDateTo
+            // 
+            this.lblDateTo.AutoSize = true;
+            this.lblDateTo.Location = new System.Drawing.Point(64, 153);
+            this.lblDateTo.Name = "lblDateTo";
+            this.lblDateTo.Size = new System.Drawing.Size(67, 17);
+            this.lblDateTo.TabIndex = 38;
+            this.lblDateTo.Text = "Date To :";
             // 
             // lblWarningMLDateTo
             // 
@@ -166,29 +185,87 @@
             this.chkbFacilities.Text = "Facilities :";
             this.chkbFacilities.UseVisualStyleBackColor = true;
             // 
-            // btnView
+            // btnTid
             // 
-            this.btnView.Location = new System.Drawing.Point(337, 395);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(114, 40);
-            this.btnView.TabIndex = 69;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            this.btnTid.BackColor = System.Drawing.Color.Maroon;
+            this.btnTid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTid.Location = new System.Drawing.Point(243, 56);
+            this.btnTid.Name = "btnTid";
+            this.btnTid.Size = new System.Drawing.Size(118, 68);
+            this.btnTid.TabIndex = 70;
+            this.btnTid.Text = "Search by Transaction ID";
+            this.btnTid.UseVisualStyleBackColor = false;
+            this.btnTid.Click += new System.EventHandler(this.btnTid_Click);
+            // 
+            // btnType
+            // 
+            this.btnType.BackColor = System.Drawing.Color.Maroon;
+            this.btnType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnType.Location = new System.Drawing.Point(379, 56);
+            this.btnType.Name = "btnType";
+            this.btnType.Size = new System.Drawing.Size(115, 68);
+            this.btnType.TabIndex = 71;
+            this.btnType.Text = "Search by Type";
+            this.btnType.UseVisualStyleBackColor = false;
+            this.btnType.Click += new System.EventHandler(this.btnType_Click);
+            // 
+            // gbTrans
+            // 
+            this.gbTrans.Controls.Add(this.btnViewTrans);
+            this.gbTrans.Controls.Add(this.txtTid);
+            this.gbTrans.Controls.Add(this.lblTid);
+            this.gbTrans.Location = new System.Drawing.Point(157, 142);
+            this.gbTrans.Name = "gbTrans";
+            this.gbTrans.Size = new System.Drawing.Size(432, 232);
+            this.gbTrans.TabIndex = 69;
+            this.gbTrans.TabStop = false;
+            this.gbTrans.Text = "Search by Transaction ID";
+            this.gbTrans.Visible = false;
+            // 
+            // btnViewTrans
+            // 
+            this.btnViewTrans.Location = new System.Drawing.Point(161, 169);
+            this.btnViewTrans.Name = "btnViewTrans";
+            this.btnViewTrans.Size = new System.Drawing.Size(114, 40);
+            this.btnViewTrans.TabIndex = 70;
+            this.btnViewTrans.Text = "View";
+            this.btnViewTrans.UseVisualStyleBackColor = true;
+            this.btnViewTrans.Click += new System.EventHandler(this.btnViewTrans_Click);
+            // 
+            // txtTid
+            // 
+            this.txtTid.Location = new System.Drawing.Point(216, 69);
+            this.txtTid.Name = "txtTid";
+            this.txtTid.Size = new System.Drawing.Size(100, 22);
+            this.txtTid.TabIndex = 1;
+            // 
+            // lblTid
+            // 
+            this.lblTid.AutoSize = true;
+            this.lblTid.Location = new System.Drawing.Point(92, 72);
+            this.lblTid.Name = "lblTid";
+            this.lblTid.Size = new System.Drawing.Size(108, 17);
+            this.lblTid.TabIndex = 0;
+            this.lblTid.Text = "Transaction ID :";
             // 
             // ucPastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.btnView);
-            this.Controls.Add(this.gbSearch);
+            this.Controls.Add(this.btnType);
+            this.Controls.Add(this.btnTid);
+            this.Controls.Add(this.gbType);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.gbTrans);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPastTransactions";
             this.Size = new System.Drawing.Size(752, 508);
-            this.gbSearch.ResumeLayout(false);
-            this.gbSearch.PerformLayout();
+            this.Load += new System.EventHandler(this.ucPastTransactions_Load);
+            this.gbType.ResumeLayout(false);
+            this.gbType.PerformLayout();
+            this.gbTrans.ResumeLayout(false);
+            this.gbTrans.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,16 +273,22 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.GroupBox gbSearch;
+        private System.Windows.Forms.GroupBox gbType;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbFac;
         private System.Windows.Forms.CheckBox chkbStatus;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDateTo;
         private System.Windows.Forms.Label lblWarningMLDateTo;
         private System.Windows.Forms.DateTimePicker dtpDatetoML;
         private System.Windows.Forms.DateTimePicker dtpDateFromML;
         private System.Windows.Forms.CheckBox chkbDateFrom;
         private System.Windows.Forms.CheckBox chkbFacilities;
+        private System.Windows.Forms.Button btnTid;
+        private System.Windows.Forms.Button btnType;
+        private System.Windows.Forms.GroupBox gbTrans;
+        private System.Windows.Forms.Button btnViewTrans;
+        private System.Windows.Forms.TextBox txtTid;
+        private System.Windows.Forms.Label lblTid;
     }
 }
