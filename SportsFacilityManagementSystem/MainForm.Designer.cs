@@ -348,8 +348,8 @@
             // ucPastTransactions1
             // 
             this.ucPastTransactions1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucPastTransactions1.Datefrom = null;
-            this.ucPastTransactions1.Dateto = null;
+            //this.ucPastTransactions1.Datefrom = null;
+            //this.ucPastTransactions1.Dateto = null;
             this.ucPastTransactions1.Fac = null;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ucPastTransactions1.Location = new System.Drawing.Point(230, 29);

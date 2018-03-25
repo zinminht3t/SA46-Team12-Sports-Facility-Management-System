@@ -62,10 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookingDetails.cs" />
-    <Compile Include="BookingOccupancy.cs">
+    <Compile Include="BookingInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookingOccupancy.rpt</DependentUpon>
+      <DependentUpon>BookingInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
@@ -88,10 +88,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet5.Designer.cs">
+    <Compile Include="DataSet6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet5.xsd</DependentUpon>
+      <DependentUpon>DataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="Facility.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
@@ -165,6 +165,12 @@
       <DependentUpon>MonthlyRevenue.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Occupancy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Occupancy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PastTransactions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,18 +186,6 @@
     </Compile>
     <Compile Include="Rate.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Revenue.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Revenue.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Revenue1.cs">
-      <DependentUpon>Revenue.rpt</DependentUpon>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="SportsFacilitiesModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -277,9 +271,9 @@
     <Compile Include="User.cs">
       <DependentUpon>SportsFacilitiesModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BookingOccupancy.rpt">
+    <EmbeddedResource Include="BookingInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BookingOccupancy.cs</LastGenOutput>
+      <LastGenOutput>BookingInvoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -315,6 +309,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MonthlyRevenue.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Occupancy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Occupancy.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PastTransactions.resx">
       <DependentUpon>PastTransactions.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,10 +320,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Revenue.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Revenue1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAddMember.resx">
       <DependentUpon>ucAddMember.cs</DependentUpon>
@@ -395,16 +389,16 @@
     <None Include="DataSet4.xss">
       <DependentUpon>DataSet4.xsd</DependentUpon>
     </None>
-    <None Include="DataSet5.xsc">
-      <DependentUpon>DataSet5.xsd</DependentUpon>
+    <None Include="DataSet6.xsc">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
     </None>
-    <None Include="DataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet5.Designer.cs</LastGenOutput>
+    <None Include="DataSet6.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet6.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet5.xss">
-      <DependentUpon>DataSet5.xsd</DependentUpon>
+    <None Include="DataSet6.xss">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

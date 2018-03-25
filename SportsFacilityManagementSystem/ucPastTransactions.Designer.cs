@@ -72,7 +72,7 @@
             this.gbSearch.Size = new System.Drawing.Size(522, 272);
             this.gbSearch.TabIndex = 68;
             this.gbSearch.TabStop = false;
-            this.gbSearch.Text = "Search by";
+            this.gbSearch.Text = "Search";
             // 
             // cmbStatus
             // 
