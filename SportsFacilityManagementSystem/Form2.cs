@@ -71,18 +71,16 @@ namespace SportsFacilityManagementSystem
 
 
 
-            //  Monthly Revenue Report
-            DataSet5 ds = new DataSet5();
+            //  March Revenue Report
+            //DataSet5 ds = new DataSet5();
 
-            DataSet5TableAdapters.revenuereportTableAdapter da = new DataSet5TableAdapters.revenuereportTableAdapter();
+            //DataSet5TableAdapters.revenuereportTableAdapter da = new DataSet5TableAdapters.revenuereportTableAdapter();
 
-            da.Fill(ds.revenuereport);
-            MarchRevenue cr = new MarchRevenue();
-            cr.SetDataSource(ds);
+            //da.Fill(ds.revenuereport);
+            //MarchRevenue cr = new MarchRevenue();
+            //cr.SetDataSource(ds);
 
-            crystalReportViewer1.ReportSource = cr;
-
-
+            //crystalReportViewer1.ReportSource = cr;
 
 
             //Occupancy Report
@@ -95,8 +93,22 @@ namespace SportsFacilityManagementSystem
             //Occupancy cr = new Occupancy();
             //cr.SetDataSource(ds);
 
-
             //crystalReportViewer1.ReportSource = cr;
+
+
+
+            //Booking Availability Report
+
+            DataSet6 ds = new DataSet6();
+
+            DataSet6TableAdapters.bookinginvoicereportTableAdapter da = new DataSet6TableAdapters.bookinginvoicereportTableAdapter();
+
+            da.Fill(ds.bookinginvoicereport);
+            BookingAvailability cr = new BookingAvailability();
+            cr.SetDataSource(ds);
+
+
+            crystalReportViewer1.ReportSource = cr;
 
 
 
