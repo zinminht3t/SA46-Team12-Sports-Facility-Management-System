@@ -24,12 +24,13 @@ namespace SportsFacilityManagementSystem
         private int noSelected;
         private List<Control> collectionClickedButtons = new List<Control>();
         private static List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
-
+        private int facId;
 
         private int? facilityTransID;
         private int? facilityMemID;
         private string facilityMemName;
         private DateTime dtpBookingDatevalue;
+        public static int redButtonTransID;
 
 
         public ucBooking()
@@ -48,7 +49,7 @@ namespace SportsFacilityManagementSystem
             dtpBookingDate.Value = DateTime.Today;
 
             //dtpBookingDate.CustomFormat = "yyyy-MM-dd";
-            //dtpBookingDatevalue = dtpBookingDate.Value;
+            dtpBookingDatevalue = dtpBookingDate.Value;
 
         }
 
@@ -65,8 +66,33 @@ namespace SportsFacilityManagementSystem
             }
             else if (dynamicButton.BackColor == Color.Red)
             {
+                this.getFacilityID(); //facility id
+                char redButtonSubfacility = char.Parse(dynamicButton.Name.Substring(3, 1));
+                int redButtonSubfacility_ = 0; //subfacility id
+                switch (redButtonSubfacility)
+                {
+                    case 'A':
+                        redButtonSubfacility_ = 1;
+                        break;
+
+                    case 'B':
+                        redButtonSubfacility_ = 2;
+                        break;
+
+                    case 'C':
+                        redButtonSubfacility_ = 3;
+                        break;
+
+                }
+
+                int redButtonTimeslotID = Int32.Parse(dynamicButton.Name.Substring(4, 1)); //slot id
+                int fid = this.getFacilityID();
+                redButtonTransID = ctx.TransactionDetails.First(x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == (dtpBookingDatevalue)).transactionid;
+
                 frmBookingDetail frmBD = new frmBookingDetail();
                 frmBD.ShowDialog();
+                LoadBookingSlots();
+
 
             }
             else
@@ -170,12 +196,11 @@ namespace SportsFacilityManagementSystem
             //get facility id of chosen facility in combobox
             if (cmbSports.Text != defaultCmbSports)
             {
-                var facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text);
-                int facId_ = facId.facilityid;
-                noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId_); //to replace output with no of subfac belonging to selected facility
+                this.getFacilityID();
+                noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId); //to replace output with no of subfac belonging to selected facility
 
                 //create array of subfacilities name belonging to selceted facility
-                var qrySubFacilitiesName = from x in ctx.SubFacilities where x.facilityid == facId_ orderby x.subfacilityname select x.subfacilityname;
+                var qrySubFacilitiesName = from x in ctx.SubFacilities where x.facilityid == facId orderby x.subfacilityname select x.subfacilityname;
                 subfacilitiesListNames = qrySubFacilitiesName.ToList<String>();
 
 
@@ -186,7 +211,7 @@ namespace SportsFacilityManagementSystem
                     {
                         try
                         {
-                            facilityTransID = ctx.TransactionDetails.First(x => x.facilityid == facId_ && x.subfacilityid == slotRow && x.timeslotid == slotCol && x.date == dtpBookingDate.Value).transactionid;
+                            facilityTransID = ctx.TransactionDetails.First(x => x.facilityid == facId && x.subfacilityid == slotRow && x.timeslotid == slotCol && x.date == dtpBookingDate.Value).transactionid;
                             facilityMemID = ctx.Transactions.Where(x => x.transactionid == facilityTransID && x.status == "Confirmed").FirstOrDefault().memberid;
                             facilityMemName = ctx.Members.Where(x => x.memberid == facilityMemID).FirstOrDefault().name;
                         }
@@ -375,6 +400,20 @@ namespace SportsFacilityManagementSystem
                 }
 
             }
+        }
+
+        private int getFacilityID()
+        {
+            try
+            {
+                facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text).facilityid;
+                
+            }
+            catch
+            {
+                //invalid facilityID
+            }
+            return facId;
         }
 
         private void dtpBookingDate_ValueChanged(object sender, EventArgs e)

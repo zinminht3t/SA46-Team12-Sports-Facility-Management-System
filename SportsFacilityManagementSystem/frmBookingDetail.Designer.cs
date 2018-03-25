@@ -51,6 +51,7 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lbSelSlotsFacility = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbSelSlotsTiming
@@ -283,6 +284,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(199, 676);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(248, 44);
+            this.btnCancel.TabIndex = 99;
+            this.btnCancel.Text = "Cancel Booking";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmBookingDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -311,6 +324,7 @@
             this.Controls.Add(this.lblBookingDate);
             this.Controls.Add(this.lblMemID);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.btnCancel);
             this.Name = "frmBookingDetail";
             this.Text = "frmBookingDetail";
             this.Load += new System.EventHandler(this.frmBookingDetail_Load);
@@ -344,5 +358,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ListBox lbSelSlotsFacility;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
