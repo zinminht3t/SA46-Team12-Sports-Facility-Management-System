@@ -307,6 +307,7 @@ namespace SportsFacilityManagementSystem
                                         //this slot is already booked
                                         B.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                         B.BackColor = Color.Red;
+                                        collectionVisibleButtons.Add(B);
                                     }
                                     else
                                     {
@@ -339,6 +340,7 @@ namespace SportsFacilityManagementSystem
                                         //this slot is already booked
                                         C.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                         C.BackColor = Color.Red;
+                                        collectionVisibleButtons.Add(C);
                                     }
                                     else
                                     {
