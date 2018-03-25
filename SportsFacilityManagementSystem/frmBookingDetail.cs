@@ -19,8 +19,10 @@ namespace SportsFacilityManagementSystem
         double price;
         int facilityID;
         int transid;
-
+        int trandetailid;
         public static int rptTransactionid;
+        TransactionDetail removetd;
+        Transaction rt;
         public frmBookingDetail()
         {
             InitializeComponent();
@@ -33,32 +35,34 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsFacility.Items.Clear();
             lbSelSlotsSF.Items.Clear();
             lbSelSlotsTiming.Items.Clear();
-            transid = ucBooking.redButtonTransID;
+            trandetailid = ucBooking.redButtonTransID;
+            transid = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid).transactionid;
+
+
+            removetd = new TransactionDetail();
+            removetd = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid);
+
             dtpDate.Value = ucBooking.getForDate();
 
 
-            Transaction t = new Transaction();
-            t = cxt.Transactions.First(x => x.transactionid == transid);
-            txtMemID.Text = t.memberid.ToString();
-            txtMemIDdisplay.Text = t.Member.name.ToString();
-            dtpBookingDate.Value = t.systemtime;
-            txtRemarks.Text = t.remark;
-            txtTotalPrice.Text = t.total.ToString();
-
-            foreach(TransactionDetail td in t.TransactionDetails)
-            {
-                txtFacilityID.Text = td.facilityid.ToString();
-                txtFacilityIDdisplay.Text = td.Facility.facilityname.ToString();
-                txtRates.Text = td.Facility.Rate.ratepertimeslot.ToString();
-                lbSelSlotsFacility.Items.Add(td.Facility.facilityname);
-                lbSelSlotsSF.Items.Add(td.SubFacility.subfacilityname);
-                lbSelSlotsTiming.Items.Add(td.Timeslot.timeslot);
-            }
+            rt = new Transaction();
+            rt = cxt.Transactions.First(x => x.transactionid == transid);
+            txtMemID.Text = rt.memberid.ToString();
+            txtMemIDdisplay.Text = rt.Member.name.ToString();
+            dtpBookingDate.Value = rt.systemtime;
+            txtRemarks.Text = rt.remark;
+            txtTotalPrice.Text = rt.total.ToString();
+            txtFacilityID.Text = removetd.facilityid.ToString();
+            txtFacilityIDdisplay.Text = removetd.Facility.facilityname.ToString();
+            txtRates.Text = removetd.Facility.Rate.ratepertimeslot.ToString();
+            lbSelSlotsFacility.Items.Add(removetd.Facility.facilityname);
+            lbSelSlotsSF.Items.Add(removetd.SubFacility.subfacilityname);
+            lbSelSlotsTiming.Items.Add(removetd.Timeslot.timeslot);
         }
 
         private void frmBookingDetail_Load(object sender, EventArgs e)
         {
-            if (txtFacilityID.Text == ""||txtFacilityID.Text is null)
+            if (txtFacilityID.Text == "" || txtFacilityID.Text is null)
             {
                 ShowExistingBookingDetail();
             }
@@ -84,7 +88,7 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsFacility.Items.Clear();
             this.lbSelSlotsFacility.Items.Add(s);
         }
-            
+
         public void setTxtFacilityID(string s)
         {
             this.txtFacilityID.Text = s;
@@ -109,7 +113,7 @@ namespace SportsFacilityManagementSystem
 
         private void lbSelSlotsSF_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtMemID_TextChanged(object sender, EventArgs e)
@@ -123,7 +127,7 @@ namespace SportsFacilityManagementSystem
             {
                 txtMemIDdisplay.Text = "";
             }
-         
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -198,10 +202,14 @@ namespace SportsFacilityManagementSystem
             {
                 try
                 {
-                    Transaction updatet = new Transaction();
-                    updatet = cxt.Transactions.First(x => x.transactionid == transid);
-                    updatet.status = "Cancelled";
+
+                    cxt.TransactionDetails.Remove(removetd);
                     cxt.SaveChanges();
+                    if (cxt.TransactionDetails.Where(x => x.transactionid == transid).Count() == 0)
+                    {
+                        rt.status = "Cancelled";
+                        cxt.SaveChanges();
+                    }
                     MessageBox.Show("Booking has been successfully cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }

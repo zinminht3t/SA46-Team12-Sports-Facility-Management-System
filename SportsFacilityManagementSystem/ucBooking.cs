@@ -90,7 +90,7 @@ namespace SportsFacilityManagementSystem
                 //}
 
                 int redButtonTimeslotID = Int32.Parse(dynamicButton.Name.Substring(4, 1)); //slot id
-                redButtonTransID = ctx.TransactionDetails.First(x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == dtpBookingDate.Value && x.timeslotid == redButtonTimeslotID).transactionid;
+                redButtonTransID = ctx.TransactionDetails.First(x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == dtpBookingDate.Value && x.timeslotid == redButtonTimeslotID).transactiondetailid; // this is the transaction detail id
 
                 frmBookingDetail frmBD = new frmBookingDetail();
                 frmBD.ShowDialog();
@@ -440,6 +440,9 @@ namespace SportsFacilityManagementSystem
         private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
         {
             dtpBookingDatevalue = dtpBookingDate.Value;
+            LoadBookingSlots();
+
+
         }
 
         private void ucBooking_Load_1(object sender, EventArgs e)
