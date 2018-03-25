@@ -16,14 +16,14 @@ namespace SportsFacilityManagementSystem {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class MonthlyRevenue : ReportClass {
+    public class MarchRevenue : ReportClass {
         
-        public MonthlyRevenue() {
+        public MarchRevenue() {
         }
         
         public override string ResourceName {
             get {
-                return "MonthlyRevenue.rpt";
+                return "MarchRevenue.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SportsFacilityManagementSystem {
         
         public override string FullResourceName {
             get {
-                return "SportsFacilityManagementSystem.MonthlyRevenue.rpt";
+                return "SportsFacilityManagementSystem.MarchRevenue.rpt";
             }
             set {
                 // Do nothing
@@ -122,7 +122,7 @@ namespace SportsFacilityManagementSystem {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Year {
+        public CrystalDecisions.Shared.IParameterField Parameter_Month {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -130,9 +130,9 @@ namespace SportsFacilityManagementSystem {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedMonthlyRevenue : Component, ICachedReport {
+    public class CachedMarchRevenue : Component, ICachedReport {
         
-        public CachedMonthlyRevenue() {
+        public CachedMarchRevenue() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace SportsFacilityManagementSystem {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            MonthlyRevenue rpt = new MonthlyRevenue();
+            MarchRevenue rpt = new MarchRevenue();
             rpt.Site = this.Site;
             return rpt;
         }
