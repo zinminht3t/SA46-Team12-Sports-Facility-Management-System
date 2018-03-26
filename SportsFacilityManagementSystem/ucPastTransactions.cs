@@ -198,14 +198,14 @@ namespace SportsFacilityManagementSystem
 
         private void ucPastTransactions_Load(object sender, EventArgs e)
         {
-            Facility forcombo = new Facility();
-            forcombo.facilityname = "All";
-            List<Facility> ls = frmLogin.facilitylist;
-            ls.Add(forcombo);
+            //Facility forcombo = new Facility();
+            //forcombo.facilityname = "All";
+            //List<Facility> ls = frmLogin.facilitylist;
+            //ls.Add(forcombo);
 
-            cmbFac.DataSource = ls;
-            cmbFac.SelectedIndex = ls.Count() - 1;
-            cmbFac.DisplayMember = "facilityname";
+            cmbFac.DataSource = frmLogin.facilitylist;
+            //cmbFac.SelectedIndex = ls.Count() - 1;
+            //cmbFac.DisplayMember = "facilityname";
             cmbFac.ValueMember = "facilityname";
         }
 

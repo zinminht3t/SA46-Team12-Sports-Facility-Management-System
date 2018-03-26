@@ -52,11 +52,11 @@
             this.btnRPrint = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.gbMMR = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbMRMonth = new System.Windows.Forms.ComboBox();
             this.cmbMRYear = new System.Windows.Forms.ComboBox();
             this.btnMRPrint = new System.Windows.Forms.Button();
             this.lblMRYear = new System.Windows.Forms.Label();
-            this.cmbMRMonth = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.gbReport.SuspendLayout();
             this.gbMemberList.SuspendLayout();
             this.gbRevenue.SuspendLayout();
@@ -65,7 +65,6 @@
             // 
             // cmbTypeofReport
             // 
-            this.cmbTypeofReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeofReport.ForeColor = System.Drawing.Color.Black;
             this.cmbTypeofReport.FormattingEnabled = true;
             this.cmbTypeofReport.Items.AddRange(new object[] {
@@ -354,6 +353,38 @@
             this.gbMMR.TabStop = false;
             this.gbMMR.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(102, 221);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 25);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Select Month : ";
+            // 
+            // cmbMRMonth
+            // 
+            this.cmbMRMonth.FormattingEnabled = true;
+            this.cmbMRMonth.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbMRMonth.Location = new System.Drawing.Point(291, 218);
+            this.cmbMRMonth.Name = "cmbMRMonth";
+            this.cmbMRMonth.Size = new System.Drawing.Size(168, 33);
+            this.cmbMRMonth.TabIndex = 15;
+            this.cmbMRMonth.Text = "January";
+            // 
             // cmbMRYear
             // 
             this.cmbMRYear.FormattingEnabled = true;
@@ -399,38 +430,6 @@
             this.lblMRYear.Size = new System.Drawing.Size(142, 25);
             this.lblMRYear.TabIndex = 2;
             this.lblMRYear.Text = "Select Year : ";
-            // 
-            // cmbMRMonth
-            // 
-            this.cmbMRMonth.FormattingEnabled = true;
-            this.cmbMRMonth.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.cmbMRMonth.Location = new System.Drawing.Point(291, 218);
-            this.cmbMRMonth.Name = "cmbMRMonth";
-            this.cmbMRMonth.Size = new System.Drawing.Size(168, 33);
-            this.cmbMRMonth.TabIndex = 15;
-            this.cmbMRMonth.Text = "January";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 221);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 25);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Select Month : ";
             // 
             // ucReports
             // 
