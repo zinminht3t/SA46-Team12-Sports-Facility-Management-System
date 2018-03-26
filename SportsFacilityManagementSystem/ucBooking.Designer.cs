@@ -61,6 +61,7 @@
             // 
             // cmbSports
             // 
+            this.cmbSports.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSports.FormattingEnabled = true;
             this.cmbSports.Location = new System.Drawing.Point(133, 106);
             this.cmbSports.Margin = new System.Windows.Forms.Padding(4);

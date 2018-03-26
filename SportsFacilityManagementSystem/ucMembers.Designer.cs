@@ -79,6 +79,7 @@
             // 
             // cmbSearchBy
             // 
+            this.cmbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchBy.FormattingEnabled = true;
             this.cmbSearchBy.Items.AddRange(new object[] {
             "Member ID",
@@ -87,16 +88,15 @@
             "Mobile Number",
             "Email"});
             this.cmbSearchBy.Location = new System.Drawing.Point(108, 76);
-            this.cmbSearchBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSearchBy.Name = "cmbSearchBy";
             this.cmbSearchBy.Size = new System.Drawing.Size(229, 24);
             this.cmbSearchBy.TabIndex = 1;
-            this.cmbSearchBy.Text = "Select";
             // 
             // txtKeyword
             // 
             this.txtKeyword.Location = new System.Drawing.Point(377, 76);
-            this.txtKeyword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKeyword.Margin = new System.Windows.Forms.Padding(2);
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(219, 22);
             this.txtKeyword.TabIndex = 2;
@@ -104,7 +104,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(471, 109);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(125, 30);
             this.btnSearch.TabIndex = 3;
@@ -162,7 +162,7 @@
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(116, 329);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(125, 30);
             this.btnPrint.TabIndex = 54;
@@ -173,7 +173,7 @@
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(395, 329);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(125, 30);
             this.btnEdit.TabIndex = 53;
@@ -186,9 +186,9 @@
             this.groupBox1.Controls.Add(this.rdbFemale);
             this.groupBox1.Controls.Add(this.rdbMale);
             this.groupBox1.Location = new System.Drawing.Point(252, 143);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(268, 36);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
@@ -197,7 +197,7 @@
             // 
             this.rdbFemale.AutoSize = true;
             this.rdbFemale.Location = new System.Drawing.Point(165, 12);
-            this.rdbFemale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(75, 21);
             this.rdbFemale.TabIndex = 1;
@@ -209,7 +209,7 @@
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Location = new System.Drawing.Point(37, 12);
-            this.rdbMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbMale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(59, 21);
             this.rdbMale.TabIndex = 0;
@@ -224,7 +224,7 @@
             "Active",
             "Inactive"});
             this.cmbStatus.Location = new System.Drawing.Point(252, 299);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(269, 24);
             this.cmbStatus.TabIndex = 51;
@@ -232,7 +232,7 @@
             // dtpExpiry
             // 
             this.dtpExpiry.Location = new System.Drawing.Point(252, 269);
-            this.dtpExpiry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpExpiry.Margin = new System.Windows.Forms.Padding(2);
             this.dtpExpiry.Name = "dtpExpiry";
             this.dtpExpiry.Size = new System.Drawing.Size(269, 22);
             this.dtpExpiry.TabIndex = 50;
@@ -240,7 +240,7 @@
             // dtpJoin
             // 
             this.dtpJoin.Location = new System.Drawing.Point(252, 243);
-            this.dtpJoin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpJoin.Margin = new System.Windows.Forms.Padding(2);
             this.dtpJoin.Name = "dtpJoin";
             this.dtpJoin.Size = new System.Drawing.Size(269, 22);
             this.dtpJoin.TabIndex = 49;
@@ -248,7 +248,7 @@
             // dtpDOB
             // 
             this.dtpDOB.Location = new System.Drawing.Point(252, 216);
-            this.dtpDOB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(269, 22);
             this.dtpDOB.TabIndex = 48;
@@ -256,7 +256,7 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(116, 328);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(125, 30);
             this.btnReset.TabIndex = 47;
@@ -267,7 +267,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(395, 328);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(125, 30);
             this.btnUpdate.TabIndex = 46;
@@ -278,7 +278,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(252, 188);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(269, 22);
             this.txtEmail.TabIndex = 41;
@@ -286,7 +286,7 @@
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(252, 119);
-            this.txtMobile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMobile.Margin = new System.Windows.Forms.Padding(2);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(269, 22);
             this.txtMobile.TabIndex = 39;
@@ -294,7 +294,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(252, 70);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(269, 46);
@@ -303,7 +303,7 @@
             // txtICNo
             // 
             this.txtICNo.Location = new System.Drawing.Point(252, 44);
-            this.txtICNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtICNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtICNo.Name = "txtICNo";
             this.txtICNo.Size = new System.Drawing.Size(269, 22);
             this.txtICNo.TabIndex = 37;
@@ -311,7 +311,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(252, 17);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(269, 22);
             this.txtName.TabIndex = 36;
@@ -463,7 +463,7 @@
             this.Controls.Add(this.txtKeyword);
             this.Controls.Add(this.cmbSearchBy);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucMembers";
             this.Size = new System.Drawing.Size(752, 508);
             this.Load += new System.EventHandler(this.ucMembers_Load);

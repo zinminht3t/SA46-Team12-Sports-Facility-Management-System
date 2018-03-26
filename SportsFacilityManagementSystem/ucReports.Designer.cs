@@ -58,6 +58,7 @@
             // 
             // cmbTypeofReport
             // 
+            this.cmbTypeofReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeofReport.ForeColor = System.Drawing.Color.Black;
             this.cmbTypeofReport.FormattingEnabled = true;
             this.cmbTypeofReport.Items.AddRange(new object[] {
@@ -68,7 +69,6 @@
             this.cmbTypeofReport.Name = "cmbTypeofReport";
             this.cmbTypeofReport.Size = new System.Drawing.Size(222, 24);
             this.cmbTypeofReport.TabIndex = 0;
-            this.cmbTypeofReport.Text = "Select Report";
             this.cmbTypeofReport.SelectedIndexChanged += new System.EventHandler(this.cmbTypeofReport_SelectedIndexChanged);
             // 
             // lblTypeofReport
@@ -177,7 +177,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 182);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(17, 16);
             this.radioButton1.TabIndex = 26;
@@ -188,7 +188,7 @@
             // 
             this.rdnDateRange.AutoSize = true;
             this.rdnDateRange.Location = new System.Drawing.Point(7, 103);
-            this.rdnDateRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdnDateRange.Margin = new System.Windows.Forms.Padding(2);
             this.rdnDateRange.Name = "rdnDateRange";
             this.rdnDateRange.Size = new System.Drawing.Size(17, 16);
             this.rdnDateRange.TabIndex = 25;
@@ -285,7 +285,7 @@
             "2011",
             "2010"});
             this.cmbYear.Location = new System.Drawing.Point(194, 69);
-            this.cmbYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbYear.Margin = new System.Windows.Forms.Padding(2);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(113, 24);
             this.cmbYear.TabIndex = 14;

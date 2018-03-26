@@ -33,6 +33,7 @@
             this.lblWarningRate = new System.Windows.Forms.Label();
             this.lblWarningName = new System.Windows.Forms.Label();
             this.lblRatesInfo = new System.Windows.Forms.Label();
+            this.pbRatesinfo = new System.Windows.Forms.PictureBox();
             this.cmbCourtNo = new System.Windows.Forms.ComboBox();
             this.txtRate = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.lblRatesEdit = new System.Windows.Forms.Label();
             this.lblNameEdit = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pbRatesinfo = new System.Windows.Forms.PictureBox();
             this.gbSearchEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRatesinfo)).BeginInit();
             this.SuspendLayout();
@@ -111,8 +111,21 @@
             this.lblRatesInfo.Text = "Rates / 2 hours";
             this.lblRatesInfo.Visible = false;
             // 
+            // pbRatesinfo
+            // 
+            this.pbRatesinfo.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
+            this.pbRatesinfo.Location = new System.Drawing.Point(299, 104);
+            this.pbRatesinfo.Name = "pbRatesinfo";
+            this.pbRatesinfo.Size = new System.Drawing.Size(24, 22);
+            this.pbRatesinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbRatesinfo.TabIndex = 66;
+            this.pbRatesinfo.TabStop = false;
+            this.pbRatesinfo.MouseEnter += new System.EventHandler(this.pbRatesinfo_MouseEnter);
+            this.pbRatesinfo.MouseLeave += new System.EventHandler(this.pbRatesinfo_MouseLeave);
+            // 
             // cmbCourtNo
             // 
+            this.cmbCourtNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCourtNo.FormattingEnabled = true;
             this.cmbCourtNo.Items.AddRange(new object[] {
             "1",
@@ -122,12 +135,11 @@
             this.cmbCourtNo.Name = "cmbCourtNo";
             this.cmbCourtNo.Size = new System.Drawing.Size(71, 24);
             this.cmbCourtNo.TabIndex = 65;
-            this.cmbCourtNo.Text = "Select";
             // 
             // txtRate
             // 
             this.txtRate.Location = new System.Drawing.Point(175, 104);
-            this.txtRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRate.Margin = new System.Windows.Forms.Padding(2);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(119, 22);
             this.txtRate.TabIndex = 61;
@@ -136,7 +148,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(332, 275);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(119, 37);
             this.btnSubmit.TabIndex = 43;
@@ -147,7 +159,7 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(46, 275);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(119, 37);
             this.btnReset.TabIndex = 44;
@@ -167,7 +179,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(175, 39);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(208, 22);
             this.txtName.TabIndex = 39;
@@ -204,18 +216,6 @@
             this.lblTitle.TabIndex = 66;
             this.lblTitle.Text = "Add New Facilities";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbRatesinfo
-            // 
-            this.pbRatesinfo.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
-            this.pbRatesinfo.Location = new System.Drawing.Point(299, 104);
-            this.pbRatesinfo.Name = "pbRatesinfo";
-            this.pbRatesinfo.Size = new System.Drawing.Size(24, 22);
-            this.pbRatesinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbRatesinfo.TabIndex = 66;
-            this.pbRatesinfo.TabStop = false;
-            this.pbRatesinfo.MouseEnter += new System.EventHandler(this.pbRatesinfo_MouseEnter);
-            this.pbRatesinfo.MouseLeave += new System.EventHandler(this.pbRatesinfo_MouseLeave);
             // 
             // ucAddFacilities
             // 
