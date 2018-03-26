@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crRevenue);
             this.Name = "frmRevenueReport";
-            this.Text = "frmRevenueReport";
+            this.Text = "Revenue Report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmRevenueReport_Load);
             this.ResumeLayout(false);
