@@ -63,7 +63,7 @@
             // 
             this.cmbSports.FormattingEnabled = true;
             this.cmbSports.Location = new System.Drawing.Point(200, 166);
-            this.cmbSports.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbSports.Margin = new System.Windows.Forms.Padding(6);
             this.cmbSports.Name = "cmbSports";
             this.cmbSports.Size = new System.Drawing.Size(396, 33);
             this.cmbSports.TabIndex = 13;
@@ -73,7 +73,7 @@
             // dtpBookingDate
             // 
             this.dtpBookingDate.Location = new System.Drawing.Point(200, 103);
-            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(396, 31);
             this.dtpBookingDate.TabIndex = 12;
@@ -128,7 +128,7 @@
             this.btnBook.Enabled = false;
             this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBook.Location = new System.Drawing.Point(864, 728);
-            this.btnBook.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(6);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(150, 44);
             this.btnBook.TabIndex = 14;
@@ -142,7 +142,7 @@
             this.btnC5.Enabled = false;
             this.btnC5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC5.Location = new System.Drawing.Point(864, 566);
-            this.btnC5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnC5.Margin = new System.Windows.Forms.Padding(6);
             this.btnC5.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnC5.Name = "btnC5";
             this.btnC5.Size = new System.Drawing.Size(150, 144);
@@ -156,7 +156,7 @@
             this.btnC4.Enabled = false;
             this.btnC4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC4.Location = new System.Drawing.Point(712, 566);
-            this.btnC4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnC4.Margin = new System.Windows.Forms.Padding(6);
             this.btnC4.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnC4.Name = "btnC4";
             this.btnC4.Size = new System.Drawing.Size(150, 144);
@@ -170,7 +170,7 @@
             this.btnC3.Enabled = false;
             this.btnC3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC3.Location = new System.Drawing.Point(561, 566);
-            this.btnC3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnC3.Margin = new System.Windows.Forms.Padding(6);
             this.btnC3.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnC3.Name = "btnC3";
             this.btnC3.Size = new System.Drawing.Size(150, 144);
@@ -184,7 +184,7 @@
             this.btnC2.Enabled = false;
             this.btnC2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC2.Location = new System.Drawing.Point(410, 566);
-            this.btnC2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnC2.Margin = new System.Windows.Forms.Padding(6);
             this.btnC2.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnC2.Name = "btnC2";
             this.btnC2.Size = new System.Drawing.Size(150, 144);
@@ -198,7 +198,7 @@
             this.btnC1.Enabled = false;
             this.btnC1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC1.Location = new System.Drawing.Point(258, 566);
-            this.btnC1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnC1.Margin = new System.Windows.Forms.Padding(6);
             this.btnC1.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnC1.Name = "btnC1";
             this.btnC1.Size = new System.Drawing.Size(150, 144);
@@ -212,7 +212,7 @@
             this.btnB5.Enabled = false;
             this.btnB5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB5.Location = new System.Drawing.Point(864, 420);
-            this.btnB5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnB5.Margin = new System.Windows.Forms.Padding(6);
             this.btnB5.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB5.Name = "btnB5";
             this.btnB5.Size = new System.Drawing.Size(150, 144);
@@ -226,7 +226,7 @@
             this.btnB4.Enabled = false;
             this.btnB4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB4.Location = new System.Drawing.Point(712, 420);
-            this.btnB4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnB4.Margin = new System.Windows.Forms.Padding(6);
             this.btnB4.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB4.Name = "btnB4";
             this.btnB4.Size = new System.Drawing.Size(150, 144);
@@ -240,7 +240,7 @@
             this.btnB3.Enabled = false;
             this.btnB3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB3.Location = new System.Drawing.Point(561, 420);
-            this.btnB3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnB3.Margin = new System.Windows.Forms.Padding(6);
             this.btnB3.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB3.Name = "btnB3";
             this.btnB3.Size = new System.Drawing.Size(150, 144);
@@ -254,7 +254,7 @@
             this.btnB2.Enabled = false;
             this.btnB2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB2.Location = new System.Drawing.Point(410, 420);
-            this.btnB2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnB2.Margin = new System.Windows.Forms.Padding(6);
             this.btnB2.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB2.Name = "btnB2";
             this.btnB2.Size = new System.Drawing.Size(150, 144);
@@ -268,7 +268,7 @@
             this.btnB1.Enabled = false;
             this.btnB1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB1.Location = new System.Drawing.Point(258, 420);
-            this.btnB1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnB1.Margin = new System.Windows.Forms.Padding(6);
             this.btnB1.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB1.Name = "btnB1";
             this.btnB1.Size = new System.Drawing.Size(150, 144);
@@ -294,7 +294,7 @@
             this.btnA5.Enabled = false;
             this.btnA5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA5.Location = new System.Drawing.Point(864, 275);
-            this.btnA5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnA5.Margin = new System.Windows.Forms.Padding(6);
             this.btnA5.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnA5.Name = "btnA5";
             this.btnA5.Size = new System.Drawing.Size(150, 144);
@@ -308,7 +308,7 @@
             this.btnA4.Enabled = false;
             this.btnA4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA4.Location = new System.Drawing.Point(712, 275);
-            this.btnA4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnA4.Margin = new System.Windows.Forms.Padding(6);
             this.btnA4.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnA4.Name = "btnA4";
             this.btnA4.Size = new System.Drawing.Size(150, 144);
@@ -322,7 +322,7 @@
             this.btnA3.Enabled = false;
             this.btnA3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA3.Location = new System.Drawing.Point(561, 275);
-            this.btnA3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnA3.Margin = new System.Windows.Forms.Padding(6);
             this.btnA3.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnA3.Name = "btnA3";
             this.btnA3.Size = new System.Drawing.Size(150, 144);
@@ -336,7 +336,7 @@
             this.btnA2.Enabled = false;
             this.btnA2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA2.Location = new System.Drawing.Point(410, 275);
-            this.btnA2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnA2.Margin = new System.Windows.Forms.Padding(6);
             this.btnA2.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnA2.Name = "btnA2";
             this.btnA2.Size = new System.Drawing.Size(150, 144);
@@ -350,7 +350,7 @@
             this.btnA1.Enabled = false;
             this.btnA1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA1.Location = new System.Drawing.Point(258, 275);
-            this.btnA1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnA1.Margin = new System.Windows.Forms.Padding(6);
             this.btnA1.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnA1.Name = "btnA1";
             this.btnA1.Size = new System.Drawing.Size(150, 144);
@@ -470,6 +470,7 @@
             this.Name = "ucBooking";
             this.Size = new System.Drawing.Size(1128, 794);
             this.Load += new System.EventHandler(this.ucBooking_Load_1);
+            this.VisibleChanged += new System.EventHandler(this.ucBooking_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -13,6 +13,7 @@ namespace SportsFacilityManagementSystem
     public partial class ucAddFacilities : UserControl
     {
         Facility facility;
+        SportsFacilitiesEntities ctx;
         public ucAddFacilities()
         {
             InitializeComponent();
@@ -64,6 +65,7 @@ namespace SportsFacilityManagementSystem
                 InsertData();
                 MessageBox.Show("Add Facility Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ResetAllData();
+                frmLogin.facilitylist = ctx.Facilities.ToList();
             }
         }
 
@@ -96,7 +98,7 @@ namespace SportsFacilityManagementSystem
         }
         private void InsertData()
         {
-            SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
+            ctx = new SportsFacilitiesEntities();
             facility = new Facility();
             facility.facilityname = txtName.Text;
             string price = "";

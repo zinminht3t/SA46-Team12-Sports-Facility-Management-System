@@ -114,6 +114,7 @@ namespace SportsFacilityManagementSystem
                 cmbSearchBy.SelectedIndex = 0;
                 gbSearchResults.Visible = false;
                 btnSearch.Enabled = true;
+                cmbSearchBy.DataSource = frmLogin.facilitylist;
             }
         }
         private void AddVisibleChangedEventHandler()

@@ -40,7 +40,7 @@ namespace SportsFacilityManagementSystem
             InitializeComponent();
 
         }
-        
+
         #region Accessor / Mutator
         public static List<BookingDetails> getSelectedSlots()
         {
@@ -248,7 +248,7 @@ namespace SportsFacilityManagementSystem
                 //loop to populate buttons for display
                 for (int noRows = 1; noRows <= 3; noRows++)
                 {
-                    if (noRows <= noSubFacilities) 
+                    if (noRows <= noSubFacilities)
                     {
                         Controls["lblRow" + noRows].Text = subfacilitiesListNames[noRows - 1];
                         Controls["lblRow" + noRows].Visible = true;
@@ -279,7 +279,7 @@ namespace SportsFacilityManagementSystem
                                     A.Text = "";
                                 }
                                 break;
-                            case 2: 
+                            case 2:
                                 Control B = this.Controls["btnB" + noCols];
                                 if (noSubFacilities > 1)
                                 {
@@ -306,7 +306,7 @@ namespace SportsFacilityManagementSystem
                                     B.BackColor = Color.LightGreen;
                                 }
                                 break;
-                            case 3: 
+                            case 3:
                                 Control C = this.Controls["btnC" + noCols];
                                 if (noSubFacilities > 2)
                                 {
@@ -352,7 +352,7 @@ namespace SportsFacilityManagementSystem
                 }
                 for (int noRows = 1; noRows <= 3; noRows++)
                 {
-                    Controls["lblRow" + noRows].Visible = false; 
+                    Controls["lblRow" + noRows].Visible = false;
 
                     for (int noCols = 1; noCols <= 5; noCols++)
                     {
@@ -381,5 +381,20 @@ namespace SportsFacilityManagementSystem
         }
         #endregion
 
+        private void ucBooking_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                cmbSports.Text = defaultCmbSports;
+                cmbSports.DataSource = frmLogin.facilitylist;
+                cmbSports.DisplayMember = "facilityname";
+                cmbSports.ValueMember = "facilityname";
+                LoadBookingSlots();
+            }
+        }
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucBooking_VisibleChanged);
+        }
     }
 }

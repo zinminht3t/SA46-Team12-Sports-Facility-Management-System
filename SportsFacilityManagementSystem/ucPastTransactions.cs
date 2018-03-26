@@ -241,6 +241,11 @@ namespace SportsFacilityManagementSystem
             rbtnTid.Checked = false;
             txtTid.Text = "";
             btnViewTrans.Enabled = false;
+
+            //refresh facility list
+            cmbFac.DataSource = frmLogin.facilitylist;
+            cmbFac.DisplayMember = "facilityname";
+            cmbFac.ValueMember = "facilityname";
         }
     }
 }
