@@ -49,7 +49,6 @@
             this.lblWarningGender = new System.Windows.Forms.Label();
             this.lblWarningMobile = new System.Windows.Forms.Label();
             this.lblWarningAddress = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblWarningEmail = new System.Windows.Forms.Label();
@@ -107,9 +106,9 @@
             this.labelJoindate.Location = new System.Drawing.Point(177, 362);
             this.labelJoindate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJoindate.Name = "labelJoindate";
-            this.labelJoindate.Size = new System.Drawing.Size(89, 17);
+            this.labelJoindate.Size = new System.Drawing.Size(80, 17);
             this.labelJoindate.TabIndex = 31;
-            this.labelJoindate.Text = "* Join Date : ";
+            this.labelJoindate.Text = "Join Date : ";
             // 
             // labelDob
             // 
@@ -117,14 +116,14 @@
             this.labelDob.Location = new System.Drawing.Point(177, 185);
             this.labelDob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDob.Name = "labelDob";
-            this.labelDob.Size = new System.Drawing.Size(108, 17);
+            this.labelDob.Size = new System.Drawing.Size(99, 17);
             this.labelDob.TabIndex = 30;
-            this.labelDob.Text = "* Date of Birth : ";
+            this.labelDob.Text = "Date of Birth : ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(187, 256);
+            this.label7.Location = new System.Drawing.Point(177, 253);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 17);
@@ -137,9 +136,9 @@
             this.labelGender.Location = new System.Drawing.Point(177, 134);
             this.labelGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(77, 17);
+            this.labelGender.Size = new System.Drawing.Size(68, 17);
             this.labelGender.TabIndex = 28;
-            this.labelGender.Text = "* Gender : ";
+            this.labelGender.Text = "Gender : ";
             // 
             // labelMobile
             // 
@@ -147,9 +146,9 @@
             this.labelMobile.Location = new System.Drawing.Point(177, 220);
             this.labelMobile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMobile.Name = "labelMobile";
-            this.labelMobile.Size = new System.Drawing.Size(124, 17);
+            this.labelMobile.Size = new System.Drawing.Size(115, 17);
             this.labelMobile.TabIndex = 27;
-            this.labelMobile.Text = "* Mobile Number : ";
+            this.labelMobile.Text = "Mobile Number : ";
             // 
             // labelAddress
             // 
@@ -157,9 +156,9 @@
             this.labelAddress.Location = new System.Drawing.Point(177, 291);
             this.labelAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(81, 17);
+            this.labelAddress.Size = new System.Drawing.Size(72, 17);
             this.labelAddress.TabIndex = 26;
-            this.labelAddress.Text = "* Address : ";
+            this.labelAddress.Text = "Address : ";
             // 
             // lblIC
             // 
@@ -167,9 +166,9 @@
             this.lblIC.Location = new System.Drawing.Point(177, 97);
             this.lblIC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIC.Name = "lblIC";
-            this.lblIC.Size = new System.Drawing.Size(100, 17);
+            this.lblIC.Size = new System.Drawing.Size(91, 17);
             this.lblIC.TabIndex = 25;
-            this.lblIC.Text = "* Identity No. : ";
+            this.lblIC.Text = "Identity No. : ";
             // 
             // lblName
             // 
@@ -177,9 +176,9 @@
             this.lblName.Location = new System.Drawing.Point(177, 61);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 17);
+            this.lblName.Size = new System.Drawing.Size(57, 17);
             this.lblName.TabIndex = 24;
-            this.lblName.Text = "* Name : ";
+            this.lblName.Text = "Name : ";
             // 
             // btnSubmit
             // 
@@ -208,7 +207,7 @@
             this.dtpJoindate.Location = new System.Drawing.Point(297, 362);
             this.dtpJoindate.MinDate = new System.DateTime(2018, 3, 23, 0, 0, 0, 0);
             this.dtpJoindate.Name = "dtpJoindate";
-            this.dtpJoindate.Size = new System.Drawing.Size(219, 22);
+            this.dtpJoindate.Size = new System.Drawing.Size(272, 22);
             this.dtpJoindate.TabIndex = 48;
             // 
             // lblWarningName
@@ -266,15 +265,6 @@
             this.lblWarningAddress.Text = "* Field cannot be blank";
             this.lblWarningAddress.Visible = false;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(180, 407);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 17);
-            this.label13.TabIndex = 55;
-            this.label13.Text = "*Compulsory field";
-            // 
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Crimson;
@@ -294,7 +284,7 @@
             this.dtpDOB.MaxDate = new System.DateTime(2018, 3, 23, 0, 0, 0, 0);
             this.dtpDOB.MinDate = new System.DateTime(1900, 1, 30, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(219, 22);
+            this.dtpDOB.Size = new System.Drawing.Size(272, 22);
             this.dtpDOB.TabIndex = 57;
             this.dtpDOB.Value = new System.DateTime(2018, 3, 23, 0, 0, 0, 0);
             // 
@@ -354,7 +344,6 @@
             this.Controls.Add(this.lblWarningEmail);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.lblWarningAddress);
             this.Controls.Add(this.lblWarningMobile);
             this.Controls.Add(this.lblWarningGender);
@@ -409,7 +398,6 @@
         private System.Windows.Forms.Label lblWarningGender;
         private System.Windows.Forms.Label lblWarningMobile;
         private System.Windows.Forms.Label lblWarningAddress;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.Label lblWarningEmail;

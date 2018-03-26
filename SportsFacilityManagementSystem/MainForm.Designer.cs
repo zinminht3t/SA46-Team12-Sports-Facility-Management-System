@@ -46,13 +46,13 @@
             this.btnPasttransactions = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ucAddFacilities1 = new SportsFacilityManagementSystem.ucAddFacilities();
-            this.ucAddMember1 = new SportsFacilityManagementSystem.ucAddMember();
             this.ucFacilities2 = new SportsFacilityManagementSystem.ucFacilities();
-            this.ucMembers1 = new SportsFacilityManagementSystem.ucMembers();
-            this.ucPastTransactions1 = new SportsFacilityManagementSystem.ucPastTransactions();
-            this.ucReports1 = new SportsFacilityManagementSystem.ucReports();
+            this.ucAddMember1 = new SportsFacilityManagementSystem.ucAddMember();
+            this.ucAddFacilities1 = new SportsFacilityManagementSystem.ucAddFacilities();
             this.ucBooking2 = new SportsFacilityManagementSystem.ucBooking();
+            this.ucReports1 = new SportsFacilityManagementSystem.ucReports();
+            this.ucPastTransactions1 = new SportsFacilityManagementSystem.ucPastTransactions();
+            this.ucMembers1 = new SportsFacilityManagementSystem.ucMembers();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,7 +106,7 @@
             this.btnLogout.Location = new System.Drawing.Point(13, 464);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(215, 76);
-            this.btnLogout.TabIndex = 10;
+            this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -143,7 +143,7 @@
             this.btnMembers.Location = new System.Drawing.Point(13, 236);
             this.btnMembers.Name = "btnMembers";
             this.btnMembers.Size = new System.Drawing.Size(215, 76);
-            this.btnMembers.TabIndex = 7;
+            this.btnMembers.TabIndex = 2;
             this.btnMembers.Text = "Members";
             this.btnMembers.UseVisualStyleBackColor = false;
             this.btnMembers.MouseEnter += new System.EventHandler(this.btnMembers_MouseEnter);
@@ -161,7 +161,7 @@
             this.btnFacilities.Location = new System.Drawing.Point(13, 312);
             this.btnFacilities.Name = "btnFacilities";
             this.btnFacilities.Size = new System.Drawing.Size(215, 76);
-            this.btnFacilities.TabIndex = 9;
+            this.btnFacilities.TabIndex = 3;
             this.btnFacilities.Text = "Facilities";
             this.btnFacilities.UseVisualStyleBackColor = false;
             this.btnFacilities.MouseEnter += new System.EventHandler(this.btnFacilities_MouseEnter);
@@ -179,7 +179,7 @@
             this.btnReports.Location = new System.Drawing.Point(13, 388);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(215, 76);
-            this.btnReports.TabIndex = 8;
+            this.btnReports.TabIndex = 4;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
@@ -234,6 +234,7 @@
             this.btnAddFacilities.Name = "btnAddFacilities";
             this.btnAddFacilities.Size = new System.Drawing.Size(154, 76);
             this.btnAddFacilities.TabIndex = 14;
+            this.btnAddFacilities.TabStop = false;
             this.btnAddFacilities.Text = "Add New Facilities";
             this.btnAddFacilities.UseVisualStyleBackColor = false;
             this.btnAddFacilities.Visible = false;
@@ -252,6 +253,7 @@
             this.btnSearchFacilities.Name = "btnSearchFacilities";
             this.btnSearchFacilities.Size = new System.Drawing.Size(154, 76);
             this.btnSearchFacilities.TabIndex = 13;
+            this.btnSearchFacilities.TabStop = false;
             this.btnSearchFacilities.Text = "Search / Modify Facilities";
             this.btnSearchFacilities.UseVisualStyleBackColor = false;
             this.btnSearchFacilities.Visible = false;
@@ -280,7 +282,8 @@
             this.btnUpcoming.Location = new System.Drawing.Point(228, 156);
             this.btnUpcoming.Name = "btnUpcoming";
             this.btnUpcoming.Size = new System.Drawing.Size(154, 76);
-            this.btnUpcoming.TabIndex = 21;
+            this.btnUpcoming.TabIndex = 6;
+            this.btnUpcoming.TabStop = false;
             this.btnUpcoming.Text = "Upcoming Bookings";
             this.btnUpcoming.UseVisualStyleBackColor = false;
             this.btnUpcoming.Visible = false;
@@ -298,7 +301,8 @@
             this.btnPasttransactions.Location = new System.Drawing.Point(228, 231);
             this.btnPasttransactions.Name = "btnPasttransactions";
             this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
-            this.btnPasttransactions.TabIndex = 20;
+            this.btnPasttransactions.TabIndex = 7;
+            this.btnPasttransactions.TabStop = false;
             this.btnPasttransactions.Text = "View Past Transactions";
             this.btnPasttransactions.UseVisualStyleBackColor = false;
             this.btnPasttransactions.Visible = false;
@@ -323,15 +327,16 @@
             this.panel1.TabIndex = 34;
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
-            // ucAddFacilities1
+            // ucFacilities2
             // 
-            this.ucAddFacilities1.BackColor = System.Drawing.Color.Ivory;
-            this.ucAddFacilities1.Location = new System.Drawing.Point(235, 27);
-            this.ucAddFacilities1.Name = "ucAddFacilities1";
-            this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
-            this.ucAddFacilities1.TabIndex = 35;
-            this.ucAddFacilities1.Visible = false;
-            this.ucAddFacilities1.MouseEnter += new System.EventHandler(this.ucAddFacilities1_MouseEnter);
+            this.ucFacilities2.BackColor = System.Drawing.Color.Ivory;
+            this.ucFacilities2.Location = new System.Drawing.Point(235, 26);
+            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(2);
+            this.ucFacilities2.Name = "ucFacilities2";
+            this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
+            this.ucFacilities2.TabIndex = 37;
+            this.ucFacilities2.Visible = false;
+            this.ucFacilities2.MouseEnter += new System.EventHandler(this.ucFacilities2_MouseEnter);
             // 
             // ucAddMember1
             // 
@@ -344,27 +349,36 @@
             this.ucAddMember1.Visible = false;
             this.ucAddMember1.MouseEnter += new System.EventHandler(this.ucAddMember1_MouseEnter);
             // 
-            // ucFacilities2
+            // ucAddFacilities1
             // 
-            this.ucFacilities2.BackColor = System.Drawing.Color.Ivory;
-            this.ucFacilities2.Location = new System.Drawing.Point(235, 26);
-            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(2);
-            this.ucFacilities2.Name = "ucFacilities2";
-            this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
-            this.ucFacilities2.TabIndex = 37;
-            this.ucFacilities2.Visible = false;
-            this.ucFacilities2.MouseEnter += new System.EventHandler(this.ucFacilities2_MouseEnter);
+            this.ucAddFacilities1.BackColor = System.Drawing.Color.Ivory;
+            this.ucAddFacilities1.Location = new System.Drawing.Point(235, 27);
+            this.ucAddFacilities1.Name = "ucAddFacilities1";
+            this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
+            this.ucAddFacilities1.TabIndex = 35;
+            this.ucAddFacilities1.Visible = false;
+            this.ucAddFacilities1.MouseEnter += new System.EventHandler(this.ucAddFacilities1_MouseEnter);
             // 
-            // ucMembers1
+            // ucBooking2
             // 
-            this.ucMembers1.BackColor = System.Drawing.Color.Ivory;
-            this.ucMembers1.Location = new System.Drawing.Point(235, 26);
-            this.ucMembers1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucMembers1.Name = "ucMembers1";
-            this.ucMembers1.Size = new System.Drawing.Size(752, 508);
-            this.ucMembers1.TabIndex = 38;
-            this.ucMembers1.Visible = false;
-            this.ucMembers1.MouseEnter += new System.EventHandler(this.ucMembers1_MouseEnter);
+            this.ucBooking2.BackColor = System.Drawing.Color.Ivory;
+            this.ucBooking2.Location = new System.Drawing.Point(235, 27);
+            this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ucBooking2.Name = "ucBooking2";
+            this.ucBooking2.Size = new System.Drawing.Size(752, 508);
+            this.ucBooking2.TabIndex = 41;
+            this.ucBooking2.Visible = false;
+            this.ucBooking2.MouseEnter += new System.EventHandler(this.ucBooking2_MouseEnter);
+            // 
+            // ucReports1
+            // 
+            this.ucReports1.BackColor = System.Drawing.Color.Ivory;
+            this.ucReports1.Location = new System.Drawing.Point(235, 27);
+            this.ucReports1.Name = "ucReports1";
+            this.ucReports1.Size = new System.Drawing.Size(752, 508);
+            this.ucReports1.TabIndex = 40;
+            this.ucReports1.Visible = false;
+            this.ucReports1.MouseEnter += new System.EventHandler(this.ucReports1_MouseEnter);
             // 
             // ucPastTransactions1
             // 
@@ -382,26 +396,16 @@
             this.ucPastTransactions1.Visible = false;
             this.ucPastTransactions1.MouseEnter += new System.EventHandler(this.ucPastTransactions1_MouseEnter);
             // 
-            // ucReports1
+            // ucMembers1
             // 
-            this.ucReports1.BackColor = System.Drawing.Color.Ivory;
-            this.ucReports1.Location = new System.Drawing.Point(235, 27);
-            this.ucReports1.Name = "ucReports1";
-            this.ucReports1.Size = new System.Drawing.Size(752, 508);
-            this.ucReports1.TabIndex = 40;
-            this.ucReports1.Visible = false;
-            this.ucReports1.MouseEnter += new System.EventHandler(this.ucReports1_MouseEnter);
-            // 
-            // ucBooking2
-            // 
-            this.ucBooking2.BackColor = System.Drawing.Color.Ivory;
-            this.ucBooking2.Location = new System.Drawing.Point(235, 27);
-            this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ucBooking2.Name = "ucBooking2";
-            this.ucBooking2.Size = new System.Drawing.Size(752, 508);
-            this.ucBooking2.TabIndex = 41;
-            this.ucBooking2.Visible = false;
-            this.ucBooking2.MouseEnter += new System.EventHandler(this.ucBooking2_MouseEnter);
+            this.ucMembers1.BackColor = System.Drawing.Color.Ivory;
+            this.ucMembers1.Location = new System.Drawing.Point(235, 26);
+            this.ucMembers1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucMembers1.Name = "ucMembers1";
+            this.ucMembers1.Size = new System.Drawing.Size(752, 508);
+            this.ucMembers1.TabIndex = 38;
+            this.ucMembers1.Visible = false;
+            this.ucMembers1.MouseEnter += new System.EventHandler(this.ucMembers1_MouseEnter);
             // 
             // frmMain
             // 

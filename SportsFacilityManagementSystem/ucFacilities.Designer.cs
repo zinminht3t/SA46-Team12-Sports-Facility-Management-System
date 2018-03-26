@@ -286,7 +286,6 @@
             // 
             // cmbSearchBy
             // 
-            this.cmbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchBy.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbSearchBy.FormattingEnabled = true;
             this.cmbSearchBy.Items.AddRange(new object[] {

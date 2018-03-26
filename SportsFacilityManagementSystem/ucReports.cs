@@ -69,6 +69,17 @@ namespace SportsFacilityManagementSystem
             cmbTypeofReport.Text = "Select Report";
             dtpDateFromML.MaxDate = DateTime.Today.AddDays(-1);
             dtpDateFromReport.MaxDate = DateTime.Today.AddDays(-1);
+
+            List<int> years = new List<int>();
+            int thisyear = DateTime.Today.Year;
+            for(int i = 0; i < 3; i++)
+            {
+                years.Add(thisyear - i);
+            }
+            cmbMRYear.DataSource = years;
+            cmbYear.DataSource = years;
+
+
         }
 
         private void gbMemberList_Enter(object sender, EventArgs e)
