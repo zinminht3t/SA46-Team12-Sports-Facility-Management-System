@@ -34,6 +34,7 @@
             this.cmbFac = new System.Windows.Forms.ComboBox();
             this.chkbStatus = new System.Windows.Forms.CheckBox();
             this.btnView = new System.Windows.Forms.Button();
+            this.lblDateTo = new System.Windows.Forms.Label();
             this.lblWarningMLDateTo = new System.Windows.Forms.Label();
             this.dtpDatetoML = new System.Windows.Forms.DateTimePicker();
             this.dtpDateFromML = new System.Windows.Forms.DateTimePicker();
@@ -46,7 +47,6 @@
             this.rbtnAll = new System.Windows.Forms.RadioButton();
             this.btnViewTrans = new System.Windows.Forms.Button();
             this.txtTid = new System.Windows.Forms.TextBox();
-            this.lblDateTo = new System.Windows.Forms.Label();
             this.gbType.SuspendLayout();
             this.gbTrans.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +127,15 @@
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // lblDateTo
+            // 
+            this.lblDateTo.AutoSize = true;
+            this.lblDateTo.Location = new System.Drawing.Point(64, 153);
+            this.lblDateTo.Name = "lblDateTo";
+            this.lblDateTo.Size = new System.Drawing.Size(33, 17);
+            this.lblDateTo.TabIndex = 38;
+            this.lblDateTo.Text = "To :";
             // 
             // lblWarningMLDateTo
             // 
@@ -250,15 +259,6 @@
             this.txtTid.ReadOnly = true;
             this.txtTid.Size = new System.Drawing.Size(100, 22);
             this.txtTid.TabIndex = 19;
-            // 
-            // lblDateTo
-            // 
-            this.lblDateTo.AutoSize = true;
-            this.lblDateTo.Location = new System.Drawing.Point(64, 153);
-            this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(67, 17);
-            this.lblDateTo.TabIndex = 38;
-            this.lblDateTo.Text = "Date To :";
             // 
             // ucPastTransactions
             // 

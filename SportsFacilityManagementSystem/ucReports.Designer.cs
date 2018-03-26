@@ -94,21 +94,20 @@
             // 
             // lblDateFrom
             // 
-            this.lblDateFrom.AutoSize = true;
-            this.lblDateFrom.Location = new System.Drawing.Point(35, 69);
+            this.lblDateFrom.Location = new System.Drawing.Point(35, 59);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(82, 17);
+            this.lblDateFrom.Size = new System.Drawing.Size(104, 43);
             this.lblDateFrom.TabIndex = 2;
-            this.lblDateFrom.Text = "Date From :";
+            this.lblDateFrom.Text = "Week Starting From :";
             // 
             // lblToDate
             // 
             this.lblToDate.AutoSize = true;
             this.lblToDate.Location = new System.Drawing.Point(35, 122);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(67, 17);
+            this.lblToDate.Size = new System.Drawing.Size(33, 17);
             this.lblToDate.TabIndex = 3;
-            this.lblToDate.Text = "To Date :";
+            this.lblToDate.Text = "To :";
             // 
             // dtpDateFromReport
             // 
@@ -455,10 +454,10 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTypeofReport);
             this.Controls.Add(this.cmbTypeofReport);
-            this.Controls.Add(this.gbRevenue);
-            this.Controls.Add(this.gbMMR);
             this.Controls.Add(this.gbReport);
             this.Controls.Add(this.gbMemberList);
+            this.Controls.Add(this.gbRevenue);
+            this.Controls.Add(this.gbMMR);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ucReports";
             this.Size = new System.Drawing.Size(752, 508);

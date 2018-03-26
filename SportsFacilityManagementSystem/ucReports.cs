@@ -76,8 +76,6 @@ namespace SportsFacilityManagementSystem
             gbReport.Visible = false;
             cmbStatus.SelectedIndex = 0;
             cmbTypeofReport.Text = "Select Report";
-            dtpDateFromML.MaxDate = DateTime.Today.AddDays(-1);
-            dtpDateFromReport.MaxDate = DateTime.Today.AddDays(-1);
 
             List<int> years = new List<int>();
             int thisyear = DateTime.Today.Year;

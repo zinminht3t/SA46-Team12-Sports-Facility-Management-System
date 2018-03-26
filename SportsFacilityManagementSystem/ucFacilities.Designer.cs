@@ -32,6 +32,9 @@
             this.lblSearchby = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
+            this.cmbRates = new System.Windows.Forms.ComboBox();
+            this.lblWarningRate = new System.Windows.Forms.Label();
+            this.pbWarningRate = new System.Windows.Forms.PictureBox();
             this.lblWarningFac = new System.Windows.Forms.Label();
             this.lblWarningID = new System.Windows.Forms.Label();
             this.pbWarningFac = new System.Windows.Forms.PictureBox();
@@ -42,18 +45,15 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtFacilitiesNo = new System.Windows.Forms.TextBox();
-            this.txtRates = new System.Windows.Forms.TextBox();
             this.lblFacilitiesno = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblRates = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.cmbSearchBy = new System.Windows.Forms.ComboBox();
-            this.lblWarningRate = new System.Windows.Forms.Label();
-            this.pbWarningRate = new System.Windows.Forms.PictureBox();
             this.gbSearchResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -93,6 +93,7 @@
             // gbSearchResults
             // 
             this.gbSearchResults.BackColor = System.Drawing.Color.Transparent;
+            this.gbSearchResults.Controls.Add(this.cmbRates);
             this.gbSearchResults.Controls.Add(this.lblWarningRate);
             this.gbSearchResults.Controls.Add(this.pbWarningRate);
             this.gbSearchResults.Controls.Add(this.lblWarningFac);
@@ -105,7 +106,6 @@
             this.gbSearchResults.Controls.Add(this.btnSave);
             this.gbSearchResults.Controls.Add(this.btnCancel);
             this.gbSearchResults.Controls.Add(this.txtFacilitiesNo);
-            this.gbSearchResults.Controls.Add(this.txtRates);
             this.gbSearchResults.Controls.Add(this.lblFacilitiesno);
             this.gbSearchResults.Controls.Add(this.txtName);
             this.gbSearchResults.Controls.Add(this.lblRates);
@@ -117,6 +117,48 @@
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
             this.gbSearchResults.Visible = false;
+            // 
+            // cmbRates
+            // 
+            this.cmbRates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRates.Enabled = false;
+            this.cmbRates.FormattingEnabled = true;
+            this.cmbRates.Items.AddRange(new object[] {
+            "$ 3.00",
+            "$ 4.00",
+            "$ 5.00",
+            "$ 6.00",
+            "$ 7.00",
+            "$ 8.00",
+            "$ 9.00",
+            "$ 10.00"});
+            this.cmbRates.Location = new System.Drawing.Point(174, 131);
+            this.cmbRates.Name = "cmbRates";
+            this.cmbRates.Size = new System.Drawing.Size(119, 24);
+            this.cmbRates.TabIndex = 72;
+            // 
+            // lblWarningRate
+            // 
+            this.lblWarningRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblWarningRate.Location = new System.Drawing.Point(324, 126);
+            this.lblWarningRate.Name = "lblWarningRate";
+            this.lblWarningRate.Size = new System.Drawing.Size(83, 36);
+            this.lblWarningRate.TabIndex = 71;
+            this.lblWarningRate.Text = "Rates / 2 hours";
+            this.lblWarningRate.Visible = false;
+            // 
+            // pbWarningRate
+            // 
+            this.pbWarningRate.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
+            this.pbWarningRate.Location = new System.Drawing.Point(294, 131);
+            this.pbWarningRate.Name = "pbWarningRate";
+            this.pbWarningRate.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningRate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbWarningRate.TabIndex = 70;
+            this.pbWarningRate.TabStop = false;
+            this.pbWarningRate.Visible = false;
+            this.pbWarningRate.MouseEnter += new System.EventHandler(this.pbWarningRate_MouseEnter);
+            this.pbWarningRate.MouseLeave += new System.EventHandler(this.pbWarningRate_MouseLeave);
             // 
             // lblWarningFac
             // 
@@ -213,7 +255,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(119, 37);
             this.btnCancel.TabIndex = 63;
-            this.btnCancel.Text = "Cancel Changes";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -226,15 +268,6 @@
             this.txtFacilitiesNo.ReadOnly = true;
             this.txtFacilitiesNo.Size = new System.Drawing.Size(119, 22);
             this.txtFacilitiesNo.TabIndex = 61;
-            // 
-            // txtRates
-            // 
-            this.txtRates.Location = new System.Drawing.Point(174, 131);
-            this.txtRates.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRates.Name = "txtRates";
-            this.txtRates.ReadOnly = true;
-            this.txtRates.Size = new System.Drawing.Size(119, 22);
-            this.txtRates.TabIndex = 60;
             // 
             // lblFacilitiesno
             // 
@@ -287,29 +320,6 @@
             this.cmbSearchBy.Size = new System.Drawing.Size(190, 24);
             this.cmbSearchBy.TabIndex = 56;
             // 
-            // lblWarningRate
-            // 
-            this.lblWarningRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWarningRate.Location = new System.Drawing.Point(324, 126);
-            this.lblWarningRate.Name = "lblWarningRate";
-            this.lblWarningRate.Size = new System.Drawing.Size(83, 36);
-            this.lblWarningRate.TabIndex = 71;
-            this.lblWarningRate.Text = "Rates / 2 hours";
-            this.lblWarningRate.Visible = false;
-            // 
-            // pbWarningRate
-            // 
-            this.pbWarningRate.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
-            this.pbWarningRate.Location = new System.Drawing.Point(294, 131);
-            this.pbWarningRate.Name = "pbWarningRate";
-            this.pbWarningRate.Size = new System.Drawing.Size(24, 22);
-            this.pbWarningRate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbWarningRate.TabIndex = 70;
-            this.pbWarningRate.TabStop = false;
-            this.pbWarningRate.Visible = false;
-            this.pbWarningRate.MouseEnter += new System.EventHandler(this.pbWarningRate_MouseEnter);
-            this.pbWarningRate.MouseLeave += new System.EventHandler(this.pbWarningRate_MouseLeave);
-            // 
             // ucFacilities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,9 +336,9 @@
             this.Load += new System.EventHandler(this.ucFacilities_Load);
             this.gbSearchResults.ResumeLayout(false);
             this.gbSearchResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,7 +351,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox gbSearchResults;
         private System.Windows.Forms.TextBox txtFacilitiesNo;
-        private System.Windows.Forms.TextBox txtRates;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblFacilitiesno;
         private System.Windows.Forms.TextBox txtName;
@@ -358,5 +367,6 @@
         private System.Windows.Forms.PictureBox pbWarningID;
         private System.Windows.Forms.Label lblWarningRate;
         private System.Windows.Forms.PictureBox pbWarningRate;
+        private System.Windows.Forms.ComboBox cmbRates;
     }
 }
