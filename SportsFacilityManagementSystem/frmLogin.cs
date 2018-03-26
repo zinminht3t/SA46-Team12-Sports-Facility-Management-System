@@ -67,22 +67,25 @@ namespace SportsFacilityManagementSystem
 
         public void ChangeMemberStatus()
         {
+            SportsFacilitiesEntities cxt = new SportsFacilitiesEntities();
             List<Member> lstmember = new List<Member>();
-            lstmember = ctx.Members.Where(x => x.expirydate < DateTime.Today).ToList();
+            lstmember = cxt.Members.Where(x => x.expirydate < DateTime.Today).ToList();
+            int c = lstmember.Count;
             foreach (var member in lstmember)
             {
-                ctx.Members.First(x => x.memberid == member.memberid).status = "Inactive";
+                cxt.Members.First(x => x.memberid == member.memberid).status = "Inactive";
             }
-
+            cxt.SaveChanges();
 
             List<Member> inlstmember = new List<Member>();
-            inlstmember = ctx.Members.Where(x => x.expirydate > DateTime.Today).ToList();
-            foreach (var member in lstmember)
+            inlstmember = cxt.Members.Where(x => x.expirydate > DateTime.Today).ToList();
+            int count = inlstmember.Count;
+            foreach (var member in inlstmember)
             {
-                ctx.Members.First(x => x.memberid == member.memberid).status = "Active";
+                cxt.Members.First(x => x.memberid == member.memberid).status = "Active";
             }
 
-            ctx.SaveChanges();
+            cxt.SaveChanges();
         }
 
         public static string EncryptPassword(string password)

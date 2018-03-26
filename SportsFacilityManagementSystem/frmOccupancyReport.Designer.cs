@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1552, 978);
             this.Controls.Add(this.crOccupancy);
             this.Name = "frmOccupancyReport";
-            this.Text = "frmOccupancyReport";
+            this.Text = "Occupancy Report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmOccupancyReport_Load);
             this.ResumeLayout(false);

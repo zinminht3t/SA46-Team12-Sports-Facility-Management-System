@@ -125,7 +125,7 @@ namespace SportsFacilityManagementSystem
             try
             {
                 int ID = Convert.ToInt32(txtMemID.Text);
-                txtMemIDdisplay.Text = cxt.Members.First(x => x.memberid == ID).name;
+                txtMemIDdisplay.Text = cxt.Members.First(x => x.memberid == ID && x.status == "Active").name;
                 btnBook.Enabled = true;
             }
             catch

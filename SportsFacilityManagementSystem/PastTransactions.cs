@@ -68,6 +68,16 @@ namespace SportsFacilityManagementSystem
             SQL();
 
             DisplayTable(command);
+
+            int count = dgvTransactions.Rows.Count;
+            if(count > 0)
+            {
+                toolStripStatusLabel1.Text = count.ToString() + " Rows";
+            }
+            else
+            {
+                toolStripStatusLabel1.Text = "No result";
+            }
         }
 
         private void SQL()

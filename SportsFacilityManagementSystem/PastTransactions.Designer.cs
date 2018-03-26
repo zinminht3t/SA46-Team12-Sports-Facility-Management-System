@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PastTransactions));
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
             this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +39,11 @@
             this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Member = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTransactions
@@ -59,22 +62,13 @@
             this.Invoice,
             this.MemberID,
             this.Member});
-            this.dgvTransactions.Location = new System.Drawing.Point(89, 28);
+            this.dgvTransactions.Location = new System.Drawing.Point(41, 66);
+            this.dgvTransactions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowTemplate.Height = 24;
-            this.dgvTransactions.Size = new System.Drawing.Size(658, 353);
+            this.dgvTransactions.Size = new System.Drawing.Size(1822, 778);
             this.dgvTransactions.TabIndex = 0;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(380, 413);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(86, 34);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // TransID
             // 
@@ -82,7 +76,7 @@
             this.TransID.HeaderText = "Transaction ID";
             this.TransID.Name = "TransID";
             this.TransID.ReadOnly = true;
-            this.TransID.Width = 129;
+            this.TransID.Width = 180;
             // 
             // status
             // 
@@ -90,7 +84,7 @@
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
-            this.status.Width = 77;
+            this.status.Width = 118;
             // 
             // BookingDate
             // 
@@ -98,7 +92,7 @@
             this.BookingDate.HeaderText = "Booking Date";
             this.BookingDate.Name = "BookingDate";
             this.BookingDate.ReadOnly = true;
-            this.BookingDate.Width = 122;
+            this.BookingDate.Width = 171;
             // 
             // Facilityname
             // 
@@ -106,7 +100,7 @@
             this.Facilityname.HeaderText = "Sports";
             this.Facilityname.Name = "Facilityname";
             this.Facilityname.ReadOnly = true;
-            this.Facilityname.Width = 78;
+            this.Facilityname.Width = 119;
             // 
             // Timeslot
             // 
@@ -114,7 +108,7 @@
             this.Timeslot.HeaderText = "Timing";
             this.Timeslot.Name = "Timeslot";
             this.Timeslot.ReadOnly = true;
-            this.Timeslot.Width = 79;
+            this.Timeslot.Width = 121;
             // 
             // Total
             // 
@@ -122,7 +116,7 @@
             this.Total.HeaderText = "Total Price";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
-            this.Total.Width = 105;
+            this.Total.Width = 148;
             // 
             // Invoice
             // 
@@ -130,7 +124,7 @@
             this.Invoice.HeaderText = "Invoice Date";
             this.Invoice.Name = "Invoice";
             this.Invoice.ReadOnly = true;
-            this.Invoice.Width = 115;
+            this.Invoice.Width = 162;
             // 
             // MemberID
             // 
@@ -138,29 +132,64 @@
             this.MemberID.HeaderText = "Member ID";
             this.MemberID.Name = "MemberID";
             this.MemberID.ReadOnly = true;
-            this.MemberID.Width = 105;
+            this.MemberID.Width = 149;
             // 
             // Member
             // 
             this.Member.HeaderText = "Member";
             this.Member.Name = "Member";
             this.Member.ReadOnly = true;
-            this.Member.Width = 88;
+            this.Member.Width = 135;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(790, 854);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(129, 53);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 905);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(2127, 37);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(79, 32);
+            this.toolStripStatusLabel1.Text = "Ready";
             // 
             // PastTransactions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(832, 477);
+            this.ClientSize = new System.Drawing.Size(2127, 942);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvTransactions);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PastTransactions";
             this.Text = "Transactions";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PastTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -177,5 +206,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Invoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn MemberID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Member;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

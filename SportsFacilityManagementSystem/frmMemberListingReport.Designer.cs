@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crMLReport);
             this.Name = "frmMemberListingReport";
-            this.Text = "frmMemberListingReport";
+            this.Text = "Member Listing Report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMemberListingReport_Load);
             this.ResumeLayout(false);
