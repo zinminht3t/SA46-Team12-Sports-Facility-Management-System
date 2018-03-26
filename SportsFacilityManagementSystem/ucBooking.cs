@@ -185,7 +185,7 @@ namespace SportsFacilityManagementSystem
             ifBookedSubfacility.Clear();
 
             //get facility id of chosen facility in combobox
-            if (cmbSports.Text != "Select Sports")
+            if (cmbSports.Text != defaultCmbSports)
             {
                 this.getFacilityID();
                 noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId); //to replace output with no of subfac belonging to selected facility
@@ -431,13 +431,18 @@ namespace SportsFacilityManagementSystem
         {
             ctx = new SportsFacilitiesEntities();
 
- 
 
-            cmbSports.DataSource = frmLogin.bookingSportsList;
-            //cmbSports.DisplayMember = "facilityname";
-            //cmbSports.ValueMember = "facilityname";
-            dtpBookingDate.Value = DateTime.Today;
-            dtpBookingDatevalue = dtpBookingDate.Value;
+
+            cmbSports.DataSource = frmLogin.facilitylist;
+            cmbSports.DisplayMember = "facilityname";
+            cmbSports.ValueMember = "facilityname";
+            defaultCmbSports = "- Select sport -";
+            cmbSports.Text = defaultCmbSports;
+            //cmbSports.DataSource = frmLogin.bookingSportsList;
+            ////cmbSports.DisplayMember = "facilityname";
+            ////cmbSports.ValueMember = "facilityname";
+            //dtpBookingDate.Value = DateTime.Today;
+            //dtpBookingDatevalue = dtpBookingDate.Value;
 
             cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
 
