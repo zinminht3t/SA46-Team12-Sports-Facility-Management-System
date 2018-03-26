@@ -21,10 +21,8 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             if (txtUserID.Text == "" || txtPassword.Text == "")
             {
                 MessageBox.Show("Enter the User ID and Password!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,7 +36,6 @@ namespace SportsFacilityManagementSystem
                     password = EncryptPassword(password); //all passwords for the users are 1234
                     int result = 0;
                     result = ctx.Users.Where(x => x.userid == userid && x.password == password).Count();
-
                     if (result > 0) //if the user login success
                     {
                         user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
@@ -59,12 +56,10 @@ namespace SportsFacilityManagementSystem
                 }
             }
         }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
             ctx = new SportsFacilitiesEntities();
         }
-
         public void ChangeMemberStatus()
         {
             SportsFacilitiesEntities cxt = new SportsFacilitiesEntities();
@@ -76,7 +71,6 @@ namespace SportsFacilityManagementSystem
                 cxt.Members.First(x => x.memberid == member.memberid).status = "Inactive";
             }
             cxt.SaveChanges();
-
             List<Member> inlstmember = new List<Member>();
             inlstmember = cxt.Members.Where(x => x.expirydate > DateTime.Today).ToList();
             int count = inlstmember.Count;
@@ -87,7 +81,6 @@ namespace SportsFacilityManagementSystem
 
             cxt.SaveChanges();
         }
-
         public static string EncryptPassword(string password)
         {
             string key = "EvelynJaydenSandyZin";

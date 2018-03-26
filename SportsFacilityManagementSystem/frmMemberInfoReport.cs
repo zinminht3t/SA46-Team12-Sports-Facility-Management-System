@@ -16,13 +16,10 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
-
         private void frmMemberInfoReport_Load(object sender, EventArgs e)
         {
             DataSet3 ds = new DataSet3();
-
             DataSet3TableAdapters.MembersTableAdapter da = new DataSet3TableAdapters.MembersTableAdapter();
-
             da.Fill(ds.Members);
             MemberForm cr = new MemberForm();
             cr.SetDataSource(ds);

@@ -16,13 +16,12 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
-
         private void frmMemberListingReport_Load(object sender, EventArgs e)
         {
             DataSet1 ds = new DataSet1();
             DataSet1TableAdapters.MembersTableAdapter da = new DataSet1TableAdapters.MembersTableAdapter();
             da.Fill(ds.Members);
-            if(ucReports.isDateRange)
+            if (ucReports.isDateRange)
             {
                 MemberListing cr = new MemberListing();
                 cr.SetDataSource(ds);
