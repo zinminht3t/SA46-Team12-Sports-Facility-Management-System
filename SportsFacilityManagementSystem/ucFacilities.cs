@@ -89,10 +89,17 @@ namespace SportsFacilityManagementSystem
             if (savebtn == DialogResult.Yes)
             {
                 ButtonVisibility(false);
-                int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == txtRates.Text).Select(y => y.rateid).First();
-                fac.rateid = rateid;
-                fac.facilityname = txtName.Text;
-                cxt.SaveChanges();
+                try
+                {
+                    int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == txtRates.Text).Select(y => y.rateid).First();
+                    fac.rateid = rateid;
+                    fac.facilityname = txtName.Text;
+                    cxt.SaveChanges();
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Invalid input! Please enter a valid rate.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
         #region Visibility Events
@@ -104,11 +111,11 @@ namespace SportsFacilityManagementSystem
                 txtName.ReadOnly = false;
                 txtRates.ReadOnly = false;
                 btnEdit.Visible = false;
-                lblAvailable.Visible = false;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 pbWarningFac.Visible = true;
                 pbWarningID.Visible = true;
+                pbWarningRate.Visible = true;
                 btnSearch.Enabled = false;
             }
             else
@@ -116,11 +123,11 @@ namespace SportsFacilityManagementSystem
                 txtName.ReadOnly = true;
                 txtRates.ReadOnly = true;
                 btnEdit.Visible = true;
-                lblAvailable.Visible = true;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
                 pbWarningFac.Visible = false;
                 pbWarningID.Visible = false;
+                pbWarningRate.Visible = false;
                 btnSearch.Enabled = true;
             }
         }
@@ -146,11 +153,6 @@ namespace SportsFacilityManagementSystem
         }
         #endregion
 
-        private void lblAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-        }
-
         private void ucFacilities_Load(object sender, EventArgs e)
         {
 
@@ -158,6 +160,16 @@ namespace SportsFacilityManagementSystem
             cmbSearchBy.DisplayMember = "facilityname";
             cmbSearchBy.ValueMember = "facilityname";
             cmbSearchBy.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void pbWarningRate_MouseEnter(object sender, EventArgs e)
+        {
+            lblWarningRate.Visible = true;
+        }
+
+        private void pbWarningRate_MouseLeave(object sender, EventArgs e)
+        {
+            lblWarningRate.Visible = false;
         }
     }
 }

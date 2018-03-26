@@ -32,7 +32,6 @@
             this.lblSearchby = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
-            this.lblAvailable = new System.Windows.Forms.LinkLabel();
             this.lblWarningFac = new System.Windows.Forms.Label();
             this.lblWarningID = new System.Windows.Forms.Label();
             this.pbWarningFac = new System.Windows.Forms.PictureBox();
@@ -49,9 +48,12 @@
             this.lblRates = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.cmbSearchBy = new System.Windows.Forms.ComboBox();
+            this.lblWarningRate = new System.Windows.Forms.Label();
+            this.pbWarningRate = new System.Windows.Forms.PictureBox();
             this.gbSearchResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -60,7 +62,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(125, 30);
-            this.btnSearch.TabIndex = 29;
+            this.btnSearch.TabIndex = 57;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -91,7 +93,8 @@
             // gbSearchResults
             // 
             this.gbSearchResults.BackColor = System.Drawing.Color.Transparent;
-            this.gbSearchResults.Controls.Add(this.lblAvailable);
+            this.gbSearchResults.Controls.Add(this.lblWarningRate);
+            this.gbSearchResults.Controls.Add(this.pbWarningRate);
             this.gbSearchResults.Controls.Add(this.lblWarningFac);
             this.gbSearchResults.Controls.Add(this.lblWarningID);
             this.gbSearchResults.Controls.Add(this.pbWarningFac);
@@ -114,18 +117,6 @@
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
             this.gbSearchResults.Visible = false;
-            // 
-            // lblAvailable
-            // 
-            this.lblAvailable.AutoSize = true;
-            this.lblAvailable.Location = new System.Drawing.Point(51, 206);
-            this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(120, 17);
-            this.lblAvailable.TabIndex = 70;
-            this.lblAvailable.TabStop = true;
-            this.lblAvailable.Text = "Check Availablility";
-            this.lblAvailable.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.lblAvailable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAvailable_LinkClicked);
             // 
             // lblWarningFac
             // 
@@ -180,7 +171,7 @@
             this.txtFacilityID.Name = "txtFacilityID";
             this.txtFacilityID.ReadOnly = true;
             this.txtFacilityID.Size = new System.Drawing.Size(119, 22);
-            this.txtFacilityID.TabIndex = 65;
+            this.txtFacilityID.TabIndex = 58;
             // 
             // lblFacilityID
             // 
@@ -198,7 +189,7 @@
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(119, 37);
-            this.btnEdit.TabIndex = 43;
+            this.btnEdit.TabIndex = 62;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -209,7 +200,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 37);
-            this.btnSave.TabIndex = 62;
+            this.btnSave.TabIndex = 64;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Visible = false;
@@ -234,7 +225,7 @@
             this.txtFacilitiesNo.Name = "txtFacilitiesNo";
             this.txtFacilitiesNo.ReadOnly = true;
             this.txtFacilitiesNo.Size = new System.Drawing.Size(119, 22);
-            this.txtFacilitiesNo.TabIndex = 60;
+            this.txtFacilitiesNo.TabIndex = 61;
             // 
             // txtRates
             // 
@@ -243,7 +234,7 @@
             this.txtRates.Name = "txtRates";
             this.txtRates.ReadOnly = true;
             this.txtRates.Size = new System.Drawing.Size(119, 22);
-            this.txtRates.TabIndex = 59;
+            this.txtRates.TabIndex = 60;
             // 
             // lblFacilitiesno
             // 
@@ -262,7 +253,7 @@
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(119, 22);
-            this.txtName.TabIndex = 39;
+            this.txtName.TabIndex = 59;
             // 
             // lblRates
             // 
@@ -294,7 +285,30 @@
             this.cmbSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSearchBy.Name = "cmbSearchBy";
             this.cmbSearchBy.Size = new System.Drawing.Size(190, 24);
-            this.cmbSearchBy.TabIndex = 27;
+            this.cmbSearchBy.TabIndex = 56;
+            // 
+            // lblWarningRate
+            // 
+            this.lblWarningRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblWarningRate.Location = new System.Drawing.Point(324, 126);
+            this.lblWarningRate.Name = "lblWarningRate";
+            this.lblWarningRate.Size = new System.Drawing.Size(83, 36);
+            this.lblWarningRate.TabIndex = 71;
+            this.lblWarningRate.Text = "Rates / 2 hours";
+            this.lblWarningRate.Visible = false;
+            // 
+            // pbWarningRate
+            // 
+            this.pbWarningRate.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
+            this.pbWarningRate.Location = new System.Drawing.Point(294, 131);
+            this.pbWarningRate.Name = "pbWarningRate";
+            this.pbWarningRate.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningRate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbWarningRate.TabIndex = 70;
+            this.pbWarningRate.TabStop = false;
+            this.pbWarningRate.Visible = false;
+            this.pbWarningRate.MouseEnter += new System.EventHandler(this.pbWarningRate_MouseEnter);
+            this.pbWarningRate.MouseLeave += new System.EventHandler(this.pbWarningRate_MouseLeave);
             // 
             // ucFacilities
             // 
@@ -314,6 +328,7 @@
             this.gbSearchResults.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,6 +356,7 @@
         private System.Windows.Forms.Label lblWarningID;
         private System.Windows.Forms.PictureBox pbWarningFac;
         private System.Windows.Forms.PictureBox pbWarningID;
-        private System.Windows.Forms.LinkLabel lblAvailable;
+        private System.Windows.Forms.Label lblWarningRate;
+        private System.Windows.Forms.PictureBox pbWarningRate;
     }
 }

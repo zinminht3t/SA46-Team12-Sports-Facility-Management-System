@@ -63,19 +63,19 @@
             // 
             this.cmbSports.FormattingEnabled = true;
             this.cmbSports.Location = new System.Drawing.Point(133, 106);
-            this.cmbSports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSports.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSports.Name = "cmbSports";
             this.cmbSports.Size = new System.Drawing.Size(265, 24);
-            this.cmbSports.TabIndex = 79;
+            this.cmbSports.TabIndex = 13;
             this.cmbSports.SelectedIndexChanged += new System.EventHandler(this.cmbSports_SelectedIndexChanged);
             // 
             // dtpBookingDate
             // 
             this.dtpBookingDate.Location = new System.Drawing.Point(133, 66);
-            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpBookingDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBookingDate.Name = "dtpBookingDate";
             this.dtpBookingDate.Size = new System.Drawing.Size(265, 22);
-            this.dtpBookingDate.TabIndex = 78;
+            this.dtpBookingDate.TabIndex = 12;
             this.dtpBookingDate.ValueChanged += new System.EventHandler(this.dtpBookingDate_ValueChanged);
             // 
             // lblSports
@@ -127,10 +127,10 @@
             this.btnBook.Enabled = false;
             this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBook.Location = new System.Drawing.Point(576, 466);
-            this.btnBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(4);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(100, 28);
-            this.btnBook.TabIndex = 73;
+            this.btnBook.TabIndex = 14;
             this.btnBook.Text = "Book";
             this.btnBook.UseVisualStyleBackColor = true;
             this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
@@ -141,7 +141,7 @@
             this.btnC5.Enabled = false;
             this.btnC5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC5.Location = new System.Drawing.Point(576, 362);
-            this.btnC5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC5.Margin = new System.Windows.Forms.Padding(4);
             this.btnC5.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC5.Name = "btnC5";
             this.btnC5.Size = new System.Drawing.Size(100, 92);
@@ -155,7 +155,7 @@
             this.btnC4.Enabled = false;
             this.btnC4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC4.Location = new System.Drawing.Point(475, 362);
-            this.btnC4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC4.Margin = new System.Windows.Forms.Padding(4);
             this.btnC4.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC4.Name = "btnC4";
             this.btnC4.Size = new System.Drawing.Size(100, 92);
@@ -169,7 +169,7 @@
             this.btnC3.Enabled = false;
             this.btnC3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC3.Location = new System.Drawing.Point(374, 362);
-            this.btnC3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC3.Margin = new System.Windows.Forms.Padding(4);
             this.btnC3.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC3.Name = "btnC3";
             this.btnC3.Size = new System.Drawing.Size(100, 92);
@@ -183,7 +183,7 @@
             this.btnC2.Enabled = false;
             this.btnC2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC2.Location = new System.Drawing.Point(273, 362);
-            this.btnC2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC2.Margin = new System.Windows.Forms.Padding(4);
             this.btnC2.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC2.Name = "btnC2";
             this.btnC2.Size = new System.Drawing.Size(100, 92);
@@ -197,7 +197,7 @@
             this.btnC1.Enabled = false;
             this.btnC1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnC1.Location = new System.Drawing.Point(172, 362);
-            this.btnC1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnC1.Margin = new System.Windows.Forms.Padding(4);
             this.btnC1.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnC1.Name = "btnC1";
             this.btnC1.Size = new System.Drawing.Size(100, 92);
@@ -211,7 +211,7 @@
             this.btnB5.Enabled = false;
             this.btnB5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB5.Location = new System.Drawing.Point(576, 269);
-            this.btnB5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB5.Margin = new System.Windows.Forms.Padding(4);
             this.btnB5.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB5.Name = "btnB5";
             this.btnB5.Size = new System.Drawing.Size(100, 92);
@@ -225,7 +225,7 @@
             this.btnB4.Enabled = false;
             this.btnB4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB4.Location = new System.Drawing.Point(475, 269);
-            this.btnB4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB4.Margin = new System.Windows.Forms.Padding(4);
             this.btnB4.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB4.Name = "btnB4";
             this.btnB4.Size = new System.Drawing.Size(100, 92);
@@ -239,7 +239,7 @@
             this.btnB3.Enabled = false;
             this.btnB3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB3.Location = new System.Drawing.Point(374, 269);
-            this.btnB3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB3.Margin = new System.Windows.Forms.Padding(4);
             this.btnB3.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB3.Name = "btnB3";
             this.btnB3.Size = new System.Drawing.Size(100, 92);
@@ -253,7 +253,7 @@
             this.btnB2.Enabled = false;
             this.btnB2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB2.Location = new System.Drawing.Point(273, 269);
-            this.btnB2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB2.Margin = new System.Windows.Forms.Padding(4);
             this.btnB2.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB2.Name = "btnB2";
             this.btnB2.Size = new System.Drawing.Size(100, 92);
@@ -267,7 +267,7 @@
             this.btnB1.Enabled = false;
             this.btnB1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnB1.Location = new System.Drawing.Point(172, 269);
-            this.btnB1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnB1.Margin = new System.Windows.Forms.Padding(4);
             this.btnB1.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnB1.Name = "btnB1";
             this.btnB1.Size = new System.Drawing.Size(100, 92);
@@ -293,7 +293,7 @@
             this.btnA5.Enabled = false;
             this.btnA5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA5.Location = new System.Drawing.Point(576, 176);
-            this.btnA5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA5.Margin = new System.Windows.Forms.Padding(4);
             this.btnA5.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA5.Name = "btnA5";
             this.btnA5.Size = new System.Drawing.Size(100, 92);
@@ -307,7 +307,7 @@
             this.btnA4.Enabled = false;
             this.btnA4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA4.Location = new System.Drawing.Point(475, 176);
-            this.btnA4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA4.Margin = new System.Windows.Forms.Padding(4);
             this.btnA4.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA4.Name = "btnA4";
             this.btnA4.Size = new System.Drawing.Size(100, 92);
@@ -321,7 +321,7 @@
             this.btnA3.Enabled = false;
             this.btnA3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA3.Location = new System.Drawing.Point(374, 176);
-            this.btnA3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA3.Margin = new System.Windows.Forms.Padding(4);
             this.btnA3.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA3.Name = "btnA3";
             this.btnA3.Size = new System.Drawing.Size(100, 92);
@@ -335,7 +335,7 @@
             this.btnA2.Enabled = false;
             this.btnA2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA2.Location = new System.Drawing.Point(273, 176);
-            this.btnA2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA2.Margin = new System.Windows.Forms.Padding(4);
             this.btnA2.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA2.Name = "btnA2";
             this.btnA2.Size = new System.Drawing.Size(100, 92);
@@ -349,7 +349,7 @@
             this.btnA1.Enabled = false;
             this.btnA1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnA1.Location = new System.Drawing.Point(172, 176);
-            this.btnA1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnA1.Margin = new System.Windows.Forms.Padding(4);
             this.btnA1.MaximumSize = new System.Drawing.Size(267, 246);
             this.btnA1.Name = "btnA1";
             this.btnA1.Size = new System.Drawing.Size(100, 92);
@@ -369,7 +369,6 @@
             this.lblTitle.TabIndex = 80;
             this.lblTitle.Text = "Upcoming Bookings";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // lblTime3
             // 

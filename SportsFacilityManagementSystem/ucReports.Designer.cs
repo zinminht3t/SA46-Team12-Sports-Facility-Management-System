@@ -35,6 +35,10 @@
             this.dtpDateFromReport = new System.Windows.Forms.DateTimePicker();
             this.dtpToDateReport = new System.Windows.Forms.DateTimePicker();
             this.gbReport = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbOSubfacility = new System.Windows.Forms.ComboBox();
+            this.cmbOFacility = new System.Windows.Forms.ComboBox();
             this.labelWarningReportTodate = new System.Windows.Forms.Label();
             this.btnPrintReport = new System.Windows.Forms.Button();
             this.gbMemberList = new System.Windows.Forms.GroupBox();
@@ -57,10 +61,6 @@
             this.cmbMRYear = new System.Windows.Forms.ComboBox();
             this.btnMRPrint = new System.Windows.Forms.Button();
             this.lblMRYear = new System.Windows.Forms.Label();
-            this.cmbOFacility = new System.Windows.Forms.ComboBox();
-            this.cmbOSubfacility = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.gbReport.SuspendLayout();
             this.gbMemberList.SuspendLayout();
             this.gbRevenue.SuspendLayout();
@@ -80,7 +80,7 @@
             this.cmbTypeofReport.Location = new System.Drawing.Point(240, 56);
             this.cmbTypeofReport.Name = "cmbTypeofReport";
             this.cmbTypeofReport.Size = new System.Drawing.Size(222, 24);
-            this.cmbTypeofReport.TabIndex = 0;
+            this.cmbTypeofReport.TabIndex = 70;
             this.cmbTypeofReport.SelectedIndexChanged += new System.EventHandler(this.cmbTypeofReport_SelectedIndexChanged);
             // 
             // lblTypeofReport
@@ -115,14 +115,14 @@
             this.dtpDateFromReport.Location = new System.Drawing.Point(152, 69);
             this.dtpDateFromReport.Name = "dtpDateFromReport";
             this.dtpDateFromReport.Size = new System.Drawing.Size(285, 22);
-            this.dtpDateFromReport.TabIndex = 4;
+            this.dtpDateFromReport.TabIndex = 73;
             // 
             // dtpToDateReport
             // 
             this.dtpToDateReport.Location = new System.Drawing.Point(152, 122);
             this.dtpToDateReport.Name = "dtpToDateReport";
             this.dtpToDateReport.Size = new System.Drawing.Size(281, 22);
-            this.dtpToDateReport.TabIndex = 5;
+            this.dtpToDateReport.TabIndex = 74;
             this.dtpToDateReport.ValueChanged += new System.EventHandler(this.dtpToDateReport_ValueChanged);
             // 
             // gbReport
@@ -143,6 +143,41 @@
             this.gbReport.TabIndex = 13;
             this.gbReport.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 215);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 17);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Sub Facility : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 169);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Facility : ";
+            // 
+            // cmbOSubfacility
+            // 
+            this.cmbOSubfacility.FormattingEnabled = true;
+            this.cmbOSubfacility.Location = new System.Drawing.Point(152, 212);
+            this.cmbOSubfacility.Name = "cmbOSubfacility";
+            this.cmbOSubfacility.Size = new System.Drawing.Size(194, 24);
+            this.cmbOSubfacility.TabIndex = 76;
+            // 
+            // cmbOFacility
+            // 
+            this.cmbOFacility.FormattingEnabled = true;
+            this.cmbOFacility.Location = new System.Drawing.Point(152, 166);
+            this.cmbOFacility.Name = "cmbOFacility";
+            this.cmbOFacility.Size = new System.Drawing.Size(194, 24);
+            this.cmbOFacility.TabIndex = 75;
+            this.cmbOFacility.SelectedIndexChanged += new System.EventHandler(this.cmbOFacility_SelectedIndexChanged);
+            // 
             // labelWarningReportTodate
             // 
             this.labelWarningReportTodate.ForeColor = System.Drawing.Color.Red;
@@ -158,7 +193,7 @@
             this.btnPrintReport.Location = new System.Drawing.Point(193, 255);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(112, 58);
-            this.btnPrintReport.TabIndex = 13;
+            this.btnPrintReport.TabIndex = 77;
             this.btnPrintReport.Text = "Print";
             this.btnPrintReport.UseVisualStyleBackColor = true;
             this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
@@ -183,7 +218,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 182);
+            this.label1.Location = new System.Drawing.Point(53, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 27;
@@ -192,27 +227,27 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(10, 284);
+            this.radioButton1.Location = new System.Drawing.Point(30, 181);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(17, 16);
-            this.radioButton1.TabIndex = 26;
+            this.radioButton1.TabIndex = 81;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // rdnDateRange
             // 
             this.rdnDateRange.AutoSize = true;
-            this.rdnDateRange.Location = new System.Drawing.Point(10, 161);
+            this.rdnDateRange.Location = new System.Drawing.Point(30, 73);
             this.rdnDateRange.Name = "rdnDateRange";
             this.rdnDateRange.Size = new System.Drawing.Size(17, 16);
-            this.rdnDateRange.TabIndex = 25;
+            this.rdnDateRange.TabIndex = 78;
             this.rdnDateRange.TabStop = true;
             this.rdnDateRange.UseVisualStyleBackColor = true;
             // 
             // lblDateRange
             // 
             this.lblDateRange.AutoSize = true;
-            this.lblDateRange.Location = new System.Drawing.Point(29, 103);
+            this.lblDateRange.Location = new System.Drawing.Point(53, 72);
             this.lblDateRange.Name = "lblDateRange";
             this.lblDateRange.Size = new System.Drawing.Size(138, 17);
             this.lblDateRange.TabIndex = 24;
@@ -223,25 +258,25 @@
             this.btnPrintML.Location = new System.Drawing.Point(211, 257);
             this.btnPrintML.Name = "btnPrintML";
             this.btnPrintML.Size = new System.Drawing.Size(112, 58);
-            this.btnPrintML.TabIndex = 22;
+            this.btnPrintML.TabIndex = 83;
             this.btnPrintML.Text = "Print";
             this.btnPrintML.UseVisualStyleBackColor = true;
             this.btnPrintML.Click += new System.EventHandler(this.btnPrintML_Click);
             // 
             // dtpDatetoML
             // 
-            this.dtpDatetoML.Location = new System.Drawing.Point(170, 124);
+            this.dtpDatetoML.Location = new System.Drawing.Point(221, 127);
             this.dtpDatetoML.Name = "dtpDatetoML";
             this.dtpDatetoML.Size = new System.Drawing.Size(263, 22);
-            this.dtpDatetoML.TabIndex = 21;
+            this.dtpDatetoML.TabIndex = 80;
             this.dtpDatetoML.ValueChanged += new System.EventHandler(this.dtpDatetoML_ValueChanged);
             // 
             // dtpDateFromML
             // 
-            this.dtpDateFromML.Location = new System.Drawing.Point(170, 71);
+            this.dtpDateFromML.Location = new System.Drawing.Point(221, 70);
             this.dtpDateFromML.Name = "dtpDateFromML";
             this.dtpDateFromML.Size = new System.Drawing.Size(263, 22);
-            this.dtpDateFromML.TabIndex = 20;
+            this.dtpDateFromML.TabIndex = 79;
             // 
             // cmbStatus
             // 
@@ -250,10 +285,10 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(170, 177);
+            this.cmbStatus.Location = new System.Drawing.Point(221, 177);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(124, 24);
-            this.cmbStatus.TabIndex = 17;
+            this.cmbStatus.TabIndex = 82;
             // 
             // lblTitle
             // 
@@ -299,17 +334,17 @@
             "2012",
             "2011",
             "2010"});
-            this.cmbYear.Location = new System.Drawing.Point(291, 108);
+            this.cmbYear.Location = new System.Drawing.Point(246, 60);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(113, 24);
-            this.cmbYear.TabIndex = 14;
+            this.cmbYear.TabIndex = 71;
             // 
             // btnRPrint
             // 
-            this.btnRPrint.Location = new System.Drawing.Point(193, 255);
+            this.btnRPrint.Location = new System.Drawing.Point(211, 209);
             this.btnRPrint.Name = "btnRPrint";
             this.btnRPrint.Size = new System.Drawing.Size(112, 58);
-            this.btnRPrint.TabIndex = 13;
+            this.btnRPrint.TabIndex = 72;
             this.btnRPrint.Text = "Print";
             this.btnRPrint.UseVisualStyleBackColor = true;
             this.btnRPrint.Click += new System.EventHandler(this.btnRPrint_Click);
@@ -317,7 +352,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 71);
+            this.label4.Location = new System.Drawing.Point(136, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 17);
             this.label4.TabIndex = 2;
@@ -340,7 +375,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 141);
+            this.label2.Location = new System.Drawing.Point(122, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 17);
             this.label2.TabIndex = 16;
@@ -363,10 +398,10 @@
             "October",
             "November",
             "December"});
-            this.cmbMRMonth.Location = new System.Drawing.Point(291, 218);
+            this.cmbMRMonth.Location = new System.Drawing.Point(273, 138);
             this.cmbMRMonth.Name = "cmbMRMonth";
             this.cmbMRMonth.Size = new System.Drawing.Size(113, 24);
-            this.cmbMRMonth.TabIndex = 15;
+            this.cmbMRMonth.TabIndex = 72;
             // 
             // cmbMRYear
             // 
@@ -387,10 +422,10 @@
             "2012",
             "2011",
             "2010"});
-            this.cmbMRYear.Location = new System.Drawing.Point(291, 108);
+            this.cmbMRYear.Location = new System.Drawing.Point(273, 67);
             this.cmbMRYear.Name = "cmbMRYear";
             this.cmbMRYear.Size = new System.Drawing.Size(113, 24);
-            this.cmbMRYear.TabIndex = 14;
+            this.cmbMRYear.TabIndex = 71;
             this.cmbMRYear.SelectedIndexChanged += new System.EventHandler(this.cmbMRYear_SelectedIndexChanged);
             // 
             // btnMRPrint
@@ -398,7 +433,7 @@
             this.btnMRPrint.Location = new System.Drawing.Point(193, 255);
             this.btnMRPrint.Name = "btnMRPrint";
             this.btnMRPrint.Size = new System.Drawing.Size(112, 58);
-            this.btnMRPrint.TabIndex = 13;
+            this.btnMRPrint.TabIndex = 73;
             this.btnMRPrint.Text = "Print";
             this.btnMRPrint.UseVisualStyleBackColor = true;
             this.btnMRPrint.Click += new System.EventHandler(this.button1_Click);
@@ -406,46 +441,11 @@
             // lblMRYear
             // 
             this.lblMRYear.AutoSize = true;
-            this.lblMRYear.Location = new System.Drawing.Point(67, 71);
+            this.lblMRYear.Location = new System.Drawing.Point(122, 70);
             this.lblMRYear.Name = "lblMRYear";
             this.lblMRYear.Size = new System.Drawing.Size(93, 17);
             this.lblMRYear.TabIndex = 2;
             this.lblMRYear.Text = "Select Year : ";
-            // 
-            // cmbOFacility
-            // 
-            this.cmbOFacility.FormattingEnabled = true;
-            this.cmbOFacility.Location = new System.Drawing.Point(152, 166);
-            this.cmbOFacility.Name = "cmbOFacility";
-            this.cmbOFacility.Size = new System.Drawing.Size(194, 24);
-            this.cmbOFacility.TabIndex = 25;
-            this.cmbOFacility.SelectedIndexChanged += new System.EventHandler(this.cmbOFacility_SelectedIndexChanged);
-            // 
-            // cmbOSubfacility
-            // 
-            this.cmbOSubfacility.FormattingEnabled = true;
-            this.cmbOSubfacility.Location = new System.Drawing.Point(152, 212);
-            this.cmbOSubfacility.Name = "cmbOSubfacility";
-            this.cmbOSubfacility.Size = new System.Drawing.Size(194, 24);
-            this.cmbOSubfacility.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 169);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Facility : ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 215);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Sub Facility : ";
             // 
             // ucReports
             // 
@@ -455,10 +455,10 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTypeofReport);
             this.Controls.Add(this.cmbTypeofReport);
+            this.Controls.Add(this.gbRevenue);
             this.Controls.Add(this.gbMMR);
             this.Controls.Add(this.gbReport);
             this.Controls.Add(this.gbMemberList);
-            this.Controls.Add(this.gbRevenue);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ucReports";
             this.Size = new System.Drawing.Size(752, 508);
