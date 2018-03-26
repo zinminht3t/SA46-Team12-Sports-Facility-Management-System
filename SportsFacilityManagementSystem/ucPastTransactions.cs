@@ -188,9 +188,9 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
-                    transID = txtTid.Text;
-                    pt.viewbtnTrans = true;
-                    pt.viewAllTrans = false;
+                transID = txtTid.Text;
+                pt.viewbtnTrans = true;
+                pt.viewAllTrans = false;
             }
             pt.ShowDialog();
 
@@ -211,6 +211,44 @@ namespace SportsFacilityManagementSystem
         private void rbtnAll_CheckedChanged(object sender, EventArgs e)
         {
             txtTid.ReadOnly = true;
+        }
+
+        private void resetPastTransControls()
+        {
+            //search by type
+            cmbFac.Text = "";
+            cmbStatus.Text = "All";
+            dtpDateFromML.Value = DateTime.Now;
+            dtpDatetoML.Value = DateTime.Now;
+            chkbFacilities.Checked = false;
+            chkbDateFrom.Checked = false;
+            chkbStatus.Checked = false;
+            btnView.Enabled = false;
+
+
+            //search by transaction
+            rbtnAll.Checked = false;
+            rbtnTid.Checked = false;
+            txtTid.Text = "";
+            btnViewTrans.Enabled = false;
+        }
+
+        private void ucPastTransactions_VisibleChanged(object sender, EventArgs e)
+        {
+            
+            if (this.Visible)
+            {
+                resetPastTransControls();
+            }
+
+            btnView.Enabled = true;
+            btnViewTrans.Enabled = true;
+
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucPastTransactions_VisibleChanged);
         }
     }
 }

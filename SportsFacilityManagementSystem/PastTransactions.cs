@@ -72,7 +72,7 @@ namespace SportsFacilityManagementSystem
             int count = dgvTransactions.Rows.Count;
             if(count > 0)
             {
-                toolStripStatusLabel1.Text = count.ToString() + " Rows";
+                toolStripStatusLabel1.Text = count.ToString() + " Records Found!";
             }
             else
             {

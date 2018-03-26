@@ -305,7 +305,7 @@
             this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
             this.btnPasttransactions.TabIndex = 0;
             this.btnPasttransactions.TabStop = false;
-            this.btnPasttransactions.Text = "View Past Transactions";
+            this.btnPasttransactions.Text = "View Transactions";
             this.btnPasttransactions.UseVisualStyleBackColor = false;
             this.btnPasttransactions.Visible = false;
             this.btnPasttransactions.Click += new System.EventHandler(this.btnPasttransactions_Click);
