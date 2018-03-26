@@ -13,6 +13,7 @@ namespace SportsFacilityManagementSystem
 {
     public partial class PastTransactions : Form
     {
+        #region Properties
         ucPastTransactions ucPT;
         public bool getFlagfac;
         public bool getFlagdate;
@@ -21,6 +22,7 @@ namespace SportsFacilityManagementSystem
         public bool viewAllTrans;
         public bool norecords;
         string command;
+        #endregion
         public PastTransactions()
         {
             InitializeComponent();

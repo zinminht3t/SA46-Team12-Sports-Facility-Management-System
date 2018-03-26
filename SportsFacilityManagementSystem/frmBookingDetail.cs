@@ -12,9 +12,10 @@ namespace SportsFacilityManagementSystem
 {
     public partial class frmBookingDetail : Form
     {
+        #region Properties
         int i;
-        private SportsFacilitiesEntities cxt = new SportsFacilitiesEntities();
-        private int noOfSlotsSelected = 1;
+        SportsFacilitiesEntities cxt = new SportsFacilitiesEntities();
+        int noOfSlotsSelected = 1;
         double price;
         int facilityID;
         int transid;
@@ -22,60 +23,12 @@ namespace SportsFacilityManagementSystem
         public static int rptTransactionid;
         TransactionDetail removetd;
         Transaction rt;
+        #endregion
         public frmBookingDetail()
         {
             InitializeComponent();
         }
-        private void ShowExistingBookingDetail()
-        {
-            btnCancel.Visible = true;
-            btnBook.Visible = false;
-            txtMemID.ReadOnly = true;
-            lbSelSlotsFacility.Items.Clear();
-            lbSelSlotsSF.Items.Clear();
-            lbSelSlotsTiming.Items.Clear();
-            trandetailid = ucBooking.redButtonTransID;
-            transid = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid).transactionid;
-            removetd = new TransactionDetail();
-            removetd = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid);
-            dtpDate.Value = ucBooking.getForDate();
-            rt = new Transaction();
-            rt = cxt.Transactions.First(x => x.transactionid == transid);
-            txtMemID.Text = rt.memberid.ToString();
-            txtMemIDdisplay.Text = rt.Member.name.ToString();
-            dtpBookingDate.Value = rt.systemtime;
-            txtRemarks.Text = rt.remark;
-            txtTotalPrice.Text = rt.total.ToString();
-            txtFacilityID.Text = removetd.facilityid.ToString();
-            txtFacilityIDdisplay.Text = removetd.Facility.facilityname.ToString();
-            txtRates.Text = removetd.Facility.Rate.ratepertimeslot.ToString();
-            lbSelSlotsFacility.Items.Add(removetd.Facility.facilityname);
-            lbSelSlotsSF.Items.Add(removetd.SubFacility.subfacilityname);
-            lbSelSlotsTiming.Items.Add(removetd.Timeslot.timeslot);
-        }
-        private void frmBookingDetail_Load(object sender, EventArgs e)
-        {
-            if (txtFacilityID.Text == "" || txtFacilityID.Text is null)
-            {
-                ShowExistingBookingDetail();
-            }
-            else
-            {
-                btnBook.Enabled = false;
-                txtMemID.ReadOnly = false;
-                btnCancel.Visible = false;
-                btnBook.Visible = true;
-                facilityID = cxt.Facilities.First(x => x.facilityname == txtFacilityID.Text).facilityid;
-                double rate = cxt.Facilities.First(x => x.facilityid == facilityID).Rate.ratepertimeslot;
-                txtRates.Text = "$" + String.Format("{0:#.00}", rate);
-                noOfSlotsSelected = lbSelSlotsSF.Items.Count;
-                price = rate * noOfSlotsSelected;
-                string totalprice = price.ToString();
-                txtTotalPrice.Text = "$" + String.Format("{0:#.00}", totalprice);
-                dtpDate.Value = ucBooking.getForDate();
-            }
-
-        }
+        #region Accessor / Mutator
         public void setLbSelFacility(String s)
         {
             lbSelSlotsFacility.Items.Clear();
@@ -101,8 +54,30 @@ namespace SportsFacilityManagementSystem
             }
 
         }
-        private void lbSelSlotsSF_SelectedIndexChanged(object sender, EventArgs e)
+        #endregion
+        #region Event Handler
+        private void frmBookingDetail_Load(object sender, EventArgs e)
         {
+            if (txtFacilityID.Text == "" || txtFacilityID.Text is null)
+            {
+                ShowExistingBookingDetail();
+            }
+            else
+            {
+                btnBook.Enabled = false;
+                txtMemID.ReadOnly = false;
+                btnCancel.Visible = false;
+                btnBook.Visible = true;
+                facilityID = cxt.Facilities.First(x => x.facilityname == txtFacilityID.Text).facilityid;
+                double rate = cxt.Facilities.First(x => x.facilityid == facilityID).Rate.ratepertimeslot;
+                txtRates.Text = "$" + String.Format("{0:#.00}", rate);
+                noOfSlotsSelected = lbSelSlotsSF.Items.Count;
+                price = rate * noOfSlotsSelected;
+                string totalprice = price.ToString();
+                txtTotalPrice.Text = "$" + String.Format("{0:#.00}", totalprice);
+                dtpDate.Value = ucBooking.getForDate();
+            }
+
         }
         private void txtMemID_TextChanged(object sender, EventArgs e)
         {
@@ -192,6 +167,34 @@ namespace SportsFacilityManagementSystem
                     MessageBox.Show("You have encountered an error. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        #endregion
+        private void ShowExistingBookingDetail()
+        {
+            btnCancel.Visible = true;
+            btnBook.Visible = false;
+            txtMemID.ReadOnly = true;
+            lbSelSlotsFacility.Items.Clear();
+            lbSelSlotsSF.Items.Clear();
+            lbSelSlotsTiming.Items.Clear();
+            trandetailid = ucBooking.redButtonTransID;
+            transid = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid).transactionid;
+            removetd = new TransactionDetail();
+            removetd = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid);
+            dtpDate.Value = ucBooking.getForDate();
+            rt = new Transaction();
+            rt = cxt.Transactions.First(x => x.transactionid == transid);
+            txtMemID.Text = rt.memberid.ToString();
+            txtMemIDdisplay.Text = rt.Member.name.ToString();
+            dtpBookingDate.Value = rt.systemtime;
+            txtRemarks.Text = rt.remark;
+            txtTotalPrice.Text = rt.total.ToString();
+            txtFacilityID.Text = removetd.facilityid.ToString();
+            txtFacilityIDdisplay.Text = removetd.Facility.facilityname.ToString();
+            txtRates.Text = removetd.Facility.Rate.ratepertimeslot.ToString();
+            lbSelSlotsFacility.Items.Add(removetd.Facility.facilityname);
+            lbSelSlotsSF.Items.Add(removetd.SubFacility.subfacilityname);
+            lbSelSlotsTiming.Items.Add(removetd.Timeslot.timeslot);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace SportsFacilityManagementSystem
 {
     public partial class ucFacilities : UserControl
     {
+        #region Properties
         frmMain fm;
         SportsFacilitiesEntities cxt;
         string facilityidtemp = "";
@@ -20,10 +21,12 @@ namespace SportsFacilityManagementSystem
         string ratesWOsymbol = "";
         string facilitiesnotemp = "";
         Facility fac;
+        #endregion
         public ucFacilities()
         {
             InitializeComponent();
         }
+        #region Event Handlers
         private void ucFacilities_Load(object sender, EventArgs e)
         {
             cmbSearchBy.DataSource = frmLogin.facilitylist;
@@ -31,13 +34,11 @@ namespace SportsFacilityManagementSystem
             cmbSearchBy.ValueMember = "facilityname";
             cmbSearchBy.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-
         private void lblCheckAvailability_Click(object sender, EventArgs e)
         {
             fm = new frmMain();
             fm.ShowMainpage();
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             cxt = new SportsFacilitiesEntities();
@@ -106,9 +107,6 @@ namespace SportsFacilityManagementSystem
                 cmbSearchBy.DataSource = frmLogin.facilitylist;
             }
         }
-
-       
-
         private void ucFacilities_VisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible)
@@ -118,11 +116,11 @@ namespace SportsFacilityManagementSystem
                 btnSearch.Enabled = true;
             }
         }
-
         private void AddVisibleChangedEventHandler()
         {
             this.VisibleChanged += new EventHandler(this.ucFacilities_VisibleChanged);
         }
+        #endregion
 
         #region Visibility Events
         private void ButtonVisibility(bool ClickEditBtn)

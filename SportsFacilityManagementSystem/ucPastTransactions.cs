@@ -82,6 +82,8 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
+
+        #region Event Handler
         private void btnView_Click(object sender, EventArgs e)
         {
             #region Checking error of selection
@@ -154,14 +156,6 @@ namespace SportsFacilityManagementSystem
             msgbox = false;
             #endregion
         }
-        private void msgBox()
-        {
-            if (msgbox == false)
-            {
-                msgbox = true;
-                MessageBox.Show("Selection error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
         private void btnTid_Click(object sender, EventArgs e)
         {
             gbTrans.Visible = true;
@@ -203,6 +197,32 @@ namespace SportsFacilityManagementSystem
         {
             txtTid.ReadOnly = true;
         }
+        private void ucPastTransactions_VisibleChanged(object sender, EventArgs e)
+        {
+
+            if (this.Visible)
+            {
+                resetPastTransControls();
+            }
+
+            btnView.Enabled = true;
+            btnViewTrans.Enabled = true;
+
+        }
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucPastTransactions_VisibleChanged);
+        }
+        #endregion
+
+        private void msgBox()
+        {
+            if (msgbox == false)
+            {
+                msgbox = true;
+                MessageBox.Show("Selection error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
         private void resetPastTransControls()
         {
             //search by type
@@ -221,22 +241,6 @@ namespace SportsFacilityManagementSystem
             rbtnTid.Checked = false;
             txtTid.Text = "";
             btnViewTrans.Enabled = false;
-        }
-        private void ucPastTransactions_VisibleChanged(object sender, EventArgs e)
-        {
-
-            if (this.Visible)
-            {
-                resetPastTransControls();
-            }
-
-            btnView.Enabled = true;
-            btnViewTrans.Enabled = true;
-
-        }
-        private void AddVisibleChangedEventHandler()
-        {
-            this.VisibleChanged += new EventHandler(this.ucPastTransactions_VisibleChanged);
         }
     }
 }

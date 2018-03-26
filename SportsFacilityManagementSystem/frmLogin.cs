@@ -52,7 +52,7 @@ namespace SportsFacilityManagementSystem
                 }
                 catch
                 {
-                    MessageBox.Show("User ID is number only!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("User ID is Employee ID!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -101,6 +101,10 @@ namespace SportsFacilityManagementSystem
                 }
             }
             return password;
+        }
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

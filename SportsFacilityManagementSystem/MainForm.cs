@@ -140,7 +140,6 @@ namespace SportsFacilityManagementSystem
         {
             HideAllUC();
             ucReports1.Visible = true;
-
         }
 
         private void btnUpcoming_Click(object sender, EventArgs e)
@@ -226,6 +225,7 @@ namespace SportsFacilityManagementSystem
             HideAllUC();
             ucBooking2.Visible = true;
         }
+        #endregion
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -241,6 +241,5 @@ namespace SportsFacilityManagementSystem
                 e.Cancel = true;
             }
         }
-        #endregion
     }
 }

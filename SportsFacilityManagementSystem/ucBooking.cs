@@ -12,70 +12,61 @@ namespace SportsFacilityManagementSystem
 {
     public partial class ucBooking : UserControl
     {
-        private SportsFacilitiesEntities ctx;
-        private List<String> subfacilitiesListNames = new List<String>();
-        private List<int> subfacilitiesListIds = new List<int>();
-        private List<int> ifBookedSubfacility = new List<int>();
-        private int[,] arrayDaySlots = new int[3, 5];
-        private string[,] arrayDaySlotsName = new string[3, 5];
-        private string defaultCmbSports;
-        private int noSubFacilities;
-        private List<Control> collectionVisibleButtons = new List<Control>();
-        private int noSelected;
-        private List<Control> collectionClickedButtons = new List<Control>();
-        private static List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
-        private int facId;
-        private int? facilityTransID;
-        private int? facilityMemID;
-        private string facilityMemName;
-        private static DateTime dtpBookingDatevalue;
+        #region Properties
+        SportsFacilitiesEntities ctx;
+        List<String> subfacilitiesListNames = new List<String>();
+        List<int> subfacilitiesListIds = new List<int>();
+        List<int> ifBookedSubfacility = new List<int>();
+        List<Control> collectionVisibleButtons = new List<Control>();
+        List<Control> collectionClickedButtons = new List<Control>();
+        static List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
+        string[,] arrayDaySlotsName = new string[3, 5];
+        string defaultCmbSports;
+        string facilityMemName;
+        string sfname;
+        int sfid;
+        int noSubFacilities;
+        int noSelected;
+        int facId;
+        int[,] arrayDaySlots = new int[3, 5];
+        int? facilityTransID;
+        int? facilityMemID;
         public static int redButtonTransID;
+        static DateTime dtpBookingDatevalue;
+        #endregion
+
         public ucBooking()
         {
             InitializeComponent();
+
         }
-        //This event is triggered when a visible Button is clicked.
-        protected void con_Click(object sender, EventArgs e)
-        {
-            Button dynamicButton = (sender as Button);
-            if (dynamicButton.BackColor == Color.Green) //already clicked before
-            {
-                dynamicButton.BackColor = Color.LightGreen;
-                collectionClickedButtons.Remove(dynamicButton);
-                noSelected--; //unselected
-            }
-            else if (dynamicButton.BackColor == Color.Red)
-            {
-                this.getFacilityID(); //facility id
-                char redButtonSubfacility = char.Parse(dynamicButton.Name.Substring(3, 1));
-                string subfname = redButtonSubfacility.ToString();
-                int fid = this.getFacilityID();
-                int redButtonSubfacility_ = ctx.SubFacilities.First(x => x.subfacilityname == subfname && x.facilityid == fid).subfacilityid;
-                int redButtonTimeslotID = Int32.Parse(dynamicButton.Name.Substring(4, 1)); //slot id
-                redButtonTransID = ctx.TransactionDetails.First(x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == dtpBookingDate.Value && x.timeslotid == redButtonTimeslotID).transactiondetailid; // this is the transaction detail id
-                frmBookingDetail frmBD = new frmBookingDetail();
-                frmBD.ShowDialog();
-                LoadBookingSlots();
-            }
-            else
-            {
-                dynamicButton.BackColor = Color.Green;
-                collectionClickedButtons.Add(dynamicButton);
-                noSelected++;
-            }
-            if (noSelected > 0)
-            {
-                btnBook.Enabled = true;
-            }
-            else
-            {
-                btnBook.Enabled = false;
-            }
-        }
+        
+        #region Accessor / Mutator
         public static List<BookingDetails> getSelectedSlots()
         {
             return bkgDetailsList;
         }
+
+        private int getFacilityID()
+        {
+            try
+            {
+                facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text).facilityid;
+            }
+            catch
+            {
+                //invalid facilityID
+            }
+            return facId;
+        }
+
+        public static DateTime getForDate()
+        {
+            return dtpBookingDatevalue;
+        }
+        #endregion
+
+        #region Event Handler
         private void btnBook_Click(object sender, EventArgs e)
         {
             bkgDetailsList.Clear();
@@ -105,10 +96,12 @@ namespace SportsFacilityManagementSystem
                             cRow_ = 3;
                             break;
                     }
+
                     BookingDetails bd = new BookingDetails() { subFacilityBooked = subfacilitiesListNames[cRow_ - 1], slotBooked = Int32.Parse(c.Name.Substring(4, 1)) };
                     bkgDetailsList.Add(bd);
                     controlIndex++;
                 }
+
                 frmBookingDetail frmBD = new frmBookingDetail();
                 frmBD.setTxtFacilityID(cmbSports.Text);
                 frmBD.SetLbSelectedSlotSF(bkgDetailsList);
@@ -127,27 +120,97 @@ namespace SportsFacilityManagementSystem
             collectionClickedButtons.Clear();
             LoadBookingSlots();
         }
+        protected void con_Click(object sender, EventArgs e)
+        {
+            //This event is triggered when a visible Button is clicked.
+            #region Button Clicks for displayed booking slots
+            Button dynamicButton = (sender as Button);
+            if (dynamicButton.BackColor == Color.Green) //already clicked before
+            {
+                dynamicButton.BackColor = Color.LightGreen;
+                collectionClickedButtons.Remove(dynamicButton);
+                noSelected--; //unselected
+            }
+            else
+            if (dynamicButton.BackColor == Color.Red)
+            {
+                this.getFacilityID();
+                char redButtonSubfacility = char.Parse(dynamicButton.Name.Substring(3, 1));
+                string subfname = redButtonSubfacility.ToString();
+                int fid = this.getFacilityID();
+                int redButtonSubfacility_ = ctx.SubFacilities.First(x => x.subfacilityname == subfname && x.facilityid == fid).subfacilityid;
+                int redButtonTimeslotID = Int32.Parse(dynamicButton.Name.Substring(4, 1));
+                redButtonTransID = ctx.TransactionDetails.First
+                    (x => x.facilityid == fid && x.subfacilityid == redButtonSubfacility_ && x.date == dtpBookingDate.Value
+                    && x.timeslotid == redButtonTimeslotID).transactiondetailid;
+                frmBookingDetail frmBD = new frmBookingDetail();
+                frmBD.ShowDialog();
+                LoadBookingSlots();
+            }
+            else
+            {
+                dynamicButton.BackColor = Color.Green;
+                collectionClickedButtons.Add(dynamicButton);
+                noSelected++;
+            }
+            #endregion
+
+            if (noSelected > 0)
+            {
+                btnBook.Enabled = true;
+            }
+            else
+            {
+                btnBook.Enabled = false;
+            }
+        }
+        private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpBookingDatevalue = dtpBookingDate.Value;
+            LoadBookingSlots();
+        }
+        private void ucBooking_Load_1(object sender, EventArgs e)
+        {
+            ctx = new SportsFacilitiesEntities();
+            defaultCmbSports = "- Select sport -";
+            cmbSports.Text = defaultCmbSports;
+            dtpBookingDate.Value = DateTime.Today;
+            dtpBookingDatevalue = dtpBookingDate.Value;
+        }
+        private void cmbSports_Click(object sender, EventArgs e)
+        {
+            cmbSports.DataSource = frmLogin.facilitylist;
+            cmbSports.DisplayMember = "facilityname";
+            cmbSports.ValueMember = "facilityname";
+            if (cmbSports.SelectedIndex >= 0)
+            {
+                cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
+                LoadBookingSlots();
+            }
+
+        }
+        #endregion
+
+        #region Reload buttons displayed
         private void LoadBookingSlots()
         {
             noSelected = 0;
-            //need to clear button collections
+
             foreach (Control c in collectionVisibleButtons)
             {
                 c.Click -= new System.EventHandler(this.con_Click);
             }
-            collectionVisibleButtons.Clear(); //pls check collection of items stored per click change
+            collectionVisibleButtons.Clear();
             subfacilitiesListNames.Clear();
             ifBookedSubfacility.Clear();
-            //get facility id of chosen facility in combobox
+
             if (cmbSports.Text != defaultCmbSports)
             {
                 this.getFacilityID();
                 noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId); //to replace output with no of subfac belonging to selected facility
-                //create array of subfacilities name belonging to selceted facility
+                //create array of subfacilities name belonging to selected facility
                 var qrySubFacilitiesName = from x in ctx.SubFacilities where x.facilityid == facId orderby x.subfacilityname select x.subfacilityname;
                 subfacilitiesListNames = qrySubFacilitiesName.ToList<String>();
-                string sfname;
-                int sfid;
                 //populate arrays for UI booking slots of selected date
                 for (int slotRow = 1; slotRow <= 3; slotRow++)
                 {
@@ -182,10 +245,10 @@ namespace SportsFacilityManagementSystem
                 {
                     Controls["lblTime" + slotsLabels].Visible = true;
                 }
-                //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
+                //loop to populate buttons for display
                 for (int noRows = 1; noRows <= 3; noRows++)
                 {
-                    if (noRows <= noSubFacilities) //subfacility labels visibility
+                    if (noRows <= noSubFacilities) 
                     {
                         Controls["lblRow" + noRows].Text = subfacilitiesListNames[noRows - 1];
                         Controls["lblRow" + noRows].Visible = true;
@@ -209,7 +272,6 @@ namespace SportsFacilityManagementSystem
                                     //this slot is already booked
                                     A.Text = arrayDaySlotsName[noRows - 1, noCols - 1];
                                     A.BackColor = Color.Red;
-                                    //A.Enabled = false;
                                 }
                                 else
                                 {
@@ -217,7 +279,7 @@ namespace SportsFacilityManagementSystem
                                     A.Text = "";
                                 }
                                 break;
-                            case 2: //might need to hide if selected facility only has 1 subfacility
+                            case 2: 
                                 Control B = this.Controls["btnB" + noCols];
                                 if (noSubFacilities > 1)
                                 {
@@ -244,7 +306,7 @@ namespace SportsFacilityManagementSystem
                                     B.BackColor = Color.LightGreen;
                                 }
                                 break;
-                            case 3: //might need to hide if selected facility only has 1 subfacility
+                            case 3: 
                                 Control C = this.Controls["btnC" + noCols];
                                 if (noSubFacilities > 2)
                                 {
@@ -283,15 +345,14 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
-                //if default option, show 0 row of subfacility slots
-                //for each relevant buttons, make buttons visisble + create collections of button click events + populate text with data
+                //when default option in cmbSports, hide all buttons and slot/SF labels
                 for (int slotsLabels = 1; slotsLabels <= 5; slotsLabels++)
                 {
                     Controls["lblTime" + slotsLabels].Visible = false;
                 }
                 for (int noRows = 1; noRows <= 3; noRows++)
                 {
-                    Controls["lblRow" + noRows].Visible = false; //subtntity labels
+                    Controls["lblRow" + noRows].Visible = false; 
 
                     for (int noCols = 1; noCols <= 5; noCols++)
                     {
@@ -318,50 +379,7 @@ namespace SportsFacilityManagementSystem
 
             }
         }
-        private int getFacilityID()
-        {
-            try
-            {
-                facId = ctx.Facilities.First(x => x.facilityname == cmbSports.Text).facilityid;
-            }
-            catch
-            {
-                //invalid facilityID
-            }
-            return facId;
-        }
-        public static DateTime getForDate()
-        {
-            return dtpBookingDatevalue;
-        }
-        private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
-        {
-            dtpBookingDatevalue = dtpBookingDate.Value;
-            LoadBookingSlots();
-        }
-        private void ucBooking_Load_1(object sender, EventArgs e)
-        {
-            ctx = new SportsFacilitiesEntities();
-            defaultCmbSports = "- Select sport -";
-            cmbSports.Text = defaultCmbSports;
-            dtpBookingDate.Value = DateTime.Today;
-            dtpBookingDatevalue = dtpBookingDate.Value;
-        }
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-        private void cmbSports_Click(object sender, EventArgs e)
-        {
-            cmbSports.DataSource = frmLogin.facilitylist;
-            cmbSports.DisplayMember = "facilityname";
-            cmbSports.ValueMember = "facilityname";
-            if (cmbSports.SelectedIndex >= 0)
-            {
-                cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
-                LoadBookingSlots();
-            }
-
-        }
     }
 }

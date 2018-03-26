@@ -17,6 +17,7 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
+        #region Event Handlers
         private void pbRatesinfo_MouseEnter(object sender, EventArgs e)
         {
             lblRatesInfo.Visible = true;
@@ -29,15 +30,7 @@ namespace SportsFacilityManagementSystem
         {
             ResetAllData();
         }
-        private void ResetAllData()
-        {
-            txtName.Text = "";
-            cmbRates.SelectedIndex=0;
-            cmbCourtNo.SelectedIndex = 1;
-            lblWarningRate.Visible = false;
-            lblWarningCourt.Visible = false;
-            lblWarningName.Visible = false;
-        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (cmbRates.Text == "")
@@ -72,6 +65,34 @@ namespace SportsFacilityManagementSystem
                 MessageBox.Show("Add Facility Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ResetAllData();
             }
+        }
+
+        private void ucAddFacilities_Load(object sender, EventArgs e)
+        {
+            cmbCourtNo.SelectedIndex = 0;
+        }
+
+        private void ucAddFacilities_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                ResetAllData();
+            }
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucAddFacilities_VisibleChanged);
+        }
+        #endregion
+        private void ResetAllData()
+        {
+            txtName.Text = "";
+            cmbRates.SelectedIndex = 0;
+            cmbCourtNo.SelectedIndex = 1;
+            lblWarningRate.Visible = false;
+            lblWarningCourt.Visible = false;
+            lblWarningName.Visible = false;
         }
         private void InsertData()
         {
@@ -129,23 +150,6 @@ namespace SportsFacilityManagementSystem
             {
                 MessageBox.Show("Error Occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void ucAddFacilities_Load(object sender, EventArgs e)
-        {
-            cmbCourtNo.SelectedIndex = 0;
-        }
-
-        private void ucAddFacilities_VisibleChanged(object sender, EventArgs e)
-        {
-            if (this.Visible)
-            {
-                ResetAllData();
-            }
-        }
-
-        private void AddVisibleChangedEventHandler()
-        {
-            this.VisibleChanged += new EventHandler(this.ucAddFacilities_VisibleChanged);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace SportsFacilityManagementSystem
 {
     public partial class ucReports : UserControl
     {
+        #region Properties
         public static ParameterRangeValue daterangeML;
         public static string paramstatus;
         public static bool isDateRange;
@@ -24,10 +25,12 @@ namespace SportsFacilityManagementSystem
         public static int facilityid;
         public static int subfacilityid;
         SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
+        #endregion
         public ucReports()
         {
             InitializeComponent();
         }
+        #region Event Handlers
         private void cmbTypeofReport_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTypeofReport.SelectedIndex == 0)
@@ -76,9 +79,6 @@ namespace SportsFacilityManagementSystem
             cmbYear.DataSource = years;
             dtpToDateReport.Value = DateTime.Today.AddDays(7);
         }
-        private void gbMemberList_Enter(object sender, EventArgs e)
-        {
-        }
         private void btnPrintML_Click(object sender, EventArgs e)
         {
             daterangeML = new ParameterRangeValue();
@@ -116,9 +116,6 @@ namespace SportsFacilityManagementSystem
         {
             dtpDateFromReport.Value = dtpToDateReport.Value.AddDays(-6);
         }
-        private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
-        {
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             mrmonth = (cmbMRMonth.SelectedIndex + 1).ToString();
@@ -126,14 +123,10 @@ namespace SportsFacilityManagementSystem
             frmMonthlyRevenueReport frmMRR = new frmMonthlyRevenueReport();
             frmMRR.ShowDialog();
         }
-        private void cmbMRYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
         private void dtpDateFromReport_ValueChanged(object sender, EventArgs e)
         {
             dtpToDateReport.Value = dtpDateFromReport.Value.AddDays(6);
         }
-
         private void ucReports_VisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible)
@@ -141,10 +134,10 @@ namespace SportsFacilityManagementSystem
                 cmbTypeofReport.SelectedIndex=0;
             }
         }
-
         private void AddVisibleChangedEventHandler()
         {
             this.VisibleChanged += new EventHandler(this.ucReports_VisibleChanged);
         }
+        #endregion
     }
 }
