@@ -32,7 +32,7 @@ namespace SportsFacilityManagementSystem
         private void ResetAllData()
         {
             txtName.Text = "";
-            cmbRates.Text = "";
+            cmbRates.SelectedIndex=0;
             cmbCourtNo.SelectedIndex = 1;
             lblWarningRate.Visible = false;
             lblWarningCourt.Visible = false;
@@ -133,6 +133,19 @@ namespace SportsFacilityManagementSystem
         private void ucAddFacilities_Load(object sender, EventArgs e)
         {
             cmbCourtNo.SelectedIndex = 0;
+        }
+
+        private void ucAddFacilities_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                ResetAllData();
+            }
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucAddFacilities_VisibleChanged);
         }
     }
 }
