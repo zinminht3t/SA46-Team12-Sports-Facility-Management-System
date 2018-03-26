@@ -19,6 +19,7 @@ namespace SportsFacilityManagementSystem
         public bool getFlagstatus;
         public bool viewbtnTrans;
         public bool viewAllTrans;
+        public bool norecords;
         string command;
         public PastTransactions()
         {
@@ -35,13 +36,13 @@ namespace SportsFacilityManagementSystem
             string con = "data source = (local);" + "integrated security = SSPI;Initial catalog = Team12BSFMS";
             SqlConnection cn = new SqlConnection(con);
             SqlDataAdapter sda = new SqlDataAdapter(sqlcommand, cn);
-            DataTable dt = new DataTable();
             DataSet2 ds = new DataSet2();
             cn.Open();
+            #region Catch invalid variable
             try
             {
                 sda.Fill(ds);
-                ds.Tables.Add(dt);
+                ds.Tables.Add();
                 cn.Close();
                 dgvTransactions.DataSource = ds.Tables[1];
             }
@@ -50,20 +51,38 @@ namespace SportsFacilityManagementSystem
                 this.Close();
                 MessageBox.Show("Incorrect value! Please try again", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            #endregion
+
+            #region Show if no results returned
+            if (dgvTransactions.Rows.Count == 0)
+            {
+                this.Close();
+                MessageBox.Show("No results found!", "No results", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            #endregion
         }
 
         private void PastTransactions_Load(object sender, EventArgs e)
         {
             ucPT = new ucPastTransactions();
+            SQL();
+
+            DisplayTable(command);
+        }
+
+        private void SQL()
+        {
+            #region SQL Command
+            ucPT = new ucPastTransactions();
+            string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
+            string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
+            string SQLwhereDate = "date between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
+            string SQLwhereStatus = "status = '" + ucPT.Status + "'";
+            #endregion
+            #region Display Datagridview Table
             if (viewbtnTrans == false)
             {
-                #region SQL Commands
-                string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
-                string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
-                string SQLwhereDate = "date between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
-                string SQLwhereStatus = "status = '" + ucPT.Status + "'";
-                #endregion
-                #region Display Datagridview
+                #region Display Search by Type
                 #region Facility.Checked
                 if (getFlagfac == true && getFlagdate == false && getFlagstatus == false)
                 {
@@ -177,26 +196,20 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
+                #region Display Transaction Search
                 if (viewAllTrans == true)
                 {
-                    command = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
+                    command = SQLcolumns;
                 }
                 else
                 {
-                    command = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport " +
-                        " where transactionid ='" + ucPT.TransID + "'";
+                    command = SQLcolumns + " where transactionid ='" + ucPT.TransID + "'";
                 }
-            }
-
-            DisplayTable(command);
-            
-            #region Show if no results returned
-            if (dgvTransactions.Rows.Count == 1)
-            {
-                this.Close();
-                MessageBox.Show("No results for these criterias!", "No Results");
+                #endregion
             }
             #endregion
+
+
         }
 
     }

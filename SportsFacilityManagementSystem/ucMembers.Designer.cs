@@ -34,16 +34,13 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.gbSearchResults = new System.Windows.Forms.GroupBox();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.rdbMale = new System.Windows.Forms.RadioButton();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
             this.dtpJoin = new System.Windows.Forms.DateTimePicker();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.btnReset = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
@@ -60,9 +57,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.lblWarningKeyword = new System.Windows.Forms.Label();
             this.lblWarningSearchBy = new System.Windows.Forms.Label();
             this.lblWarningSearchResult = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.gbSearchResults.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -127,9 +127,9 @@
             // 
             // gbSearchResults
             // 
+            this.gbSearchResults.Controls.Add(this.txtStatus);
             this.gbSearchResults.Controls.Add(this.btnEdit);
             this.gbSearchResults.Controls.Add(this.groupBox1);
-            this.gbSearchResults.Controls.Add(this.cmbStatus);
             this.gbSearchResults.Controls.Add(this.dtpExpiry);
             this.gbSearchResults.Controls.Add(this.dtpJoin);
             this.gbSearchResults.Controls.Add(this.dtpDOB);
@@ -158,17 +158,6 @@
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
             this.gbSearchResults.Visible = false;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(70, 329);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(125, 30);
-            this.btnPrint.TabIndex = 54;
-            this.btnPrint.Text = "Print Info";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnEdit
             // 
@@ -219,19 +208,6 @@
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(206, 296);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(269, 24);
-            this.cmbStatus.TabIndex = 53;
-            // 
             // dtpExpiry
             // 
             this.dtpExpiry.Enabled = false;
@@ -258,17 +234,6 @@
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(269, 22);
             this.dtpDOB.TabIndex = 50;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(70, 328);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(125, 30);
-            this.btnReset.TabIndex = 47;
-            this.btnReset.Text = "Cancel";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnUpdate
             // 
@@ -427,6 +392,28 @@
             this.lblName.TabIndex = 26;
             this.lblName.Text = "Name : ";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(70, 329);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(125, 30);
+            this.btnPrint.TabIndex = 54;
+            this.btnPrint.Text = "Print Info";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(70, 328);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(125, 30);
+            this.btnReset.TabIndex = 47;
+            this.btnReset.Text = "Cancel";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // lblWarningKeyword
             // 
             this.lblWarningKeyword.AutoSize = true;
@@ -459,6 +446,15 @@
             this.lblWarningSearchResult.TabIndex = 61;
             this.lblWarningSearchResult.Text = "There is no result related to the keyword";
             this.lblWarningSearchResult.Visible = false;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(206, 294);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(269, 22);
+            this.txtStatus.TabIndex = 56;
             // 
             // ucMembers
             // 
@@ -518,11 +514,11 @@
         private System.Windows.Forms.DateTimePicker dtpExpiry;
         private System.Windows.Forms.DateTimePicker dtpJoin;
         private System.Windows.Forms.DateTimePicker dtpDOB;
-        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdbFemale;
         private System.Windows.Forms.RadioButton rdbMale;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }

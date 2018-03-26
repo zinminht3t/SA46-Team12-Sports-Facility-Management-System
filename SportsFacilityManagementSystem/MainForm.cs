@@ -133,21 +133,14 @@ namespace SportsFacilityManagementSystem
         #region Sidetab Panel (Mouse Click Events)
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            DialogResult logoutMsg =
-                MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo);
-
-            if (logoutMsg == DialogResult.Yes)
-            {
-                this.Close();
-                frmLogin login = new frmLogin();
-                login.Show();
-            }
+            this.Close();
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
             HideAllUC();
             ucReports1.Visible = true;
+
         }
 
         private void btnUpcoming_Click(object sender, EventArgs e)
@@ -227,11 +220,34 @@ namespace SportsFacilityManagementSystem
             ucMembers1.Visible = false;
             ucAddMember1.Visible = false;
             ucBooking2.Visible = false;
+
+            ucReports1.Refresh();
+            ucPastTransactions1.Refresh();
+            ucFacilities2.Refresh();
+            ucAddFacilities1.Refresh();
+            ucMembers1.Refresh();
+            ucAddMember1.Refresh();
+            ucBooking2.Refresh();
         }
         public void ShowMainpage()
         {
             HideAllUC();
             ucBooking2.Visible = true;
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult logoutMsg =
+                MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo);
+            if (logoutMsg == DialogResult.Yes)
+            {
+                frmLogin login = new frmLogin();
+                login.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         #endregion

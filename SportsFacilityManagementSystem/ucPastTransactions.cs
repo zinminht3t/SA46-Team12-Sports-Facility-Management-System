@@ -193,7 +193,7 @@ namespace SportsFacilityManagementSystem
                     pt.viewAllTrans = false;
             }
             pt.ShowDialog();
-            
+
         }
 
         private void ucPastTransactions_Load(object sender, EventArgs e)

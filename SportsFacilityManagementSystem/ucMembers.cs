@@ -149,14 +149,15 @@ namespace SportsFacilityManagementSystem
             }
             txtEmail.Text = m.email;
             txtAddress.Text = m.address;
-            if(m.status == "Active")
-            {
-                cmbStatus.SelectedIndex = 0;
-            }
-            else
-            {
-                cmbStatus.SelectedIndex = 1;
-            }
+            txtStatus.Text = m.status;
+            //if(m.status == "Active")
+            //{
+            //    cmbStatus.SelectedIndex = 0;
+            //}
+            //else
+            //{
+            //    cmbStatus.SelectedIndex = 1;
+            //}
             dtpDOB.Value = Convert.ToDateTime(m.dateofbirth);
             dtpJoin.Value = Convert.ToDateTime(m.joindate);
             dtpExpiry.Value = Convert.ToDateTime(m.expirydate);
@@ -224,14 +225,14 @@ namespace SportsFacilityManagementSystem
             resultmember.dateofbirth = dtpDOB.Value;
             resultmember.joindate = dtpJoin.Value;
             resultmember.expirydate = dtpExpiry.Value;
-            if (cmbStatus.SelectedItem.ToString() == "Active")
-            {
-                resultmember.status = "Active";
-            }
-            else
-            {
-                resultmember.status = "Inactive";
-            }
+            //if (cmbStatus.SelectedItem.ToString() == "Active")
+            //{
+            //    resultmember.status = "Active";
+            //}
+            //else
+            //{
+            //    resultmember.status = "Inactive";
+            //}
             ctx.SaveChanges();
         }
 

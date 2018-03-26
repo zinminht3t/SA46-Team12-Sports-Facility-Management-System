@@ -31,12 +31,34 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PastTransactions));
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
+            this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Facilityname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Timeslot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MemberID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Member = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTransactions
             // 
+            this.dgvTransactions.AllowUserToAddRows = false;
+            this.dgvTransactions.AllowUserToDeleteRows = false;
+            this.dgvTransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTransactions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TransID,
+            this.status,
+            this.BookingDate,
+            this.Facilityname,
+            this.Timeslot,
+            this.Total,
+            this.Invoice,
+            this.MemberID,
+            this.Member});
             this.dgvTransactions.Location = new System.Drawing.Point(89, 28);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.ReadOnly = true;
@@ -54,6 +76,77 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // TransID
+            // 
+            this.TransID.DataPropertyName = "transactionid";
+            this.TransID.HeaderText = "Transaction ID";
+            this.TransID.Name = "TransID";
+            this.TransID.ReadOnly = true;
+            this.TransID.Width = 129;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 77;
+            // 
+            // BookingDate
+            // 
+            this.BookingDate.DataPropertyName = "date";
+            this.BookingDate.HeaderText = "Booking Date";
+            this.BookingDate.Name = "BookingDate";
+            this.BookingDate.ReadOnly = true;
+            this.BookingDate.Width = 122;
+            // 
+            // Facilityname
+            // 
+            this.Facilityname.DataPropertyName = "facilityname";
+            this.Facilityname.HeaderText = "Sports";
+            this.Facilityname.Name = "Facilityname";
+            this.Facilityname.ReadOnly = true;
+            this.Facilityname.Width = 78;
+            // 
+            // Timeslot
+            // 
+            this.Timeslot.DataPropertyName = "timeslot";
+            this.Timeslot.HeaderText = "Timing";
+            this.Timeslot.Name = "Timeslot";
+            this.Timeslot.ReadOnly = true;
+            this.Timeslot.Width = 79;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Total Price";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 105;
+            // 
+            // Invoice
+            // 
+            this.Invoice.DataPropertyName = "systemtime";
+            this.Invoice.HeaderText = "Invoice Date";
+            this.Invoice.Name = "Invoice";
+            this.Invoice.ReadOnly = true;
+            this.Invoice.Width = 115;
+            // 
+            // MemberID
+            // 
+            this.MemberID.DataPropertyName = "memberid";
+            this.MemberID.HeaderText = "Member ID";
+            this.MemberID.Name = "MemberID";
+            this.MemberID.ReadOnly = true;
+            this.MemberID.Width = 105;
+            // 
+            // Member
+            // 
+            this.Member.HeaderText = "Member";
+            this.Member.Name = "Member";
+            this.Member.ReadOnly = true;
+            this.Member.Width = 88;
+            // 
             // PastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -64,7 +157,7 @@
             this.Controls.Add(this.dgvTransactions);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PastTransactions";
-            this.Text = "PastTransactions";
+            this.Text = "Transactions";
             this.Load += new System.EventHandler(this.PastTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.ResumeLayout(false);
@@ -75,5 +168,14 @@
 
         private System.Windows.Forms.DataGridView dgvTransactions;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookingDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Facilityname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Timeslot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Invoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MemberID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Member;
     }
 }

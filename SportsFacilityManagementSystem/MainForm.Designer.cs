@@ -440,6 +440,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sports Facility Management System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseEnter += new System.EventHandler(this.frmMain_MouseEnter);
             this.pnlSidebar.ResumeLayout(false);
