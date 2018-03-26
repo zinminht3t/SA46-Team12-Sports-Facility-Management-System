@@ -21,6 +21,11 @@ namespace SportsFacilityManagementSystem
         public static string year;
         public static string mrmonth;
         public static string mryear;
+        public static int facilityid;
+        public static int subfacilityid;
+
+        SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
+
         public ucReports()
         {
             InitializeComponent();
@@ -41,6 +46,10 @@ namespace SportsFacilityManagementSystem
                 gbRevenue.Visible = false;
                 gbReport.Visible = true;
                 gbMMR.Visible = false;
+
+                cmbOFacility.DataSource = ctx.Facilities.ToList();
+                cmbOFacility.DisplayMember = "facilityname";
+                cmbOFacility.ValueMember = "facilityid";
 
             }
             else if(cmbTypeofReport.SelectedIndex == 2)
@@ -100,7 +109,10 @@ namespace SportsFacilityManagementSystem
         {
             datefrom = dtpDateFromReport.Value;
             dateto = dtpToDateReport.Value;
-            if(cmbTypeofReport.SelectedIndex == 1) //facility occupancy report
+            facilityid = Convert.ToInt32(cmbOFacility.SelectedValue);
+            subfacilityid = Convert.ToInt32(cmbOSubfacility.SelectedValue);
+
+            if (cmbTypeofReport.SelectedIndex == 1) //facility occupancy report
             {
                 frmOccupancyReport frmOR = new frmOccupancyReport();
                 frmOR.ShowDialog();
@@ -135,6 +147,18 @@ namespace SportsFacilityManagementSystem
         private void cmbMRYear_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbOFacility_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int facid = Convert.ToInt32(cmbOFacility.SelectedValue);
+                cmbOSubfacility.DataSource = ctx.SubFacilities.Where(x => x.facilityid == facid).ToList();
+                cmbOSubfacility.DisplayMember = "subfacilityname";
+                cmbOSubfacility.ValueMember = "subfacilityid";
+            }
+            catch { }
         }
     }
 }

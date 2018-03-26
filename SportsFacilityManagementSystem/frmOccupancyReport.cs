@@ -24,10 +24,12 @@ namespace SportsFacilityManagementSystem
             DataSet6TableAdapters.bookinginvoicereportTableAdapter da = new DataSet6TableAdapters.bookinginvoicereportTableAdapter();
 
             da.Fill(ds.bookinginvoicereport);
-            Occupancy cr = new Occupancy();
+            BookingAvailability cr = new BookingAvailability();
             cr.SetDataSource(ds);
             cr.SetParameterValue("dateFrom", ucReports.datefrom);
             cr.SetParameterValue("dateTo", ucReports.dateto);
+            cr.SetParameterValue("FacilityID", ucReports.facilityid);
+            cr.SetParameterValue("SubFacilityID", ucReports.subfacilityid);
             crOccupancy.ReportSource = cr;
         }
     }
