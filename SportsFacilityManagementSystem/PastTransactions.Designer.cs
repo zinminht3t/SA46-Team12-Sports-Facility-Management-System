@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PastTransactions));
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.TransID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,10 +42,6 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,70 +67,6 @@
             this.dgvTransactions.RowTemplate.Height = 24;
             this.dgvTransactions.Size = new System.Drawing.Size(1110, 412);
             this.dgvTransactions.TabIndex = 0;
-            // 
-            // TransID
-            // 
-            this.TransID.DataPropertyName = "transactionid";
-            this.TransID.HeaderText = "Transaction ID";
-            this.TransID.Name = "TransID";
-            this.TransID.ReadOnly = true;
-            this.TransID.Width = 129;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 77;
-            // 
-            // BookingDate
-            // 
-            this.BookingDate.DataPropertyName = "date";
-            this.BookingDate.HeaderText = "Booking Date";
-            this.BookingDate.Name = "BookingDate";
-            this.BookingDate.ReadOnly = true;
-            this.BookingDate.Width = 122;
-            // 
-            // Facilityname
-            // 
-            this.Facilityname.DataPropertyName = "facilityname";
-            this.Facilityname.HeaderText = "Sports";
-            this.Facilityname.Name = "Facilityname";
-            this.Facilityname.ReadOnly = true;
-            this.Facilityname.Width = 78;
-            // 
-            // Timeslot
-            // 
-            this.Timeslot.DataPropertyName = "timeslot";
-            this.Timeslot.HeaderText = "Timing";
-            this.Timeslot.Name = "Timeslot";
-            this.Timeslot.ReadOnly = true;
-            this.Timeslot.Width = 79;
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "total";
-            this.Total.HeaderText = "Total Price";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 105;
-            // 
-            // Invoice
-            // 
-            this.Invoice.DataPropertyName = "systemtime";
-            this.Invoice.HeaderText = "Invoice Date";
-            this.Invoice.Name = "Invoice";
-            this.Invoice.ReadOnly = true;
-            this.Invoice.Width = 115;
-            // 
-            // MemberID
-            // 
-            this.MemberID.DataPropertyName = "memberid";
-            this.MemberID.HeaderText = "Member ID";
-            this.MemberID.Name = "MemberID";
-            this.MemberID.ReadOnly = true;
-            this.MemberID.Width = 105;
             // 
             // btnClose
             // 
@@ -174,6 +110,70 @@
             this.lblTitle.Text = "View Transactions";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TransID
+            // 
+            this.TransID.DataPropertyName = "transactionid";
+            this.TransID.HeaderText = "Transaction ID";
+            this.TransID.Name = "TransID";
+            this.TransID.ReadOnly = true;
+            this.TransID.Width = 129;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 77;
+            // 
+            // BookingDate
+            // 
+            this.BookingDate.DataPropertyName = "date";
+            this.BookingDate.HeaderText = "Booking Date";
+            this.BookingDate.Name = "BookingDate";
+            this.BookingDate.ReadOnly = true;
+            this.BookingDate.Width = 122;
+            // 
+            // Facilityname
+            // 
+            this.Facilityname.DataPropertyName = "facilityname";
+            this.Facilityname.HeaderText = "Sports";
+            this.Facilityname.Name = "Facilityname";
+            this.Facilityname.ReadOnly = true;
+            this.Facilityname.Width = 78;
+            // 
+            // Timeslot
+            // 
+            this.Timeslot.DataPropertyName = "timeslot";
+            this.Timeslot.HeaderText = "Booking Time";
+            this.Timeslot.Name = "Timeslot";
+            this.Timeslot.ReadOnly = true;
+            this.Timeslot.Width = 123;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Total Fee";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 97;
+            // 
+            // Invoice
+            // 
+            this.Invoice.DataPropertyName = "systemtime";
+            this.Invoice.HeaderText = "Invoice Date";
+            this.Invoice.Name = "Invoice";
+            this.Invoice.ReadOnly = true;
+            this.Invoice.Width = 115;
+            // 
+            // MemberID
+            // 
+            this.MemberID.DataPropertyName = "memberid";
+            this.MemberID.HeaderText = "Member ID";
+            this.MemberID.Name = "MemberID";
+            this.MemberID.ReadOnly = true;
+            this.MemberID.Width = 105;
+            // 
             // PastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,6 +202,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransID;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingDate;
@@ -210,6 +211,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Invoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn MemberID;
-        private System.Windows.Forms.Label lblTitle;
     }
 }
