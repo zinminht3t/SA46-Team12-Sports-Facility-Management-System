@@ -68,6 +68,7 @@ namespace SportsFacilityManagementSystem
                 txtMemID.ReadOnly = false;
                 btnCancel.Visible = false;
                 btnBook.Visible = true;
+                btnPrint.Visible = false;
                 facilityID = cxt.Facilities.First(x => x.facilityname == txtFacilityID.Text).facilityid;
                 double rate = cxt.Facilities.First(x => x.facilityid == facilityID).Rate.ratepertimeslot;
                 txtRates.Text = "$" + String.Format("{0:#.00}", rate);
@@ -173,6 +174,7 @@ namespace SportsFacilityManagementSystem
         {
             btnCancel.Visible = true;
             btnBook.Visible = false;
+            btnPrint.Visible = true;
             txtMemID.ReadOnly = true;
             lbSelSlotsFacility.Items.Clear();
             lbSelSlotsSF.Items.Clear();
@@ -195,6 +197,13 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsFacility.Items.Add(removetd.Facility.facilityname);
             lbSelSlotsSF.Items.Add(removetd.SubFacility.subfacilityname);
             lbSelSlotsTiming.Items.Add(removetd.Timeslot.timeslot);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            rptTransactionid = transid;
+            frmInvoiceReport frmIR = new frmInvoiceReport();
+            frmIR.ShowDialog();
         }
     }
 }
