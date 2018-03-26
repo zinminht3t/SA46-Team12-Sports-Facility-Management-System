@@ -15,6 +15,7 @@ namespace SportsFacilityManagementSystem
         Member resultmember;
         SportsFacilitiesEntities ctx;
         public static int memberid;
+
         public ucMembers()
         {
             InitializeComponent();

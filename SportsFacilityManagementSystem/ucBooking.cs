@@ -435,6 +435,8 @@ namespace SportsFacilityManagementSystem
             cmbSports.Text = defaultCmbSports;
             dtpBookingDate.Value = DateTime.Today;
             dtpBookingDatevalue = dtpBookingDate.Value;
+
+            cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
