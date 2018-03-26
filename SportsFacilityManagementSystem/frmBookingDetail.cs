@@ -103,7 +103,8 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsTiming.Items.Clear();
             string a;
             int timeslot;
-            foreach (BookingDetails bd in l)
+
+            foreach (BookingDetails bd in l.OrderBy(x => x.subFacilityBooked).ThenBy(x => x.slotBooked))
             {
                 i = l.IndexOf(bd) + 0;
                 this.lbSelSlotsSF.Items.Add(l[i].subFacilityBooked);
