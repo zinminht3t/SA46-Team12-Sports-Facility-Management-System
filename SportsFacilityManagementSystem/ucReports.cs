@@ -47,10 +47,6 @@ namespace SportsFacilityManagementSystem
                 gbReport.Visible = true;
                 gbMMR.Visible = false;
 
-                cmbOFacility.DataSource = ctx.Facilities.ToList();
-                cmbOFacility.DisplayMember = "facilityname";
-                cmbOFacility.ValueMember = "facilityid";
-
             }
             else if(cmbTypeofReport.SelectedIndex == 2)
             {
@@ -85,6 +81,7 @@ namespace SportsFacilityManagementSystem
             }
             cmbMRYear.DataSource = years;
             cmbYear.DataSource = years;
+            dtpToDateReport.Value = DateTime.Today.AddDays(7);
 
 
         }
@@ -118,8 +115,6 @@ namespace SportsFacilityManagementSystem
         {
             datefrom = dtpDateFromReport.Value;
             dateto = dtpToDateReport.Value;
-            facilityid = Convert.ToInt32(cmbOFacility.SelectedValue);
-            subfacilityid = Convert.ToInt32(cmbOSubfacility.SelectedValue);
 
             if (cmbTypeofReport.SelectedIndex == 1) //facility occupancy report
             {
@@ -137,12 +132,15 @@ namespace SportsFacilityManagementSystem
 
         private void dtpToDateReport_ValueChanged(object sender, EventArgs e)
         {
-            dtpDateFromReport.MaxDate = dtpToDateReport.Value.AddDays(-1);
+            //dtpDateFromReport.MaxDate = dtpToDateReport.Value.AddDays(-1);
+            dtpDateFromReport.Value = dtpToDateReport.Value.AddDays(-6);
+
         }
 
         private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
         {
-            dtpDateFromML.MaxDate = dtpDatetoML.Value.AddDays(-1);
+            //dtpDateFromML.MaxDate = dtpDatetoML.Value.AddDays(-1);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -158,21 +156,12 @@ namespace SportsFacilityManagementSystem
 
         }
 
-        private void cmbOFacility_SelectedIndexChanged(object sender, EventArgs e)
+        private void dtpDateFromReport_ValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int facid = Convert.ToInt32(cmbOFacility.SelectedValue);
-                cmbOSubfacility.DataSource = ctx.SubFacilities.Where(x => x.facilityid == facid).ToList();
-                cmbOSubfacility.DisplayMember = "subfacilityname";
-                cmbOSubfacility.ValueMember = "subfacilityid";
-            }
-            catch
-            {
-                cmbOSubfacility.DataSource = ctx.SubFacilities.Where(x => x.facilityid == 1).ToList();
-                cmbOSubfacility.DisplayMember = "subfacilityname";
-                cmbOSubfacility.ValueMember = "subfacilityid";
-            }
+            //dtpDatetoML.MinDate = dtpDateFromML.Value.AddDays(-1);
+            //dtpDatetoML.MaxDate = dtpDateFromML.Value.AddDays(1);
+
+            dtpToDateReport.Value = dtpDateFromReport.Value.AddDays(6);
         }
     }
 }
