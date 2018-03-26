@@ -140,6 +140,7 @@ namespace SportsFacilityManagementSystem
         {
             HideAllUC();
             ucReports1.Visible = true;
+
         }
 
         private void btnUpcoming_Click(object sender, EventArgs e)
