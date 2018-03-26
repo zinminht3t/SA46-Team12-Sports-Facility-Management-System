@@ -15,6 +15,7 @@ namespace SportsFacilityManagementSystem
         #region Properties
         static string fac;
         static string status;
+        static string transID;
         static DateTime datefrom;
         static DateTime dateto;
         bool error = false;
@@ -63,6 +64,17 @@ namespace SportsFacilityManagementSystem
             set
             {
                 dateto = value;
+            }
+        }
+        public string TransID
+        {
+            get
+            {
+                return transID;
+            }
+            set
+            {
+                transID = value;
             }
         }
         #endregion
@@ -135,6 +147,7 @@ namespace SportsFacilityManagementSystem
                 pt.getFlagfac = chkbFacilities.Checked;
                 pt.getFlagdate = chkbDateFrom.Checked;
                 pt.getFlagstatus = chkbStatus.Checked;
+                pt.viewbtnTrans = false;
                 pt.ShowDialog();
             }
             
@@ -153,5 +166,57 @@ namespace SportsFacilityManagementSystem
             }
         }
 
+        private void btnTid_Click(object sender, EventArgs e)
+        {
+            gbTrans.Visible = true;
+            gbType.Visible = false;
+        }
+
+        private void btnType_Click(object sender, EventArgs e)
+        {
+            gbType.Visible = true;
+            gbTrans.Visible = false;
+        }
+
+        private void btnViewTrans_Click(object sender, EventArgs e)
+        {
+            PastTransactions pt = new PastTransactions();
+            if (rbtnAll.Checked == true)
+            {
+                pt.viewAllTrans = true;
+                pt.viewbtnTrans = true;
+            }
+            else
+            {
+                    transID = txtTid.Text;
+                    pt.viewbtnTrans = true;
+                    pt.viewAllTrans = false;
+            }
+            pt.ShowDialog();
+            
+        }
+
+        private void ucPastTransactions_Load(object sender, EventArgs e)
+        {
+            Facility forcombo = new Facility();
+            forcombo.facilityname = "All";
+            List<Facility> ls = frmLogin.facilitylist;
+            ls.Add(forcombo);
+
+            cmbFac.DataSource = ls;
+            cmbFac.SelectedIndex = ls.Count() - 1;
+            cmbFac.DisplayMember = "facilityname";
+            cmbFac.ValueMember = "facilityname";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtTid.ReadOnly = false;
+        }
+
+        private void rbtnAll_CheckedChanged(object sender, EventArgs e)
+        {
+            txtTid.ReadOnly = true;
+        }
     }
 }

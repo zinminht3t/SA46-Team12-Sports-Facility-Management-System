@@ -77,7 +77,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.BackColor = System.Drawing.Color.Crimson;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
@@ -290,11 +290,7 @@
             this.cmbSearchBy.ForeColor = System.Drawing.SystemColors.InfoText;
             this.cmbSearchBy.FormattingEnabled = true;
             this.cmbSearchBy.Items.AddRange(new object[] {
-            "Badminton",
-            "Basketball",
-            "Futsal",
-            "Squash",
-            "Table Tennis"});
+            "- default -"});
             this.cmbSearchBy.Location = new System.Drawing.Point(335, 71);
             this.cmbSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSearchBy.Name = "cmbSearchBy";
@@ -305,7 +301,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.gbSearchResults);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnSearch);
@@ -314,6 +310,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucFacilities";
             this.Size = new System.Drawing.Size(752, 508);
+            this.Load += new System.EventHandler(this.ucFacilities_Load);
             this.gbSearchResults.ResumeLayout(false);
             this.gbSearchResults.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningFac)).EndInit();

@@ -19,9 +19,18 @@ namespace SportsFacilityManagementSystem
         string ratestemp = "";
         string facilitiesnotemp = "";
         Facility fac;
+       // List<String> sportsList;
+        
         public ucFacilities()
         {
             InitializeComponent();
+            //sportsList = listOfSports.getSportList();
+            //cmbSearchBy.DataSource = sportsList;
+        }
+
+        private void ucFacilities_load()
+        {
+            //sportsList = listOfSports.getSportList();
         }
 
         private void lblCheckAvailability_Click(object sender, EventArgs e)
@@ -143,6 +152,14 @@ namespace SportsFacilityManagementSystem
         private void lblAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
+        }
+
+        private void ucFacilities_Load(object sender, EventArgs e)
+        {
+
+            cmbSearchBy.DataSource = frmLogin.facilitylist;
+            cmbSearchBy.DisplayMember = "facilityname";
+            cmbSearchBy.ValueMember = "facilityname";
         }
     }
 }

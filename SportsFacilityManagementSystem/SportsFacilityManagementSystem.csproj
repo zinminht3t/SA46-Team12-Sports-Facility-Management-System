@@ -167,6 +167,7 @@
     <Compile Include="FrmSubMembers.Designer.cs">
       <DependentUpon>FrmSubMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="listOfSports.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +385,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAddFacilities.resx">
+      <DependentUpon>ucAddFacilities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAddMember.resx">
       <DependentUpon>ucAddMember.cs</DependentUpon>

@@ -39,6 +39,7 @@ namespace SportsFacilityManagementSystem
 
             ctx = new SportsFacilitiesEntities();
             //List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
+
             defaultCmbSports = "- Select sport -";
             //facList.Insert(0, defaultCmbSports);
             //cmbSports.DataSource = facList;
@@ -447,6 +448,9 @@ namespace SportsFacilityManagementSystem
 
         private void ucBooking_Load_1(object sender, EventArgs e)
         {
+            cmbSports.DataSource = frmLogin.facilitylist;
+            cmbSports.DisplayMember = "facilityname";
+            cmbSports.ValueMember = "facilityname";
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
