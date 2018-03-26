@@ -70,15 +70,17 @@ namespace SportsFacilityManagementSystem
             SportsFacilitiesEntities cxt = new SportsFacilitiesEntities();
             List<Member> lstmember = new List<Member>();
             lstmember = cxt.Members.Where(x => x.expirydate < DateTime.Today).ToList();
+            int c = lstmember.Count;
             foreach (var member in lstmember)
             {
                 cxt.Members.First(x => x.memberid == member.memberid).status = "Inactive";
             }
-
+            cxt.SaveChanges();
 
             List<Member> inlstmember = new List<Member>();
             inlstmember = cxt.Members.Where(x => x.expirydate > DateTime.Today).ToList();
-            foreach (var member in lstmember)
+            int count = inlstmember.Count;
+            foreach (var member in inlstmember)
             {
                 cxt.Members.First(x => x.memberid == member.memberid).status = "Active";
             }
