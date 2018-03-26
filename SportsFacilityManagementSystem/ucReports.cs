@@ -19,6 +19,8 @@ namespace SportsFacilityManagementSystem
         public static DateTime datefrom;
         public static DateTime dateto;
         public static string year;
+        public static string mrmonth;
+        public static string mryear;
         public ucReports()
         {
             InitializeComponent();
@@ -31,18 +33,30 @@ namespace SportsFacilityManagementSystem
                 gbReport.Visible = false;
                 gbMemberList.Visible = true;
                 gbRevenue.Visible = false;
+                gbMMR.Visible = false;
             }
             else if(cmbTypeofReport.SelectedIndex == 1)
             {
                 gbMemberList.Visible = false;
                 gbRevenue.Visible = false;
                 gbReport.Visible = true;
+                gbMMR.Visible = false;
+
             }
-            else
+            else if(cmbTypeofReport.SelectedIndex == 2)
             {
                 gbMemberList.Visible = false;
                 gbRevenue.Visible = true;
                 gbReport.Visible = false;
+                gbMMR.Visible = false;
+
+            }
+            else
+            {
+                gbMemberList.Visible = false;
+                gbRevenue.Visible = false;
+                gbReport.Visible = false;
+                gbMMR.Visible = true;
             }
         }
 
@@ -52,6 +66,7 @@ namespace SportsFacilityManagementSystem
             gbMemberList.Visible = false;
             gbReport.Visible = false;
             cmbStatus.SelectedIndex = 0;
+            cmbTypeofReport.Text = "Select Report";
             dtpDateFromML.MaxDate = DateTime.Today.AddDays(-1);
             dtpDateFromReport.MaxDate = DateTime.Today.AddDays(-1);
         }
@@ -107,6 +122,19 @@ namespace SportsFacilityManagementSystem
         private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
         {
             dtpDateFromML.MaxDate = dtpDatetoML.Value.AddDays(-1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mrmonth = (cmbMRMonth.SelectedIndex + 1).ToString();
+            mryear = cmbMRYear.SelectedItem.ToString();
+            frmMonthlyRevenueReport frmMRR = new frmMonthlyRevenueReport();
+            frmMRR.ShowDialog();
+        }
+
+        private void cmbMRYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

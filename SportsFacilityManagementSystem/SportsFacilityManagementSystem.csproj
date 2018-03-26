@@ -149,6 +149,12 @@
     <Compile Include="frmMemberListingReport.Designer.cs">
       <DependentUpon>frmMemberListingReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMonthlyRevenueReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonthlyRevenueReport.Designer.cs">
+      <DependentUpon>frmMonthlyRevenueReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOccupancyReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,7 +173,6 @@
     <Compile Include="FrmSubMembers.Designer.cs">
       <DependentUpon>FrmSubMembers.cs</DependentUpon>
     </Compile>
-    <Compile Include="listOfSports.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMemberListingReport.resx">
       <DependentUpon>frmMemberListingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMonthlyRevenueReport.resx">
+      <DependentUpon>frmMonthlyRevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOccupancyReport.resx">
       <DependentUpon>frmOccupancyReport.cs</DependentUpon>

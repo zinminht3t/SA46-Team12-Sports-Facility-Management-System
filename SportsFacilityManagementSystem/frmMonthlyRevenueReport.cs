@@ -26,7 +26,8 @@ namespace SportsFacilityManagementSystem
 
             MarchRevenue cr = new MarchRevenue();
             cr.SetDataSource(ds);
-            cr.SetParameterValue("Month", ucReports.month);
+            cr.SetParameterValue("Month", ucReports.mrmonth);
+            cr.SetParameterValue("Year", ucReports.mryear);
             crMRReport.ReportSource = cr;
         }
     }
