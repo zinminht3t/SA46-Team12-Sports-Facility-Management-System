@@ -166,11 +166,13 @@ namespace SportsFacilityManagementSystem
 
         private void cmbSports_SelectedIndexChanged(object sender, EventArgs e)
         {
+            collectionClickedButtons.Clear();
             LoadBookingSlots();
         }
 
         private void LoadBookingSlots()
         {
+            //bkgDetailsList.Clear();
             noSelected = 0;
             //need to clear button collections                     con.Click += new System.EventHandler(this.con_Click);
             foreach (Control c in collectionVisibleButtons)
@@ -183,7 +185,7 @@ namespace SportsFacilityManagementSystem
             ifBookedSubfacility.Clear();
 
             //get facility id of chosen facility in combobox
-            if (cmbSports.Text != defaultCmbSports)
+            if (cmbSports.Text != "Select Sports")
             {
                 this.getFacilityID();
                 noSubFacilities = ctx.SubFacilities.Count(x => x.facilityid == facId); //to replace output with no of subfac belonging to selected facility
@@ -428,15 +430,17 @@ namespace SportsFacilityManagementSystem
         private void ucBooking_Load_1(object sender, EventArgs e)
         {
             ctx = new SportsFacilitiesEntities();
-            cmbSports.DataSource = frmLogin.facilitylist;
-            cmbSports.DisplayMember = "facilityname";
-            cmbSports.ValueMember = "facilityname";
-            defaultCmbSports = "- Select sport -";
-            cmbSports.Text = defaultCmbSports;
+
+ 
+
+            cmbSports.DataSource = frmLogin.bookingSportsList;
+            //cmbSports.DisplayMember = "facilityname";
+            //cmbSports.ValueMember = "facilityname";
             dtpBookingDate.Value = DateTime.Today;
             dtpBookingDatevalue = dtpBookingDate.Value;
 
             cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
