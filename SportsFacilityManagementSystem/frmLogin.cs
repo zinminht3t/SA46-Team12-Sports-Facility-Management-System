@@ -43,7 +43,7 @@ namespace SportsFacilityManagementSystem
                     if (result > 0) //if the user login success
                     {
                         user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
-                        ChangeExpiredMemberStatus(); //check the expired members and update their status to "Inactive"
+                        ChangeMemberStatus(); //check the expired members and update their status to "Inactive"
                         this.Hide();
                         facilitylist = ctx.Facilities.ToList();
 
@@ -77,7 +77,7 @@ namespace SportsFacilityManagementSystem
             ctx = new SportsFacilitiesEntities();
         }
 
-        private void ChangeExpiredMemberStatus()
+        public void ChangeMemberStatus()
         {
             List<Member> lstmember = new List<Member>();
             lstmember = ctx.Members.Where(x => x.expirydate < DateTime.Today).ToList();
@@ -85,6 +85,15 @@ namespace SportsFacilityManagementSystem
             {
                 ctx.Members.First(x => x.memberid == member.memberid).status = "Inactive";
             }
+
+
+            List<Member> inlstmember = new List<Member>();
+            inlstmember = ctx.Members.Where(x => x.expirydate > DateTime.Today).ToList();
+            foreach (var member in lstmember)
+            {
+                ctx.Members.First(x => x.memberid == member.memberid).status = "Active";
+            }
+
             ctx.SaveChanges();
         }
 

@@ -232,7 +232,11 @@ namespace SportsFacilityManagementSystem
             {
                 resultmember.status = "Inactive";
             }
+
             ctx.SaveChanges();
+
+            frmLogin fr = new frmLogin();
+            fr.ChangeMemberStatus();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
