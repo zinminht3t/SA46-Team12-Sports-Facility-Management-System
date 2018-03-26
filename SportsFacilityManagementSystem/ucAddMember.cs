@@ -26,6 +26,7 @@ namespace SportsFacilityManagementSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            ResetAllWarningLabels();
             // need to add status as active + member expiry (2years?) into database (jayden)
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
             if (txtName.Text == "" || txtICNo.Text == "" || txtMobile.Text == "" || txtEmail.Text == "" || txtAddress.Text == "")
@@ -87,6 +88,7 @@ namespace SportsFacilityManagementSystem
                     {
                         InsertData();
                         ResetAllFields();
+                        ResetAllWarningLabels();
                         MessageBox.Show("Add Member Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         DialogResult d = MessageBox.Show("Do you want to print the membership form?", "Print Membership Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -172,9 +174,23 @@ namespace SportsFacilityManagementSystem
         private void btnReset_Click(object sender, EventArgs e)
         {
             ResetAllFields();
+            ResetAllWarningLabels();
         }
 
         private void ResetAllFields()
+        {
+            txtName.Text = "";
+            txtICNo.Text = "";
+            txtMobile.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            rdbFemale.Checked = false;
+            rdbMale.Checked = true;
+            dtpDOB.Value = dtpDOB.MaxDate = DateTime.Today.AddYears(-13);
+            dtpJoindate.Value = DateTime.Now;
+        }
+
+        private void ResetAllWarningLabels()
         {
             lblWarningName.Visible = false;
             lblWarningIC.Visible = false;
@@ -184,16 +200,6 @@ namespace SportsFacilityManagementSystem
             lblWarningMobile.Visible = false;
             lblWarningEmail.Text = "Field cannot be blank";
             lblWarningEmail.Visible = false;
-
-            txtName.Text = "";
-            txtICNo.Text = "";
-            txtMobile.Text = "";
-            txtEmail.Text = "";
-            txtAddress.Text = "";
-            rdbFemale.Checked = false;
-            rdbMale.Checked = true;
-            dtpDOB.Value = DateTime.Now;
-            dtpJoindate.Value = DateTime.Now;
         }
 
         private void ucAddMember_Load(object sender, EventArgs e)
@@ -207,6 +213,7 @@ namespace SportsFacilityManagementSystem
             if (this.Visible)
             {
                 ResetAllFields();
+                ResetAllWarningLabels();
             }
         }
 
