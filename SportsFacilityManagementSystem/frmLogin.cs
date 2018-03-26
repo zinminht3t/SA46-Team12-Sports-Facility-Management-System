@@ -41,10 +41,9 @@ namespace SportsFacilityManagementSystem
                         user = ctx.Users.Where(x => x.userid == userid && x.password == password).First();
                         ChangeExpiredMemberStatus(); //check the expired members and update their status to "Inactive"
                         this.Hide();
-
+                        facilitylist = ctx.Facilities.ToList();
                         frmMain main = new frmMain(); //call the main form
                         main.Show();
-                        facilitylist = ctx.Facilities.ToList();
                     }
                     else
                     {
@@ -61,7 +60,6 @@ namespace SportsFacilityManagementSystem
         private void frmLogin_Load(object sender, EventArgs e)
         {
             ctx = new SportsFacilitiesEntities();
-
         }
 
         private void ChangeExpiredMemberStatus()
@@ -73,21 +71,6 @@ namespace SportsFacilityManagementSystem
                 ctx.Members.First(x => x.memberid == member.memberid).status = "Inactive";
             }
             ctx.SaveChanges();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

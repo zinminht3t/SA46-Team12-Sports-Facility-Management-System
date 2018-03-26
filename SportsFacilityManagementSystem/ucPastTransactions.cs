@@ -181,18 +181,42 @@ namespace SportsFacilityManagementSystem
         private void btnViewTrans_Click(object sender, EventArgs e)
         {
             PastTransactions pt = new PastTransactions();
-            transID = txtTid.Text;
-            pt.viewbtnTrans = true;
+            if (rbtnAll.Checked == true)
+            {
+                pt.viewAllTrans = true;
+                pt.viewbtnTrans = true;
+            }
+            else
+            {
+                    transID = txtTid.Text;
+                    pt.viewbtnTrans = true;
+                    pt.viewAllTrans = false;
+            }
             pt.ShowDialog();
             
         }
 
         private void ucPastTransactions_Load(object sender, EventArgs e)
         {
+            Facility forcombo = new Facility();
+            forcombo.facilityname = "All";
             List<Facility> ls = frmLogin.facilitylist;
+            ls.Add(forcombo);
+
             cmbFac.DataSource = ls;
+            cmbFac.SelectedIndex = ls.Count() - 1;
             cmbFac.DisplayMember = "facilityname";
             cmbFac.ValueMember = "facilityname";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtTid.ReadOnly = false;
+        }
+
+        private void rbtnAll_CheckedChanged(object sender, EventArgs e)
+        {
+            txtTid.ReadOnly = true;
         }
     }
 }
