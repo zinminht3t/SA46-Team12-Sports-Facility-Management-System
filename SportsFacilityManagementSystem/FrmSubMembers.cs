@@ -21,7 +21,7 @@ namespace SportsFacilityManagementSystem
         private void FrmSubMembers_Load(object sender, EventArgs e)
         {
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
-            dgvMembers.DataSource = ctx.Members.ToList();
+            dgvMembers.DataSource = ctx.Members.Where(x => x.status == "Active").ToList();
         }
 
         private void dgvMembers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
