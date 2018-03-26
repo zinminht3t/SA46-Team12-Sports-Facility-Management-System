@@ -20,12 +20,10 @@ namespace SportsFacilityManagementSystem
         string ratesWOsymbol = "";
         string facilitiesnotemp = "";
         Facility fac;
-        
         public ucFacilities()
         {
             InitializeComponent();
         }
-
         private void ucFacilities_Load(object sender, EventArgs e)
         {
             cmbSearchBy.DataSource = frmLogin.facilitylist;
@@ -51,31 +49,27 @@ namespace SportsFacilityManagementSystem
             {
                 fac = cxt.Facilities.Where(x => x.facilityname == cmbSearchBy.Text).First();
                 gbSearchResults.Visible = true;
-
                 //Facility Name / ID Display
                 txtFacilityID.Text = fac.facilityid.ToString();
                 facilityidtemp = txtFacilityID.Text;
                 txtName.Text = fac.facilityname.ToString();
                 nametemp = txtName.Text;
-
                 // Rates Display
                 r = fac.rateid.ToString();
                 rate = cxt.Rates.Where(x => x.rateid.ToString() == r).First();
                 ratesWOsymbol = rate.ratepertimeslot.ToString();
                 cmbRates.Text = "$ " + ratesWOsymbol + ".00";
                 ratestemp = ratesWOsymbol;
-
                 // Subfacility Display
                 var q = from x in cxt.SubFacilities where x.facilityid.ToString() == txtFacilityID.Text select x;
                 txtFacilitiesNo.Text = q.Count().ToString();
                 facilitiesnotemp = txtFacilitiesNo.Text;
             }
-            catch(InvalidOperationException)
+            catch (InvalidOperationException)
             {
-                MessageBox.Show("Search Results cannot be empty", "Warning", MessageBoxButtons.OK , MessageBoxIcon.Error);
+                MessageBox.Show("Search Results cannot be empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ButtonVisibility(true);
@@ -88,7 +82,6 @@ namespace SportsFacilityManagementSystem
             txtFacilitiesNo.Text = facilitiesnotemp;
             ButtonVisibility(false);
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             DialogResult savebtn =
@@ -97,7 +90,7 @@ namespace SportsFacilityManagementSystem
             {
                 ButtonVisibility(false);
                 string price = "";
-                if(cmbRates.Text.Length > 6)
+                if (cmbRates.Text.Length > 6)
                 {
                     price = cmbRates.Text.Substring(2, 2);
                 }
@@ -106,9 +99,9 @@ namespace SportsFacilityManagementSystem
                     price = cmbRates.Text.Substring(2, 1);
                 }
                 int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == price).Select(y => y.rateid).First(); ;
-                    fac.rateid = rateid;
-                    fac.facilityname = txtName.Text;
-                    cxt.SaveChanges();
+                fac.rateid = rateid;
+                fac.facilityname = txtName.Text;
+                cxt.SaveChanges();
                 frmLogin.facilitylist = cxt.Facilities.ToList();
                 cmbSearchBy.DataSource = frmLogin.facilitylist;
             }
@@ -142,38 +135,30 @@ namespace SportsFacilityManagementSystem
                 btnSearch.Enabled = true;
             }
         }
-
         private void pbWarningID_MouseEnter(object sender, EventArgs e)
         {
             lblWarningID.Visible = true;
         }
-
         private void pbWarningID_MouseLeave(object sender, EventArgs e)
         {
             lblWarningID.Visible = false;
         }
-
         private void pbWarningFac_MouseEnter(object sender, EventArgs e)
         {
             lblWarningFac.Visible = true;
         }
-
         private void pbWarningFac_MouseLeave(object sender, EventArgs e)
         {
             lblWarningFac.Visible = false;
         }
-
         private void pbWarningRate_MouseEnter(object sender, EventArgs e)
         {
             lblWarningRate.Visible = true;
         }
-
         private void pbWarningRate_MouseLeave(object sender, EventArgs e)
         {
             lblWarningRate.Visible = false;
         }
         #endregion
-
-
     }
 }

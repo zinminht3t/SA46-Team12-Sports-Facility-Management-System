@@ -17,22 +17,18 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
-
         private void pbRatesinfo_MouseEnter(object sender, EventArgs e)
         {
             lblRatesInfo.Visible = true;
         }
-
         private void pbRatesinfo_MouseLeave(object sender, EventArgs e)
         {
             lblRatesInfo.Visible = false;
         }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             ResetAllData();
         }
-
         private void ResetAllData()
         {
             txtName.Text = "";
@@ -42,10 +38,9 @@ namespace SportsFacilityManagementSystem
             lblWarningCourt.Visible = false;
             lblWarningName.Visible = false;
         }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(cmbRates.Text == "")
+            if (cmbRates.Text == "")
             {
                 lblWarningRate.Visible = true;
             }
@@ -71,30 +66,28 @@ namespace SportsFacilityManagementSystem
                     lblWarningCourt.Visible = false;
                 }
             }
-
             else
             {
-                    InsertData();
-                    MessageBox.Show("Add Facility Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ResetAllData();
+                InsertData();
+                MessageBox.Show("Add Facility Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetAllData();
             }
         }
-
         private void InsertData()
         {
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
             facility = new Facility();
             facility.facilityname = txtName.Text;
             string price = "";
-                if (cmbRates.Text.Length > 6)
-                {
-                    price = cmbRates.Text.Substring(2, 2);
-                }
-                else
-                {
-                    price = cmbRates.Text.Substring(2, 1);
-                }
-                int rate = Convert.ToInt32(price);
+            if (cmbRates.Text.Length > 6)
+            {
+                price = cmbRates.Text.Substring(2, 2);
+            }
+            else
+            {
+                price = cmbRates.Text.Substring(2, 1);
+            }
+            int rate = Convert.ToInt32(price);
 
             if ((ctx.Rates.Where(x => x.ratepertimeslot == rate).Count()) > 0)
             {
@@ -102,11 +95,11 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
-                    Rate newrate = new Rate();
-                    newrate.ratepertimeslot = rate;
-                    ctx.Rates.Add(newrate);
-                    ctx.SaveChanges();
-                    facility.rateid = ctx.Rates.Where(x => x.ratepertimeslot == rate).First().rateid;
+                Rate newrate = new Rate();
+                newrate.ratepertimeslot = rate;
+                ctx.Rates.Add(newrate);
+                ctx.SaveChanges();
+                facility.rateid = ctx.Rates.Where(x => x.ratepertimeslot == rate).First().rateid;
             }
             try
             {
@@ -137,7 +130,6 @@ namespace SportsFacilityManagementSystem
                 MessageBox.Show("Error Occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void ucAddFacilities_Load(object sender, EventArgs e)
         {
             cmbCourtNo.SelectedIndex = 0;

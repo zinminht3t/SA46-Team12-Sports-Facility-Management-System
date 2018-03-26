@@ -23,38 +23,33 @@ namespace SportsFacilityManagementSystem
         public static string mryear;
         public static int facilityid;
         public static int subfacilityid;
-
         SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
-
         public ucReports()
         {
             InitializeComponent();
         }
-
         private void cmbTypeofReport_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbTypeofReport.SelectedIndex == 0)
+            if (cmbTypeofReport.SelectedIndex == 0)
             {
                 gbReport.Visible = false;
                 gbMemberList.Visible = true;
                 gbRevenue.Visible = false;
                 gbMMR.Visible = false;
             }
-            else if(cmbTypeofReport.SelectedIndex == 1)
+            else if (cmbTypeofReport.SelectedIndex == 1)
             {
                 gbMemberList.Visible = false;
                 gbRevenue.Visible = false;
                 gbReport.Visible = true;
                 gbMMR.Visible = false;
-
             }
-            else if(cmbTypeofReport.SelectedIndex == 2)
+            else if (cmbTypeofReport.SelectedIndex == 2)
             {
                 gbMemberList.Visible = false;
                 gbRevenue.Visible = true;
                 gbReport.Visible = false;
                 gbMMR.Visible = false;
-
             }
             else
             {
@@ -64,7 +59,6 @@ namespace SportsFacilityManagementSystem
                 gbMMR.Visible = true;
             }
         }
-
         private void ucReports_Load(object sender, EventArgs e)
         {
             rdnDateRange.Checked = true;
@@ -72,33 +66,26 @@ namespace SportsFacilityManagementSystem
             gbReport.Visible = false;
             cmbStatus.SelectedIndex = 0;
             cmbTypeofReport.Text = "Select Report";
-
             List<int> years = new List<int>();
             int thisyear = DateTime.Today.Year;
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 years.Add(thisyear - i);
             }
             cmbMRYear.DataSource = years;
             cmbYear.DataSource = years;
             dtpToDateReport.Value = DateTime.Today.AddDays(7);
-
-
         }
-
         private void gbMemberList_Enter(object sender, EventArgs e)
         {
-
         }
-
         private void btnPrintML_Click(object sender, EventArgs e)
         {
-
             daterangeML = new ParameterRangeValue();
             daterangeML.StartValue = dtpDateFromML.Value;
             daterangeML.EndValue = dtpDatetoML.Value;
             paramstatus = cmbStatus.SelectedItem.ToString();
-            if(rdnDateRange.Checked)
+            if (rdnDateRange.Checked)
             {
                 isDateRange = true;
             }
@@ -108,41 +95,30 @@ namespace SportsFacilityManagementSystem
             }
             frmMemberListingReport frm = new frmMemberListingReport();
             frm.ShowDialog();
-
         }
-
         private void btnPrintReport_Click(object sender, EventArgs e)
         {
             datefrom = dtpDateFromReport.Value;
             dateto = dtpToDateReport.Value;
-
             if (cmbTypeofReport.SelectedIndex == 1) //facility occupancy report
             {
                 frmOccupancyReport frmOR = new frmOccupancyReport();
                 frmOR.ShowDialog();
             }
         }
-
         private void btnRPrint_Click(object sender, EventArgs e)
         {
             year = cmbYear.SelectedItem.ToString();
             frmRevenueReport frmRR = new frmRevenueReport();
             frmRR.ShowDialog();
         }
-
         private void dtpToDateReport_ValueChanged(object sender, EventArgs e)
         {
-            //dtpDateFromReport.MaxDate = dtpToDateReport.Value.AddDays(-1);
             dtpDateFromReport.Value = dtpToDateReport.Value.AddDays(-6);
-
         }
-
         private void dtpDatetoML_ValueChanged(object sender, EventArgs e)
         {
-            //dtpDateFromML.MaxDate = dtpDatetoML.Value.AddDays(-1);
-
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             mrmonth = (cmbMRMonth.SelectedIndex + 1).ToString();
@@ -150,17 +126,11 @@ namespace SportsFacilityManagementSystem
             frmMonthlyRevenueReport frmMRR = new frmMonthlyRevenueReport();
             frmMRR.ShowDialog();
         }
-
         private void cmbMRYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
         private void dtpDateFromReport_ValueChanged(object sender, EventArgs e)
         {
-            //dtpDatetoML.MinDate = dtpDateFromML.Value.AddDays(-1);
-            //dtpDatetoML.MaxDate = dtpDateFromML.Value.AddDays(1);
-
             dtpToDateReport.Value = dtpDateFromReport.Value.AddDays(6);
         }
     }

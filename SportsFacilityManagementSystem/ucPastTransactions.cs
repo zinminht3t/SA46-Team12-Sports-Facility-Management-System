@@ -78,12 +78,10 @@ namespace SportsFacilityManagementSystem
             }
         }
         #endregion
-        
         public ucPastTransactions()
         {
             InitializeComponent();
         }
-
         private void btnView_Click(object sender, EventArgs e)
         {
             #region Checking error of selection
@@ -128,7 +126,7 @@ namespace SportsFacilityManagementSystem
                         Datefrom = dtpDateFromML.Value;
                         Dateto = dtpDatetoML.Value;
                         lblWarningMLDateTo.Visible = false;
-                        
+
                     }
                     else
                     {
@@ -150,13 +148,12 @@ namespace SportsFacilityManagementSystem
                 pt.viewbtnTrans = false;
                 pt.ShowDialog();
             }
-            
+
             // Reset to false for new search
             error = false;
             msgbox = false;
             #endregion
         }
-
         private void msgBox()
         {
             if (msgbox == false)
@@ -165,19 +162,16 @@ namespace SportsFacilityManagementSystem
                 MessageBox.Show("Selection error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void btnTid_Click(object sender, EventArgs e)
         {
             gbTrans.Visible = true;
             gbType.Visible = false;
         }
-
         private void btnType_Click(object sender, EventArgs e)
         {
             gbType.Visible = true;
             gbTrans.Visible = false;
         }
-
         private void btnViewTrans_Click(object sender, EventArgs e)
         {
             PastTransactions pt = new PastTransactions();
@@ -195,24 +189,20 @@ namespace SportsFacilityManagementSystem
             pt.ShowDialog();
 
         }
-
         private void ucPastTransactions_Load(object sender, EventArgs e)
         {
             cmbFac.DataSource = frmLogin.facilitylist;
             cmbFac.ValueMember = "facilityname";
             this.Refresh();
         }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             txtTid.ReadOnly = false;
         }
-
         private void rbtnAll_CheckedChanged(object sender, EventArgs e)
         {
             txtTid.ReadOnly = true;
         }
-
         private void resetPastTransControls()
         {
             //search by type
@@ -232,10 +222,9 @@ namespace SportsFacilityManagementSystem
             txtTid.Text = "";
             btnViewTrans.Enabled = false;
         }
-
         private void ucPastTransactions_VisibleChanged(object sender, EventArgs e)
         {
-            
+
             if (this.Visible)
             {
                 resetPastTransControls();
@@ -245,7 +234,6 @@ namespace SportsFacilityManagementSystem
             btnViewTrans.Enabled = true;
 
         }
-
         private void AddVisibleChangedEventHandler()
         {
             this.VisibleChanged += new EventHandler(this.ucPastTransactions_VisibleChanged);
