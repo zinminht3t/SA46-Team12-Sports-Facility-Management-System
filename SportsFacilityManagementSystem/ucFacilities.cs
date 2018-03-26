@@ -106,6 +106,24 @@ namespace SportsFacilityManagementSystem
                 cmbSearchBy.DataSource = frmLogin.facilitylist;
             }
         }
+
+       
+
+        private void ucFacilities_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                cmbSearchBy.SelectedIndex = 0;
+                gbSearchResults.Visible = false;
+                btnSearch.Enabled = true;
+            }
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucFacilities_VisibleChanged);
+        }
+
         #region Visibility Events
         private void ButtonVisibility(bool ClickEditBtn)
         {

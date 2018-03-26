@@ -58,10 +58,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(400, 118);
+            this.btnSearch.Location = new System.Drawing.Point(300, 96);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(125, 30);
+            this.btnSearch.Size = new System.Drawing.Size(94, 24);
             this.btnSearch.TabIndex = 57;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -70,10 +70,10 @@
             // lblSearchby
             // 
             this.lblSearchby.AutoSize = true;
-            this.lblSearchby.Location = new System.Drawing.Point(229, 74);
+            this.lblSearchby.Location = new System.Drawing.Point(172, 60);
             this.lblSearchby.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchby.Name = "lblSearchby";
-            this.lblSearchby.Size = new System.Drawing.Size(84, 17);
+            this.lblSearchby.Size = new System.Drawing.Size(64, 13);
             this.lblSearchby.TabIndex = 26;
             this.lblSearchby.Text = "Search by : ";
             // 
@@ -83,9 +83,10 @@
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTitle.Location = new System.Drawing.Point(123, 0);
+            this.lblTitle.Location = new System.Drawing.Point(92, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(541, 40);
+            this.lblTitle.Size = new System.Drawing.Size(406, 32);
             this.lblTitle.TabIndex = 57;
             this.lblTitle.Text = "Search Facilities";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,9 +111,11 @@
             this.gbSearchResults.Controls.Add(this.txtName);
             this.gbSearchResults.Controls.Add(this.lblRates);
             this.gbSearchResults.Controls.Add(this.lblName);
-            this.gbSearchResults.Location = new System.Drawing.Point(178, 167);
+            this.gbSearchResults.Location = new System.Drawing.Point(134, 136);
+            this.gbSearchResults.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbSearchResults.Name = "gbSearchResults";
-            this.gbSearchResults.Size = new System.Drawing.Size(419, 328);
+            this.gbSearchResults.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSearchResults.Size = new System.Drawing.Size(314, 266);
             this.gbSearchResults.TabIndex = 63;
             this.gbSearchResults.TabStop = false;
             this.gbSearchResults.Text = "Search Results";
@@ -132,17 +135,19 @@
             "$ 8.00",
             "$ 9.00",
             "$ 10.00"});
-            this.cmbRates.Location = new System.Drawing.Point(174, 131);
+            this.cmbRates.Location = new System.Drawing.Point(130, 106);
+            this.cmbRates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbRates.Name = "cmbRates";
-            this.cmbRates.Size = new System.Drawing.Size(119, 24);
+            this.cmbRates.Size = new System.Drawing.Size(90, 21);
             this.cmbRates.TabIndex = 72;
             // 
             // lblWarningRate
             // 
             this.lblWarningRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWarningRate.Location = new System.Drawing.Point(324, 126);
+            this.lblWarningRate.Location = new System.Drawing.Point(243, 102);
+            this.lblWarningRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWarningRate.Name = "lblWarningRate";
-            this.lblWarningRate.Size = new System.Drawing.Size(83, 36);
+            this.lblWarningRate.Size = new System.Drawing.Size(63, 30);
             this.lblWarningRate.TabIndex = 71;
             this.lblWarningRate.Text = "Rates / 2 hours";
             this.lblWarningRate.Visible = false;
@@ -150,9 +155,10 @@
             // pbWarningRate
             // 
             this.pbWarningRate.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
-            this.pbWarningRate.Location = new System.Drawing.Point(294, 131);
+            this.pbWarningRate.Location = new System.Drawing.Point(220, 106);
+            this.pbWarningRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbWarningRate.Name = "pbWarningRate";
-            this.pbWarningRate.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningRate.Size = new System.Drawing.Size(18, 18);
             this.pbWarningRate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbWarningRate.TabIndex = 70;
             this.pbWarningRate.TabStop = false;
@@ -163,9 +169,10 @@
             // lblWarningFac
             // 
             this.lblWarningFac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWarningFac.Location = new System.Drawing.Point(323, 167);
+            this.lblWarningFac.Location = new System.Drawing.Point(242, 136);
+            this.lblWarningFac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWarningFac.Name = "lblWarningFac";
-            this.lblWarningFac.Size = new System.Drawing.Size(89, 56);
+            this.lblWarningFac.Size = new System.Drawing.Size(67, 46);
             this.lblWarningFac.TabIndex = 69;
             this.lblWarningFac.Text = "This field cannot be edited";
             this.lblWarningFac.Visible = false;
@@ -173,9 +180,10 @@
             // lblWarningID
             // 
             this.lblWarningID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWarningID.Location = new System.Drawing.Point(324, 53);
+            this.lblWarningID.Location = new System.Drawing.Point(243, 43);
+            this.lblWarningID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWarningID.Name = "lblWarningID";
-            this.lblWarningID.Size = new System.Drawing.Size(83, 60);
+            this.lblWarningID.Size = new System.Drawing.Size(63, 49);
             this.lblWarningID.TabIndex = 68;
             this.lblWarningID.Text = "This field cannot be edited";
             this.lblWarningID.Visible = false;
@@ -183,9 +191,10 @@
             // pbWarningFac
             // 
             this.pbWarningFac.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
-            this.pbWarningFac.Location = new System.Drawing.Point(294, 168);
+            this.pbWarningFac.Location = new System.Drawing.Point(220, 136);
+            this.pbWarningFac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbWarningFac.Name = "pbWarningFac";
-            this.pbWarningFac.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningFac.Size = new System.Drawing.Size(18, 18);
             this.pbWarningFac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbWarningFac.TabIndex = 67;
             this.pbWarningFac.TabStop = false;
@@ -196,9 +205,10 @@
             // pbWarningID
             // 
             this.pbWarningID.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
-            this.pbWarningID.Location = new System.Drawing.Point(294, 53);
+            this.pbWarningID.Location = new System.Drawing.Point(220, 43);
+            this.pbWarningID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbWarningID.Name = "pbWarningID";
-            this.pbWarningID.Size = new System.Drawing.Size(24, 22);
+            this.pbWarningID.Size = new System.Drawing.Size(18, 18);
             this.pbWarningID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbWarningID.TabIndex = 66;
             this.pbWarningID.TabStop = false;
@@ -208,29 +218,29 @@
             // 
             // txtFacilityID
             // 
-            this.txtFacilityID.Location = new System.Drawing.Point(174, 53);
+            this.txtFacilityID.Location = new System.Drawing.Point(130, 43);
             this.txtFacilityID.Margin = new System.Windows.Forms.Padding(2);
             this.txtFacilityID.Name = "txtFacilityID";
             this.txtFacilityID.ReadOnly = true;
-            this.txtFacilityID.Size = new System.Drawing.Size(119, 22);
+            this.txtFacilityID.Size = new System.Drawing.Size(90, 20);
             this.txtFacilityID.TabIndex = 58;
             // 
             // lblFacilityID
             // 
             this.lblFacilityID.AutoSize = true;
-            this.lblFacilityID.Location = new System.Drawing.Point(51, 56);
+            this.lblFacilityID.Location = new System.Drawing.Point(38, 46);
             this.lblFacilityID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFacilityID.Name = "lblFacilityID";
-            this.lblFacilityID.Size = new System.Drawing.Size(76, 17);
+            this.lblFacilityID.Size = new System.Drawing.Size(59, 13);
             this.lblFacilityID.TabIndex = 64;
             this.lblFacilityID.Text = "Facility ID :";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(257, 262);
+            this.btnEdit.Location = new System.Drawing.Point(193, 213);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(119, 37);
+            this.btnEdit.Size = new System.Drawing.Size(89, 30);
             this.btnEdit.TabIndex = 62;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -238,10 +248,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(224, 262);
+            this.btnSave.Location = new System.Drawing.Point(168, 213);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(119, 37);
+            this.btnSave.Size = new System.Drawing.Size(89, 30);
             this.btnSave.TabIndex = 64;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -250,10 +260,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(80, 262);
+            this.btnCancel.Location = new System.Drawing.Point(60, 213);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(119, 37);
+            this.btnCancel.Size = new System.Drawing.Size(89, 30);
             this.btnCancel.TabIndex = 63;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -262,49 +272,49 @@
             // 
             // txtFacilitiesNo
             // 
-            this.txtFacilitiesNo.Location = new System.Drawing.Point(174, 168);
+            this.txtFacilitiesNo.Location = new System.Drawing.Point(130, 136);
             this.txtFacilitiesNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtFacilitiesNo.Name = "txtFacilitiesNo";
             this.txtFacilitiesNo.ReadOnly = true;
-            this.txtFacilitiesNo.Size = new System.Drawing.Size(119, 22);
+            this.txtFacilitiesNo.Size = new System.Drawing.Size(90, 20);
             this.txtFacilitiesNo.TabIndex = 61;
             // 
             // lblFacilitiesno
             // 
             this.lblFacilitiesno.AutoSize = true;
-            this.lblFacilitiesno.Location = new System.Drawing.Point(51, 171);
+            this.lblFacilitiesno.Location = new System.Drawing.Point(38, 139);
             this.lblFacilitiesno.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFacilitiesno.Name = "lblFacilitiesno";
-            this.lblFacilitiesno.Size = new System.Drawing.Size(112, 17);
+            this.lblFacilitiesno.Size = new System.Drawing.Size(85, 13);
             this.lblFacilitiesno.TabIndex = 41;
             this.lblFacilitiesno.Text = "No of Facilities : ";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(174, 92);
+            this.txtName.Location = new System.Drawing.Point(130, 75);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(119, 22);
+            this.txtName.Size = new System.Drawing.Size(90, 20);
             this.txtName.TabIndex = 59;
             // 
             // lblRates
             // 
             this.lblRates.AutoSize = true;
-            this.lblRates.Location = new System.Drawing.Point(51, 134);
+            this.lblRates.Location = new System.Drawing.Point(38, 109);
             this.lblRates.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRates.Name = "lblRates";
-            this.lblRates.Size = new System.Drawing.Size(57, 17);
+            this.lblRates.Size = new System.Drawing.Size(44, 13);
             this.lblRates.TabIndex = 38;
             this.lblRates.Text = "Rates : ";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(51, 94);
+            this.lblName.Location = new System.Drawing.Point(38, 76);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(104, 17);
+            this.lblName.Size = new System.Drawing.Size(79, 13);
             this.lblName.TabIndex = 37;
             this.lblName.Text = "Facility Name : ";
             // 
@@ -314,15 +324,15 @@
             this.cmbSearchBy.FormattingEnabled = true;
             this.cmbSearchBy.Items.AddRange(new object[] {
             "- default -"});
-            this.cmbSearchBy.Location = new System.Drawing.Point(335, 71);
+            this.cmbSearchBy.Location = new System.Drawing.Point(251, 58);
             this.cmbSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSearchBy.Name = "cmbSearchBy";
-            this.cmbSearchBy.Size = new System.Drawing.Size(190, 24);
+            this.cmbSearchBy.Size = new System.Drawing.Size(144, 21);
             this.cmbSearchBy.TabIndex = 56;
             // 
             // ucFacilities
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.gbSearchResults);
@@ -332,8 +342,9 @@
             this.Controls.Add(this.lblSearchby);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucFacilities";
-            this.Size = new System.Drawing.Size(752, 508);
+            this.Size = new System.Drawing.Size(564, 413);
             this.Load += new System.EventHandler(this.ucFacilities_Load);
+            this.VisibleChanged += new System.EventHandler(this.ucFacilities_VisibleChanged);
             this.gbSearchResults.ResumeLayout(false);
             this.gbSearchResults.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWarningRate)).EndInit();

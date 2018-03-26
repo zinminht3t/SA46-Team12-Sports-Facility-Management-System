@@ -133,5 +133,18 @@ namespace SportsFacilityManagementSystem
         {
             dtpToDateReport.Value = dtpDateFromReport.Value.AddDays(6);
         }
+
+        private void ucReports_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                cmbTypeofReport.SelectedIndex=0;
+            }
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucReports_VisibleChanged);
+        }
     }
 }
