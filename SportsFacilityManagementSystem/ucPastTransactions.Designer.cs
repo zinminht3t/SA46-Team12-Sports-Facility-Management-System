@@ -61,7 +61,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(678, 40);
             this.lblTitle.TabIndex = 67;
-            this.lblTitle.Text = "View Past Transactions";
+            this.lblTitle.Text = "View Transactions";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gbType
