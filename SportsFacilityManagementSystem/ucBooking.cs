@@ -432,25 +432,36 @@ namespace SportsFacilityManagementSystem
             ctx = new SportsFacilitiesEntities();
 
 
-
-            cmbSports.DataSource = frmLogin.facilitylist;
-            cmbSports.DisplayMember = "facilityname";
-            cmbSports.ValueMember = "facilityname";
             defaultCmbSports = "- Select sport -";
             cmbSports.Text = defaultCmbSports;
+
+
             //cmbSports.DataSource = frmLogin.bookingSportsList;
             ////cmbSports.DisplayMember = "facilityname";
             ////cmbSports.ValueMember = "facilityname";
             dtpBookingDate.Value = DateTime.Today;
             dtpBookingDatevalue = dtpBookingDate.Value;
 
-            cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
-            LoadBookingSlots();
+            //LoadBookingSlots();
 
         }
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cmbSports_Click(object sender, EventArgs e)
+        {
+            cmbSports.DataSource = frmLogin.facilitylist;
+            cmbSports.DisplayMember = "facilityname";
+            cmbSports.ValueMember = "facilityname";
+
+            if(cmbSports.SelectedIndex >= 0)
+            {
+                cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
+                LoadBookingSlots();
+            }
 
         }
     }

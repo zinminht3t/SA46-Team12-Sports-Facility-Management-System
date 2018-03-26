@@ -17,7 +17,6 @@ namespace SportsFacilityManagementSystem
         SportsFacilitiesEntities ctx;
         public static User user;
         public static List<Facility> facilitylist;
-        public static List<String> bookingSportsList;
         public frmLogin()
         {
             InitializeComponent();
@@ -46,17 +45,6 @@ namespace SportsFacilityManagementSystem
                         ChangeMemberStatus(); //check the expired members and update their status to "Inactive"
                         this.Hide();
                         facilitylist = ctx.Facilities.ToList();
-
-                        bookingSportsList = new List<String>();
-
-
-                        foreach (Facility f in frmLogin.facilitylist)
-                        {
-                            int findex = frmLogin.facilitylist.IndexOf(f);
-                            bookingSportsList.Add(f.facilityname);
-                        }
-                        bookingSportsList.Insert(0, "Select Sports");
-
                         frmMain main = new frmMain(); //call the main form
                         main.Show();
                     }
