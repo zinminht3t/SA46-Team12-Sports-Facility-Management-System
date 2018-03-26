@@ -25,35 +25,16 @@ namespace SportsFacilityManagementSystem
         private List<Control> collectionClickedButtons = new List<Control>();
         private static List<BookingDetails> bkgDetailsList = new List<BookingDetails>();
         private int facId;
-
         private int? facilityTransID;
         private int? facilityMemID;
         private string facilityMemName;
         private static DateTime dtpBookingDatevalue;
         public static int redButtonTransID;
-
-
         public ucBooking()
         {
             InitializeComponent();
 
-            ctx = new SportsFacilitiesEntities();
-            //List<String> facList = ctx.Facilities.OrderBy(x => x.facilityname).Select(y => y.facilityname).ToList();
-
-            defaultCmbSports = "- Select sport -";
-            //facList.Insert(0, defaultCmbSports);
-            //cmbSports.DataSource = facList;
-
-            //dtpBookingDate.MinDate = Convert.ToDateTime(DateTime.Now);
-
-            cmbSports.Text = defaultCmbSports;
-            dtpBookingDate.Value = DateTime.Today;
-
-            //dtpBookingDate.CustomFormat = "yyyy-MM-dd";
-            dtpBookingDatevalue = dtpBookingDate.Value;
-
         }
-
         //This event is triggered when a visible Button is clicked.
         protected void con_Click(object sender, EventArgs e)
         {
@@ -442,15 +423,18 @@ namespace SportsFacilityManagementSystem
         {
             dtpBookingDatevalue = dtpBookingDate.Value;
             LoadBookingSlots();
-
-
         }
 
         private void ucBooking_Load_1(object sender, EventArgs e)
         {
+            ctx = new SportsFacilitiesEntities();
             cmbSports.DataSource = frmLogin.facilitylist;
             cmbSports.DisplayMember = "facilityname";
             cmbSports.ValueMember = "facilityname";
+            defaultCmbSports = "- Select sport -";
+            cmbSports.Text = defaultCmbSports;
+            dtpBookingDate.Value = DateTime.Today;
+            dtpBookingDatevalue = dtpBookingDate.Value;
         }
 
         private void lblTitle_Click(object sender, EventArgs e)

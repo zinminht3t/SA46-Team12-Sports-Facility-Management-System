@@ -62,7 +62,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(297, 253);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(219, 22);
             this.txtEmail.TabIndex = 39;
@@ -70,7 +70,7 @@
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(297, 217);
-            this.txtMobile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMobile.Margin = new System.Windows.Forms.Padding(2);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(117, 22);
             this.txtMobile.TabIndex = 37;
@@ -79,7 +79,7 @@
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(297, 292);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(219, 46);
@@ -88,7 +88,7 @@
             // txtICNo
             // 
             this.txtICNo.Location = new System.Drawing.Point(297, 94);
-            this.txtICNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtICNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtICNo.Name = "txtICNo";
             this.txtICNo.Size = new System.Drawing.Size(219, 22);
             this.txtICNo.TabIndex = 35;
@@ -96,7 +96,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(297, 57);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(219, 22);
             this.txtName.TabIndex = 34;
@@ -184,7 +184,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(386, 447);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(96, 32);
             this.btnSubmit.TabIndex = 44;
@@ -195,7 +195,7 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(232, 447);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(87, 32);
             this.btnReset.TabIndex = 45;
@@ -277,7 +277,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.BackColor = System.Drawing.Color.Crimson;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
@@ -314,9 +314,9 @@
             this.groupBox1.Controls.Add(this.rdbFemale);
             this.groupBox1.Controls.Add(this.rdbMale);
             this.groupBox1.Location = new System.Drawing.Point(297, 118);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(217, 43);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
@@ -325,7 +325,7 @@
             // 
             this.rdbFemale.AutoSize = true;
             this.rdbFemale.Location = new System.Drawing.Point(125, 19);
-            this.rdbFemale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(75, 21);
             this.rdbFemale.TabIndex = 1;
@@ -337,7 +337,7 @@
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Location = new System.Drawing.Point(14, 19);
-            this.rdbMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbMale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(59, 21);
             this.rdbMale.TabIndex = 0;
@@ -349,7 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblWarningEmail);
             this.Controls.Add(this.dtpDOB);
@@ -376,7 +376,7 @@
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.lblIC);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucAddMember";
             this.Size = new System.Drawing.Size(752, 508);
             this.Load += new System.EventHandler(this.ucAddMember_Load);

@@ -45,12 +45,13 @@
             this.btnUpcoming = new System.Windows.Forms.Button();
             this.btnPasttransactions = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ucAddFacilities1 = new SportsFacilityManagementSystem.ucAddFacilities();
             this.ucAddMember1 = new SportsFacilityManagementSystem.ucAddMember();
             this.ucFacilities2 = new SportsFacilityManagementSystem.ucFacilities();
-            this.ucAddFacilities1 = new SportsFacilityManagementSystem.ucAddFacilities();
-            this.ucReports1 = new SportsFacilityManagementSystem.ucReports();
-            this.ucPastTransactions1 = new SportsFacilityManagementSystem.ucPastTransactions();
             this.ucMembers1 = new SportsFacilityManagementSystem.ucMembers();
+            this.ucPastTransactions1 = new SportsFacilityManagementSystem.ucPastTransactions();
+            this.ucReports1 = new SportsFacilityManagementSystem.ucReports();
             this.ucBooking2 = new SportsFacilityManagementSystem.ucBooking();
             this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -59,7 +60,7 @@
             // 
             // pnlSidebar
             // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnlSidebar.BackColor = System.Drawing.Color.Ivory;
             this.pnlSidebar.Controls.Add(this.pbLogo);
             this.pnlSidebar.Controls.Add(this.pnlSidetab);
             this.pnlSidebar.Controls.Add(this.btnLogout);
@@ -76,9 +77,9 @@
             // pbLogo
             // 
             this.pbLogo.Image = global::SportsFacilityManagementSystem.Properties.Resources.GetActiveLogo;
-            this.pbLogo.Location = new System.Drawing.Point(18, 0);
+            this.pbLogo.Location = new System.Drawing.Point(-11, 0);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(207, 160);
+            this.pbLogo.Size = new System.Drawing.Size(229, 160);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 15;
             this.pbLogo.TabStop = false;
@@ -86,7 +87,7 @@
             // 
             // pnlSidetab
             // 
-            this.pnlSidetab.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pnlSidetab.BackColor = System.Drawing.Color.Crimson;
             this.pnlSidetab.Location = new System.Drawing.Point(-1, 160);
             this.pnlSidetab.Name = "pnlSidetab";
             this.pnlSidetab.Size = new System.Drawing.Size(17, 76);
@@ -94,15 +95,15 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnLogout.BackColor = System.Drawing.Color.Ivory;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLogout.Image = global::SportsFacilityManagementSystem.Properties.Resources.Logout;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(13, 467);
+            this.btnLogout.Location = new System.Drawing.Point(13, 464);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(215, 76);
             this.btnLogout.TabIndex = 10;
@@ -113,12 +114,12 @@
             // 
             // btnBooking
             // 
-            this.btnBooking.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnBooking.BackColor = System.Drawing.Color.Ivory;
             this.btnBooking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBooking.FlatAppearance.BorderSize = 0;
             this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBooking.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBooking.Image = global::SportsFacilityManagementSystem.Properties.Resources.Booking;
             this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBooking.Location = new System.Drawing.Point(13, 160);
@@ -131,12 +132,12 @@
             // 
             // btnMembers
             // 
-            this.btnMembers.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnMembers.BackColor = System.Drawing.Color.Ivory;
             this.btnMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMembers.FlatAppearance.BorderSize = 0;
             this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMembers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMembers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnMembers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnMembers.Image = global::SportsFacilityManagementSystem.Properties.Resources.Members;
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMembers.Location = new System.Drawing.Point(13, 236);
@@ -149,12 +150,12 @@
             // 
             // btnFacilities
             // 
-            this.btnFacilities.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnFacilities.BackColor = System.Drawing.Color.Ivory;
             this.btnFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnFacilities.FlatAppearance.BorderSize = 0;
             this.btnFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFacilities.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnFacilities.Image = global::SportsFacilityManagementSystem.Properties.Resources.Stadium;
             this.btnFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFacilities.Location = new System.Drawing.Point(13, 312);
@@ -167,12 +168,12 @@
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnReports.BackColor = System.Drawing.Color.Ivory;
             this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnReports.FlatAppearance.BorderSize = 0;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnReports.Image = global::SportsFacilityManagementSystem.Properties.Resources.Report;
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReports.Location = new System.Drawing.Point(13, 388);
@@ -186,7 +187,7 @@
             // 
             // btnSearchMembers
             // 
-            this.btnSearchMembers.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSearchMembers.BackColor = System.Drawing.Color.Crimson;
             this.btnSearchMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSearchMembers.FlatAppearance.BorderSize = 0;
             this.btnSearchMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -204,7 +205,7 @@
             // 
             // btnAddMembers
             // 
-            this.btnAddMembers.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnAddMembers.BackColor = System.Drawing.Color.Crimson;
             this.btnAddMembers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAddMembers.FlatAppearance.BorderSize = 0;
             this.btnAddMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -222,7 +223,7 @@
             // 
             // btnAddFacilities
             // 
-            this.btnAddFacilities.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnAddFacilities.BackColor = System.Drawing.Color.Crimson;
             this.btnAddFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAddFacilities.FlatAppearance.BorderSize = 0;
             this.btnAddFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,7 +241,7 @@
             // 
             // btnSearchFacilities
             // 
-            this.btnSearchFacilities.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSearchFacilities.BackColor = System.Drawing.Color.Crimson;
             this.btnSearchFacilities.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSearchFacilities.FlatAppearance.BorderSize = 0;
             this.btnSearchFacilities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -260,7 +261,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblWelcome.Location = new System.Drawing.Point(698, 4);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(154, 20);
@@ -269,7 +270,7 @@
             // 
             // btnUpcoming
             // 
-            this.btnUpcoming.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUpcoming.BackColor = System.Drawing.Color.Crimson;
             this.btnUpcoming.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnUpcoming.FlatAppearance.BorderSize = 0;
             this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -287,7 +288,7 @@
             // 
             // btnPasttransactions
             // 
-            this.btnPasttransactions.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnPasttransactions.BackColor = System.Drawing.Color.Crimson;
             this.btnPasttransactions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPasttransactions.FlatAppearance.BorderSize = 0;
             this.btnPasttransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -313,91 +314,100 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // ucAddMember1
+            // panel1
             // 
-            this.ucAddMember1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddMember1.Location = new System.Drawing.Point(228, 27);
-            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(1);
-            this.ucAddMember1.Name = "ucAddMember1";
-            this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
-            this.ucAddMember1.TabIndex = 31;
-            this.ucAddMember1.Visible = false;
-            // 
-            // ucFacilities2
-            // 
-            this.ucFacilities2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucFacilities2.Location = new System.Drawing.Point(229, 27);
-            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(1);
-            this.ucFacilities2.Name = "ucFacilities2";
-            this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
-            this.ucFacilities2.TabIndex = 32;
-            this.ucFacilities2.Visible = false;
-            this.ucFacilities2.MouseEnter += new System.EventHandler(this.ucFacilities2_MouseEnter);
+            this.panel1.BackColor = System.Drawing.Color.Crimson;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(235, 548);
+            this.panel1.TabIndex = 34;
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             // 
             // ucAddFacilities1
             // 
-            this.ucAddFacilities1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucAddFacilities1.Location = new System.Drawing.Point(228, 31);
-            this.ucAddFacilities1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucAddFacilities1.BackColor = System.Drawing.Color.Ivory;
+            this.ucAddFacilities1.Location = new System.Drawing.Point(235, 27);
             this.ucAddFacilities1.Name = "ucAddFacilities1";
             this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
-            this.ucAddFacilities1.TabIndex = 23;
+            this.ucAddFacilities1.TabIndex = 35;
             this.ucAddFacilities1.Visible = false;
             this.ucAddFacilities1.MouseEnter += new System.EventHandler(this.ucAddFacilities1_MouseEnter);
             // 
-            // ucReports1
+            // ucAddMember1
             // 
-            this.ucReports1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucReports1.Location = new System.Drawing.Point(231, 29);
-            this.ucReports1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucReports1.Name = "ucReports1";
-            this.ucReports1.Size = new System.Drawing.Size(751, 519);
-            this.ucReports1.TabIndex = 29;
-            this.ucReports1.Visible = false;
-            this.ucReports1.MouseEnter += new System.EventHandler(this.ucReports1_MouseEnter);
+            this.ucAddMember1.BackColor = System.Drawing.Color.Ivory;
+            this.ucAddMember1.Location = new System.Drawing.Point(235, 26);
+            this.ucAddMember1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucAddMember1.Name = "ucAddMember1";
+            this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
+            this.ucAddMember1.TabIndex = 36;
+            this.ucAddMember1.Visible = false;
+            this.ucAddMember1.MouseEnter += new System.EventHandler(this.ucAddMember1_MouseEnter);
+            // 
+            // ucFacilities2
+            // 
+            this.ucFacilities2.BackColor = System.Drawing.Color.Ivory;
+            this.ucFacilities2.Location = new System.Drawing.Point(235, 26);
+            this.ucFacilities2.Margin = new System.Windows.Forms.Padding(2);
+            this.ucFacilities2.Name = "ucFacilities2";
+            this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
+            this.ucFacilities2.TabIndex = 37;
+            this.ucFacilities2.Visible = false;
+            this.ucFacilities2.MouseEnter += new System.EventHandler(this.ucFacilities2_MouseEnter);
+            // 
+            // ucMembers1
+            // 
+            this.ucMembers1.BackColor = System.Drawing.Color.Ivory;
+            this.ucMembers1.Location = new System.Drawing.Point(235, 26);
+            this.ucMembers1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucMembers1.Name = "ucMembers1";
+            this.ucMembers1.Size = new System.Drawing.Size(752, 508);
+            this.ucMembers1.TabIndex = 38;
+            this.ucMembers1.Visible = false;
+            this.ucMembers1.MouseEnter += new System.EventHandler(this.ucMembers1_MouseEnter);
             // 
             // ucPastTransactions1
             // 
-            this.ucPastTransactions1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ucPastTransactions1.BackColor = System.Drawing.Color.Ivory;
             this.ucPastTransactions1.Datefrom = new System.DateTime(((long)(0)));
             this.ucPastTransactions1.Dateto = new System.DateTime(((long)(0)));
             this.ucPastTransactions1.Fac = null;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ucPastTransactions1.Location = new System.Drawing.Point(230, 29);
-            this.ucPastTransactions1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucPastTransactions1.Location = new System.Drawing.Point(235, 27);
             this.ucPastTransactions1.Name = "ucPastTransactions1";
             this.ucPastTransactions1.Size = new System.Drawing.Size(752, 508);
             this.ucPastTransactions1.Status = null;
-            this.ucPastTransactions1.TabIndex = 28;
+            this.ucPastTransactions1.TabIndex = 39;
+            this.ucPastTransactions1.TransID = null;
             this.ucPastTransactions1.Visible = false;
             this.ucPastTransactions1.MouseEnter += new System.EventHandler(this.ucPastTransactions1_MouseEnter);
             // 
-            // ucMembers1
+            // ucReports1
             // 
-            this.ucMembers1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucMembers1.Location = new System.Drawing.Point(231, 31);
-            this.ucMembers1.Margin = new System.Windows.Forms.Padding(1);
-            this.ucMembers1.Name = "ucMembers1";
-            this.ucMembers1.Size = new System.Drawing.Size(752, 508);
-            this.ucMembers1.TabIndex = 27;
-            this.ucMembers1.Visible = false;
-            this.ucMembers1.MouseEnter += new System.EventHandler(this.ucMembers1_MouseEnter);
+            this.ucReports1.BackColor = System.Drawing.Color.Ivory;
+            this.ucReports1.Location = new System.Drawing.Point(235, 27);
+            this.ucReports1.Name = "ucReports1";
+            this.ucReports1.Size = new System.Drawing.Size(752, 508);
+            this.ucReports1.TabIndex = 40;
+            this.ucReports1.Visible = false;
+            this.ucReports1.MouseEnter += new System.EventHandler(this.ucReports1_MouseEnter);
             // 
             // ucBooking2
             // 
-            this.ucBooking2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucBooking2.Location = new System.Drawing.Point(228, 30);
+            this.ucBooking2.BackColor = System.Drawing.Color.Ivory;
+            this.ucBooking2.Location = new System.Drawing.Point(235, 27);
             this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucBooking2.Name = "ucBooking2";
             this.ucBooking2.Size = new System.Drawing.Size(752, 508);
-            this.ucBooking2.TabIndex = 33;
+            this.ucBooking2.TabIndex = 41;
+            this.ucBooking2.Visible = false;
             this.ucBooking2.MouseEnter += new System.EventHandler(this.ucBooking2_MouseEnter);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(979, 524);
             this.Controls.Add(this.btnUpcoming);
             this.Controls.Add(this.btnPasttransactions);
@@ -408,13 +418,14 @@
             this.Controls.Add(this.btnAddMembers);
             this.Controls.Add(this.btnSearchMembers);
             this.Controls.Add(this.pnlSidebar);
-            this.Controls.Add(this.ucAddMember1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ucFacilities2);
+            this.Controls.Add(this.ucAddMember1);
             this.Controls.Add(this.ucAddFacilities1);
+            this.Controls.Add(this.ucBooking2);
             this.Controls.Add(this.ucReports1);
             this.Controls.Add(this.ucPastTransactions1);
             this.Controls.Add(this.ucMembers1);
-            this.Controls.Add(this.ucBooking2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(997, 571);
@@ -450,13 +461,14 @@
         private System.Windows.Forms.Button btnUpcoming;
         private System.Windows.Forms.Button btnPasttransactions;
         private ucBooking ucBooking1;
-        private ucAddFacilities ucAddFacilities1;
         private ucFacilities ucFacilities1;
+        private System.Windows.Forms.Panel panel1;
+        private ucAddFacilities ucAddFacilities1;
+        private ucAddMember ucAddMember1;
+        private ucFacilities ucFacilities2;
         private ucMembers ucMembers1;
         private ucPastTransactions ucPastTransactions1;
         private ucReports ucReports1;
-        private ucAddMember ucAddMember1;
-        private ucFacilities ucFacilities2;
         private ucBooking ucBooking2;
     }
 }

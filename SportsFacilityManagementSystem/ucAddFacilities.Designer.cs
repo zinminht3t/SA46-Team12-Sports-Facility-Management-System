@@ -74,7 +74,7 @@
             // 
             this.lblWarningCourt.AutoSize = true;
             this.lblWarningCourt.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningCourt.Location = new System.Drawing.Point(266, 221);
+            this.lblWarningCourt.Location = new System.Drawing.Point(266, 220);
             this.lblWarningCourt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarningCourt.Name = "lblWarningCourt";
             this.lblWarningCourt.Size = new System.Drawing.Size(232, 25);
@@ -86,7 +86,7 @@
             // 
             this.lblWarningRate.AutoSize = true;
             this.lblWarningRate.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningRate.Location = new System.Drawing.Point(266, 132);
+            this.lblWarningRate.Location = new System.Drawing.Point(266, 131);
             this.lblWarningRate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarningRate.Name = "lblWarningRate";
             this.lblWarningRate.Size = new System.Drawing.Size(232, 25);
@@ -98,7 +98,7 @@
             // 
             this.lblWarningName.AutoSize = true;
             this.lblWarningName.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningName.Location = new System.Drawing.Point(266, 29);
+            this.lblWarningName.Location = new System.Drawing.Point(266, 30);
             this.lblWarningName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarningName.Name = "lblWarningName";
             this.lblWarningName.Size = new System.Drawing.Size(232, 25);
@@ -137,12 +137,11 @@
             "1",
             "2",
             "3"});
-            this.cmbCourtNo.Location = new System.Drawing.Point(262, 251);
+            this.cmbCourtNo.Location = new System.Drawing.Point(262, 252);
             this.cmbCourtNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbCourtNo.Name = "cmbCourtNo";
             this.cmbCourtNo.Size = new System.Drawing.Size(104, 33);
             this.cmbCourtNo.TabIndex = 65;
-            this.cmbCourtNo.Text = "Select";
             // 
             // txtRate
             // 
@@ -174,7 +173,7 @@
             // 
             // lblFacilitiesNoEdit
             // 
-            this.lblFacilitiesNoEdit.Location = new System.Drawing.Point(45, 251);
+            this.lblFacilitiesNoEdit.Location = new System.Drawing.Point(45, 252);
             this.lblFacilitiesNoEdit.Name = "lblFacilitiesNoEdit";
             this.lblFacilitiesNoEdit.Size = new System.Drawing.Size(150, 66);
             this.lblFacilitiesNoEdit.TabIndex = 41;
@@ -207,7 +206,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.BackColor = System.Drawing.Color.Crimson;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
@@ -223,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbSearchEdit);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

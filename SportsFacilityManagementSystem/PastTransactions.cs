@@ -18,6 +18,7 @@ namespace SportsFacilityManagementSystem
         public bool getFlagdate;
         public bool getFlagstatus;
         public bool viewbtnTrans;
+        public bool viewAllTrans;
         string command;
         public PastTransactions()
         {
@@ -37,10 +38,18 @@ namespace SportsFacilityManagementSystem
             DataTable dt = new DataTable();
             DataSet2 ds = new DataSet2();
             cn.Open();
-            sda.Fill(ds);
-            ds.Tables.Add(dt);
-            cn.Close();
-            dgvTransactions.DataSource = ds.Tables[1];
+            try
+            {
+                sda.Fill(ds);
+                ds.Tables.Add(dt);
+                cn.Close();
+                dgvTransactions.DataSource = ds.Tables[1];
+            }
+            catch
+            {
+                this.Close();
+                MessageBox.Show("Incorrect value! Please try again", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void PastTransactions_Load(object sender, EventArgs e)
@@ -168,8 +177,15 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
-                command = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport " +
-                    " where transactionid ='" + ucPT.TransID +"'";
+                if (viewAllTrans == true)
+                {
+                    command = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
+                }
+                else
+                {
+                    command = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport " +
+                        " where transactionid ='" + ucPT.TransID + "'";
+                }
             }
 
             DisplayTable(command);

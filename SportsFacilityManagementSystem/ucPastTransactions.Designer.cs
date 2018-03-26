@@ -43,16 +43,17 @@
             this.btnTid = new System.Windows.Forms.Button();
             this.btnType = new System.Windows.Forms.Button();
             this.gbTrans = new System.Windows.Forms.GroupBox();
+            this.rbtnTid = new System.Windows.Forms.RadioButton();
+            this.rbtnAll = new System.Windows.Forms.RadioButton();
             this.btnViewTrans = new System.Windows.Forms.Button();
             this.txtTid = new System.Windows.Forms.TextBox();
-            this.lblTid = new System.Windows.Forms.Label();
             this.gbType.SuspendLayout();
             this.gbTrans.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.BackColor = System.Drawing.Color.Crimson;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
@@ -101,12 +102,7 @@
             this.cmbFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFac.FormattingEnabled = true;
             this.cmbFac.Items.AddRange(new object[] {
-            "All",
-            "Badminton",
-            "Basketball",
-            "Futsal",
-            "Squash",
-            "Table Tennis"});
+            "All"});
             this.cmbFac.Location = new System.Drawing.Point(183, 44);
             this.cmbFac.Name = "cmbFac";
             this.cmbFac.Size = new System.Drawing.Size(222, 24);
@@ -193,7 +189,7 @@
             this.btnTid.Name = "btnTid";
             this.btnTid.Size = new System.Drawing.Size(118, 68);
             this.btnTid.TabIndex = 70;
-            this.btnTid.Text = "Search by Transaction ID";
+            this.btnTid.Text = "Search by Transaction";
             this.btnTid.UseVisualStyleBackColor = false;
             this.btnTid.Click += new System.EventHandler(this.btnTid_Click);
             // 
@@ -211,16 +207,41 @@
             // 
             // gbTrans
             // 
+            this.gbTrans.Controls.Add(this.rbtnTid);
+            this.gbTrans.Controls.Add(this.rbtnAll);
             this.gbTrans.Controls.Add(this.btnViewTrans);
             this.gbTrans.Controls.Add(this.txtTid);
-            this.gbTrans.Controls.Add(this.lblTid);
             this.gbTrans.Location = new System.Drawing.Point(157, 142);
             this.gbTrans.Name = "gbTrans";
             this.gbTrans.Size = new System.Drawing.Size(432, 232);
             this.gbTrans.TabIndex = 69;
             this.gbTrans.TabStop = false;
-            this.gbTrans.Text = "Search by Transaction ID";
+            this.gbTrans.Text = "Search by Transaction";
             this.gbTrans.Visible = false;
+            // 
+            // rbtnTid
+            // 
+            this.rbtnTid.AutoSize = true;
+            this.rbtnTid.Location = new System.Drawing.Point(74, 101);
+            this.rbtnTid.Name = "rbtnTid";
+            this.rbtnTid.Size = new System.Drawing.Size(149, 21);
+            this.rbtnTid.TabIndex = 72;
+            this.rbtnTid.TabStop = true;
+            this.rbtnTid.Text = "By Transaction ID :";
+            this.rbtnTid.UseVisualStyleBackColor = true;
+            this.rbtnTid.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // rbtnAll
+            // 
+            this.rbtnAll.AutoSize = true;
+            this.rbtnAll.Location = new System.Drawing.Point(74, 54);
+            this.rbtnAll.Name = "rbtnAll";
+            this.rbtnAll.Size = new System.Drawing.Size(130, 21);
+            this.rbtnAll.TabIndex = 71;
+            this.rbtnAll.TabStop = true;
+            this.rbtnAll.Text = "All Transactions";
+            this.rbtnAll.UseVisualStyleBackColor = true;
+            this.rbtnAll.CheckedChanged += new System.EventHandler(this.rbtnAll_CheckedChanged);
             // 
             // btnViewTrans
             // 
@@ -234,30 +255,21 @@
             // 
             // txtTid
             // 
-            this.txtTid.Location = new System.Drawing.Point(216, 69);
+            this.txtTid.Location = new System.Drawing.Point(229, 101);
             this.txtTid.Name = "txtTid";
             this.txtTid.Size = new System.Drawing.Size(100, 22);
             this.txtTid.TabIndex = 1;
-            // 
-            // lblTid
-            // 
-            this.lblTid.AutoSize = true;
-            this.lblTid.Location = new System.Drawing.Point(92, 72);
-            this.lblTid.Name = "lblTid";
-            this.lblTid.Size = new System.Drawing.Size(108, 17);
-            this.lblTid.TabIndex = 0;
-            this.lblTid.Text = "Transaction ID :";
             // 
             // ucPastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.btnType);
             this.Controls.Add(this.btnTid);
-            this.Controls.Add(this.gbType);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbTrans);
+            this.Controls.Add(this.gbType);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPastTransactions";
             this.Size = new System.Drawing.Size(752, 508);
@@ -289,6 +301,7 @@
         private System.Windows.Forms.GroupBox gbTrans;
         private System.Windows.Forms.Button btnViewTrans;
         private System.Windows.Forms.TextBox txtTid;
-        private System.Windows.Forms.Label lblTid;
+        private System.Windows.Forms.RadioButton rbtnAll;
+        private System.Windows.Forms.RadioButton rbtnTid;
     }
 }

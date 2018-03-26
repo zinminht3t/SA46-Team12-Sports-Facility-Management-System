@@ -62,12 +62,6 @@
             // cmbSports
             // 
             this.cmbSports.FormattingEnabled = true;
-            this.cmbSports.Items.AddRange(new object[] {
-            "Badminton",
-            "Basketball",
-            "Futsal",
-            "Squash",
-            "Table Tennis"});
             this.cmbSports.Location = new System.Drawing.Point(200, 166);
             this.cmbSports.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmbSports.Name = "cmbSports";
@@ -175,7 +169,7 @@
             this.btnC3.BackColor = System.Drawing.Color.LightGreen;
             this.btnC3.Enabled = false;
             this.btnC3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnC3.Location = new System.Drawing.Point(560, 566);
+            this.btnC3.Location = new System.Drawing.Point(561, 566);
             this.btnC3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnC3.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnC3.Name = "btnC3";
@@ -217,7 +211,7 @@
             this.btnB5.BackColor = System.Drawing.Color.LightGreen;
             this.btnB5.Enabled = false;
             this.btnB5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnB5.Location = new System.Drawing.Point(864, 422);
+            this.btnB5.Location = new System.Drawing.Point(864, 420);
             this.btnB5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnB5.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB5.Name = "btnB5";
@@ -231,7 +225,7 @@
             this.btnB4.BackColor = System.Drawing.Color.LightGreen;
             this.btnB4.Enabled = false;
             this.btnB4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnB4.Location = new System.Drawing.Point(712, 422);
+            this.btnB4.Location = new System.Drawing.Point(712, 420);
             this.btnB4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnB4.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB4.Name = "btnB4";
@@ -245,7 +239,7 @@
             this.btnB3.BackColor = System.Drawing.Color.LightGreen;
             this.btnB3.Enabled = false;
             this.btnB3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnB3.Location = new System.Drawing.Point(560, 422);
+            this.btnB3.Location = new System.Drawing.Point(561, 420);
             this.btnB3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnB3.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB3.Name = "btnB3";
@@ -259,7 +253,7 @@
             this.btnB2.BackColor = System.Drawing.Color.LightGreen;
             this.btnB2.Enabled = false;
             this.btnB2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnB2.Location = new System.Drawing.Point(410, 422);
+            this.btnB2.Location = new System.Drawing.Point(410, 420);
             this.btnB2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnB2.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB2.Name = "btnB2";
@@ -273,7 +267,7 @@
             this.btnB1.BackColor = System.Drawing.Color.LightGreen;
             this.btnB1.Enabled = false;
             this.btnB1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnB1.Location = new System.Drawing.Point(258, 422);
+            this.btnB1.Location = new System.Drawing.Point(258, 420);
             this.btnB1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnB1.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnB1.Name = "btnB1";
@@ -327,7 +321,7 @@
             this.btnA3.BackColor = System.Drawing.Color.LightGreen;
             this.btnA3.Enabled = false;
             this.btnA3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnA3.Location = new System.Drawing.Point(560, 275);
+            this.btnA3.Location = new System.Drawing.Point(561, 275);
             this.btnA3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnA3.MaximumSize = new System.Drawing.Size(400, 384);
             this.btnA3.Name = "btnA3";
@@ -366,7 +360,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.BackColor = System.Drawing.Color.Crimson;
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Window;
@@ -443,7 +437,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.lblTime5);
             this.Controls.Add(this.lblTime4);
             this.Controls.Add(this.lblTime3);
