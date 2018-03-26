@@ -158,7 +158,12 @@ namespace SportsFacilityManagementSystem
                 cmbOSubfacility.DisplayMember = "subfacilityname";
                 cmbOSubfacility.ValueMember = "subfacilityid";
             }
-            catch { }
+            catch
+            {
+                cmbOSubfacility.DataSource = ctx.SubFacilities.Where(x => x.facilityid == 1).ToList();
+                cmbOSubfacility.DisplayMember = "subfacilityname";
+                cmbOSubfacility.ValueMember = "subfacilityid";
+            }
         }
     }
 }
