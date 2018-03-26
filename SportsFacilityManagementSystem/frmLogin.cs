@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,6 +35,7 @@ namespace SportsFacilityManagementSystem
                 {
                     int userid = Convert.ToInt32(txtUserID.Text);
                     string password = txtPassword.Text;
+                    password = EncryptPassword(password); //all passwords for the users are 1234
                     int result = 0;
                     result = ctx.Users.Where(x => x.userid == userid && x.password == password).Count();
 
@@ -71,6 +74,28 @@ namespace SportsFacilityManagementSystem
                 ctx.Members.First(x => x.memberid == member.memberid).status = "Inactive";
             }
             ctx.SaveChanges();
+        }
+
+        public static string EncryptPassword(string password)
+        {
+            string key = "EvelynJaydenSandyZin";
+            byte[] cbyptes = Encoding.Unicode.GetBytes(password);
+            using (Aes aesencrypt = Aes.Create())
+            {
+                Rfc2898DeriveBytes kbyptes = new Rfc2898DeriveBytes(key, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                aesencrypt.Key = kbyptes.GetBytes(32);
+                aesencrypt.IV = kbyptes.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, aesencrypt.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(cbyptes, 0, cbyptes.Length);
+                        cs.Close();
+                    }
+                    password = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return password;
         }
     }
 }
