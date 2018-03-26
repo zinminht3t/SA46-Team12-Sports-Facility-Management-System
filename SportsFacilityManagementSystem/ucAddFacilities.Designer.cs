@@ -30,12 +30,10 @@
         {
             this.gbSearchEdit = new System.Windows.Forms.GroupBox();
             this.lblWarningCourt = new System.Windows.Forms.Label();
-            this.lblWarningRate = new System.Windows.Forms.Label();
             this.lblWarningName = new System.Windows.Forms.Label();
             this.lblRatesInfo = new System.Windows.Forms.Label();
             this.pbRatesinfo = new System.Windows.Forms.PictureBox();
             this.cmbCourtNo = new System.Windows.Forms.ComboBox();
-            this.txtRate = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblFacilitiesNoEdit = new System.Windows.Forms.Label();
@@ -43,19 +41,21 @@
             this.lblRatesEdit = new System.Windows.Forms.Label();
             this.lblNameEdit = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.cmbRates = new System.Windows.Forms.ComboBox();
+            this.lblWarningRate = new System.Windows.Forms.Label();
             this.gbSearchEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRatesinfo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSearchEdit
             // 
-            this.gbSearchEdit.Controls.Add(this.lblWarningCourt);
             this.gbSearchEdit.Controls.Add(this.lblWarningRate);
+            this.gbSearchEdit.Controls.Add(this.cmbRates);
+            this.gbSearchEdit.Controls.Add(this.lblWarningCourt);
             this.gbSearchEdit.Controls.Add(this.lblWarningName);
             this.gbSearchEdit.Controls.Add(this.lblRatesInfo);
             this.gbSearchEdit.Controls.Add(this.pbRatesinfo);
             this.gbSearchEdit.Controls.Add(this.cmbCourtNo);
-            this.gbSearchEdit.Controls.Add(this.txtRate);
             this.gbSearchEdit.Controls.Add(this.btnSubmit);
             this.gbSearchEdit.Controls.Add(this.btnReset);
             this.gbSearchEdit.Controls.Add(this.lblFacilitiesNoEdit);
@@ -79,17 +79,6 @@
             this.lblWarningCourt.Text = "* Field cannot be blank";
             this.lblWarningCourt.Visible = false;
             // 
-            // lblWarningRate
-            // 
-            this.lblWarningRate.AutoSize = true;
-            this.lblWarningRate.ForeColor = System.Drawing.Color.Red;
-            this.lblWarningRate.Location = new System.Drawing.Point(177, 84);
-            this.lblWarningRate.Name = "lblWarningRate";
-            this.lblWarningRate.Size = new System.Drawing.Size(152, 17);
-            this.lblWarningRate.TabIndex = 69;
-            this.lblWarningRate.Text = "* Field cannot be blank";
-            this.lblWarningRate.Visible = false;
-            // 
             // lblWarningName
             // 
             this.lblWarningName.AutoSize = true;
@@ -104,17 +93,18 @@
             // lblRatesInfo
             // 
             this.lblRatesInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRatesInfo.Location = new System.Drawing.Point(332, 105);
+            this.lblRatesInfo.Location = new System.Drawing.Point(335, 87);
             this.lblRatesInfo.Name = "lblRatesInfo";
             this.lblRatesInfo.Size = new System.Drawing.Size(129, 43);
             this.lblRatesInfo.TabIndex = 67;
             this.lblRatesInfo.Text = "Rates / 2 hours";
+            this.lblRatesInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblRatesInfo.Visible = false;
             // 
             // pbRatesinfo
             // 
             this.pbRatesinfo.Image = global::SportsFacilityManagementSystem.Properties.Resources.Info;
-            this.pbRatesinfo.Location = new System.Drawing.Point(299, 104);
+            this.pbRatesinfo.Location = new System.Drawing.Point(302, 96);
             this.pbRatesinfo.Name = "pbRatesinfo";
             this.pbRatesinfo.Size = new System.Drawing.Size(24, 22);
             this.pbRatesinfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,15 +125,6 @@
             this.cmbCourtNo.Name = "cmbCourtNo";
             this.cmbCourtNo.Size = new System.Drawing.Size(71, 24);
             this.cmbCourtNo.TabIndex = 67;
-            // 
-            // txtRate
-            // 
-            this.txtRate.Location = new System.Drawing.Point(175, 104);
-            this.txtRate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRate.Name = "txtRate";
-            this.txtRate.Size = new System.Drawing.Size(119, 22);
-            this.txtRate.TabIndex = 66;
-            this.txtRate.TextChanged += new System.EventHandler(this.txtRate_TextChanged);
             // 
             // btnSubmit
             // 
@@ -217,6 +198,35 @@
             this.lblTitle.Text = "Add New Facilities";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbRates
+            // 
+            this.cmbRates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRates.FormattingEnabled = true;
+            this.cmbRates.Items.AddRange(new object[] {
+            "$ 3.00",
+            "$ 4.00",
+            "$ 5.00",
+            "$ 6.00",
+            "$ 7.00",
+            "$ 8.00",
+            "$ 9.00",
+            "$ 10.00"});
+            this.cmbRates.Location = new System.Drawing.Point(175, 97);
+            this.cmbRates.Name = "cmbRates";
+            this.cmbRates.Size = new System.Drawing.Size(121, 24);
+            this.cmbRates.TabIndex = 71;
+            // 
+            // lblWarningRate
+            // 
+            this.lblWarningRate.AutoSize = true;
+            this.lblWarningRate.ForeColor = System.Drawing.Color.Red;
+            this.lblWarningRate.Location = new System.Drawing.Point(177, 76);
+            this.lblWarningRate.Name = "lblWarningRate";
+            this.lblWarningRate.Size = new System.Drawing.Size(152, 17);
+            this.lblWarningRate.TabIndex = 72;
+            this.lblWarningRate.Text = "* Field cannot be blank";
+            this.lblWarningRate.Visible = false;
+            // 
             // ucAddFacilities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,7 +248,6 @@
 
         private System.Windows.Forms.GroupBox gbSearchEdit;
         private System.Windows.Forms.ComboBox cmbCourtNo;
-        private System.Windows.Forms.TextBox txtRate;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblFacilitiesNoEdit;
@@ -249,7 +258,8 @@
         private System.Windows.Forms.Label lblRatesInfo;
         private System.Windows.Forms.PictureBox pbRatesinfo;
         private System.Windows.Forms.Label lblWarningCourt;
-        private System.Windows.Forms.Label lblWarningRate;
         private System.Windows.Forms.Label lblWarningName;
+        private System.Windows.Forms.ComboBox cmbRates;
+        private System.Windows.Forms.Label lblWarningRate;
     }
 }

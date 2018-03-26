@@ -36,16 +36,21 @@ namespace SportsFacilityManagementSystem
         private void ResetAllData()
         {
             txtName.Text = "";
-            txtRate.Text = "";
+            cmbRates.Text = "";
             cmbCourtNo.SelectedIndex = 1;
+            lblWarningRate.Visible = false;
             lblWarningCourt.Visible = false;
             lblWarningName.Visible = false;
-            lblWarningRate.Visible = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtRate.Text == "" || cmbCourtNo.Text == "")
+            if(cmbRates.Text == "")
+            {
+                lblWarningRate.Visible = true;
+            }
+            else
+            if (txtName.Text == "" || cmbCourtNo.Text == "")
             {
                 if (txtName.Text == "")
                 {
@@ -56,14 +61,6 @@ namespace SportsFacilityManagementSystem
                     lblWarningName.Visible = false;
                 }
 
-                if (txtRate.Text == "")
-                {
-                    lblWarningRate.Visible = true;
-                }
-                else
-                {
-                    lblWarningRate.Visible = false;
-                }
 
                 if (cmbCourtNo.Text == "")
                 {
@@ -77,12 +74,9 @@ namespace SportsFacilityManagementSystem
 
             else
             {
-                if (lblWarningRate.Text == "") //if the user only enter the numbers
-                {
                     InsertData();
                     MessageBox.Show("Add Facility Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetAllData();
-                }
             }
         }
 
@@ -91,25 +85,28 @@ namespace SportsFacilityManagementSystem
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
             facility = new Facility();
             facility.facilityname = txtName.Text;
-            int rate = Convert.ToInt32(txtRate.Text);
+            string price = "";
+                if (cmbRates.Text.Length > 6)
+                {
+                    price = cmbRates.Text.Substring(2, 2);
+                }
+                else
+                {
+                    price = cmbRates.Text.Substring(2, 1);
+                }
+                int rate = Convert.ToInt32(price);
+
             if ((ctx.Rates.Where(x => x.ratepertimeslot == rate).Count()) > 0)
             {
                 facility.rateid = ctx.Rates.Where(x => x.ratepertimeslot == rate).First().rateid;
             }
             else
             {
-                try
-                {
                     Rate newrate = new Rate();
                     newrate.ratepertimeslot = rate;
                     ctx.Rates.Add(newrate);
                     ctx.SaveChanges();
                     facility.rateid = ctx.Rates.Where(x => x.ratepertimeslot == rate).First().rateid;
-                }
-                catch
-                {
-                    MessageBox.Show("Error Occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             try
             {
@@ -138,19 +135,6 @@ namespace SportsFacilityManagementSystem
             catch
             {
                 MessageBox.Show("Error Occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void txtRate_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtRate.Text, "[^0-9]"))
-            {
-                lblWarningRate.Text = "Please enter only numbers.";
-                lblWarningRate.Visible = true;
-            }
-            else
-            {
-                lblWarningRate.Text = "";
             }
         }
 
