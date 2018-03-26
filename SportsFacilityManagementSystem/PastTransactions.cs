@@ -60,7 +60,7 @@ namespace SportsFacilityManagementSystem
                 #region SQL Commands
                 string SQLcolumns = "select memberid, name, transactionid, facilityname, timeslot, total, systemtime, date, status from dbo.bookinginvoicereport ";
                 string SQLwhereFacility = "facilityname ='" + ucPT.Fac + "'";
-                string SQLwhereDate = "cast (systemtime as date) between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
+                string SQLwhereDate = "date between '" + ucPT.Datefrom.ToString("yyyy/MM/dd") + "' and '" + ucPT.Dateto.ToString("yyyy/MM/dd") + "'";
                 string SQLwhereStatus = "status = '" + ucPT.Status + "'";
                 #endregion
                 #region Display Datagridview
@@ -152,11 +152,11 @@ namespace SportsFacilityManagementSystem
                     else
                         if (ucPT.Fac != "All" && ucPT.Status == "All")
                     {
-                        command = SQLcolumns + " where " + SQLwhereStatus;
+                        command = SQLcolumns + " where " + SQLwhereFacility;
                     }
                     else
                     {
-                        command = SQLcolumns + " where " + SQLwhereFacility;
+                        command = SQLcolumns + " where " + SQLwhereStatus;
                     }
                 }
                 #endregion

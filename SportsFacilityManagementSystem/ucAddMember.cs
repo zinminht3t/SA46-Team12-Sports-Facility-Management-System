@@ -18,6 +18,11 @@ namespace SportsFacilityManagementSystem
             InitializeComponent();
         }
 
+        private void TabStopChanged(object sender, EventArgs e)
+        {
+            ((RadioButton)rdbMale).TabStop = false;
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             // need to add status as active + member expiry (2years?) into database (jayden)

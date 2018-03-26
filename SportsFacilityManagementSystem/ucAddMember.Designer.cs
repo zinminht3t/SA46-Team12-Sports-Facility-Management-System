@@ -64,7 +64,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(219, 22);
-            this.txtEmail.TabIndex = 39;
+            this.txtEmail.TabIndex = 37;
             // 
             // txtMobile
             // 
@@ -72,7 +72,7 @@
             this.txtMobile.Margin = new System.Windows.Forms.Padding(2);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(117, 22);
-            this.txtMobile.TabIndex = 37;
+            this.txtMobile.TabIndex = 36;
             this.txtMobile.TextChanged += new System.EventHandler(this.txtMobile_TextChanged);
             // 
             // txtAddress
@@ -82,7 +82,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(219, 46);
-            this.txtAddress.TabIndex = 36;
+            this.txtAddress.TabIndex = 38;
             // 
             // txtICNo
             // 
@@ -90,7 +90,7 @@
             this.txtICNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtICNo.Name = "txtICNo";
             this.txtICNo.Size = new System.Drawing.Size(219, 22);
-            this.txtICNo.TabIndex = 35;
+            this.txtICNo.TabIndex = 30;
             // 
             // txtName
             // 
@@ -98,7 +98,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(219, 22);
-            this.txtName.TabIndex = 34;
+            this.txtName.TabIndex = 29;
             // 
             // labelJoindate
             // 
@@ -182,22 +182,22 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(386, 447);
+            this.btnSubmit.Location = new System.Drawing.Point(411, 446);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(96, 32);
-            this.btnSubmit.TabIndex = 44;
+            this.btnSubmit.TabIndex = 41;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(232, 447);
+            this.btnReset.Location = new System.Drawing.Point(252, 446);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(87, 32);
-            this.btnReset.TabIndex = 45;
+            this.btnReset.TabIndex = 40;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -205,10 +205,10 @@
             // dtpJoindate
             // 
             this.dtpJoindate.Location = new System.Drawing.Point(297, 362);
-            this.dtpJoindate.MinDate = new System.DateTime(2018, 3, 23, 0, 0, 0, 0);
+            this.dtpJoindate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpJoindate.Name = "dtpJoindate";
             this.dtpJoindate.Size = new System.Drawing.Size(272, 22);
-            this.dtpJoindate.TabIndex = 48;
+            this.dtpJoindate.TabIndex = 39;
             // 
             // lblWarningName
             // 
@@ -285,7 +285,7 @@
             this.dtpDOB.MinDate = new System.DateTime(1900, 1, 30, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(272, 22);
-            this.dtpDOB.TabIndex = 57;
+            this.dtpDOB.TabIndex = 35;
             this.dtpDOB.Value = new System.DateTime(2018, 3, 23, 0, 0, 0, 0);
             // 
             // lblWarningEmail
@@ -308,17 +308,17 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(217, 43);
-            this.groupBox1.TabIndex = 59;
+            this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
             // rdbFemale
             // 
             this.rdbFemale.AutoSize = true;
-            this.rdbFemale.Location = new System.Drawing.Point(125, 19);
+            this.rdbFemale.Location = new System.Drawing.Point(114, 14);
             this.rdbFemale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(75, 21);
-            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.TabIndex = 34;
             this.rdbFemale.TabStop = true;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
@@ -326,11 +326,11 @@
             // rdbMale
             // 
             this.rdbMale.AutoSize = true;
-            this.rdbMale.Location = new System.Drawing.Point(14, 19);
+            this.rdbMale.Location = new System.Drawing.Point(29, 14);
             this.rdbMale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(59, 21);
-            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabIndex = 33;
             this.rdbMale.TabStop = true;
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
