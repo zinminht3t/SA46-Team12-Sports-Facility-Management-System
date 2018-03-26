@@ -139,6 +139,7 @@ namespace SportsFacilityManagementSystem
         private void btnReports_Click(object sender, EventArgs e)
         {
             HideAllUC();
+            ucReports1.Visible = true;
         }
 
         private void btnUpcoming_Click(object sender, EventArgs e)
@@ -218,16 +219,6 @@ namespace SportsFacilityManagementSystem
             ucMembers1.Visible = false;
             ucAddMember1.Visible = false;
             ucBooking2.Visible = false;
-
-            ucReports1.Update();
-            ucPastTransactions1.Update();
-            ucFacilities2.Update();
-            ucAddFacilities1.Update();
-            ucMembers1.Update();
-            ucAddMember1.Update();
-            ucBooking2.Update();
-            
-
         }
         public void ShowMainpage()
         {
