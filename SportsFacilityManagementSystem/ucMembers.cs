@@ -288,5 +288,41 @@ namespace SportsFacilityManagementSystem
             frmMemberInfoReport frmMIR = new frmMemberInfoReport();
             frmMIR.ShowDialog();
         }
+
+        private void resetUC()
+        {
+
+            //search members
+            cmbSearchBy.Text = "";
+            txtKeyword.Text = "";
+            txtName.Text = "";
+            txtICNo.Text = "";
+            txtAddress.Text = "";
+            txtMobile.Text = "";
+            rdbMale.Checked = false;
+            rdbFemale.Checked = false;
+            txtEmail.Text = "";
+            dtpDOB.MaxDate = DateTime.Today.AddYears(-13);
+            dtpExpiry.Value = DateTime.Now;
+            dtpJoin.Value = DateTime.Now;
+            txtStatus.Text = "";
+            lblWarningSearchBy.Visible = false;
+            lblWarningSearchResult.Visible = false;
+            lblWarningKeyword.Visible = false;
+            
+        }
+
+        private void ucMembers_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                resetUC();
+            }
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucMembers_VisibleChanged);
+        }
     }
 }

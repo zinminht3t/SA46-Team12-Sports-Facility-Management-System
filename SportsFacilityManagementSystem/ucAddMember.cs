@@ -190,6 +190,10 @@ namespace SportsFacilityManagementSystem
             txtMobile.Text = "";
             txtEmail.Text = "";
             txtAddress.Text = "";
+            rdbFemale.Checked = false;
+            rdbMale.Checked = true;
+            dtpDOB.Value = DateTime.Now;
+            dtpJoindate.Value = DateTime.Now;
         }
 
         private void ucAddMember_Load(object sender, EventArgs e)
@@ -197,5 +201,19 @@ namespace SportsFacilityManagementSystem
             dtpDOB.MaxDate = DateTime.Today.AddYears(-13); // the member must be at least 13 years old.
             rdbMale.Checked = true;
         }
+
+        private void ucAddMember_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                ResetAllFields();
+            }
+        }
+
+        private void AddVisibleChangedEventHandler()
+        {
+            this.VisibleChanged += new EventHandler(this.ucAddMember_VisibleChanged);
+        }
+
     }
 }
