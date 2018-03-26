@@ -49,15 +49,16 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnLogin.BackColor = System.Drawing.Color.DarkGray;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(142, 156);
-            this.btnLogin.MaximumSize = new System.Drawing.Size(237, 36);
-            this.btnLogin.MinimumSize = new System.Drawing.Size(237, 36);
+            this.btnLogin.Location = new System.Drawing.Point(213, 244);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogin.MaximumSize = new System.Drawing.Size(356, 56);
+            this.btnLogin.MinimumSize = new System.Drawing.Size(356, 56);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(237, 36);
+            this.btnLogin.Size = new System.Drawing.Size(356, 56);
             this.btnLogin.TabIndex = 14;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -65,17 +66,19 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(143, 114);
+            this.txtPassword.Location = new System.Drawing.Point(214, 178);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(237, 22);
+            this.txtPassword.Size = new System.Drawing.Size(354, 31);
             this.txtPassword.TabIndex = 12;
             // 
             // txtUserID
             // 
-            this.txtUserID.Location = new System.Drawing.Point(143, 42);
+            this.txtUserID.Location = new System.Drawing.Point(214, 66);
+            this.txtUserID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(237, 22);
+            this.txtUserID.Size = new System.Drawing.Size(354, 31);
             this.txtUserID.TabIndex = 11;
             // 
             // lblPassword
@@ -83,9 +86,10 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPassword.Location = new System.Drawing.Point(168, 89);
+            this.lblPassword.Location = new System.Drawing.Point(252, 139);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(87, 17);
+            this.lblPassword.Size = new System.Drawing.Size(128, 25);
             this.lblPassword.TabIndex = 10;
             this.lblPassword.Text = "Password :";
             // 
@@ -94,9 +98,10 @@
             this.lblUserID.AutoSize = true;
             this.lblUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserID.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUserID.Location = new System.Drawing.Point(168, 17);
+            this.lblUserID.Location = new System.Drawing.Point(252, 27);
+            this.lblUserID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(72, 17);
+            this.lblUserID.Size = new System.Drawing.Size(104, 25);
             this.lblUserID.TabIndex = 9;
             this.lblUserID.Text = "User ID :";
             // 
@@ -105,18 +110,20 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTitle.Location = new System.Drawing.Point(127, 39);
+            this.lblTitle.Location = new System.Drawing.Point(190, 61);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(358, 25);
+            this.lblTitle.Size = new System.Drawing.Size(560, 37);
             this.lblTitle.TabIndex = 16;
             this.lblTitle.Text = "Sports Facility Management System";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SportsFacilityManagementSystem.Properties.Resources.GetActiveLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox3.Location = new System.Drawing.Point(15, 16);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(98, 87);
+            this.pictureBox3.Size = new System.Drawing.Size(147, 136);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
@@ -124,9 +131,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SportsFacilityManagementSystem.Properties.Resources.Account;
-            this.pictureBox2.Location = new System.Drawing.Point(143, 14);
+            this.pictureBox2.Location = new System.Drawing.Point(214, 22);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
@@ -134,9 +142,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SportsFacilityManagementSystem.Properties.Resources.LoginBlack;
-            this.pictureBox1.Location = new System.Drawing.Point(143, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(214, 134);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 22);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -146,9 +155,10 @@
             this.panel1.BackColor = System.Drawing.Color.Ivory;
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Location = new System.Drawing.Point(0, 16);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 107);
+            this.panel1.Size = new System.Drawing.Size(818, 167);
             this.panel1.TabIndex = 17;
             // 
             // panel2
@@ -161,22 +171,22 @@
             this.panel2.Controls.Add(this.lblPassword);
             this.panel2.Controls.Add(this.lblUserID);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(-2, 140);
+            this.panel2.Location = new System.Drawing.Point(-3, 219);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(542, 217);
+            this.panel2.Size = new System.Drawing.Size(813, 339);
             this.panel2.TabIndex = 18;
             // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(536, 376);
+            this.ClientSize = new System.Drawing.Size(804, 588);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

@@ -17,6 +17,7 @@ namespace SportsFacilityManagementSystem
         string facilityidtemp = "";
         string nametemp = "";
         string ratestemp = "";
+        string ratesWOsymbol = "";
         string facilitiesnotemp = "";
         Facility fac;
         
@@ -25,9 +26,12 @@ namespace SportsFacilityManagementSystem
             InitializeComponent();
         }
 
-        private void ucFacilities_load()
+        private void ucFacilities_Load(object sender, EventArgs e)
         {
-            //sportsList = listOfSports.getSportList();
+            cmbSearchBy.DataSource = frmLogin.facilitylist;
+            cmbSearchBy.DisplayMember = "facilityname";
+            cmbSearchBy.ValueMember = "facilityname";
+            cmbSearchBy.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void lblCheckAvailability_Click(object sender, EventArgs e)
@@ -47,16 +51,20 @@ namespace SportsFacilityManagementSystem
             {
                 fac = cxt.Facilities.Where(x => x.facilityname == cmbSearchBy.Text).First();
                 gbSearchResults.Visible = true;
+
                 //Facility Name / ID Display
                 txtFacilityID.Text = fac.facilityid.ToString();
                 facilityidtemp = txtFacilityID.Text;
                 txtName.Text = fac.facilityname.ToString();
                 nametemp = txtName.Text;
+
                 // Rates Display
                 r = fac.rateid.ToString();
                 rate = cxt.Rates.Where(x => x.rateid.ToString() == r).First();
-                txtRates.Text = rate.ratepertimeslot.ToString();
-                ratestemp = txtRates.Text;
+                ratesWOsymbol = rate.ratepertimeslot.ToString();
+                cmbRates.Text = "$ " + ratesWOsymbol + ".00";
+                ratestemp = ratesWOsymbol;
+
                 // Subfacility Display
                 var q = from x in cxt.SubFacilities where x.facilityid.ToString() == txtFacilityID.Text select x;
                 txtFacilitiesNo.Text = q.Count().ToString();
@@ -72,12 +80,11 @@ namespace SportsFacilityManagementSystem
         {
             ButtonVisibility(true);
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtFacilityID.Text = facilityidtemp;
             txtName.Text = nametemp;
-            txtRates.Text = ratestemp;
+            cmbRates.Text = "$" + ratestemp + ".00";
             txtFacilitiesNo.Text = facilitiesnotemp;
             ButtonVisibility(false);
         }
@@ -89,10 +96,21 @@ namespace SportsFacilityManagementSystem
             if (savebtn == DialogResult.Yes)
             {
                 ButtonVisibility(false);
-                int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == txtRates.Text).Select(y => y.rateid).First();
-                fac.rateid = rateid;
-                fac.facilityname = txtName.Text;
-                cxt.SaveChanges();
+                string price = "";
+                if(cmbRates.Text.Length > 6)
+                {
+                    price = cmbRates.Text.Substring(2, 2);
+                }
+                else
+                {
+                    price = cmbRates.Text.Substring(2, 1);
+                }
+                int rateid = cxt.Rates.Where(x => x.ratepertimeslot.ToString() == price).Select(y => y.rateid).First(); ;
+                    fac.rateid = rateid;
+                    fac.facilityname = txtName.Text;
+                    cxt.SaveChanges();
+                frmLogin.facilitylist = cxt.Facilities.ToList();
+                cmbSearchBy.DataSource = frmLogin.facilitylist;
             }
         }
         #region Visibility Events
@@ -102,25 +120,25 @@ namespace SportsFacilityManagementSystem
             if (ClickEditBtn == true)
             {
                 txtName.ReadOnly = false;
-                txtRates.ReadOnly = false;
+                cmbRates.Enabled = true;
                 btnEdit.Visible = false;
-                lblAvailable.Visible = false;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 pbWarningFac.Visible = true;
                 pbWarningID.Visible = true;
+                pbWarningRate.Visible = true;
                 btnSearch.Enabled = false;
             }
             else
             {
                 txtName.ReadOnly = true;
-                txtRates.ReadOnly = true;
+                cmbRates.Enabled = false;
                 btnEdit.Visible = true;
-                lblAvailable.Visible = true;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
                 pbWarningFac.Visible = false;
                 pbWarningID.Visible = false;
+                pbWarningRate.Visible = false;
                 btnSearch.Enabled = true;
             }
         }
@@ -144,20 +162,18 @@ namespace SportsFacilityManagementSystem
         {
             lblWarningFac.Visible = false;
         }
+
+        private void pbWarningRate_MouseEnter(object sender, EventArgs e)
+        {
+            lblWarningRate.Visible = true;
+        }
+
+        private void pbWarningRate_MouseLeave(object sender, EventArgs e)
+        {
+            lblWarningRate.Visible = false;
+        }
         #endregion
 
-        private void lblAvailable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-        }
 
-        private void ucFacilities_Load(object sender, EventArgs e)
-        {
-
-            cmbSearchBy.DataSource = frmLogin.facilitylist;
-            cmbSearchBy.DisplayMember = "facilityname";
-            cmbSearchBy.ValueMember = "facilityname";
-            cmbSearchBy.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
     }
 }

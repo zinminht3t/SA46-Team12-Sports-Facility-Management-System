@@ -69,6 +69,7 @@
             // 
             // cmbTypeofReport
             // 
+            this.cmbTypeofReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTypeofReport.ForeColor = System.Drawing.Color.Black;
             this.cmbTypeofReport.FormattingEnabled = true;
             this.cmbTypeofReport.Items.AddRange(new object[] {
@@ -79,7 +80,7 @@
             this.cmbTypeofReport.Location = new System.Drawing.Point(240, 56);
             this.cmbTypeofReport.Name = "cmbTypeofReport";
             this.cmbTypeofReport.Size = new System.Drawing.Size(222, 24);
-            this.cmbTypeofReport.TabIndex = 0;
+            this.cmbTypeofReport.TabIndex = 70;
             this.cmbTypeofReport.SelectedIndexChanged += new System.EventHandler(this.cmbTypeofReport_SelectedIndexChanged);
             // 
             // lblTypeofReport
@@ -93,35 +94,34 @@
             // 
             // lblDateFrom
             // 
-            this.lblDateFrom.AutoSize = true;
-            this.lblDateFrom.Location = new System.Drawing.Point(35, 69);
+            this.lblDateFrom.Location = new System.Drawing.Point(35, 59);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(82, 17);
+            this.lblDateFrom.Size = new System.Drawing.Size(104, 43);
             this.lblDateFrom.TabIndex = 2;
-            this.lblDateFrom.Text = "Date From :";
+            this.lblDateFrom.Text = "Week Starting From :";
             // 
             // lblToDate
             // 
             this.lblToDate.AutoSize = true;
             this.lblToDate.Location = new System.Drawing.Point(35, 122);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(67, 17);
+            this.lblToDate.Size = new System.Drawing.Size(33, 17);
             this.lblToDate.TabIndex = 3;
-            this.lblToDate.Text = "To Date :";
+            this.lblToDate.Text = "To :";
             // 
             // dtpDateFromReport
             // 
             this.dtpDateFromReport.Location = new System.Drawing.Point(152, 69);
             this.dtpDateFromReport.Name = "dtpDateFromReport";
             this.dtpDateFromReport.Size = new System.Drawing.Size(285, 22);
-            this.dtpDateFromReport.TabIndex = 4;
+            this.dtpDateFromReport.TabIndex = 73;
             // 
             // dtpToDateReport
             // 
             this.dtpToDateReport.Location = new System.Drawing.Point(152, 122);
             this.dtpToDateReport.Name = "dtpToDateReport";
             this.dtpToDateReport.Size = new System.Drawing.Size(281, 22);
-            this.dtpToDateReport.TabIndex = 5;
+            this.dtpToDateReport.TabIndex = 74;
             this.dtpToDateReport.ValueChanged += new System.EventHandler(this.dtpToDateReport_ValueChanged);
             // 
             // gbReport
@@ -166,7 +166,7 @@
             this.cmbOSubfacility.Location = new System.Drawing.Point(152, 212);
             this.cmbOSubfacility.Name = "cmbOSubfacility";
             this.cmbOSubfacility.Size = new System.Drawing.Size(194, 24);
-            this.cmbOSubfacility.TabIndex = 26;
+            this.cmbOSubfacility.TabIndex = 76;
             // 
             // cmbOFacility
             // 
@@ -174,7 +174,7 @@
             this.cmbOFacility.Location = new System.Drawing.Point(152, 166);
             this.cmbOFacility.Name = "cmbOFacility";
             this.cmbOFacility.Size = new System.Drawing.Size(194, 24);
-            this.cmbOFacility.TabIndex = 25;
+            this.cmbOFacility.TabIndex = 75;
             this.cmbOFacility.SelectedIndexChanged += new System.EventHandler(this.cmbOFacility_SelectedIndexChanged);
             // 
             // labelWarningReportTodate
@@ -192,7 +192,7 @@
             this.btnPrintReport.Location = new System.Drawing.Point(193, 255);
             this.btnPrintReport.Name = "btnPrintReport";
             this.btnPrintReport.Size = new System.Drawing.Size(112, 58);
-            this.btnPrintReport.TabIndex = 13;
+            this.btnPrintReport.TabIndex = 77;
             this.btnPrintReport.Text = "Print";
             this.btnPrintReport.UseVisualStyleBackColor = true;
             this.btnPrintReport.Click += new System.EventHandler(this.btnPrintReport_Click);
@@ -217,7 +217,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 182);
+            this.label1.Location = new System.Drawing.Point(53, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 27;
@@ -226,29 +226,27 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 182);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Location = new System.Drawing.Point(30, 181);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(17, 16);
-            this.radioButton1.TabIndex = 26;
+            this.radioButton1.TabIndex = 81;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // rdnDateRange
             // 
             this.rdnDateRange.AutoSize = true;
-            this.rdnDateRange.Location = new System.Drawing.Point(7, 103);
-            this.rdnDateRange.Margin = new System.Windows.Forms.Padding(2);
+            this.rdnDateRange.Location = new System.Drawing.Point(30, 73);
             this.rdnDateRange.Name = "rdnDateRange";
             this.rdnDateRange.Size = new System.Drawing.Size(17, 16);
-            this.rdnDateRange.TabIndex = 25;
+            this.rdnDateRange.TabIndex = 78;
             this.rdnDateRange.TabStop = true;
             this.rdnDateRange.UseVisualStyleBackColor = true;
             // 
             // lblDateRange
             // 
             this.lblDateRange.AutoSize = true;
-            this.lblDateRange.Location = new System.Drawing.Point(29, 103);
+            this.lblDateRange.Location = new System.Drawing.Point(53, 72);
             this.lblDateRange.Name = "lblDateRange";
             this.lblDateRange.Size = new System.Drawing.Size(138, 17);
             this.lblDateRange.TabIndex = 24;
@@ -259,37 +257,37 @@
             this.btnPrintML.Location = new System.Drawing.Point(211, 257);
             this.btnPrintML.Name = "btnPrintML";
             this.btnPrintML.Size = new System.Drawing.Size(112, 58);
-            this.btnPrintML.TabIndex = 22;
+            this.btnPrintML.TabIndex = 83;
             this.btnPrintML.Text = "Print";
             this.btnPrintML.UseVisualStyleBackColor = true;
             this.btnPrintML.Click += new System.EventHandler(this.btnPrintML_Click);
             // 
             // dtpDatetoML
             // 
-            this.dtpDatetoML.Location = new System.Drawing.Point(170, 124);
+            this.dtpDatetoML.Location = new System.Drawing.Point(221, 127);
             this.dtpDatetoML.Name = "dtpDatetoML";
             this.dtpDatetoML.Size = new System.Drawing.Size(263, 22);
-            this.dtpDatetoML.TabIndex = 21;
+            this.dtpDatetoML.TabIndex = 80;
             this.dtpDatetoML.ValueChanged += new System.EventHandler(this.dtpDatetoML_ValueChanged);
             // 
             // dtpDateFromML
             // 
-            this.dtpDateFromML.Location = new System.Drawing.Point(170, 71);
+            this.dtpDateFromML.Location = new System.Drawing.Point(221, 70);
             this.dtpDateFromML.Name = "dtpDateFromML";
             this.dtpDateFromML.Size = new System.Drawing.Size(263, 22);
-            this.dtpDateFromML.TabIndex = 20;
+            this.dtpDateFromML.TabIndex = 79;
             // 
             // cmbStatus
             // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Active",
             "Inactive"});
-            this.cmbStatus.Location = new System.Drawing.Point(170, 177);
+            this.cmbStatus.Location = new System.Drawing.Point(221, 177);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(124, 24);
-            this.cmbStatus.TabIndex = 17;
-            this.cmbStatus.Text = "All";
+            this.cmbStatus.TabIndex = 82;
             // 
             // lblTitle
             // 
@@ -318,6 +316,7 @@
             // 
             // cmbYear
             // 
+            this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYear.FormattingEnabled = true;
             this.cmbYear.Items.AddRange(new object[] {
             "2023",
@@ -334,19 +333,17 @@
             "2012",
             "2011",
             "2010"});
-            this.cmbYear.Location = new System.Drawing.Point(194, 69);
-            this.cmbYear.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbYear.Location = new System.Drawing.Point(246, 60);
             this.cmbYear.Name = "cmbYear";
             this.cmbYear.Size = new System.Drawing.Size(113, 24);
-            this.cmbYear.TabIndex = 14;
-            this.cmbYear.Text = "2018";
+            this.cmbYear.TabIndex = 71;
             // 
             // btnRPrint
             // 
-            this.btnRPrint.Location = new System.Drawing.Point(193, 255);
+            this.btnRPrint.Location = new System.Drawing.Point(211, 209);
             this.btnRPrint.Name = "btnRPrint";
             this.btnRPrint.Size = new System.Drawing.Size(112, 58);
-            this.btnRPrint.TabIndex = 13;
+            this.btnRPrint.TabIndex = 72;
             this.btnRPrint.Text = "Print";
             this.btnRPrint.UseVisualStyleBackColor = true;
             this.btnRPrint.Click += new System.EventHandler(this.btnRPrint_Click);
@@ -354,7 +351,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 71);
+            this.label4.Location = new System.Drawing.Point(136, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 17);
             this.label4.TabIndex = 2;
@@ -377,7 +374,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 141);
+            this.label2.Location = new System.Drawing.Point(122, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 17);
             this.label2.TabIndex = 16;
@@ -385,6 +382,7 @@
             // 
             // cmbMRMonth
             // 
+            this.cmbMRMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMRMonth.FormattingEnabled = true;
             this.cmbMRMonth.Items.AddRange(new object[] {
             "January",
@@ -399,15 +397,14 @@
             "October",
             "November",
             "December"});
-            this.cmbMRMonth.Location = new System.Drawing.Point(194, 140);
-            this.cmbMRMonth.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMRMonth.Location = new System.Drawing.Point(273, 138);
             this.cmbMRMonth.Name = "cmbMRMonth";
             this.cmbMRMonth.Size = new System.Drawing.Size(113, 24);
-            this.cmbMRMonth.TabIndex = 15;
-            this.cmbMRMonth.Text = "January";
+            this.cmbMRMonth.TabIndex = 72;
             // 
             // cmbMRYear
             // 
+            this.cmbMRYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMRYear.FormattingEnabled = true;
             this.cmbMRYear.Items.AddRange(new object[] {
             "2023",
@@ -424,12 +421,10 @@
             "2012",
             "2011",
             "2010"});
-            this.cmbMRYear.Location = new System.Drawing.Point(194, 69);
-            this.cmbMRYear.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMRYear.Location = new System.Drawing.Point(273, 67);
             this.cmbMRYear.Name = "cmbMRYear";
             this.cmbMRYear.Size = new System.Drawing.Size(113, 24);
-            this.cmbMRYear.TabIndex = 14;
-            this.cmbMRYear.Text = "2018";
+            this.cmbMRYear.TabIndex = 71;
             this.cmbMRYear.SelectedIndexChanged += new System.EventHandler(this.cmbMRYear_SelectedIndexChanged);
             // 
             // btnMRPrint
@@ -437,7 +432,7 @@
             this.btnMRPrint.Location = new System.Drawing.Point(193, 255);
             this.btnMRPrint.Name = "btnMRPrint";
             this.btnMRPrint.Size = new System.Drawing.Size(112, 58);
-            this.btnMRPrint.TabIndex = 13;
+            this.btnMRPrint.TabIndex = 73;
             this.btnMRPrint.Text = "Print";
             this.btnMRPrint.UseVisualStyleBackColor = true;
             this.btnMRPrint.Click += new System.EventHandler(this.button1_Click);
@@ -445,7 +440,7 @@
             // lblMRYear
             // 
             this.lblMRYear.AutoSize = true;
-            this.lblMRYear.Location = new System.Drawing.Point(67, 71);
+            this.lblMRYear.Location = new System.Drawing.Point(122, 70);
             this.lblMRYear.Name = "lblMRYear";
             this.lblMRYear.Size = new System.Drawing.Size(93, 17);
             this.lblMRYear.TabIndex = 2;
@@ -459,10 +454,11 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTypeofReport);
             this.Controls.Add(this.cmbTypeofReport);
-            this.Controls.Add(this.gbRevenue);
-            this.Controls.Add(this.gbMMR);
             this.Controls.Add(this.gbReport);
             this.Controls.Add(this.gbMemberList);
+            this.Controls.Add(this.gbRevenue);
+            this.Controls.Add(this.gbMMR);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ucReports";
             this.Size = new System.Drawing.Size(752, 508);
             this.Load += new System.EventHandler(this.ucReports_Load);

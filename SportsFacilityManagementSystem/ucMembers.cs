@@ -175,19 +175,13 @@ namespace SportsFacilityManagementSystem
         {
             ctx = new SportsFacilitiesEntities();
             dtpDOB.MaxDate = DateTime.Today.AddYears(-13); // the member must be at least 13 years old.
-            btnReset.Visible = false;
-            btnUpdate.Visible = false;
-            btnEdit.Visible = true;
-            btnPrint.Visible = true;
+            ClickEvents(false);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             PopulateData(resultmember);
-            btnReset.Visible = false;
-            btnUpdate.Visible = false;
-            btnEdit.Visible = true;
-            btnPrint.Visible = true;
+            ClickEvents(false);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -209,10 +203,7 @@ namespace SportsFacilityManagementSystem
                     MessageBox.Show("Some errors occurred. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            btnReset.Visible = false;
-            btnUpdate.Visible = false;
-            btnEdit.Visible = true;
-            btnPrint.Visible = true;
+            ClickEvents(false);
         }
 
         private void UpdateMember()
@@ -241,15 +232,54 @@ namespace SportsFacilityManagementSystem
             {
                 resultmember.status = "Inactive";
             }
+
             ctx.SaveChanges();
+
+            frmLogin fr = new frmLogin();
+            fr.ChangeMemberStatus();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            btnEdit.Visible = false;
-            btnPrint.Visible = false;
-            btnUpdate.Visible = true;
-            btnReset.Visible = true;
+            ClickEvents(true);
+        }
+
+        private void ClickEvents (bool edit)
+        {
+            if(edit == true)
+            {
+                btnEdit.Visible = false;
+                btnPrint.Visible = false;
+                btnUpdate.Visible = true;
+                btnReset.Visible = true;
+                txtName.ReadOnly = false;
+                txtICNo.ReadOnly = false;
+                txtAddress.ReadOnly = false;
+                txtMobile.ReadOnly = false;
+                txtEmail.ReadOnly = false;
+                rdbFemale.Enabled = true;
+                rdbMale.Enabled = true;
+                dtpDOB.Enabled = true;
+                dtpExpiry.Enabled = true;
+                dtpJoin.Enabled = true;
+            }
+            else
+            {
+                btnEdit.Visible = true;
+                btnPrint.Visible = true;
+                btnReset.Visible = false;
+                btnUpdate.Visible = false;
+                txtName.ReadOnly = true;
+                txtICNo.ReadOnly = true;
+                txtAddress.ReadOnly = true;
+                txtMobile.ReadOnly = true;
+                txtEmail.ReadOnly = true;
+                rdbMale.Enabled = false;
+                rdbFemale.Enabled = false;
+                dtpDOB.Enabled = false;
+                dtpExpiry.Enabled = false;
+                dtpJoin.Enabled = false;
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

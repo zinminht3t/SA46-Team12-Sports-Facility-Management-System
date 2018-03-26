@@ -13,9 +13,15 @@ namespace SportsFacilityManagementSystem
 {
     public partial class ucAddMember : UserControl
     {
+        Member newmember;
         public ucAddMember()
         {
             InitializeComponent();
+        }
+
+        private void TabStopChanged(object sender, EventArgs e)
+        {
+            ((RadioButton)rdbMale).TabStop = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -83,6 +89,15 @@ namespace SportsFacilityManagementSystem
                         ResetAllFields();
                         MessageBox.Show("Add Member Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        DialogResult d = MessageBox.Show("Do you want to print the membership form?", "Print Membership Form", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if(d == DialogResult.OK)
+                        {
+                            ucMembers.memberid = newmember.memberid;
+                            frmMemberInfoReport frmMemberInfo = new frmMemberInfoReport();
+                            frmMemberInfo.ShowDialog();
+                        }
+
+
                     }
                     catch
                     {
@@ -96,7 +111,7 @@ namespace SportsFacilityManagementSystem
         private void InsertData()
         {
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
-            Member newmember = new Member();
+            newmember = new Member();
             newmember.name = txtName.Text;
             newmember.icno = txtICNo.Text;
             if(rdbMale.Checked == true)

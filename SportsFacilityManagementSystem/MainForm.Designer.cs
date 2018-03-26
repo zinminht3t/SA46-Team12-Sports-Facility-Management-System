@@ -197,7 +197,8 @@
             this.btnSearchMembers.Location = new System.Drawing.Point(228, 232);
             this.btnSearchMembers.Name = "btnSearchMembers";
             this.btnSearchMembers.Size = new System.Drawing.Size(154, 76);
-            this.btnSearchMembers.TabIndex = 11;
+            this.btnSearchMembers.TabIndex = 0;
+            this.btnSearchMembers.TabStop = false;
             this.btnSearchMembers.Text = "Search / Modify Members List";
             this.btnSearchMembers.UseVisualStyleBackColor = false;
             this.btnSearchMembers.Visible = false;
@@ -215,7 +216,8 @@
             this.btnAddMembers.Location = new System.Drawing.Point(228, 308);
             this.btnAddMembers.Name = "btnAddMembers";
             this.btnAddMembers.Size = new System.Drawing.Size(154, 76);
-            this.btnAddMembers.TabIndex = 12;
+            this.btnAddMembers.TabIndex = 0;
+            this.btnAddMembers.TabStop = false;
             this.btnAddMembers.Text = "Add New Members";
             this.btnAddMembers.UseVisualStyleBackColor = false;
             this.btnAddMembers.Visible = false;
@@ -230,10 +232,10 @@
             this.btnAddFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFacilities.Location = new System.Drawing.Point(228, 383);
+            this.btnAddFacilities.Location = new System.Drawing.Point(228, 384);
             this.btnAddFacilities.Name = "btnAddFacilities";
             this.btnAddFacilities.Size = new System.Drawing.Size(154, 76);
-            this.btnAddFacilities.TabIndex = 14;
+            this.btnAddFacilities.TabIndex = 0;
             this.btnAddFacilities.TabStop = false;
             this.btnAddFacilities.Text = "Add New Facilities";
             this.btnAddFacilities.UseVisualStyleBackColor = false;
@@ -249,10 +251,10 @@
             this.btnSearchFacilities.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFacilities.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSearchFacilities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearchFacilities.Location = new System.Drawing.Point(228, 307);
+            this.btnSearchFacilities.Location = new System.Drawing.Point(228, 308);
             this.btnSearchFacilities.Name = "btnSearchFacilities";
             this.btnSearchFacilities.Size = new System.Drawing.Size(154, 76);
-            this.btnSearchFacilities.TabIndex = 13;
+            this.btnSearchFacilities.TabIndex = 0;
             this.btnSearchFacilities.TabStop = false;
             this.btnSearchFacilities.Text = "Search / Modify Facilities";
             this.btnSearchFacilities.UseVisualStyleBackColor = false;
@@ -282,7 +284,7 @@
             this.btnUpcoming.Location = new System.Drawing.Point(228, 156);
             this.btnUpcoming.Name = "btnUpcoming";
             this.btnUpcoming.Size = new System.Drawing.Size(154, 76);
-            this.btnUpcoming.TabIndex = 6;
+            this.btnUpcoming.TabIndex = 0;
             this.btnUpcoming.TabStop = false;
             this.btnUpcoming.Text = "Upcoming Bookings";
             this.btnUpcoming.UseVisualStyleBackColor = false;
@@ -298,10 +300,10 @@
             this.btnPasttransactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPasttransactions.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPasttransactions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPasttransactions.Location = new System.Drawing.Point(228, 231);
+            this.btnPasttransactions.Location = new System.Drawing.Point(228, 232);
             this.btnPasttransactions.Name = "btnPasttransactions";
             this.btnPasttransactions.Size = new System.Drawing.Size(154, 76);
-            this.btnPasttransactions.TabIndex = 7;
+            this.btnPasttransactions.TabIndex = 0;
             this.btnPasttransactions.TabStop = false;
             this.btnPasttransactions.Text = "View Past Transactions";
             this.btnPasttransactions.UseVisualStyleBackColor = false;
@@ -330,7 +332,7 @@
             // ucFacilities2
             // 
             this.ucFacilities2.BackColor = System.Drawing.Color.Ivory;
-            this.ucFacilities2.Location = new System.Drawing.Point(235, 26);
+            this.ucFacilities2.Location = new System.Drawing.Point(237, 29);
             this.ucFacilities2.Margin = new System.Windows.Forms.Padding(2);
             this.ucFacilities2.Name = "ucFacilities2";
             this.ucFacilities2.Size = new System.Drawing.Size(752, 508);
@@ -341,7 +343,7 @@
             // ucAddMember1
             // 
             this.ucAddMember1.BackColor = System.Drawing.Color.Ivory;
-            this.ucAddMember1.Location = new System.Drawing.Point(235, 26);
+            this.ucAddMember1.Location = new System.Drawing.Point(237, 29);
             this.ucAddMember1.Margin = new System.Windows.Forms.Padding(2);
             this.ucAddMember1.Name = "ucAddMember1";
             this.ucAddMember1.Size = new System.Drawing.Size(752, 508);
@@ -352,7 +354,7 @@
             // ucAddFacilities1
             // 
             this.ucAddFacilities1.BackColor = System.Drawing.Color.Ivory;
-            this.ucAddFacilities1.Location = new System.Drawing.Point(235, 27);
+            this.ucAddFacilities1.Location = new System.Drawing.Point(237, 30);
             this.ucAddFacilities1.Name = "ucAddFacilities1";
             this.ucAddFacilities1.Size = new System.Drawing.Size(752, 508);
             this.ucAddFacilities1.TabIndex = 35;
@@ -362,7 +364,7 @@
             // ucBooking2
             // 
             this.ucBooking2.BackColor = System.Drawing.Color.Ivory;
-            this.ucBooking2.Location = new System.Drawing.Point(235, 27);
+            this.ucBooking2.Location = new System.Drawing.Point(237, 30);
             this.ucBooking2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ucBooking2.Name = "ucBooking2";
             this.ucBooking2.Size = new System.Drawing.Size(752, 508);
@@ -373,7 +375,8 @@
             // ucReports1
             // 
             this.ucReports1.BackColor = System.Drawing.Color.Ivory;
-            this.ucReports1.Location = new System.Drawing.Point(235, 27);
+            this.ucReports1.Location = new System.Drawing.Point(237, 30);
+            this.ucReports1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucReports1.Name = "ucReports1";
             this.ucReports1.Size = new System.Drawing.Size(752, 508);
             this.ucReports1.TabIndex = 40;
@@ -387,7 +390,7 @@
             this.ucPastTransactions1.Dateto = new System.DateTime(((long)(0)));
             this.ucPastTransactions1.Fac = null;
             this.ucPastTransactions1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ucPastTransactions1.Location = new System.Drawing.Point(235, 27);
+            this.ucPastTransactions1.Location = new System.Drawing.Point(237, 30);
             this.ucPastTransactions1.Name = "ucPastTransactions1";
             this.ucPastTransactions1.Size = new System.Drawing.Size(752, 508);
             this.ucPastTransactions1.Status = null;
@@ -399,7 +402,7 @@
             // ucMembers1
             // 
             this.ucMembers1.BackColor = System.Drawing.Color.Ivory;
-            this.ucMembers1.Location = new System.Drawing.Point(235, 26);
+            this.ucMembers1.Location = new System.Drawing.Point(237, 29);
             this.ucMembers1.Margin = new System.Windows.Forms.Padding(2);
             this.ucMembers1.Name = "ucMembers1";
             this.ucMembers1.Size = new System.Drawing.Size(752, 508);

@@ -166,11 +166,13 @@ namespace SportsFacilityManagementSystem
 
         private void cmbSports_SelectedIndexChanged(object sender, EventArgs e)
         {
+            collectionClickedButtons.Clear();
             LoadBookingSlots();
         }
 
         private void LoadBookingSlots()
         {
+            //bkgDetailsList.Clear();
             noSelected = 0;
             //need to clear button collections                     con.Click += new System.EventHandler(this.con_Click);
             foreach (Control c in collectionVisibleButtons)
@@ -428,15 +430,23 @@ namespace SportsFacilityManagementSystem
         private void ucBooking_Load_1(object sender, EventArgs e)
         {
             ctx = new SportsFacilitiesEntities();
+
+
+
             cmbSports.DataSource = frmLogin.facilitylist;
             cmbSports.DisplayMember = "facilityname";
             cmbSports.ValueMember = "facilityname";
             defaultCmbSports = "- Select sport -";
             cmbSports.Text = defaultCmbSports;
+            //cmbSports.DataSource = frmLogin.bookingSportsList;
+            ////cmbSports.DisplayMember = "facilityname";
+            ////cmbSports.ValueMember = "facilityname";
             dtpBookingDate.Value = DateTime.Today;
             dtpBookingDatevalue = dtpBookingDate.Value;
 
             cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoadBookingSlots();
+
         }
 
         private void lblTitle_Click(object sender, EventArgs e)

@@ -134,24 +134,24 @@
             this.cmbCourtNo.Location = new System.Drawing.Point(175, 161);
             this.cmbCourtNo.Name = "cmbCourtNo";
             this.cmbCourtNo.Size = new System.Drawing.Size(71, 24);
-            this.cmbCourtNo.TabIndex = 65;
+            this.cmbCourtNo.TabIndex = 67;
             // 
             // txtRate
             // 
             this.txtRate.Location = new System.Drawing.Point(175, 104);
-            this.txtRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRate.Margin = new System.Windows.Forms.Padding(2);
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(119, 22);
-            this.txtRate.TabIndex = 61;
+            this.txtRate.TabIndex = 66;
             this.txtRate.TextChanged += new System.EventHandler(this.txtRate_TextChanged);
             // 
             // btnSubmit
             // 
             this.btnSubmit.Location = new System.Drawing.Point(332, 275);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(119, 37);
-            this.btnSubmit.TabIndex = 43;
+            this.btnSubmit.TabIndex = 69;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -159,10 +159,10 @@
             // btnReset
             // 
             this.btnReset.Location = new System.Drawing.Point(46, 275);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(119, 37);
-            this.btnReset.TabIndex = 44;
+            this.btnReset.TabIndex = 68;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -179,10 +179,10 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(175, 39);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(208, 22);
-            this.txtName.TabIndex = 39;
+            this.txtName.TabIndex = 65;
             // 
             // lblRatesEdit
             // 

@@ -32,6 +32,7 @@ namespace SportsFacilityManagementSystem
         {
             btnCancel.Visible = true;
             btnBook.Visible = false;
+            txtMemID.ReadOnly = true;
             lbSelSlotsFacility.Items.Clear();
             lbSelSlotsSF.Items.Clear();
             lbSelSlotsTiming.Items.Clear();
@@ -68,6 +69,8 @@ namespace SportsFacilityManagementSystem
             }
             else
             {
+                btnBook.Enabled = false;
+                txtMemID.ReadOnly = false;
                 btnCancel.Visible = false;
                 btnBook.Visible = true;
                 facilityID = cxt.Facilities.First(x => x.facilityname == txtFacilityID.Text).facilityid;
@@ -100,7 +103,8 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsTiming.Items.Clear();
             string a;
             int timeslot;
-            foreach (BookingDetails bd in l)
+
+            foreach (BookingDetails bd in l.OrderBy(x => x.subFacilityBooked).ThenBy(x => x.slotBooked))
             {
                 i = l.IndexOf(bd) + 0;
                 this.lbSelSlotsSF.Items.Add(l[i].subFacilityBooked);
@@ -122,10 +126,12 @@ namespace SportsFacilityManagementSystem
             {
                 int ID = Convert.ToInt32(txtMemID.Text);
                 txtMemIDdisplay.Text = cxt.Members.First(x => x.memberid == ID).name;
+                btnBook.Enabled = true;
             }
             catch
             {
                 txtMemIDdisplay.Text = "";
+                btnBook.Enabled = false;
             }
 
         }

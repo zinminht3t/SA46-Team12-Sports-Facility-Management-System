@@ -95,7 +95,7 @@
             this.cmbStatus.Location = new System.Drawing.Point(183, 202);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(222, 24);
-            this.cmbStatus.TabIndex = 41;
+            this.cmbStatus.TabIndex = 27;
             // 
             // cmbFac
             // 
@@ -106,7 +106,7 @@
             this.cmbFac.Location = new System.Drawing.Point(183, 44);
             this.cmbFac.Name = "cmbFac";
             this.cmbFac.Size = new System.Drawing.Size(222, 24);
-            this.cmbFac.TabIndex = 40;
+            this.cmbFac.TabIndex = 22;
             // 
             // chkbStatus
             // 
@@ -114,7 +114,7 @@
             this.chkbStatus.Location = new System.Drawing.Point(44, 202);
             this.chkbStatus.Name = "chkbStatus";
             this.chkbStatus.Size = new System.Drawing.Size(133, 21);
-            this.chkbStatus.TabIndex = 39;
+            this.chkbStatus.TabIndex = 26;
             this.chkbStatus.Text = "Booking Status :";
             this.chkbStatus.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +123,7 @@
             this.btnView.Location = new System.Drawing.Point(205, 252);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(114, 40);
-            this.btnView.TabIndex = 69;
+            this.btnView.TabIndex = 28;
             this.btnView.Text = "View";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
@@ -133,9 +133,9 @@
             this.lblDateTo.AutoSize = true;
             this.lblDateTo.Location = new System.Drawing.Point(64, 153);
             this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(67, 17);
+            this.lblDateTo.Size = new System.Drawing.Size(33, 17);
             this.lblDateTo.TabIndex = 38;
-            this.lblDateTo.Text = "Date To :";
+            this.lblDateTo.Text = "To :";
             // 
             // lblWarningMLDateTo
             // 
@@ -144,7 +144,7 @@
             this.lblWarningMLDateTo.Name = "lblWarningMLDateTo";
             this.lblWarningMLDateTo.Size = new System.Drawing.Size(88, 77);
             this.lblWarningMLDateTo.TabIndex = 37;
-            this.lblWarningMLDateTo.Text = "* Date cannot be less than Date from";
+            this.lblWarningMLDateTo.Text = "* Date cannot be earlier than Date from";
             this.lblWarningMLDateTo.Visible = false;
             // 
             // dtpDatetoML
@@ -152,23 +152,22 @@
             this.dtpDatetoML.Location = new System.Drawing.Point(183, 150);
             this.dtpDatetoML.Name = "dtpDatetoML";
             this.dtpDatetoML.Size = new System.Drawing.Size(226, 22);
-            this.dtpDatetoML.TabIndex = 36;
+            this.dtpDatetoML.TabIndex = 25;
             // 
             // dtpDateFromML
             // 
             this.dtpDateFromML.Location = new System.Drawing.Point(183, 97);
             this.dtpDateFromML.Name = "dtpDateFromML";
-            this.dtpDateFromML.Size = new System.Drawing.Size(222, 22);
-            this.dtpDateFromML.TabIndex = 35;
+            this.dtpDateFromML.Size = new System.Drawing.Size(226, 22);
+            this.dtpDateFromML.TabIndex = 24;
             // 
             // chkbDateFrom
             // 
-            this.chkbDateFrom.AutoSize = true;
-            this.chkbDateFrom.Location = new System.Drawing.Point(44, 96);
+            this.chkbDateFrom.Location = new System.Drawing.Point(44, 87);
             this.chkbDateFrom.Name = "chkbDateFrom";
-            this.chkbDateFrom.Size = new System.Drawing.Size(104, 21);
-            this.chkbDateFrom.TabIndex = 34;
-            this.chkbDateFrom.Text = "Date From :";
+            this.chkbDateFrom.Size = new System.Drawing.Size(133, 41);
+            this.chkbDateFrom.TabIndex = 23;
+            this.chkbDateFrom.Text = "Booking Date From :";
             this.chkbDateFrom.UseVisualStyleBackColor = true;
             // 
             // chkbFacilities
@@ -177,7 +176,7 @@
             this.chkbFacilities.Location = new System.Drawing.Point(44, 47);
             this.chkbFacilities.Name = "chkbFacilities";
             this.chkbFacilities.Size = new System.Drawing.Size(92, 21);
-            this.chkbFacilities.TabIndex = 33;
+            this.chkbFacilities.TabIndex = 21;
             this.chkbFacilities.Text = "Facilities :";
             this.chkbFacilities.UseVisualStyleBackColor = true;
             // 
@@ -188,7 +187,7 @@
             this.btnTid.Location = new System.Drawing.Point(243, 56);
             this.btnTid.Name = "btnTid";
             this.btnTid.Size = new System.Drawing.Size(118, 68);
-            this.btnTid.TabIndex = 70;
+            this.btnTid.TabIndex = 15;
             this.btnTid.Text = "Search by Transaction";
             this.btnTid.UseVisualStyleBackColor = false;
             this.btnTid.Click += new System.EventHandler(this.btnTid_Click);
@@ -200,7 +199,7 @@
             this.btnType.Location = new System.Drawing.Point(379, 56);
             this.btnType.Name = "btnType";
             this.btnType.Size = new System.Drawing.Size(115, 68);
-            this.btnType.TabIndex = 71;
+            this.btnType.TabIndex = 16;
             this.btnType.Text = "Search by Type";
             this.btnType.UseVisualStyleBackColor = false;
             this.btnType.Click += new System.EventHandler(this.btnType_Click);
@@ -225,7 +224,7 @@
             this.rbtnTid.Location = new System.Drawing.Point(74, 101);
             this.rbtnTid.Name = "rbtnTid";
             this.rbtnTid.Size = new System.Drawing.Size(149, 21);
-            this.rbtnTid.TabIndex = 72;
+            this.rbtnTid.TabIndex = 18;
             this.rbtnTid.TabStop = true;
             this.rbtnTid.Text = "By Transaction ID :";
             this.rbtnTid.UseVisualStyleBackColor = true;
@@ -237,7 +236,7 @@
             this.rbtnAll.Location = new System.Drawing.Point(74, 54);
             this.rbtnAll.Name = "rbtnAll";
             this.rbtnAll.Size = new System.Drawing.Size(130, 21);
-            this.rbtnAll.TabIndex = 71;
+            this.rbtnAll.TabIndex = 17;
             this.rbtnAll.TabStop = true;
             this.rbtnAll.Text = "All Transactions";
             this.rbtnAll.UseVisualStyleBackColor = true;
@@ -248,7 +247,7 @@
             this.btnViewTrans.Location = new System.Drawing.Point(161, 169);
             this.btnViewTrans.Name = "btnViewTrans";
             this.btnViewTrans.Size = new System.Drawing.Size(114, 40);
-            this.btnViewTrans.TabIndex = 70;
+            this.btnViewTrans.TabIndex = 20;
             this.btnViewTrans.Text = "View";
             this.btnViewTrans.UseVisualStyleBackColor = true;
             this.btnViewTrans.Click += new System.EventHandler(this.btnViewTrans_Click);
@@ -257,19 +256,20 @@
             // 
             this.txtTid.Location = new System.Drawing.Point(229, 101);
             this.txtTid.Name = "txtTid";
+            this.txtTid.ReadOnly = true;
             this.txtTid.Size = new System.Drawing.Size(100, 22);
-            this.txtTid.TabIndex = 1;
+            this.txtTid.TabIndex = 19;
             // 
             // ucPastTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
+            this.Controls.Add(this.gbType);
             this.Controls.Add(this.btnType);
             this.Controls.Add(this.btnTid);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbTrans);
-            this.Controls.Add(this.gbType);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ucPastTransactions";
             this.Size = new System.Drawing.Size(752, 508);
@@ -290,7 +290,6 @@
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbFac;
         private System.Windows.Forms.CheckBox chkbStatus;
-        private System.Windows.Forms.Label lblDateTo;
         private System.Windows.Forms.Label lblWarningMLDateTo;
         private System.Windows.Forms.DateTimePicker dtpDatetoML;
         private System.Windows.Forms.DateTimePicker dtpDateFromML;
@@ -303,5 +302,6 @@
         private System.Windows.Forms.TextBox txtTid;
         private System.Windows.Forms.RadioButton rbtnAll;
         private System.Windows.Forms.RadioButton rbtnTid;
+        private System.Windows.Forms.Label lblDateTo;
     }
 }
