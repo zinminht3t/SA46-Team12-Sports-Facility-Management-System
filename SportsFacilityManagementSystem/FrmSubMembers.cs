@@ -17,13 +17,11 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
-
         private void FrmSubMembers_Load(object sender, EventArgs e)
         {
             SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
             dgvMembers.DataSource = ctx.Members.Where(x => x.status == "Active").ToList();
         }
-
         private void dgvMembers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             memberid = Convert.ToInt32(dgvMembers.Rows[e.RowIndex].Cells[0].Value.ToString());

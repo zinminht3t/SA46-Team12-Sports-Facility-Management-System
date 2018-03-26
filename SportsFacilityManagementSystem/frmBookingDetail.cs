@@ -12,7 +12,6 @@ namespace SportsFacilityManagementSystem
 {
     public partial class frmBookingDetail : Form
     {
-
         int i;
         private SportsFacilitiesEntities cxt = new SportsFacilitiesEntities();
         private int noOfSlotsSelected = 1;
@@ -27,7 +26,6 @@ namespace SportsFacilityManagementSystem
         {
             InitializeComponent();
         }
-
         private void ShowExistingBookingDetail()
         {
             btnCancel.Visible = true;
@@ -38,14 +36,9 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsTiming.Items.Clear();
             trandetailid = ucBooking.redButtonTransID;
             transid = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid).transactionid;
-
-
             removetd = new TransactionDetail();
             removetd = cxt.TransactionDetails.First(x => x.transactiondetailid == trandetailid);
-
             dtpDate.Value = ucBooking.getForDate();
-
-
             rt = new Transaction();
             rt = cxt.Transactions.First(x => x.transactionid == transid);
             txtMemID.Text = rt.memberid.ToString();
@@ -60,7 +53,6 @@ namespace SportsFacilityManagementSystem
             lbSelSlotsSF.Items.Add(removetd.SubFacility.subfacilityname);
             lbSelSlotsTiming.Items.Add(removetd.Timeslot.timeslot);
         }
-
         private void frmBookingDetail_Load(object sender, EventArgs e)
         {
             if (txtFacilityID.Text == "" || txtFacilityID.Text is null)
@@ -75,7 +67,6 @@ namespace SportsFacilityManagementSystem
                 btnBook.Visible = true;
                 facilityID = cxt.Facilities.First(x => x.facilityname == txtFacilityID.Text).facilityid;
                 double rate = cxt.Facilities.First(x => x.facilityid == facilityID).Rate.ratepertimeslot;
-                //txtRates.Text = rate.ToString("{0:C}");
                 txtRates.Text = "$" + String.Format("{0:#.00}", rate);
                 noOfSlotsSelected = lbSelSlotsSF.Items.Count;
                 price = rate * noOfSlotsSelected;
@@ -85,25 +76,21 @@ namespace SportsFacilityManagementSystem
             }
 
         }
-
         public void setLbSelFacility(String s)
         {
             lbSelSlotsFacility.Items.Clear();
             this.lbSelSlotsFacility.Items.Add(s);
         }
-
         public void setTxtFacilityID(string s)
         {
             this.txtFacilityID.Text = s;
         }
-
         public void SetLbSelectedSlotSF(List<BookingDetails> l)
         {
             lbSelSlotsSF.Items.Clear();
             lbSelSlotsTiming.Items.Clear();
             string a;
             int timeslot;
-
             foreach (BookingDetails bd in l.OrderBy(x => x.subFacilityBooked).ThenBy(x => x.slotBooked))
             {
                 i = l.IndexOf(bd) + 0;
@@ -114,12 +101,9 @@ namespace SportsFacilityManagementSystem
             }
 
         }
-
         private void lbSelSlotsSF_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
         private void txtMemID_TextChanged(object sender, EventArgs e)
         {
             try
@@ -135,19 +119,16 @@ namespace SportsFacilityManagementSystem
             }
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             FrmSubMembers fsm = new FrmSubMembers();
             fsm.ShowDialog();
             txtMemID.Text = FrmSubMembers.memberid.ToString();
         }
-
         private void btnBook_Click(object sender, EventArgs e)
         {
             try
             {
-
                 Transaction t = new Transaction();
                 t.memberid = Convert.ToInt32(txtMemID.Text);
                 t.remark = txtRemarks.Text;
@@ -157,7 +138,6 @@ namespace SportsFacilityManagementSystem
                 SportsFacilitiesEntities ctx = new SportsFacilitiesEntities();
                 ctx.Transactions.Add(t);
                 ctx.SaveChanges();
-
                 int id = t.transactionid;
                 TransactionDetail td;
                 int subfacilityid;
@@ -176,9 +156,7 @@ namespace SportsFacilityManagementSystem
                 }
                 ctx.SaveChanges();
                 MessageBox.Show("Booking Completed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 DialogResult result = MessageBox.Show("Do you want to print the booking invoice?", "Print", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
                 if (result == DialogResult.OK)
                 {
                     rptTransactionid = id;
@@ -190,25 +168,15 @@ namespace SportsFacilityManagementSystem
             {
                 MessageBox.Show("You have encountered an error. Please Try Again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             this.Close();
-
-            //for(lb)
-            //for(int i = 0; i < noOfSlotsSelected; i++)
-            //{
-            //    td = new TransactionDetail();
-            //}
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to proceed with the cancellation?", "Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-
             if (result == DialogResult.OK)
             {
                 try
                 {
-
                     cxt.TransactionDetails.Remove(removetd);
                     cxt.SaveChanges();
                     if (cxt.TransactionDetails.Where(x => x.transactionid == transid).Count() == 0)
