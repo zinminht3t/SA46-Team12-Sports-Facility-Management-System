@@ -441,8 +441,8 @@ namespace SportsFacilityManagementSystem
             //cmbSports.DataSource = frmLogin.bookingSportsList;
             ////cmbSports.DisplayMember = "facilityname";
             ////cmbSports.ValueMember = "facilityname";
-            //dtpBookingDate.Value = DateTime.Today;
-            //dtpBookingDatevalue = dtpBookingDate.Value;
+            dtpBookingDate.Value = DateTime.Today;
+            dtpBookingDatevalue = dtpBookingDate.Value;
 
             cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
 
