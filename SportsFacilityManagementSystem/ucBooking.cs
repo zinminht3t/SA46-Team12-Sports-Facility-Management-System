@@ -445,6 +445,7 @@ namespace SportsFacilityManagementSystem
             dtpBookingDatevalue = dtpBookingDate.Value;
 
             cmbSports.DropDownStyle = ComboBoxStyle.DropDownList;
+            LoadBookingSlots();
 
         }
 
