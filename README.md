@@ -1,9 +1,7 @@
 # SA46Team12BESNETProject
  
-===================================================================================
 		     		  	GetActive 
 		     	    Sports Facility Management System
-===================================================================================
 
 This document provides supplementary information 
 about the software on the following items:
@@ -14,26 +12,20 @@ about the software on the following items:
 4. System Requirements
 5. Authors
 
-====================================================================================
 1. User Login / Passwords
-____________________________________________________________________________________
 
 Users can login using their employee ID with a prefixed password. This password is 
 encrypted on the database.
 
 The current accessible ID / password are as follows:
-________________________________________________________________
-|    Employee ID     |       Employee 	    |     Password     |
-----------------------------------------------------------------
-|         1          |        Evelyn	    |      1234        |
-|         2          |        Jayden	    |      1234        |
-|         3          |        Sandy	    |      1234        |
-|         4          |        ZMH	    |      1234        |
-|____________________|______________________|__________________|
+EmployeeID	Employee	Password
+1		Evelyn		1234
+2		Jayden		1234
+3		Sandy		1234
+4		ZMH		1234
 
-====================================================================================
 2. Summary on Application
-____________________________________________________________________________________
+
 There are 4 main functions in the Sports Facility Management System.
 
 a. Booking
@@ -69,9 +61,7 @@ i. Membership Form
 ii. Booking Invoice
 
 
-====================================================================================
 3. Running with Test Data
-____________________________________________________________________________________
 
 a. Bookings
 ------------------------------------
@@ -90,31 +80,12 @@ ID	Name		IC No.		Mobile No.	Email
 2	Reuben Burt	81676403499	33594131	nunc.sed@urnanec.edu
 3	Talon Pugh	45267705599	89415262	tincidunt@Phasellusinfelis.edu
 
-====================================================================================
-4. System Requirements
-____________________________________________________________________________________
 
-1.8 GHz or faster processor 
-Dual-core or better recommended
-
-2 GB of RAM; 4 GB of RAM recommended 
-(2.5 GB minimum if running on a virtual machine)
-
-Hard disk space: up to 1 GB of available space
-
-Video card that supports a minimum display resolution 
-of 720p (1280 by 720)
-
-====================================================================================
-5. Authors
-____________________________________________________________________________________
+4. Authors
 	
 	Team 12B
-_______________________________
-|Student ID  |  Student Name  |
-------------------------------
-|A0114957X   |	ONG WEI TING  |
-|A0180552J   |	PEH GUEK LAN  |
-|A0180511U   |	WONG WEI JIE  |
-|A0180541M   |	ZIN MIN HTET  |
-|____________|________________|
+Student ID	Student Name
+A0114957X	ONG WEI TING
+A0180552J	PEH GUEK LAN
+A0180511U	WONG WEI JIE
+A0180541M	ZIN MIN HTET
